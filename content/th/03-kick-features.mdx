@@ -15,31 +15,38 @@ prerequisites:
 
 <StepCard step={1} title="หน้าตา Creator Dashboard">
   <SubSteps items={[
-    "เข้าไปที่ <a href='https://kick.com/dashboard/stream' target='_blank'>kick.com/dashboard/stream</a> — ศูนย์ควบคุมการสตรีมทั้งหมด",
-    "<strong>Stream Preview</strong> — จอตรวจสัญญาณสด &nbsp;|&nbsp; <strong>Activity Feed</strong> — แจ้งเตือน Follow/Sub/Raid &nbsp;|&nbsp; <strong>Chat Dock</strong> — อ่านและพิมพ์แชท &nbsp;|&nbsp; <strong>Quick Actions</strong> — ปุ่มทางลัด"
+    "เข้าไปที่ <a href='https://kick.com/dashboard/stream' target='_blank'>kick.com/dashboard/stream</a> — ศูนย์ควบคุมการสตรีมทั้งหมดของคุณ",
+    "<strong>Stream Preview</strong> — จอมอนิเตอร์ตรวจสัญญาณภาพที่ส่งมาจาก OBS แบบเรียลไทม์",
+    "<strong>Activity Feed</strong> — แจ้งเตือน Follow, Subscription และ Raid ใหม่แบบทันที",
+    "<strong>Chat Dock</strong> — อ่านและพิมพ์ตอบแชทผู้ชมจากในหน้าแดชบอร์ดได้เลย",
+    "<strong>Quick Actions</strong> — ปุ่มทางลัดสำหรับงานที่ใช้บ่อย เช่น แก้ชื่อสตรีม สร้างโพล และ Raid"
   ]} />
   <ImageCaption src="/images/ch3/s3_1_step1_dashboard_overview.jpg" alt="หน้าตา Creator Dashboard บน KICK" caption="Creator Dashboard — 4 แผงควบคุมหลัก" />
 </StepCard>
 
 <StepCard step={2} title="ตั้งชื่อสตรีม หมวดหมู่ และภาษา">
   <SubSteps items={[
-    "กดปุ่ม <strong>Edit Stream Info</strong> (ไอคอนดินสอ) ใน Quick Actions",
-    "ใส่ <strong>Title</strong>, <strong>Category</strong> (ชื่อเกมหรือ Just Chatting) และเลือก <strong>Language → Thai</strong> เพิ่ม Tag เช่น <code>Thai</code>, <code>FPS</code>, <code>VTuber</code> เพื่อให้ Algorithm ดันช่องให้คนไทยเจอ",
-    "เปิดสวิตช์ <strong>18+ Mature Content</strong> หากสตรีมมีเนื้อหาไม่เหมาะสมกับเด็ก"
+    "กดปุ่ม <strong>Edit Stream Info</strong> (ไอคอนรูปดินสอ) ในแผง Quick Actions",
+    "<strong>Title:</strong> ตั้งชื่อสตรีมให้ดึงดูด เช่น <code>[TH/EN] มือใหม่หัดเล่น VALORANT | พูดคุยกับผู้ชม</code>",
+    "<strong>Category:</strong> ค้นหาและเลือกชื่อเกมที่กำลังเล่น หรือเลือก <code>Just Chatting</code> สำหรับสตรีมที่ไม่ใช่เกม",
+    "<strong>Language:</strong> เลือก <strong>Thai</strong> — สำคัญมากสำหรับให้ Algorithm ดันช่องไปหาผู้ชมชาวไทย",
+    "<strong>Tags:</strong> เพิ่ม Tag เช่น <code>Thai</code>, <code>VTuber</code>, <code>FPS</code> เพื่อเพิ่มโอกาสให้คนเจอในหน้า Discovery",
+    "<strong>18+ Mature Content:</strong> เปิดสวิตช์นี้หากสตรีมมีเนื้อหาไม่เหมาะสมกับเด็ก เช่น ความรุนแรงหรือคำหยาบ"
   ]} />
-  <ImageCaption src="/images/ch3/s3_1_step2_edit_stream_info.jpg" alt="หน้าต่าง Edit Stream Info" caption="Edit Stream Info — ตั้งชื่อ หมวดหมู่ ภาษา และเรตติ้งเนื้อหา" />
+  <ImageCaption src="/images/ch3/s3_1_step2_edit_stream_info.jpg" alt="หน้าต่าง Edit Stream Info" caption="Edit Stream Info — ตั้งชื่อ หมวดหมู่ ภาษา แท็ก และเรตเนื้อหา" />
 </StepCard>
 
 <StepCard step={3} title="อัปโหลด Emotes และ Subscriber Badges">
   <SubSteps items={[
-    "<strong>Emotes:</strong> ไปที่ <a href='https://dashboard.kick.com/community/chat/emotes' target='_blank'>Community → Emotes</a> อัปโหลดไฟล์ PNG พื้นหลังโปร่งใส (512×512 px) ตั้งชื่อโค้ด กด Save",
-    "<strong>Badges:</strong> ไปที่ <strong>Community → Badges</strong> อัปโหลดไอคอนยศตามอายุ Sub (1, 3, 6 เดือน, 1 ปี)"
+    "ไปที่ <a href='https://dashboard.kick.com/community/chat/emotes' target='_blank'>Community → Emotes</a>",
+    "<strong>Follower Emotes:</strong> กด <strong>Add Emote</strong> อัปโหลดไฟล์ PNG พื้นหลังโปร่งใส (แนะนำ 512×512 px) และตั้งชื่อโค้ดคำสั่ง",
+    "<strong>Subscriber Badges:</strong> ไปที่ <strong>Community → Badges</strong> อัปโหลดไอคอนสำหรับยศแต่ละระดับตามอายุ Sub: 1 เดือน, 3 เดือน, 6 เดือน และ 1 ปี"
   ]} />
-  <ImageCaption src="/images/ch3/s3_1_step3_emotes_badges.jpg" alt="หน้าอัปโหลด Emotes และ Badges" caption="Community → Emotes — อัปโหลด Emote สำหรับ Follower และ Subscriber Badges" />
+  <ImageCaption src="/images/ch3/s3_1_step3_emotes_badges.jpg" alt="หน้าอัปโหลด Emotes และ Badges" caption="Community → Emotes — อัปโหลด Follower Emotes และ Subscriber Badges" />
 </StepCard>
 
 <TipBox>
-ตั้งค่า <strong>Language → Thai</strong> และเลือก <strong>Category</strong> ให้ตรงกับเกมที่เล่น — สองอย่างนี้ส่งผลมากที่สุดต่อการที่ Algorithm จะแสดงช่องของคุณให้คนไทยเจอ
+ตั้งค่า <strong>Language → Thai</strong> และเลือก <strong>Category</strong> ให้ตรงกับเกม — สองอย่างนี้ส่งผลมากที่สุดต่อการที่ Algorithm จะแสดงช่องของคุณให้คนไทยเจอ
 </TipBox>
 
 ---
@@ -48,16 +55,21 @@ prerequisites:
 
 <StepCard step={4} title="ดูสตรีมย้อนหลัง (VODs)">
   <SubSteps items={[
-    "KICK บันทึกสตรีมย้อนหลังให้อัตโนมัติ <strong>60 วัน</strong> หลังจบสตรีม — ไม่ต้องตั้งค่าเพิ่ม",
-    "เข้าดูได้ที่ <a href='https://dashboard.kick.com/studio/vods' target='_blank'>Studio → VODs</a> ปรับสถานะหรือดาวน์โหลดไฟล์ RAW ได้จากหน้านี้"
+    "KICK <strong>บันทึกทุกสตรีมให้อัตโนมัติ</strong> ทันทีที่จบสตรีม — ไม่ต้องตั้งค่าเพิ่ม",
+    "VODs จะถูกเก็บไว้ <strong>60 วัน</strong> นับจากวันที่สตรีมจบ",
+    "เข้าดูได้ที่ <a href='https://dashboard.kick.com/studio/vods' target='_blank'>Studio → VODs</a>",
+    "จากหน้านี้สามารถปรับสถานะ (ซ่อน/แสดง) แก้ชื่อ หรือดาวน์โหลดไฟล์วิดีโอดิบออกมาได้"
   ]} />
-  <ImageCaption src="/images/ch3/s3_2_step4_vods_list.jpg" alt="รายการ VODs ใน Studio" caption="Studio → VODs — รายการสตรีมย้อนหลังอัตโนมัติ 60 วัน" />
+  <ImageCaption src="/images/ch3/s3_2_step4_vods_list.jpg" alt="รายการ VODs ใน Studio" caption="Studio → VODs — รายการสตรีมย้อนหลังบันทึกอัตโนมัติ 60 วัน" />
 </StepCard>
 
 <StepCard step={5} title="ตัดคลิปไฮไลต์และดาวน์โหลด">
   <SubSteps items={[
-    "ระหว่างไลฟ์: คลิกไอคอน <strong>กรรไกร (Clip)</strong> บนหน้าจอวิดีโอ → ลากแถบเลือกช็อตเด็ด 5–60 วินาที → ตั้งชื่อ → <strong>Publish Clip</strong>",
-    "จัดการคลิปทั้งหมดได้ที่ <a href='https://dashboard.kick.com/studio/clips' target='_blank'>Studio → Clips</a> กด <strong>Download</strong> เซฟไฟล์ HD .mp4 ไปตัดลง TikTok หรือ YouTube Shorts"
+    "ระหว่างไลฟ์ คลิกไอคอน <strong>กรรไกร (Clip)</strong> บนหน้าจอวิดีโอสตรีม",
+    "ลากแถบเลือกช็อตเด็ดที่ต้องการ — ความยาวระหว่าง <strong>5 ถึง 60 วินาที</strong>",
+    "ตั้งชื่อคลิป แล้วกด <strong>Publish Clip</strong> เพื่อบันทึก",
+    "จัดการคลิปทั้งหมดได้ที่ <a href='https://dashboard.kick.com/studio/clips' target='_blank'>Studio → Clips</a> — แก้ชื่อหรือลบคลิปได้จากหน้านี้",
+    "กด <strong>Download</strong> เพื่อเซฟไฟล์ HD .mp4 นำไปตัดต่อลง TikTok, YouTube Shorts หรือ Facebook Reels"
   ]} />
   <ImageCaption src="/images/ch3/s3_2_step5_clips_management.jpg" alt="การจัดการคลิปใน Studio Clips" caption="Studio → Clips — จัดการ เปลี่ยนชื่อ และดาวน์โหลดคลิปไฮไลต์" />
 </StepCard>
@@ -68,30 +80,40 @@ prerequisites:
 
 <StepCard step={6} title="เปิด Channel Points และสร้าง Custom Rewards">
   <SubSteps items={[
-    "ไปที่ <a href='https://dashboard.kick.com/community/chat/channel-points' target='_blank'>Community → Chat → Channel Points</a> → เปิดสวิตช์ <strong>Enable</strong>",
-    "กด <strong>+ Add Custom Reward</strong> → ตั้งชื่อรางวัล (เช่น <code>สตรีมเมอร์ดื่มน้ำ</code>) กำหนดแต้มและ Cooldown → <strong>Save</strong>"
+    "ไปที่ <a href='https://dashboard.kick.com/community/chat/channel-points' target='_blank'>Community → Chat → Channel Points</a>",
+    "เลื่อนสวิตช์ <strong>Enable Channel Points</strong> เป็น ON",
+    "กด <strong>+ Add Custom Reward</strong> เพื่อสร้างรางวัลใหม่",
+    "<strong>Reward Title:</strong> ตั้งชื่อรางวัลให้สนุก เช่น <code>สตรีมเมอร์ดื่มน้ำ 1 จิบ</code>",
+    "<strong>Point Cost:</strong> กำหนดจำนวนแต้มที่คนดูต้องใช้แลก",
+    "<strong>Cooldown:</strong> ตั้งเวลาคูลดาวน์เพื่อป้องกันคนดูกดสแปมรัวๆ",
+    "กด <strong>Save</strong> — คนดูจะสามารถแลกรางวัลด้วยแต้มที่สะสมจากการนั่งดูสตรีมได้ทันที"
   ]} />
   <ImageCaption src="/images/ch3/s3_3_step6_channel_points.jpg" alt="หน้าตั้งค่า Channel Points" caption="Community → Chat → Channel Points — สร้างรางวัลให้คนดูแลกด้วยแต้มสะสม" />
 </StepCard>
 
 <StepCard step={7} title="Polls และ Predictions">
   <SubSteps items={[
-    "<strong>Poll:</strong> พิมพ์ <code>/poll [คำถาม] | [ตัวเลือก1] | [ตัวเลือก2]</code> ในแชท หรือกด <strong>Create a Poll</strong> ใน Quick Actions",
-    "<strong>Prediction:</strong> กด <strong>Start Prediction</strong> ใน Quick Actions → ตั้งหัวข้อและตัวเลือก → คนดูนำแต้มมาร่วมทาย"
+    "<strong>Poll:</strong> พิมพ์ <code>/poll [คำถาม] | [ตัวเลือก1] | [ตัวเลือก2]</code> ในแชทเพื่อเริ่มโพลทันที",
+    "หรือกด <strong>Create a Poll</strong> ใน Quick Actions เพื่อตั้งค่าผ่าน UI แทน",
+    "<strong>Prediction:</strong> กด <strong>Start Prediction</strong> ใน Quick Actions",
+    "ตั้งหัวข้อและสองตัวเลือก — คนดูนำแต้ม Channel Points มาเดิมพันว่าผลจะออกมาแบบไหน",
+    "เมื่อเหตุการณ์จบแล้ว กด Resolve เพื่อแจกแต้มให้คนที่ทายถูก"
   ]} />
-  <ImageCaption src="/images/ch3/s3_3_step7_polls_predictions.jpg" alt="หน้าจอ Poll และ Prediction" caption="Quick Actions — สร้างโพลและเกมทายผลให้คนดูมีส่วนร่วม" />
+  <ImageCaption src="/images/ch3/s3_3_step7_polls_predictions.jpg" alt="หน้าจอ Poll และ Prediction" caption="Quick Actions — สร้างโพลสำรวจและเกมทายผลให้คนดูมีส่วนร่วม" />
 </StepCard>
 
 <StepCard step={8} title="Raid — ส่งต่อคนดูให้สตรีมเมอร์คนอื่น">
   <SubSteps items={[
-    "ก่อนจบสตรีม: พิมพ์ <code>/raid [ชื่อช่อง]</code> ในแชท (เช่น <code>/raid nicejrs</code>) หรือกด <strong>Raid Channel</strong> ใน Quick Actions",
-    "ระบบนับถอยหลัง 60 วินาที → กด <strong>Raid Now</strong> เพื่อส่งผู้ชมทั้งหมดไปยังช่องเป้าหมายทันที"
+    "ก่อนจบสตรีม พิมพ์ <code>/raid [ชื่อช่อง]</code> ในแชท เช่น <code>/raid nicejrs</code>",
+    "หรือกด <strong>Raid Channel</strong> ใน Quick Actions แล้วค้นหาชื่อช่องเป้าหมาย",
+    "ระบบจะแสดง <strong>แถบนับถอยหลัง 60 วินาที</strong> — ใช้เวลานี้บอกลาคนดู",
+    "กด <strong>Raid Now</strong> เพื่อส่งผู้ชมทั้งหมดไปยังช่องเป้าหมายทันที"
   ]} />
   <ImageCaption src="/images/ch3/s3_3_step8_raid.jpg" alt="แถบนับถอยหลัง Raid" caption="Raid countdown — ส่งต่อผู้ชมทั้งหมดไปยังช่องสตรีมเมอร์อีกคน" />
 </StepCard>
 
 <TipBox>
-การทำ Raid หลังจบสตรีมทุกครั้ง ช่วยสร้างมิตรภาพกับสตรีมเมอร์คนอื่น และขยายฐานผู้ชมของทั้งสองช่องไปพร้อมกัน
+การทำ Raid หลังจบสตรีมทุกครั้ง ช่วยสร้างความสัมพันธ์กับสตรีมเมอร์คนอื่น และขยายฐานแฟนคลับของทั้งสองช่องไปพร้อมกัน
 </TipBox>
 
 ---

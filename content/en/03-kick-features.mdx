@@ -15,31 +15,38 @@ prerequisites:
 
 <StepCard step={1} title="Dashboard Layout">
   <SubSteps items={[
-    "Go to <a href='https://kick.com/dashboard/stream' target='_blank'>kick.com/dashboard/stream</a> — this is your streaming control center.",
-    "<strong>Stream Preview</strong> — live signal monitor. <strong>Activity Feed</strong> — follows/subs/raids. <strong>Chat Dock</strong> — read & reply. <strong>Quick Actions</strong> — shortcut buttons."
+    "Go to <a href='https://kick.com/dashboard/stream' target='_blank'>kick.com/dashboard/stream</a> — your streaming control center.",
+    "<strong>Stream Preview</strong> — monitors the live broadcast signal coming from OBS.",
+    "<strong>Activity Feed</strong> — real-time notifications for new Follows, Subscriptions, and Raids.",
+    "<strong>Chat Dock</strong> — read and reply to your live chat from the dashboard.",
+    "<strong>Quick Actions</strong> — shortcut buttons for common tasks like editing stream info, starting polls, and raiding."
   ]} />
   <ImageCaption src="/images/ch3/s3_1_step1_dashboard_overview.jpg" alt="KICK Creator Dashboard main layout" caption="KICK Creator Dashboard — 4 main panels overview" />
 </StepCard>
 
 <StepCard step={2} title="Set Stream Title, Category & Language">
   <SubSteps items={[
-    "Click <strong>Edit Stream Info</strong> (pencil icon) in Quick Actions.",
-    "Set your <strong>Title</strong>, <strong>Category</strong> (game name or Just Chatting), and <strong>Language → Thai</strong>. Add tags like <code>Thai</code>, <code>FPS</code>, <code>VTuber</code> to boost discovery.",
-    "Enable <strong>18+ Mature Content</strong> toggle if your stream contains strong language or violence."
+    "Click <strong>Edit Stream Info</strong> (pencil icon) in the Quick Actions panel.",
+    "<strong>Title:</strong> Write an engaging stream title, e.g., <code>[TH/EN] Beginner VALORANT | Chatting with Viewers</code>.",
+    "<strong>Category:</strong> Search and select your game name, or choose <code>Just Chatting</code> for non-gaming streams.",
+    "<strong>Language:</strong> Set to <strong>Thai</strong> — this is critical for KICK's algorithm to surface your channel to local viewers.",
+    "<strong>Tags:</strong> Add tags like <code>Thai</code>, <code>VTuber</code>, <code>FPS</code> to boost discoverability on the Discovery page.",
+    "<strong>18+ Mature Content:</strong> Enable this toggle if your stream contains strong language or violent gameplay."
   ]} />
-  <ImageCaption src="/images/ch3/s3_1_step2_edit_stream_info.jpg" alt="Edit Stream Info modal" caption="Edit Stream Info — title, category, language, and content rating" />
+  <ImageCaption src="/images/ch3/s3_1_step2_edit_stream_info.jpg" alt="Edit Stream Info modal" caption="Edit Stream Info — title, category, language, tags, and content rating" />
 </StepCard>
 
 <StepCard step={3} title="Channel Emotes & Subscriber Badges">
   <SubSteps items={[
-    "<strong>Emotes:</strong> Go to <a href='https://dashboard.kick.com/community/chat/emotes' target='_blank'>Community → Emotes</a>. Upload a transparent PNG (512×512 px), assign a code, click Save.",
-    "<strong>Badges:</strong> Go to <strong>Community → Badges</strong>. Upload tier icons for sub tenure (1M, 3M, 6M, 1Y)."
+    "Go to <a href='https://dashboard.kick.com/community/chat/emotes' target='_blank'>Community → Emotes</a>.",
+    "<strong>Follower Emotes:</strong> Click <strong>Add Emote</strong>, upload a transparent PNG (recommended 512×512 px), and assign a text command code.",
+    "<strong>Subscriber Badges:</strong> Go to <strong>Community → Badges</strong> to upload tier icons for sub tenure milestones: 1 Month, 3 Months, 6 Months, and 1 Year."
   ]} />
   <ImageCaption src="/images/ch3/s3_1_step3_emotes_badges.jpg" alt="Emotes and Badges upload page" caption="Community → Emotes — upload follower emotes and subscriber badges" />
 </StepCard>
 
 <TipBox>
-Language set to <strong>Thai</strong> + correct Category = the two biggest factors for KICK's algorithm to surface your stream to local viewers.
+Setting Language to <strong>Thai</strong> and choosing the correct Category are the two biggest factors for KICK's Discovery algorithm to recommend your stream to local viewers.
 </TipBox>
 
 ---
@@ -48,16 +55,21 @@ Language set to <strong>Thai</strong> + correct Category = the two biggest facto
 
 <StepCard step={4} title="Past Broadcasts (VODs)">
   <SubSteps items={[
-    "KICK auto-archives every stream for <strong>60 days</strong> after you go offline — no setup needed.",
-    "Access at <a href='https://dashboard.kick.com/studio/vods' target='_blank'>Studio → VODs</a>. You can manage visibility or download the raw file."
+    "KICK <strong>automatically archives</strong> every completed stream as a VOD — no setup required.",
+    "VODs are stored for <strong>60 days</strong> from the stream end date.",
+    "Access your archive at <a href='https://dashboard.kick.com/studio/vods' target='_blank'>Studio → VODs</a>.",
+    "From this page you can manage visibility, change titles, or download the raw video file."
   ]} />
   <ImageCaption src="/images/ch3/s3_2_step4_vods_list.jpg" alt="KICK Studio VODs list" caption="Studio → VODs — past broadcasts stored automatically for 60 days" />
 </StepCard>
 
 <StepCard step={5} title="Create & Download Clips">
   <SubSteps items={[
-    "During live stream: click the <strong>Scissors (Clip)</strong> icon on the video player → drag handles to select 5–60 seconds → name it → <strong>Publish Clip</strong>.",
-    "Manage all clips at <a href='https://dashboard.kick.com/studio/clips' target='_blank'>Studio → Clips</a>. Click <strong>Download</strong> to save HD .mp4 for TikTok or YouTube Shorts."
+    "During a live stream, click the <strong>Scissors (Clip)</strong> icon on the video player.",
+    "Drag the selection handles to mark your highlight moment — between <strong>5 and 60 seconds</strong>.",
+    "Name your clip and click <strong>Publish Clip</strong> to save it.",
+    "Manage all saved clips at <a href='https://dashboard.kick.com/studio/clips' target='_blank'>Studio → Clips</a> — rename or delete clips from here.",
+    "Click <strong>Download</strong> on any clip to save the HD .mp4 file for repurposing into TikTok or YouTube Shorts."
   ]} />
   <ImageCaption src="/images/ch3/s3_2_step5_clips_management.jpg" alt="KICK Studio Clips management" caption="Studio → Clips — manage, rename, and download highlight clips" />
 </StepCard>
@@ -68,39 +80,49 @@ Language set to <strong>Thai</strong> + correct Category = the two biggest facto
 
 <StepCard step={6} title="Enable Channel Points & Custom Rewards">
   <SubSteps items={[
-    "Go to <a href='https://dashboard.kick.com/community/chat/channel-points' target='_blank'>Community → Chat → Channel Points</a> → toggle <strong>Enable</strong> ON.",
-    "Click <strong>+ Add Custom Reward</strong> → set Title (e.g., <code>Drink water</code>), Point Cost, and Cooldown → <strong>Save</strong>."
+    "Go to <a href='https://dashboard.kick.com/community/chat/channel-points' target='_blank'>Community → Chat → Channel Points</a>.",
+    "Toggle <strong>Enable Channel Points</strong> to ON.",
+    "Click <strong>+ Add Custom Reward</strong> to create a new viewer reward.",
+    "<strong>Reward Title:</strong> Name your reward something fun, e.g., <code>Make the Streamer Drink Water</code>.",
+    "<strong>Point Cost:</strong> Set how many points viewers need to redeem it.",
+    "<strong>Cooldown:</strong> Set a cooldown period to prevent spam redemptions.",
+    "Click <strong>Save</strong> — viewers can now redeem rewards using points earned from watching your stream."
   ]} />
-  <ImageCaption src="/images/ch3/s3_3_step6_channel_points.jpg" alt="Channel Points settings page" caption="Community → Chat → Channel Points — enable rewards viewers redeem with watch points" />
+  <ImageCaption src="/images/ch3/s3_3_step6_channel_points.jpg" alt="Channel Points settings page" caption="Community → Chat → Channel Points — create rewards viewers redeem with watch points" />
 </StepCard>
 
 <StepCard step={7} title="Polls & Predictions">
   <SubSteps items={[
-    "<strong>Poll:</strong> Type <code>/poll [Question] | [Option1] | [Option2]</code> in chat, or click <strong>Create a Poll</strong> in Quick Actions.",
-    "<strong>Prediction:</strong> Click <strong>Start Prediction</strong> in Quick Actions → set topic + options → viewers stake Channel Points on the outcome."
+    "<strong>Poll:</strong> In chat, type <code>/poll [Question] | [Option1] | [Option2]</code> to start a quick viewer vote.",
+    "Alternatively, click <strong>Create a Poll</strong> in Quick Actions for a UI-based setup.",
+    "<strong>Prediction:</strong> Click <strong>Start Prediction</strong> in Quick Actions.",
+    "Set a topic and two outcome options — viewers stake their Channel Points on which outcome they think will happen.",
+    "Resolve the prediction after the event to distribute points to winners."
   ]} />
   <ImageCaption src="/images/ch3/s3_3_step7_polls_predictions.jpg" alt="Poll and Prediction interface" caption="Quick Actions — create viewer polls and channel point predictions" />
 </StepCard>
 
 <StepCard step={8} title="Raid — Send Your Viewers to Another Streamer">
   <SubSteps items={[
-    "Before ending stream: type <code>/raid [channel]</code> in chat (e.g., <code>/raid nicejrs</code>), or click <strong>Raid Channel</strong> in Quick Actions.",
-    "A 60-second countdown appears. Click <strong>Raid Now</strong> to transfer all active viewers instantly."
+    "Before ending your stream, type <code>/raid [channel_name]</code> in chat — e.g., <code>/raid nicejrs</code>.",
+    "Alternatively, click <strong>Raid Channel</strong> in Quick Actions and search for the target streamer.",
+    "A <strong>60-second countdown banner</strong> appears — use this time to say goodbye to your viewers.",
+    "Click <strong>Raid Now</strong> to instantly transfer all active viewers to the target channel."
   ]} />
-  <ImageCaption src="/images/ch3/s3_3_step8_raid.jpg" alt="Raid countdown banner" caption="Raid countdown — transfers your entire audience to another live channel" />
+  <ImageCaption src="/images/ch3/s3_3_step8_raid.jpg" alt="Raid countdown banner" caption="Raid countdown — transfers your entire live audience to another channel" />
 </StepCard>
 
 <TipBox>
-Raiding after every stream builds relationships with other creators and helps grow both communities over time.
+Raiding after every stream builds relationships with fellow creators and helps grow both communities at the same time.
 </TipBox>
 
 ---
 
 **Q: How long are VODs kept?**  
-A: 60 days, automatically. No setup needed — manage them at Studio → VODs.
+A: 60 days automatically. No setup needed — manage them at Studio → VODs.
 
 **Q: Where are Channel Points and Emotes settings?**  
-A: Emotes → `Community → Chat → Emotes`. Channel Points → `Community → Chat → Channel Points`.
+A: Emotes → `Community → Chat → Emotes` | Channel Points → `Community → Chat → Channel Points`.
 
 ---
 
