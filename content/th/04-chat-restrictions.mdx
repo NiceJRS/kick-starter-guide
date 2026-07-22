@@ -2,13 +2,140 @@
 number: 4
 slug: chat-restrictions
 level: beginner
-title_th: แชทและการจำกัด
-title_en: Chat & Restrictions
-description_th: Chat Modes, Banned Words, Link Protection และการจัดการแชท
-description_en: Chat Modes, Banned Words, Link Protection and chat management
-estimated_time: 15 นาที / 15 mins
+title_th: "การตั้งค่าแชทและการจำกัดข้อความ"
+title_en: "Chat & Restriction Setup"
+description_th: "คู่มือการตั้งค่าความปลอดภัยของแชต การเปิด Followers-Only, การตั้งค่า Banned Words ดักจับคำหยาบและเว็บสล็อต การบล็อก Emote สแปม และการตั้งกฎช่องแชท"
+description_en: "Complete guide to KICK chat moderation, setting up Followers-Only mode, Banned Words filter for scam links/profanity, blocking spam emotes, and setting channel rules."
+estimated_time: "20 นาที / 20 mins"
 prerequisites:
-  - account-setup
+  - kick-features
 ---
 
-{/* Content coming soon */}
+<SectionHeading id="s4-1">4.1 Chat Modes & Verification</SectionHeading>
+
+<StepCard step={1} title="Followers-Only Mode">
+  <SubSteps items={[
+    "ไปที่ <a href='https://dashboard.kick.com/chat/settings' target='_blank'>dashboard.kick.com/chat/settings</a>",
+    "เลื่อนสวิตช์ <strong>Followers-Only Mode</strong> เป็น ON",
+    "ตั้งเวลาขั้นต่ำ — แนะนำ <strong>15 นาที</strong>",
+    "ป้องกันบัญชีสร้างใหม่มาเกรียนได้ทันที ต้องกด Follow รออย่างน้อย 15 นาทีก่อนพิมพ์แชท"
+  ]} />
+  <ImageCaption src="/images/ch4/s4_1_step1_followers_only.jpg" alt="สวิตช์ Followers-Only Mode" caption="Chat Settings — เปิด Followers-Only Mode ตั้งขั้นต่ำ 15 นาที" />
+</StepCard>
+
+<StepCard step={2} title="Slow Mode และ Subscribers-Only Mode">
+  <SubSteps items={[
+    "<strong>Slow Mode:</strong> กำหนดเวลาเว้นระยะการพิมพ์ต่อคน (เช่น 5 หรือ 10 วินาที)",
+    "เหมาะสำหรับสตรีมคนดูเยอะที่แชทไหลเร็วจนอ่านไม่ทัน",
+    "<strong>Subscribers-Only Mode:</strong> เปิดเฉพาะช่วงกิจกรรมพิเศษ หรือรายการ Exclusive สำหรับ Subscriber",
+    "มอดจะได้รับการยกเว้นจากทั้งสองโหมดอัตโนมัติ"
+  ]} />
+  <ImageCaption src="/images/ch4/s4_1_step2_slow_sub_mode.jpg" alt="การตั้งค่า Slow Mode และ Subscribers-Only" caption="Chat Settings — Slow Mode ชะลอแชท และ Subscribers-Only สำหรับกิจกรรมพิเศษ" />
+</StepCard>
+
+<StepCard step={3} title="Identity Verification (ยืนยันตัวตน)">
+  <SubSteps items={[
+    "ในหัวข้อ <strong>Identity Verification</strong> ของ Chat Settings ให้เปิด <strong>Require Phone Verification</strong> หรือ <strong>Email Verification</strong>",
+    "กรองสแปมบอทออกไปได้มากกว่า <strong>90%</strong> เพราะบอทไม่มีเบอร์โทรจริง",
+    "เปิดทั้ง Phone + Email พร้อมกันได้ เพื่อป้องกันสูงสุด"
+  ]} />
+  <ImageCaption src="/images/ch4/s4_1_step3_identity_verification.jpg" alt="การตั้งค่า Identity Verification" caption="Identity Verification — บังคับยืนยันเบอร์โทร/อีเมล กรองบอทสแปมออก 90%+" />
+</StepCard>
+
+<TipBox>
+Followers-Only (15 นาที) + Phone Verification เปิดพร้อมกัน = เกราะป้องกันบอทและบัญชีเกรียนที่ได้ผลดีที่สุดสำหรับสตรีมเมอร์ไทย
+</TipBox>
+
+---
+
+<SectionHeading id="s4-2">4.2 Banned Words & Auto-Moderation</SectionHeading>
+
+<StepCard step={4} title="เพิ่มคำต้องห้าม (Banned Words)">
+  <SubSteps items={[
+    "ไปที่ <a href='https://dashboard.kick.com/moderation/banned-words' target='_blank'>dashboard.kick.com/moderation/banned-words</a>",
+    "พิมพ์คำต้องห้ามในช่อง <strong>Add banned word</strong> แล้วกด Enter",
+    "<strong>ชุดคำแนะนำสำหรับช่องไทย:</strong> คำด่ารุนแรง คำเหยียด และกลุ่มเว็บสล็อต/สแปมบอท",
+    "ตัวอย่างคำสแปม: <code>คาสิโน</code>, <code>สล็อต</code>, <code>pgslot</code>, <code>เว็บตรง</code>, <code>ฝาก-ถอน</code>, <code>โบนัส100%</code>, <code>ไลน์@</code>, <code>รับปั่น</code>",
+    "ข้อความที่ตรงกับ Banned Words จะ<strong>ถูกบล็อกก่อนขึ้นแชท</strong> — คนดูคนอื่นจะไม่เห็นเลย"
+  ]} />
+  <ImageCaption src="/images/ch4/s4_2_step4_banned_words_list.jpg" alt="ช่องเพิ่มคำต้องห้าม" caption="Moderation → Banned Words — เพิ่มคำต้องห้ามเพื่อบล็อกสแปมอัตโนมัติ" />
+</StepCard>
+
+<StepCard step={5} title="เทคนิค Wildcard (*)">
+  <SubSteps items={[
+    "ใส่เครื่องหมาย <code>*</code> ครอบหน้าหลังคำ เพื่อดักจับทุกรูปแบบที่มีคำนั้นผสมอยู่",
+    "ตัวอย่าง: <code>*สล็อต*</code> ดักจับ <code>เล่นสล็อต</code>, <code>สล็อตpg</code>, <code>เว็บสล็อต</code> ทั้งหมด",
+    "ตัวอย่าง: <code>*casino*</code> ดักจับ <code>onlinecasino</code>, <code>casinobonus</code> ฯลฯ",
+    "ถ้าไม่ใส่ Wildcard คนดูจะหลบได้ง่ายมากโดยเติมคำหน้า-หลัง"
+  ]} />
+  <ImageCaption src="/images/ch4/s4_2_step5_wildcard_technique.jpg" alt="เทคนิค Wildcard asterisk" caption="Wildcard — *สล็อต* ดักจับทุกรูปแบบ: เล่นสล็อต, สล็อตpg, เว็บสล็อต" />
+</StepCard>
+
+<StepCard step={6} title="บล็อก Emote ก่อกวน">
+  <SubSteps items={[
+    "Emote บน KICK เข้ารหัสเป็น <code>[emote:ID:EmoteName]</code> หลังบ้าน เช่น <code>[emote:39251:beeBobble]</code>",
+    "ต้องการแบน Emote ก่อกวน: พิมพ์ชื่อ Emote เช่น <code>beeBobble</code> ในช่อง Banned Words",
+    "หรือใส่ Wildcard: <code>*beeBobble*</code> เพื่อดักจับทุกรูปแบบ",
+    "กด <strong>Add</strong> — ข้อความที่มี Emote นั้นจะถูกบล็อกทันทีก่อนขึ้นแชท"
+  ]} />
+  <ImageCaption src="/images/ch4/s4_2_step6_block_emote.jpg" alt="การบล็อก Emote ผ่าน Banned Words" caption="บล็อก Emote ก่อกวน — เพิ่มชื่อ Emote ลง Banned Words เพื่อบล็อกอัตโนมัติ" />
+</StepCard>
+
+<WarningBox>
+<strong>Banned Words vs "deleted by moderator":</strong> Banned Words บล็อกข้อความก่อนขึ้นแชทเลย — คนดูไม่เห็น ส่วน "deleted by moderator" หมายความว่าข้อความขึ้นแชทไปแล้ว แต่ถูกมอดมนุษย์หรือ ChatBot (เช่น BotRix) ลบทีหลัง
+</WarningBox>
+
+---
+
+<SectionHeading id="s4-3">4.3 Link Protection, Chat Rules & Commands</SectionHeading>
+
+<StepCard step={7} title="เปิด Link Protection">
+  <SubSteps items={[
+    "ไปที่ <a href='https://dashboard.kick.com/chat/settings' target='_blank'>dashboard.kick.com/chat/settings</a> เลื่อนหา <strong>Block Links</strong> แล้วเปิดเป็น ON",
+    "บล็อกคนดูทั่วไปไม่ให้แปะลิงก์ในแชท",
+    "สตรีมเมอร์และมอด<strong>ได้รับยกเว้นอัตโนมัติ</strong> — แปะลิงก์ได้ตลอด"
+  ]} />
+  <ImageCaption src="/images/ch4/s4_3_step7_block_links.jpg" alt="สวิตช์ Block Links" caption="Chat Settings — Block Links บล็อกคนดูไม่ให้แปะ URL (มอดยกเว้น)" />
+</StepCard>
+
+<StepCard step={8} title="ตั้งกฎประจำช่อง (Chat Rules)">
+  <SubSteps items={[
+    "ไปที่ <a href='https://dashboard.kick.com/moderation/display' target='_blank'>dashboard.kick.com/moderation/display</a>",
+    "พิมพ์ข้อตกลงประจำช่องในกล่อง <strong>Chat Rules</strong>",
+    "กด <strong>Save Changes</strong>",
+    "คนดูใหม่ที่เข้ามาพิมพ์ครั้งแรก จะเจอ Pop-up แสดงกฎช่อง ต้องกด <strong>'I Agree'</strong> ก่อนถึงจะพิมพ์ได้"
+  ]} />
+  <ImageCaption src="/images/ch4/s4_3_step8_chat_rules.jpg" alt="การตั้ง Chat Rules" caption="Moderation → Display — ตั้งกฎช่อง คนดูต้องกด 'I Agree' ก่อนพิมพ์" />
+</StepCard>
+
+<StepCard step={9} title="คำสั่งด่วนสำหรับมอด (Quick Mod Commands)">
+  <SubSteps items={[
+    "สตรีมเมอร์และมอดพิมพ์คำสั่งเหล่านี้ในแชทสดได้ทันที:",
+    "<code>/clear</code> — ล้างข้อความทั้งหมดบนจอแชททันที",
+    "<code>/slow 10</code> — เปิดโหมดชะลอแชท พิมพ์ได้ทุก 10 วินาที (ปิด: <code>/slowoff</code>)",
+    "<code>/followers 15</code> — เปิดโหมดแชทเฉพาะผู้ติดตาม 15 นาที (ปิด: <code>/followersoff</code>)"
+  ]} />
+  <ImageCaption src="/images/ch4/s4_3_step9_mod_commands.jpg" alt="คำสั่งมอดในแชท" caption="คำสั่งด่วน — /clear, /slow, /followers สำหรับควบคุมแชทระหว่างสตรีม" />
+</StepCard>
+
+<TipBox>
+อยากให้ Subscriber แปะลิงก์ได้ แต่ Follower ไม่ได้? KICK Native ทำไม่ได้ — ต้องตั้งค่าเพิ่มผ่าน Chatbot ภายนอก (BotRix / Nightbot) ดูวิธีใน Chapter 5
+</TipBox>
+
+---
+
+**Q: ทำอย่างไรถ้าไม่อยากให้คนดูแปะลิงก์เว็บพนัน แต่ยังอยากให้ Subscriber แปะลิงก์ได้?**  
+A: ปุ่ม Block Links ของ KICK แบนลิงก์ทุกคนยกเว้นมอดกับสตรีมเมอร์ หากต้องการยกเว้นเฉพาะ Subscriber ต้องไปตั้งค่า URL Protection ใน BotRix หรือ Nightbot (Chapter 5)
+
+**Q: ใส่คำใน Banned Words แล้ว ทำไมคนดูยังหลบได้?**  
+A: ใส่ `*` (Wildcard) ครอบหน้าหลังคำ เช่น `*สล็อต*` แทน `สล็อต` เพื่อดักจับทุกรูปแบบ เช่น เล่นสล็อต, สล็อตpg, เว็บสล็อต
+
+---
+
+<References items={[
+  { label: "คู่มือ Creator Dashboard (KICK)", url: "https://help.kick.com/en/articles/7120642-understanding-your-kick-creator-dashboard" },
+  { label: "คู่มือฟีเจอร์ Moderation (KICK)", url: "https://help.kick.com/en/articles/10162074-moderation-features-guide" },
+  { label: "Chat Settings", url: "https://dashboard.kick.com/chat/settings" },
+  { label: "Banned Words", url: "https://dashboard.kick.com/moderation/banned-words" },
+  { label: "Moderation Display (Chat Rules)", url: "https://dashboard.kick.com/moderation/display" }
+]} />

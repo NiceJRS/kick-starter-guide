@@ -66,9 +66,27 @@ Referenced in `content/th/03-kick-features.mdx` and `content/en/03-kick-features
 
 ---
 
-## Chapter 4 — Chat Restrictions (TBD)
+## Chapter 4 — Chat Restrictions (`public/images/ch4/`)
 
-> Content not yet written. Add images here after receiving Ch4 content from Gemini.
+Referenced in `content/th/04-chat-restrictions.mdx` and `content/en/04-chat-restrictions.mdx`.
+
+| File | Description | Step | Status |
+|------|-------------|------|--------|
+| `s4_1_step1_followers_only.jpg` | Chat Settings → Followers-Only Mode toggle with 15-min minimum | StepCard 1 | ⬜ Needed |
+| `s4_1_step2_slow_sub_mode.jpg` | Chat Settings → Slow Mode rate limit + Subscribers-Only toggle | StepCard 2 | ⬜ Needed |
+| `s4_1_step3_identity_verification.jpg` | Identity Verification section — Phone/Email verification toggles | StepCard 3 | ⬜ Needed |
+| `s4_2_step4_banned_words_list.jpg` | Moderation → Banned Words — input field with scam keywords added | StepCard 4 | ⬜ Needed |
+| `s4_2_step5_wildcard_technique.jpg` | Banned Words showing wildcard entries like *slot*, *casino* | StepCard 5 | ⬜ Needed |
+| `s4_2_step6_block_emote.jpg` | Banned Words with emote name (beeBobble) added to filter | StepCard 6 | ⬜ Needed |
+| `s4_3_step7_block_links.jpg` | Chat Settings → Block Links toggle ON | StepCard 7 | ⬜ Needed |
+| `s4_3_step8_chat_rules.jpg` | Moderation → Display — Chat Rules text box + I Agree popup | StepCard 8 | ⬜ Needed |
+| `s4_3_step9_mod_commands.jpg` | Example of /clear or /slow command being typed in live chat | StepCard 9 | ⬜ Needed |
+
+**Notes for Ch4 screenshots:**
+- Steps 1-3 and 7 are all from dashboard.kick.com/chat/settings (different sections of the same page)
+- Steps 4-6 are from dashboard.kick.com/moderation/banned-words
+- Step 8 from dashboard.kick.com/moderation/display
+- Step 9: screenshot actual chat dock with a slash command typed
 
 ---
 
@@ -109,4 +127,5 @@ Referenced in `content/th/03-kick-features.mdx` and `content/en/03-kick-features
 | Ch1 Account Setup | 15 | 15 | 0 |
 | Ch2 OBS Studio | 4 | 0 | 4 |
 | Ch3 KICK Features | 8 | 0 | 8 |
-| Ch4–9 | TBD | — | — |
+| Ch4 Chat Restrictions | 9 | 0 | 9 |
+| Ch5–9 | TBD | — | — |
