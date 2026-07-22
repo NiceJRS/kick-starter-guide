@@ -7,8 +7,9 @@ import TipBox from './TipBox'
 import WarningBox from './WarningBox'
 import SubSteps from './SubSteps'
 import SectionHeading from './SectionHeading'
+import AffiliateRequirements from './AffiliateRequirements'
 
-const components = { StepCard, ImageCaption, TipBox, WarningBox, SubSteps, SectionHeading }
+const components = { StepCard, ImageCaption, TipBox, WarningBox, SubSteps, SectionHeading, AffiliateRequirements }
 
 export default function MDXRenderer({ code }: { code: string }) {
   const MDXContent = useMDXComponent(code)
