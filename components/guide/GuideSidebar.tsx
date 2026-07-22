@@ -30,31 +30,49 @@ export default function GuideSidebar({
             const done = completed.includes(g.id)
             const current = g.slug === currentSlug
             return (
-              <Link key={g.slug} href={`/${locale}/guide/${g.slug}`}>
-                <div
-                  className="flex items-center gap-2 px-2.5 py-2 rounded-lg text-[13px] transition-all"
-                  style={{
-                    background: current
-                      ? 'var(--kick-green-10)'
-                      : done
-                      ? 'rgba(83,252,24,0.04)'
-                      : 'rgba(255,255,255,0.02)',
-                    border: `0.5px solid ${current ? 'rgba(83,252,24,0.25)' : done ? 'rgba(83,252,24,0.12)' : 'rgba(255,255,255,0.05)'}`,
-                    color: current ? '#ffffff' : done ? 'rgba(83,252,24,0.7)' : '#6b8870',
-                  }}
-                >
+              <div key={g.slug}>
+                <Link href={`/${locale}/guide/${g.slug}`}>
                   <div
-                    className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-[10px]"
+                    className="flex items-center gap-2 px-2.5 py-2 rounded-lg text-[13px] transition-all"
                     style={{
-                      background: done ? 'rgba(83,252,24,0.1)' : current ? 'var(--kick-green-10)' : 'rgba(255,255,255,0.04)',
-                      border: `1px solid ${done ? 'rgba(83,252,24,0.3)' : current ? 'var(--kick-green-22)' : 'rgba(255,255,255,0.08)'}`,
+                      background: current
+                        ? 'var(--kick-green-10)'
+                        : done
+                        ? 'rgba(83,252,24,0.04)'
+                        : 'rgba(255,255,255,0.02)',
+                      border: `0.5px solid ${current ? 'rgba(83,252,24,0.25)' : done ? 'rgba(83,252,24,0.12)' : 'rgba(255,255,255,0.05)'}`,
+                      color: current ? '#ffffff' : done ? 'rgba(83,252,24,0.7)' : '#6b8870',
                     }}
                   >
-                    {done ? <IconCheck size={9} /> : i + 1}
+                    <div
+                      className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-[10px]"
+                      style={{
+                        background: done ? 'rgba(83,252,24,0.1)' : current ? 'var(--kick-green-10)' : 'rgba(255,255,255,0.04)',
+                        border: `1px solid ${done ? 'rgba(83,252,24,0.3)' : current ? 'var(--kick-green-22)' : 'rgba(255,255,255,0.08)'}`,
+                      }}
+                    >
+                      {done ? <IconCheck size={9} /> : i + 1}
+                    </div>
+                    <span className="truncate">{locale === 'th' ? g.title.th : g.title.en}</span>
                   </div>
-                  <span className="truncate">{locale === 'th' ? g.title.th : g.title.en}</span>
-                </div>
-              </Link>
+                </Link>
+
+                {/* Sub-sections — visible only for the current chapter */}
+                {current && g.sections.length > 0 && (
+                  <div className="mt-1 mb-1 ml-3 pl-2.5 space-y-0.5" style={{ borderLeft: '1px solid rgba(83,252,24,0.15)' }}>
+                    {g.sections.map((sec) => (
+                      <a
+                        key={sec.id}
+                        href={`#${sec.id}`}
+                        className="block px-2 py-1 rounded text-[11px] transition-colors hover:opacity-80"
+                        style={{ color: 'var(--text-muted)' }}
+                      >
+                        {locale === 'th' ? sec.label.th : sec.label.en}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
             )
           })}
         </div>

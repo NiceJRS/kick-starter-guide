@@ -4,11 +4,13 @@ import { useEffect, useState } from 'react'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { IconClock } from '@tabler/icons-react'
+import { allGuides } from 'contentlayer/generated'
 import { getGuideBySlug, getAdjacentGuides } from '@/lib/guides'
 import { getCompletedGuides, markGuideComplete } from '@/lib/progress'
 import LevelBadge from '@/components/shared/LevelBadge'
 import GuideSidebar from '@/components/guide/GuideSidebar'
 import GuideNav from '@/components/guide/GuideNav'
+import MDXRenderer from '@/components/guide/MDXRenderer'
 
 export default function GuidePage({
   params: { locale, slug },
@@ -17,6 +19,8 @@ export default function GuidePage({
 }) {
   const guide = getGuideBySlug(slug)
   if (!guide) notFound()
+
+  const mdxDoc = allGuides.find((g) => g.slug === slug && g.locale === locale)
 
   const { prev, next } = getAdjacentGuides(slug)
   const [completed, setCompleted] = useState<number[]>([])
@@ -80,19 +84,25 @@ export default function GuidePage({
           </div>
         </div>
 
-        {/* Placeholder content */}
+        {/* MDX Content */}
         <div
-          className="p-4 rounded-xl mb-4 text-center"
+          className="p-4 rounded-xl mb-4 prose-guide"
           style={{ background: 'var(--surface-card)', border: '1px solid rgba(255,255,255,0.06)' }}
         >
-          <div className="text-[13px] mb-1" style={{ color: 'var(--text-secondary)' }}>
-            {locale === 'th' ? '📝 เนื้อหากำลังมา' : '📝 Content coming soon'}
-          </div>
-          <div className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
-            {locale === 'th'
-              ? 'บทนี้อยู่ระหว่างการเขียน กรุณากลับมาใหม่เร็วๆ นี้'
-              : 'This chapter is being written. Please check back soon.'}
-          </div>
+          {mdxDoc ? (
+            <MDXRenderer code={mdxDoc.body.code} />
+          ) : (
+            <div className="text-center py-6">
+              <div className="text-[13px] mb-1" style={{ color: 'var(--text-secondary)' }}>
+                {locale === 'th' ? '📝 เนื้อหากำลังมา' : '📝 Content coming soon'}
+              </div>
+              <div className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
+                {locale === 'th'
+                  ? 'บทนี้อยู่ระหว่างการเขียน กรุณากลับมาใหม่เร็วๆ นี้'
+                  : 'This chapter is being written. Please check back soon.'}
+              </div>
+            </div>
+          )}
         </div>
 
         <GuideNav prev={prev} next={next} locale={locale} />

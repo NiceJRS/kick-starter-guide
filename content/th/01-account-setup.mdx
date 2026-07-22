@@ -10,4 +10,283 @@ estimated_time: 15 นาที / 15 mins
 prerequisites: []
 ---
 
-{/* Content coming soon — fill via content-intake-template.md */}
+<SectionHeading id="s1-1">1.1 การสมัครบัญชีและความปลอดภัย</SectionHeading>
+
+<StepCard step={1} title="สมัครบัญชี">
+  เข้าเว็บ kick.com แล้วคลิกปุ่ม Sign Up
+  <SubSteps items={[
+    "เปิดเบราว์เซอร์แล้วไปที่ <strong>kick.com</strong>",
+    "คลิกปุ่ม <strong>Sign Up</strong> มุมบนขวา",
+    "เลือก <strong>Google OAuth</strong> (สะดวกกว่า) หรือ <strong>Email / Password</strong>"
+  ]} />
+</StepCard>
+
+<ImageCaption
+  src="/images/ch1/1_1_0_signup.jpg"
+  alt="หน้าสมัครบัญชี KICK.com"
+  caption="หน้า Sign Up ของ KICK — เลือกสมัครผ่าน Google หรืออีเมล"
+/>
+
+<StepCard step={2} title="ยืนยันอีเมล">
+  ยืนยันอีเมลก่อนใช้งานต่อ
+  <SubSteps items={[
+    "เช็ก <strong>Inbox</strong> อีเมลที่ใช้สมัคร",
+    "ถ้าไม่เจอ ให้ดูใน <strong>Spam / Junk Mail</strong>",
+    "กดลิงก์ยืนยัน หรือกรอก <strong>รหัส OTP</strong> ที่ได้รับ"
+  ]} />
+</StepCard>
+
+<ImageCaption
+  src="/images/ch1/1_1_1_email_verify_otp.jpg"
+  alt="ยืนยัน OTP ทางอีเมล"
+  caption="กรอกรหัส OTP ที่ส่งมาทางอีเมลเพื่อยืนยันตัวตน"
+/>
+
+<StepCard step={3} title="เปิดใช้งาน 2FA (Two-Factor Authentication)">
+  ล็อคความปลอดภัยบัญชี — จำเป็นต้องเปิดเพื่อรับรายได้
+  <SubSteps items={[
+    "ไปที่ <strong>Creator Dashboard → Settings → Security</strong>",
+    "หาส่วน <strong>Two-Factor Authentication</strong>",
+    "คลิก <strong>Enable</strong> เพื่อเริ่มการตั้งค่า"
+  ]} />
+</StepCard>
+
+<ImageCaption
+  src="/images/ch1/1_1_2_profile_setting_activate_2fa_page.jpg"
+  alt="หน้าตั้งค่า Security เพื่อเปิด 2FA"
+  caption="ไปที่ Settings → Security เพื่อเปิดใช้งาน 2FA"
+/>
+
+<StepCard step={4} title="ดาวน์โหลดแอป Authenticator">
+  ติดตั้งแอปสร้างรหัสยืนยันบนมือถือ
+  <SubSteps items={[
+    "ดาวน์โหลด <strong>Google Authenticator</strong> หรือ <strong>Authy</strong> จาก App Store / Play Store",
+    "เปิดแอปทิ้งไว้ — จะใช้สแกน QR Code ในขั้นตอนถัดไป"
+  ]} />
+</StepCard>
+
+<ImageCaption
+  src="/images/ch1/1_1_3_application_google_authenticator.jpg"
+  alt="แอป Google Authenticator"
+  caption="ใช้ Google Authenticator หรือ Authy สำหรับสร้างรหัส TOTP"
+/>
+
+<StepCard step={5} title="สแกน QR Code และยืนยัน">
+  เชื่อมแอปกับบัญชี KICK แล้วยืนยันว่าใช้งานได้
+  <SubSteps items={[
+    "เปิดแอป Authenticator แล้วแตะ <strong>เพิ่มบัญชี / สแกน QR</strong>",
+    "สแกน QR Code ที่แสดงบนหน้า Security ของ KICK",
+    "กรอก <strong>รหัส 6 หลัก</strong> จากแอปเพื่อยืนยัน"
+  ]} />
+</StepCard>
+
+<ImageCaption
+  src="/images/ch1/1_1_4_verify_2fa_scan_qr_code.jpg"
+  alt="สแกน QR Code เพื่อยืนยัน 2FA"
+  caption="สแกน QR Code ด้วยแอป Authenticator บนมือถือ"
+/>
+
+<ImageCaption
+  src="/images/ch1/1_1_5_verify_2fa_success.jpg"
+  alt="เปิด 2FA สำเร็จ"
+  caption="เปิดใช้งาน 2FA สำเร็จ — บัญชีของคุณปลอดภัยแล้ว"
+/>
+
+<TipBox>
+  KICK **บังคับเปิด 2FA** เพื่อเข้าถึงระบบ Monetization และรับเงินรายได้ ควรเปิดก่อนเริ่มสตรีมครั้งแรก
+</TipBox>
+
+---
+
+<SectionHeading id="s1-2">1.2 การตั้งค่าโปรไฟล์และตกแต่งช่อง</SectionHeading>
+
+<ImageCaption
+  src="/images/ch1/1_2_0_profile_setting.jpg"
+  alt="หน้าตั้งค่าโปรไฟล์"
+  caption="หน้า Profile Settings — ปรับแต่งรูปลักษณ์ช่องของคุณ"
+/>
+
+<StepCard step={1} title="รูปโปรไฟล์ (Avatar)">
+  ใส่รูปที่จดจำได้ง่ายสำหรับช่องของคุณ
+  <SubSteps items={[
+    "ไปที่ <strong>Creator Dashboard → Settings → Profile</strong>",
+    "คลิกที่รูปโปรไฟล์ปัจจุบันเพื่อเปิดหน้าต่างอัปโหลด",
+    "อัปโหลดรูปขนาด <strong>128×128 px</strong> (แนะนำ PNG หรือ JPG)"
+  ]} />
+</StepCard>
+
+<ImageCaption
+  src="/images/ch1/1_2_1_change_avatar.jpg"
+  alt="เปลี่ยนรูปโปรไฟล์"
+  caption="คลิกที่รูปโปรไฟล์ปัจจุบันเพื่ออัปโหลดรูปใหม่"
+/>
+
+<StepCard step={2} title="แบนเนอร์ช่อง (Channel Banner)">
+  เพิ่มแบนเนอร์ที่แสดงถึงสไตล์ช่องคุณ
+  <SubSteps items={[
+    "คลิกบริเวณแบนเนอร์ในหน้า Profile settings",
+    "อัปโหลดรูปขนาด <strong>1920×1080 px</strong> เพื่อผลลัพธ์ดีที่สุด",
+    "ใช้ PNG หรือ JPG — ขนาดไฟล์ไม่เกิน 5 MB"
+  ]} />
+</StepCard>
+
+<ImageCaption
+  src="/images/ch1/1_2_2_change_banner.jpg"
+  alt="เปลี่ยนแบนเนอร์ช่อง"
+  caption="แบนเนอร์ขนาด 1920×1080 แสดงผลได้สวยทุกหน้าจอ"
+/>
+
+<StepCard step={3} title="ชีวประวัติช่อง (Bio)">
+  เขียนแนะนำช่องให้ผู้ชมใหม่รู้จักคุณ
+  <SubSteps items={[
+    "เนื้อหาที่สตรีม (เกม, IRL, ดนตรี ฯลฯ)",
+    "ตารางสตรีมหรือช่วงเวลาที่ออนบ่อย",
+    "ลิงก์ Discord หรือ CTA ชวนกดติดตาม"
+  ]} />
+</StepCard>
+
+<ImageCaption
+  src="/images/ch1/1_2_3_update_bio.jpg"
+  alt="อัปเดต Bio ช่อง"
+  caption="Bio ที่ชัดเจนช่วยให้ผู้ชมใหม่ตัดสินใจกดติดตามได้ง่ายขึ้น"
+/>
+
+<StepCard step={4} title="ลิงก์โซเชียลมีเดีย">
+  เชื่อมต่อช่องทางอื่นให้ผู้ชมติดตามได้ทุกที่
+  <SubSteps items={[
+    "เลื่อนลงหา <strong>Social Links</strong> ในหน้า Profile settings",
+    "เพิ่ม Facebook, Discord, TikTok, YouTube หรือ X (Twitter)",
+    "คลิก <strong>Save</strong> — ลิงก์จะแสดงบนหน้าช่องของคุณ"
+  ]} />
+</StepCard>
+
+<ImageCaption
+  src="/images/ch1/1_2_4_social_link.jpg"
+  alt="เพิ่มลิงก์โซเชียล"
+  caption="เชื่อมต่อโซเชียลเพื่อขยายชุมชนข้ามแพลตฟอร์ม"
+/>
+
+<TipBox>
+  ตั้งค่า **ภาษาหลัก** ของช่องเป็น Thai และเลือก **Category** หลักของการสตรีม เพื่อให้ผู้รับชมชาวไทยค้นพบช่องคุณได้ง่ายขึ้น
+</TipBox>
+
+---
+
+<SectionHeading id="s1-3">1.3 การรับ Stream Key และ Server URL</SectionHeading>
+
+<StepCard step={1} title="เปิด Creator Dashboard">
+  เข้าหน้าตั้งค่าการสตรีม
+  <SubSteps items={[
+    "คลิกรูปโปรไฟล์ (มุมบนขวา) แล้วเลือก <strong>Creator Dashboard</strong>",
+    "หรือพิมพ์ <strong>kick.com/dashboard</strong> โดยตรง"
+  ]} />
+</StepCard>
+
+<ImageCaption
+  src="/images/ch1/1_3_0_creator_dashboard.jpg"
+  alt="Creator Dashboard"
+  caption="Creator Dashboard — ศูนย์ควบคุมการสตรีมของคุณ"
+/>
+
+<StepCard step={2} title="ค้นหา Stream Key">
+  คัดลอก Server URL และ Stream Key — ต้องใช้ทั้งคู่ใน OBS
+  <SubSteps items={[
+    "ไปที่ <strong>Settings → Stream Key</strong> (หรือ <strong>Channel → Stream URL &amp; Key</strong>)",
+    "คัดลอก <strong>Stream URL (RTMP):</strong> <code>rtmps://fa723fc1b171.global-contribute.live-video.net:443/app</code>",
+    "คลิก <strong>Show</strong> ข้าง Stream Key แล้วคัดลอก (ต้องเปิด 2FA ก่อน)"
+  ]} />
+</StepCard>
+
+<ImageCaption
+  src="/images/ch1/1_3_1_stream_key_page.jpg"
+  alt="หน้าตั้งค่า Stream Key"
+  caption="Stream URL และ Stream Key — คัดลอกไปใส่ใน OBS"
+/>
+
+<ImageCaption
+  src="/images/ch1/1_3_2_click_show_stream_url_need_f2a.jpg"
+  alt="การแสดง Stream URL ต้องใช้ 2FA"
+  caption="การเปิดดู Stream Key ต้องเปิด 2FA ไว้ก่อน"
+/>
+
+<WarningBox>
+  **ห้ามเปิดเผย Stream Key ให้ผู้อื่นเห็นในระหว่างสตรีมเด็ดขาด** หากหลุด ให้กดปุ่ม **Reset Key** ทันทีเพื่อสร้างรหัสใหม่
+</WarningBox>
+
+<StepCard step={3} title="ใส่ค่าใน OBS Studio">
+  วาง URL และ Key ลง OBS เพื่อเชื่อมต่อกับ KICK
+  <SubSteps items={[
+    "เปิด OBS Studio → <strong>Settings → Stream</strong>",
+    "ตั้งค่า <strong>Service</strong> เป็น <strong>Custom</strong>",
+    "วาง <strong>Stream URL</strong> ในช่อง Server",
+    "วาง <strong>Stream Key</strong> ในช่อง Stream Key",
+    "คลิก <strong>Apply → OK</strong> เพื่อบันทึก"
+  ]} />
+</StepCard>
+
+<ImageCaption
+  src="/images/ch1/1_3_3_obs_studio_add_stream_key.jpg"
+  alt="ตั้งค่า Stream Key ใน OBS Studio"
+  caption="วาง Stream URL และ Key ใน OBS Settings → Stream"
+/>
+
+---
+
+<SectionHeading id="s1-4">1.4 ระบบรับรายได้สตรีมเมอร์ไทย (KICK Affiliate)</SectionHeading>
+
+**เพื่อปลดล็อกการตั้งค่า Stripe Payout คุณต้องผ่าน 2 เงื่อนไขต่อไปนี้:**
+
+| เงื่อนไข | เป้าหมาย |
+|---|---|
+| ชั่วโมงสตรีมสะสม | ≥ 5 ชั่วโมง |
+| ผู้ติดตาม | ≥ 75 คน |
+
+**เมื่อผ่านเงื่อนไขแล้ว:**
+
+<StepCard step={1} title="รับสิทธิ์ Affiliate">
+  เปิดใช้งานสถานะ Affiliate อย่างเป็นทางการ
+  <SubSteps items={[
+    "ไปที่ <strong>Creator Dashboard → Achievements</strong>",
+    "หา Affiliate badge แล้วคลิก <strong>Claim</strong>"
+  ]} />
+</StepCard>
+
+<StepCard step={2} title="ตั้งค่าการรับเงิน">
+  เข้าหน้าตั้งค่า Stripe Payout
+  <SubSteps items={[
+    "ไปที่ <strong>Creator Dashboard → Monetization / Payout</strong>",
+    "คลิก <strong>Set Up Payout</strong> เพื่อเริ่มขั้นตอน Stripe Connect"
+  ]} />
+</StepCard>
+
+<StepCard step={3} title="ยืนยันตัวตน (KYC)">
+  ยืนยันตัวตนเพื่อให้ Stripe ประมวลผลการชำระเงินได้
+  <SubSteps items={[
+    "เตรียม <strong>บัตรประชาชน</strong> หรือ <strong>Passport</strong>",
+    "อัปโหลดภาพหน้า-หลังตามที่ Stripe กำหนด",
+    "รอการยืนยัน — ปกติใช้เวลา <strong>1–2 วันทำการ</strong>"
+  ]} />
+</StepCard>
+
+<StepCard step={4} title="ผูกบัญชีธนาคารไทย">
+  เชื่อมต่อธนาคารเพื่อรับเงิน THB โดยตรง
+  <SubSteps items={[
+    "กรอกเลขบัญชีธนาคารและชื่อธนาคาร",
+    "ตรวจสอบข้อมูลให้ถูกต้อง — เงินจะโอนมาเป็น <strong>บาท (THB)</strong>",
+    "รอบโอนเงินประมาณ <strong>7 วันทำการ</strong> หลังรอบการจ่ายเงิน"
+  ]} />
+</StepCard>
+
+<TipBox>
+  **KICK แบ่งรายได้ 95/5** — คุณได้รับ 95% ของค่า Sub ทุกใบ ($4.75 จาก $5 Sub) และ KICK รับภาระค่าธรรมเนียม FX 1.5% ของ Stripe ให้ทั้งหมด ไม่มีหักเพิ่ม
+</TipBox>
+
+---
+
+<SectionHeading id="s1-faq">คำถามที่พบบ่อย</SectionHeading>
+
+**Q: สมัครสตรีมบน KICK ต้องใช้เอกสารอะไรในการรับเงิน?**  
+A: บัตรประชาชนหรือหนังสือเดินทางสำหรับ KYC บน Stripe Connect และบัญชีธนาคารไทยสำหรับรับโอนเงินบาท (THB)
+
+**Q: ลืมเปิด 2FA จะสตรีมได้ไหม?**  
+A: สตรีมได้ปกติ แต่จะไม่สามารถเข้าถึงการตั้งค่า Monetization เพื่อรับเงินสนับสนุนหรือรายได้จาก Sub ได้
