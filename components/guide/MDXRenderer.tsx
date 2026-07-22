@@ -9,8 +9,9 @@ import SubSteps from './SubSteps'
 import SectionHeading from './SectionHeading'
 import AffiliateRequirements from './AffiliateRequirements'
 import BitrateTable from './BitrateTable'
+import References from './References'
 
-const components = { StepCard, ImageCaption, TipBox, WarningBox, SubSteps, SectionHeading, AffiliateRequirements, BitrateTable }
+const components = { StepCard, ImageCaption, TipBox, WarningBox, SubSteps, SectionHeading, AffiliateRequirements, BitrateTable, References }
 
 export default function MDXRenderer({ code }: { code: string }) {
   const MDXContent = useMDXComponent(code)

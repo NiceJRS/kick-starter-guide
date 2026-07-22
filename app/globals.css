@@ -90,3 +90,16 @@
   .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
   .text-balance { text-wrap: balance; }
 }
+
+/* Guide content link styles — always visible, no hover required */
+.prose-guide a {
+  color: #4ade80;
+  text-decoration: underline;
+  text-decoration-color: rgba(74, 222, 128, 0.35);
+  text-underline-offset: 2px;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+.prose-guide a:hover {
+  color: var(--kick-green);
+  text-decoration-color: rgba(83, 252, 24, 0.6);
+}
