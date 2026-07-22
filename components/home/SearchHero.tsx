@@ -27,7 +27,7 @@ export default function SearchHero({
       {/* Eyebrow */}
       <div className="flex items-center justify-center gap-1 mb-2">
         <IconRocket size={10} style={{ color: 'var(--kick-green)' }} />
-        <span className="text-[9px] uppercase tracking-widest font-medium" style={{ color: 'var(--kick-green)' }}>
+        <span className="text-[11px] uppercase tracking-widest font-medium" style={{ color: 'var(--kick-green)' }}>
           {locale === 'th' ? 'คู่มือสตรีมเมอร์ไทย' : 'Thai Streamer Guide'}
         </span>
       </div>
@@ -71,7 +71,7 @@ export default function SearchHero({
           <button
             key={tag}
             onClick={() => submit(tag)}
-            className="px-2.5 py-0.5 rounded-full text-[10px] border transition-colors hover:border-white/20"
+            className="px-2.5 py-1 rounded-full text-[11px] border transition-colors hover:border-white/20"
             style={{
               background: 'rgba(255,255,255,0.04)',
               borderColor: 'rgba(255,255,255,0.07)',

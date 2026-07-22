@@ -133,14 +133,14 @@ export default function BeginnerPath({ locale }: { locale: string }) {
                   {/* Dot — clickable to toggle */}
                   <button
                     onClick={() => toggleDot(g.id)}
-                    className="w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-medium relative z-10 transition-all hover:scale-110"
+                    className="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-medium relative z-10 transition-all hover:scale-110"
                     style={{
                       background: done
                         ? 'rgba(83,252,24,0.1)'
                         : current
                         ? 'var(--purple-13)'
                         : '#111811',
-                      border: `1px solid ${done ? 'rgba(83,252,24,0.35)' : current ? 'var(--purple)' : 'rgba(255,255,255,0.07)'}`,
+                      border: `1px solid ${done ? 'rgba(83,252,24,0.35)' : current ? 'var(--purple)' : 'rgba(255,255,255,0.18)'}`,
                       color: done ? 'var(--kick-green)' : current ? 'var(--purple)' : 'var(--text-muted)',
                     }}
                   >
@@ -148,7 +148,7 @@ export default function BeginnerPath({ locale }: { locale: string }) {
                   </button>
                   {/* Label */}
                   <div
-                    className="text-[9px] mt-1.5 text-center max-w-[56px] leading-tight"
+                    className="text-[11px] mt-1.5 text-center max-w-[56px] leading-tight"
                     style={{
                       color: done
                         ? 'rgba(83,252,24,0.55)'
@@ -184,7 +184,7 @@ export default function BeginnerPath({ locale }: { locale: string }) {
                 <button
                   onClick={skip}
                   className="px-3 py-1.5 text-[11px] rounded-lg transition-colors"
-                  style={{ color: 'var(--text-muted)', border: '0.5px solid rgba(255,255,255,0.08)' }}
+                  style={{ color: '#cfd8cc', border: '1px solid rgba(255,255,255,0.20)' }}
                 >
                   {locale === 'th' ? 'ข้าม' : 'Skip'}
                 </button>

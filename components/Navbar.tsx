@@ -68,8 +68,8 @@ export default function Navbar({
             <a
               key={l.href}
               href={l.href}
-              className="px-3 py-1.5 rounded-lg text-[11px] transition-colors hover:text-[--text-primary]"
-              style={{ color: 'var(--text-muted)' }}
+              className="px-3 py-1.5 rounded-lg text-sm font-medium transition-colors hover:text-[#cfd8cc]"
+              style={{ color: '#8fa895' }}
             >
               {l.label}
             </a>

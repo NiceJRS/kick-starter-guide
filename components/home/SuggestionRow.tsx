@@ -12,27 +12,27 @@ const suggestions = [
 export default function SuggestionRow({ locale }: { locale: string }) {
   return (
     <div className="mb-3">
-      <div className="flex items-center gap-1.5 mb-2 text-[12px] font-medium" style={{ color: '#cfd8cc' }}>
-        <IconSparkles size={13} style={{ color: 'var(--kick-green)' }} />
+      <div className="flex items-center gap-1.5 mb-3 text-[13px] font-medium" style={{ color: '#cfd8cc' }}>
+        <IconSparkles size={14} style={{ color: 'var(--kick-green)' }} />
         {locale === 'th' ? 'แนะนำตามปัญหาที่พบบ่อย' : 'Common problems solved'}
       </div>
-      <div className="flex gap-[7px] overflow-x-auto pb-0.5 scrollbar-hide">
+      <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
         {suggestions.map((s) => {
           const Icon = s.icon
           return (
-            <Link key={s.slug} href={`/${locale}/guide/${s.slug}`} className="flex-shrink-0 w-[132px]">
+            <Link key={s.slug} href={`/${locale}/guide/${s.slug}`} className="flex-shrink-0 w-[148px]">
               <div
-                className="p-2.5 rounded-xl cursor-pointer transition-all hover:border-white/20 h-full"
+                className="p-3 rounded-xl cursor-pointer transition-all hover:border-white/20 h-full"
                 style={{ background: 'var(--surface-page)', border: '1px solid rgba(255,255,255,0.06)' }}
               >
-                <div className="w-6 h-6 rounded-md flex items-center justify-center mb-2"
+                <div className="w-7 h-7 rounded-md flex items-center justify-center mb-2.5"
                   style={{ background: s.bg }}>
-                  <Icon size={13} style={{ color: s.color }} />
+                  <Icon size={14} style={{ color: s.color }} />
                 </div>
-                <h4 className="text-[10px] font-medium mb-0.5" style={{ color: '#cfd8cc' }}>
+                <h4 className="text-[12px] font-medium mb-0.5" style={{ color: '#cfd8cc' }}>
                   {locale === 'th' ? s.th : s.en}
                 </h4>
-                <p className="text-[9px]" style={{ color: 'var(--text-muted)' }}>{s.sub}</p>
+                <p className="text-[11px]" style={{ color: 'var(--text-secondary)' }}>{s.sub}</p>
               </div>
             </Link>
           )

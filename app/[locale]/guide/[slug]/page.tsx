@@ -40,7 +40,7 @@ export default function GuidePage({
 
       <div className="flex-1 min-w-0">
         {/* Breadcrumb */}
-        <div className="flex items-center gap-1.5 text-[10px] mb-4" style={{ color: 'var(--text-muted)' }}>
+        <div className="flex items-center gap-1.5 text-[12px] mb-4" style={{ color: 'var(--text-secondary)' }}>
           <Link href={`/${locale}`} className="hover:text-[--text-secondary]">
             {locale === 'th' ? 'หน้าแรก' : 'Home'}
           </Link>

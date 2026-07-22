@@ -15,25 +15,25 @@ export default function DeveloperZone({
 }) {
   return (
     <div
-      className="rounded-xl overflow-hidden mt-3"
+      className="rounded-xl overflow-hidden mt-4"
       style={{ background: 'var(--surface-page)', border: '0.5px solid var(--blue-25)' }}
     >
       {/* Header */}
       <div
-        className="flex items-center justify-between px-3 py-2.5"
+        className="flex items-center justify-between px-4 py-3"
         style={{ background: '#050d14', borderBottom: '1px solid rgba(55,138,221,0.15)' }}
       >
-        <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-md flex items-center justify-center" style={{ background: 'var(--blue-10)' }}>
-            <IconCode size={13} style={{ color: 'var(--blue)' }} />
+        <div className="flex items-center gap-2.5">
+          <div className="w-7 h-7 rounded-md flex items-center justify-center" style={{ background: 'var(--blue-10)' }}>
+            <IconCode size={15} style={{ color: 'var(--blue)' }} />
           </div>
           <div>
-            <div className="text-[12px] font-medium" style={{ color: '#cfd8cc' }}>Developer Zone — KICK Public API</div>
-            <div className="text-[10px]" style={{ color: 'var(--text-muted)' }}>OAuth 2.1 · REST API · Webhooks</div>
+            <div className="text-[13px] font-medium" style={{ color: '#cfd8cc' }}>Developer Zone — KICK Public API</div>
+            <div className="text-[11px]" style={{ color: 'var(--text-muted)' }}>OAuth 2.1 · REST API · Webhooks</div>
           </div>
         </div>
         <span
-          className="text-[9px] px-2 py-0.5 rounded font-medium"
+          className="text-[11px] px-2.5 py-0.5 rounded font-medium"
           style={{ background: 'var(--blue-10)', color: 'var(--blue)', border: '1px solid var(--blue-25)' }}
         >
           Dev Mode
@@ -41,23 +41,23 @@ export default function DeveloperZone({
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-3 gap-[7px] p-3">
+      <div className="grid grid-cols-3 gap-2 p-4">
         {DEV_CARDS.map((c) => {
           const Icon = c.icon
           return (
             <div
               key={c.label}
-              className="p-2.5 rounded-lg"
+              className="p-3 rounded-lg"
               style={{ background: 'var(--surface-card)', border: '1px solid rgba(255,255,255,0.06)' }}
             >
-              <div className="w-6 h-6 rounded-md flex items-center justify-center mb-1.5" style={{ background: 'var(--blue-10)' }}>
-                <Icon size={12} style={{ color: 'var(--blue)' }} />
+              <div className="w-7 h-7 rounded-md flex items-center justify-center mb-2" style={{ background: 'var(--blue-10)' }}>
+                <Icon size={14} style={{ color: 'var(--blue)' }} />
               </div>
-              <div className="text-[10px] font-medium mb-0.5" style={{ color: '#cfd8cc' }}>{c.label}</div>
-              <div className="text-[9px] mb-1.5" style={{ color: 'var(--text-muted)' }}>{c.sub}</div>
+              <div className="text-[12px] font-medium mb-0.5" style={{ color: '#cfd8cc' }}>{c.label}</div>
+              <div className="text-[11px] mb-2" style={{ color: 'var(--text-secondary)' }}>{c.sub}</div>
               <div className="flex items-center justify-between">
-                <span className="text-[8px] px-1.5 py-0.5 rounded" style={{ background: 'var(--blue-10)', color: 'var(--blue)' }}>{c.tag}</span>
-                <span className="text-[8px]" style={{ color: 'var(--text-muted)' }}>{c.count}</span>
+                <span className="text-[11px] px-1.5 py-0.5 rounded" style={{ background: 'var(--blue-10)', color: 'var(--blue)' }}>{c.tag}</span>
+                <span className="text-[11px]" style={{ color: 'var(--text-muted)' }}>{c.count}</span>
               </div>
             </div>
           )
@@ -65,10 +65,10 @@ export default function DeveloperZone({
       </div>
 
       {/* Footer */}
-      <div className="px-3 pb-3">
+      <div className="px-4 pb-4">
         <button
           onClick={onSwitchMode}
-          className="w-full py-1.5 rounded-lg text-[10px] font-medium transition-all hover:opacity-90"
+          className="w-full py-2 rounded-lg text-[12px] font-medium transition-all hover:opacity-90"
           style={{ background: 'var(--blue-10)', color: 'var(--blue)', border: '1px solid var(--blue-25)' }}
         >
           {locale === 'th' ? 'สลับไป Developer mode →' : 'Switch to Developer mode →'}

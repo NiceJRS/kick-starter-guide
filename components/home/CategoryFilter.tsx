@@ -43,7 +43,7 @@ export default function CategoryFilter({
             <button
               key={c.value}
               onClick={() => onCategory(c.value)}
-              className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] border transition-all"
+              className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] border transition-all"
               style={{
                 background: active ? 'var(--kick-green-10)' : 'rgba(255,255,255,0.02)',
                 borderColor: active ? 'var(--kick-green-22)' : 'rgba(255,255,255,0.07)',
@@ -62,12 +62,12 @@ export default function CategoryFilter({
 
       {/* Level pills */}
       <div className="flex items-center gap-1.5">
-        <span className="text-[10px]" style={{ color: 'var(--text-muted)' }}>
+        <span className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
           {locale === 'th' ? 'ระดับ' : 'Level'}
         </span>
         <button
           onClick={() => onLevel('All')}
-          className="px-2.5 py-0.5 rounded-full text-[10px] border transition-all"
+          className="px-2.5 py-0.5 rounded-full text-[11px] border transition-all"
           style={{
             background: level === 'All' ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.02)',
             borderColor: level === 'All' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.07)',
@@ -82,7 +82,7 @@ export default function CategoryFilter({
             <button
               key={l.value}
               onClick={() => onLevel(l.value)}
-              className="px-2.5 py-0.5 rounded-full text-[10px] border transition-all"
+              className="px-2.5 py-0.5 rounded-full text-[11px] border transition-all"
               style={{
                 background: active ? l.bg : 'rgba(255,255,255,0.02)',
                 borderColor: active ? l.border : 'rgba(255,255,255,0.07)',
@@ -93,7 +93,7 @@ export default function CategoryFilter({
             </button>
           )
         })}
-        <span className="ml-auto text-[10px]" style={{ color: 'var(--text-muted)' }}>
+        <span className="ml-auto text-[11px]" style={{ color: 'var(--text-muted)' }}>
           {count} {locale === 'th' ? 'บทเรียน' : 'guides'}
         </span>
       </div>
