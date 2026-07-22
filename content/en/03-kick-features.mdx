@@ -13,98 +13,102 @@ prerequisites:
 
 <SectionHeading id="s3-1">3.1 Creator Dashboard Overview</SectionHeading>
 
-<StepCard step={1} title="Navigate Creator Dashboard & Set Stream Metadata">
+<StepCard step={1} title="Dashboard Layout">
   <SubSteps items={[
-    "Visit <a href='https://kick.com' target='_blank'>KICK.com</a>, click your profile icon at the top right, and select <strong>Creator Dashboard</strong> (or navigate directly to <a href='https://kick.com/dashboard/stream' target='_blank'>kick.com/dashboard/stream</a>).",
-    "Identify the 4 main panels: <strong>Stream Preview</strong> (live broadcast signal monitor), <strong>Activity Feed</strong> (real-time Follow/Sub/Raid notifications), <strong>Chat Dock</strong> (read and send chat messages), and <strong>Quick Actions</strong> (shortcut control buttons).",
-    "In Quick Actions panel, click <strong>Edit Stream Info</strong> (or the pencil icon) to open stream metadata modal.",
-    "<strong>Title:</strong> Craft an engaging title, e.g., <code>[TH/EN] Beginner VALORANT Stream | Chatting with Viewers</code>.",
-    "<strong>Category:</strong> Search and select your game category or primary category, such as <code>Just Chatting</code> or <code>VALORANT</code>.",
-    "<strong>Language & Tags:</strong> Set primary language to <strong>Thai</strong> and type tags like <code>Thai</code>, <code>VTuber</code>, <code>FPS</code> to boost discoverability for local viewers.",
-    "<strong>Content Classification:</strong> If broadcasting mature gameplay or strong language, enable the <strong>18+ (Mature Content)</strong> toggle to prevent moderation warnings."
+    "Go to <a href='https://kick.com/dashboard/stream' target='_blank'>kick.com/dashboard/stream</a> — this is your streaming control center.",
+    "<strong>Stream Preview</strong> — live signal monitor. <strong>Activity Feed</strong> — follows/subs/raids. <strong>Chat Dock</strong> — read & reply. <strong>Quick Actions</strong> — shortcut buttons."
   ]} />
-  <ImageCaption src="/images/ch3/s3_1_step1_dashboard_overview.jpg" alt="KICK Creator Dashboard and Edit Stream Info Layout" caption="Figure 3.1: KICK.com Creator Dashboard interface and Edit Stream Info modal" />
+  <ImageCaption src="/images/ch3/s3_1_step1_dashboard_overview.jpg" alt="KICK Creator Dashboard main layout" caption="KICK Creator Dashboard — 4 main panels overview" />
 </StepCard>
 
-<StepCard step={2} title="Configure Channel Emotes and Subscriber Badges">
+<StepCard step={2} title="Set Stream Title, Category & Language">
   <SubSteps items={[
-    "In the left navigation menu, go to <strong>Community → Emotes</strong> (<a href='https://kick.com/dashboard/community/emotes' target='_blank'>kick.com/dashboard/community/emotes</a>).",
-    "<strong>Follower Emotes:</strong> Under Follower Emotes tab, click <strong>Add Emote</strong>, upload a transparent PNG image (recommended size 512x512 px), assign a command code, and click Save.",
-    "<strong>Subscriber Badges:</strong> Go to <strong>Community → Badges</strong> to upload tier icons representing sub tenure (1 Month, 3 Months, 6 Months, 1 Year)."
+    "Click <strong>Edit Stream Info</strong> (pencil icon) in Quick Actions.",
+    "Set your <strong>Title</strong>, <strong>Category</strong> (game name or Just Chatting), and <strong>Language → Thai</strong>. Add tags like <code>Thai</code>, <code>FPS</code>, <code>VTuber</code> to boost discovery.",
+    "Enable <strong>18+ Mature Content</strong> toggle if your stream contains strong language or violence."
   ]} />
-  <ImageCaption src="/images/ch3/s3_1_step2_emotes_badges.jpg" alt="KICK Emotes and Badges Configuration Page" caption="Figure 3.2: Channel Emotes and Subscriber Badges upload interface" />
+  <ImageCaption src="/images/ch3/s3_1_step2_edit_stream_info.jpg" alt="Edit Stream Info modal" caption="Edit Stream Info — title, category, language, and content rating" />
+</StepCard>
+
+<StepCard step={3} title="Channel Emotes & Subscriber Badges">
+  <SubSteps items={[
+    "<strong>Emotes:</strong> Go to <a href='https://dashboard.kick.com/community/chat/emotes' target='_blank'>Community → Emotes</a>. Upload a transparent PNG (512×512 px), assign a code, click Save.",
+    "<strong>Badges:</strong> Go to <strong>Community → Badges</strong>. Upload tier icons for sub tenure (1M, 3M, 6M, 1Y)."
+  ]} />
+  <ImageCaption src="/images/ch3/s3_1_step3_emotes_badges.jpg" alt="Emotes and Badges upload page" caption="Community → Emotes — upload follower emotes and subscriber badges" />
 </StepCard>
 
 <TipBox>
-Setting primary language to 'Thai' and selecting accurate stream categories are the most critical factors for KICK's discovery algorithm to recommend your stream to local viewers.
+Language set to <strong>Thai</strong> + correct Category = the two biggest factors for KICK's algorithm to surface your stream to local viewers.
 </TipBox>
 
 ---
 
-<SectionHeading id="s3-2">3.2 Clips & VODs Management</SectionHeading>
+<SectionHeading id="s3-2">3.2 Clips & VODs</SectionHeading>
 
-<StepCard step={3} title="Automatic Past Broadcast Storage (VODs Auto-Archive)">
+<StepCard step={4} title="Past Broadcasts (VODs)">
   <SubSteps items={[
-    "<strong>Automatic Archiving:</strong> KICK automatically archives all completed past broadcasts (VODs) upon stream end and retains files for <strong>60 days</strong>.",
-    "<strong>Accessing Past VODs:</strong> Open Creator Dashboard and navigate to <strong>Studio → Videos</strong> (<a href='https://kick.com/dashboard/studio/videos' target='_blank'>kick.com/dashboard/studio/videos</a>).",
-    "Streamers can review, manage visibility, or download raw VOD files directly from this menu."
+    "KICK auto-archives every stream for <strong>60 days</strong> after you go offline — no setup needed.",
+    "Access at <a href='https://dashboard.kick.com/studio/vods' target='_blank'>Studio → VODs</a>. You can manage visibility or download the raw file."
   ]} />
+  <ImageCaption src="/images/ch3/s3_2_step4_vods_list.jpg" alt="KICK Studio VODs list" caption="Studio → VODs — past broadcasts stored automatically for 60 days" />
 </StepCard>
 
-<StepCard step={4} title="Clip Creation Workflow & Content Download">
+<StepCard step={5} title="Create & Download Clips">
   <SubSteps items={[
-    "<strong>Clipping During Live Stream:</strong> On the stream video player, click the <strong>Scissors icon (Clip)</strong> at the bottom right corner.",
-    "Drag the duration handles to highlight key moments (between 5 to 60 seconds), name your clip, and click <strong>Publish Clip</strong>.",
-    "<strong>Clip Management:</strong> Navigate to Creator Dashboard → <strong>Studio → Clips</strong> (<a href='https://kick.com/dashboard/studio/clips' target='_blank'>kick.com/dashboard/studio/clips</a>) to review, rename, or delete clips.",
-    "<strong>Content Repurposing:</strong> Select a clip and click <strong>Download</strong> to save the HD video file (.mp4) for editing into vertical short-form content for TikTok or YouTube Shorts."
+    "During live stream: click the <strong>Scissors (Clip)</strong> icon on the video player → drag handles to select 5–60 seconds → name it → <strong>Publish Clip</strong>.",
+    "Manage all clips at <a href='https://dashboard.kick.com/studio/clips' target='_blank'>Studio → Clips</a>. Click <strong>Download</strong> to save HD .mp4 for TikTok or YouTube Shorts."
   ]} />
-  <ImageCaption src="/images/ch3/s3_2_step4_clips_management.jpg" alt="KICK Studio Clips Management Interface" caption="Figure 3.3: Highlights clip management and HD video download in Studio → Clips" />
+  <ImageCaption src="/images/ch3/s3_2_step5_clips_management.jpg" alt="KICK Studio Clips management" caption="Studio → Clips — manage, rename, and download highlight clips" />
 </StepCard>
 
 ---
 
-<SectionHeading id="s3-3">3.3 Channel Points & Community Features</SectionHeading>
+<SectionHeading id="s3-3">3.3 Channel Points & Community</SectionHeading>
 
-<StepCard step={5} title="Enable Channel Points & Custom Rewards">
+<StepCard step={6} title="Enable Channel Points & Custom Rewards">
   <SubSteps items={[
-    "In Creator Dashboard, navigate to <strong>Community → Chat → Channel points</strong> (<a href='https://kick.com/dashboard/community/chat/channel-points' target='_blank'>kick.com/dashboard/community/chat/channel-points</a>).",
-    "Toggle <strong>Enable Channel Points</strong> to <strong>ON</strong>.",
-    "Click <strong>+ Add Custom Reward</strong> to create a new reward.",
-    "Fill in Reward Title (e.g., <code>Take a Water Sip</code>), set Point Cost, and configure Cooldown limits to prevent spamming.",
-    "Click <strong>Save</strong> to activate rewards, allowing viewers to redeem earned watch points during live broadcasts."
+    "Go to <a href='https://dashboard.kick.com/community/chat/channel-points' target='_blank'>Community → Chat → Channel Points</a> → toggle <strong>Enable</strong> ON.",
+    "Click <strong>+ Add Custom Reward</strong> → set Title (e.g., <code>Drink water</code>), Point Cost, and Cooldown → <strong>Save</strong>."
   ]} />
-  <ImageCaption src="/images/ch3/s3_3_step5_channel_points.jpg" alt="KICK Channel Points and Custom Rewards Settings" caption="Figure 3.4: Channel Points configuration and Custom Rewards setup under Community → Chat" />
+  <ImageCaption src="/images/ch3/s3_3_step6_channel_points.jpg" alt="Channel Points settings page" caption="Community → Chat → Channel Points — enable rewards viewers redeem with watch points" />
 </StepCard>
 
-<StepCard step={6} title="Execute Polls, Predictions, and Raids">
+<StepCard step={7} title="Polls & Predictions">
   <SubSteps items={[
-    "<strong>Polls:</strong> In chat, type <code>/poll [Question] | [Option1] | [Option2]</code> or click <strong>Create a Poll</strong> in Quick Actions to start quick viewer voting.",
-    "<strong>Predictions:</strong> In Quick Actions, click <strong>Start Prediction</strong>, enter topic and options, allowing viewers to stake Channel Points on live stream outcomes.",
-    "<strong>Raid Workflow:</strong> Before ending your stream, type <code>/raid [target_channel]</code> in chat (e.g., <code>/raid nicejrs</code>) or click <strong>Raid Channel</strong> in Quick Actions.",
-    "A 60-second countdown banner will appear. Once ready, click <strong>Raid Now</strong> to seamlessly transfer all active viewers to the host channel."
+    "<strong>Poll:</strong> Type <code>/poll [Question] | [Option1] | [Option2]</code> in chat, or click <strong>Create a Poll</strong> in Quick Actions.",
+    "<strong>Prediction:</strong> Click <strong>Start Prediction</strong> in Quick Actions → set topic + options → viewers stake Channel Points on the outcome."
   ]} />
-  <ImageCaption src="/images/ch3/s3_3_step6_raid_workflow.jpg" alt="KICK Raid Countdown and Transfer Workflow" caption="Figure 3.5: Raid countdown banner transferring active viewers to a fellow streamer's channel" />
+  <ImageCaption src="/images/ch3/s3_3_step7_polls_predictions.jpg" alt="Poll and Prediction interface" caption="Quick Actions — create viewer polls and channel point predictions" />
+</StepCard>
+
+<StepCard step={8} title="Raid — Send Your Viewers to Another Streamer">
+  <SubSteps items={[
+    "Before ending stream: type <code>/raid [channel]</code> in chat (e.g., <code>/raid nicejrs</code>), or click <strong>Raid Channel</strong> in Quick Actions.",
+    "A 60-second countdown appears. Click <strong>Raid Now</strong> to transfer all active viewers instantly."
+  ]} />
+  <ImageCaption src="/images/ch3/s3_3_step8_raid.jpg" alt="Raid countdown banner" caption="Raid countdown — transfers your entire audience to another live channel" />
 </StepCard>
 
 <TipBox>
-Raiding is a core community tradition on KICK. It builds relationships with fellow creators, cross-pollinates audiences, and fosters ecosystem growth.
+Raiding after every stream builds relationships with other creators and helps grow both communities over time.
 </TipBox>
 
 ---
 
-**Q: How long are stream VODs stored on KICK?**  
-A: Stream VODs are automatically archived and stored for 60 days. You can manage and download them at Creator Dashboard → Studio → Videos.
+**Q: How long are VODs kept?**  
+A: 60 days, automatically. No setup needed — manage them at Studio → VODs.
 
-**Q: Where can I find the settings for Channel Points and Emotes?**  
-A: Emote settings are located at `Community → Emotes`, while Channel Points configuration is under `Community → Chat → Channel points`.
+**Q: Where are Channel Points and Emotes settings?**  
+A: Emotes → `Community → Chat → Emotes`. Channel Points → `Community → Chat → Channel Points`.
 
 ---
 
 <References items={[
-  { label: "KICK Creator Dashboard", url: "https://kick.com/dashboard/stream" },
-  { label: "KICK Community – Emotes", url: "https://kick.com/dashboard/community/emotes" },
-  { label: "KICK Studio – Videos (VODs)", url: "https://kick.com/dashboard/studio/videos" },
-  { label: "KICK Studio – Clips", url: "https://kick.com/dashboard/studio/clips" },
-  { label: "KICK Channel Points Settings", url: "https://kick.com/dashboard/community/chat/channel-points" },
-  { label: "KICK Help Center", url: "https://help.kick.com" }
+  { label: "KICK Creator Dashboard Guide", url: "https://help.kick.com/en/articles/7120642-understanding-your-kick-creator-dashboard" },
+  { label: "KICK Moderation Features Guide", url: "https://help.kick.com/en/articles/10162074-moderation-features-guide" },
+  { label: "Community – Emotes", url: "https://dashboard.kick.com/community/chat/emotes" },
+  { label: "Studio – VODs", url: "https://dashboard.kick.com/studio/vods" },
+  { label: "Studio – Clips", url: "https://dashboard.kick.com/studio/clips" },
+  { label: "Community – Channel Points", url: "https://dashboard.kick.com/community/chat/channel-points" }
 ]} />

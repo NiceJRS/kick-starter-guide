@@ -49,18 +49,20 @@ Referenced in `content/th/02-obs-studio.mdx` and `content/en/02-obs-studio.mdx`.
 
 Referenced in `content/th/03-kick-features.mdx` and `content/en/03-kick-features.mdx`.
 
-| File | Description | Used in MDX | Status |
-|------|-------------|-------------|--------|
-| `s3_1_step1_dashboard_overview.jpg` | Creator Dashboard main interface + Edit Stream Info modal | StepCard 1 ImageCaption | ⬜ Needed |
-| `s3_1_step2_emotes_badges.jpg` | Emotes and Subscriber Badges upload page | StepCard 2 ImageCaption | ⬜ Needed |
-| `s3_2_step4_clips_management.jpg` | Studio → Clips management and download interface | StepCard 4 ImageCaption | ⬜ Needed |
-| `s3_3_step5_channel_points.jpg` | Channel Points settings and Custom Rewards | StepCard 5 ImageCaption | ⬜ Needed |
-| `s3_3_step6_raid_workflow.jpg` | Raid countdown banner and viewer transfer | StepCard 6 ImageCaption | ⬜ Needed |
+| File | Description | Step | Status |
+|------|-------------|------|--------|
+| `s3_1_step1_dashboard_overview.jpg` | Full Creator Dashboard — all 4 panels visible (Stream Preview, Activity Feed, Chat Dock, Quick Actions) | StepCard 1 | ⬜ Needed |
+| `s3_1_step2_edit_stream_info.jpg` | Edit Stream Info modal open — title, category, language, 18+ toggle visible | StepCard 2 | ⬜ Needed |
+| `s3_1_step3_emotes_badges.jpg` | dashboard.kick.com/community/chat/emotes — Emotes upload page | StepCard 3 | ⬜ Needed |
+| `s3_2_step4_vods_list.jpg` | dashboard.kick.com/studio/vods — list of past broadcasts | StepCard 4 | ⬜ Needed |
+| `s3_2_step5_clips_management.jpg` | dashboard.kick.com/studio/clips — clips list with Download button visible | StepCard 5 | ⬜ Needed |
+| `s3_3_step6_channel_points.jpg` | dashboard.kick.com/community/chat/channel-points — Enable toggle ON + Custom Rewards | StepCard 6 | ⬜ Needed |
+| `s3_3_step7_polls_predictions.jpg` | Poll creation UI or Prediction modal (Quick Actions) | StepCard 7 | ⬜ Needed |
+| `s3_3_step8_raid.jpg` | Raid countdown banner — 60-second countdown with Raid Now button | StepCard 8 | ⬜ Needed |
 
 **Notes for Ch3 screenshots:**
-- All screenshots from kick.com dashboard (browser, logged-in account)
-- For `s3_1_step1_dashboard_overview.jpg`: show full dashboard with Edit Stream Info modal open
-- For `s3_3_step6_raid_workflow.jpg`: can mock the countdown banner if not live
+- All from dashboard.kick.com (logged-in)
+- `s3_3_step8_raid.jpg`: must be captured while live — or ask another streamer to raid you so you can screenshot the receiving side
 
 ---
 
@@ -106,5 +108,5 @@ Referenced in `content/th/03-kick-features.mdx` and `content/en/03-kick-features
 |---------|-------------|------|--------|
 | Ch1 Account Setup | 15 | 15 | 0 |
 | Ch2 OBS Studio | 4 | 0 | 4 |
-| Ch3 KICK Features | 5 | 0 | 5 |
+| Ch3 KICK Features | 8 | 0 | 8 |
 | Ch4–9 | TBD | — | — |
