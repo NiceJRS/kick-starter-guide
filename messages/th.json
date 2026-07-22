@@ -1,0 +1,27 @@
+{
+  "nav": {
+    "home": "หน้าแรก",
+    "guides": "คู่มือ",
+    "search": "ค้นหา"
+  },
+  "home": {
+    "title": "คู่มือ KICK.com สำหรับสตรีมเมอร์ไทย",
+    "subtitle": "เริ่มต้นสตรีมบน KICK ตั้งแต่มือใหม่ถึงมืออาชีพ"
+  },
+  "guide": {
+    "level": {
+      "beginner": "ผู้เริ่มต้น",
+      "intermediate": "ระดับกลาง",
+      "pro": "มืออาชีพ"
+    },
+    "estimatedTime": "เวลาโดยประมาณ",
+    "prerequisites": "ต้องทำก่อน",
+    "progress": "ความคืบหน้า",
+    "markComplete": "ทำเสร็จแล้ว",
+    "nextChapter": "บทถัดไป"
+  },
+  "search": {
+    "placeholder": "ค้นหาคู่มือ...",
+    "noResults": "ไม่พบผลลัพธ์"
+  }
+}

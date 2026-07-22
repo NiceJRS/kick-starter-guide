@@ -1,0 +1,27 @@
+{
+  "nav": {
+    "home": "Home",
+    "guides": "Guides",
+    "search": "Search"
+  },
+  "home": {
+    "title": "KICK.com Guide for Thai Streamers",
+    "subtitle": "Start streaming on KICK from beginner to professional"
+  },
+  "guide": {
+    "level": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "pro": "Professional"
+    },
+    "estimatedTime": "Estimated Time",
+    "prerequisites": "Prerequisites",
+    "progress": "Progress",
+    "markComplete": "Mark Complete",
+    "nextChapter": "Next Chapter"
+  },
+  "search": {
+    "placeholder": "Search guides...",
+    "noResults": "No results found"
+  }
+}
