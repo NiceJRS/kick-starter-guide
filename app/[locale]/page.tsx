@@ -24,6 +24,20 @@ const DEV_SECTIONS = [
   { title: 'Events',             items: ['Webhooks', 'Subscribe', 'Payloads'],                          url: 'https://docs.kick.com/' },
 ]
 
+function SectionDivider({ label }: { label: string }) {
+  return (
+    <div className="flex items-center gap-3 mb-4 mt-8">
+      <span
+        className="text-[10px] font-semibold tracking-[0.12em] uppercase shrink-0"
+        style={{ color: 'var(--text-muted)' }}
+      >
+        {label}
+      </span>
+      <div className="flex-1 h-px" style={{ background: 'var(--border-default)' }} />
+    </div>
+  )
+}
+
 export default function HomePage({ params: { locale } }: { params: { locale: string } }) {
   const [mode, setMode] = useState<'streamer' | 'developer'>('streamer')
   const [search, setSearch] = useState('')
@@ -45,15 +59,26 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
     <>
       <Navbar locale={locale} mode={mode} onModeChange={setMode} />
 
-      <SearchHero locale={locale} onSearch={setSearch} />
-
       {mode === 'streamer' ? (
         <>
+          {/* Streamer Path — first section */}
+          <SectionDivider label={locale === 'th' ? 'เส้นทาง Streamer' : 'Streamer Path'} />
           <BeginnerPath locale={locale} />
+
+          {/* Search */}
+          <SectionDivider label={locale === 'th' ? 'ค้นหา' : 'Search'} />
+          <SearchHero locale={locale} onSearch={setSearch} />
+
+          {/* Highlights */}
+          <SectionDivider label={locale === 'th' ? 'แนะนำ' : 'Featured'} />
           <HighlightSection locale={locale} />
+
+          {/* Suggestions */}
+          <SectionDivider label={locale === 'th' ? 'แก้ปัญหา' : 'Quick Fixes'} />
           <SuggestionRow locale={locale} />
 
-          {/* Category filter + grid */}
+          {/* All Guides */}
+          <SectionDivider label={locale === 'th' ? 'คู่มือทั้งหมด' : 'All Guides'} />
           <CategoryFilter
             category={category}
             level={level}
@@ -62,7 +87,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
             onCategory={setCategory}
             onLevel={setLevel}
           />
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-3 gap-3 mt-4">
             {filtered.map((g) => (
               <GuideCard key={g.id} guide={g} locale={locale} />
             ))}
@@ -73,23 +98,23 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
       ) : (
         /* Developer mode */
         <div>
-          <div className="mb-3 text-[11px]" style={{ color: 'var(--text-secondary)' }}>
+          <div className="mb-4 text-[12px]" style={{ color: 'var(--text-secondary)' }}>
             {locale === 'th' ? 'เอกสาร KICK Public API — ครอบคลุม OAuth 2.1, REST, Webhooks' : 'KICK Public API docs — OAuth 2.1, REST, Webhooks'}
           </div>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 gap-3">
             {DEV_SECTIONS.map((s) => (
               <a
                 key={s.title}
                 href={s.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-xl transition-all hover:border-[--blue-25]"
+                className="p-4 rounded-xl transition-all hover:border-[--blue-25]"
                 style={{ background: 'var(--surface-page)', border: '1px solid rgba(255,255,255,0.07)' }}
               >
-                <div className="text-[11px] font-medium mb-1" style={{ color: '#cfd8cc' }}>{s.title}</div>
-                <div className="flex flex-wrap gap-1">
+                <div className="text-[12px] font-medium mb-2" style={{ color: '#cfd8cc' }}>{s.title}</div>
+                <div className="flex flex-wrap gap-1.5">
                   {s.items.map((item) => (
-                    <span key={item} className="text-[9px] px-1.5 py-0.5 rounded"
+                    <span key={item} className="text-[10px] px-2 py-0.5 rounded"
                       style={{ background: 'var(--blue-10)', color: 'var(--blue)' }}>
                       {item}
                     </span>

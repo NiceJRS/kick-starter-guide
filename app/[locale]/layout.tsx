@@ -25,7 +25,7 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider messages={messages}>
           <div className="min-h-screen" style={{ background: 'var(--surface-page)' }}>
-            <div className="max-w-2xl mx-auto px-3 pt-3 pb-8">
+            <div className="max-w-5xl mx-auto px-5 pt-4 pb-12">
               {children}
             </div>
           </div>
