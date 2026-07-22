@@ -43,11 +43,11 @@ export default function CategoryFilter({
             <button
               key={c.value}
               onClick={() => onCategory(c.value)}
-              className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] border transition-all"
+              className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] border transition-all hover:bg-[--kick-green-10] hover:border-[--kick-green-22] hover:text-[--kick-green]"
               style={{
-                background: active ? 'var(--kick-green-10)' : 'rgba(255,255,255,0.02)',
-                borderColor: active ? 'var(--kick-green-22)' : 'rgba(255,255,255,0.07)',
-                color: active ? 'var(--kick-green)' : 'var(--text-secondary)',
+                background: active ? 'var(--kick-green-10)' : 'rgba(255,255,255,0.03)',
+                borderColor: active ? 'var(--kick-green-22)' : 'rgba(255,255,255,0.10)',
+                color: active ? 'var(--kick-green)' : '#8fa895',
               }}
             >
               <Icon size={10} />
@@ -67,11 +67,11 @@ export default function CategoryFilter({
         </span>
         <button
           onClick={() => onLevel('All')}
-          className="px-2.5 py-0.5 rounded-full text-[11px] border transition-all"
+          className="px-2.5 py-0.5 rounded-full text-[11px] border transition-all hover:bg-white/[0.08] hover:border-white/20 hover:text-[#cfd8cc]"
           style={{
             background: level === 'All' ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.02)',
-            borderColor: level === 'All' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.07)',
-            color: level === 'All' ? '#cfd8cc' : 'var(--text-secondary)',
+            borderColor: level === 'All' ? 'rgba(255,255,255,0.20)' : 'rgba(255,255,255,0.10)',
+            color: level === 'All' ? '#cfd8cc' : '#8fa895',
           }}
         >
           All
@@ -82,11 +82,11 @@ export default function CategoryFilter({
             <button
               key={l.value}
               onClick={() => onLevel(l.value)}
-              className="px-2.5 py-0.5 rounded-full text-[11px] border transition-all"
+              className="px-2.5 py-0.5 rounded-full text-[11px] border transition-all hover:opacity-80"
               style={{
                 background: active ? l.bg : 'rgba(255,255,255,0.02)',
-                borderColor: active ? l.border : 'rgba(255,255,255,0.07)',
-                color: active ? l.color : 'var(--text-secondary)',
+                borderColor: active ? l.border : 'rgba(255,255,255,0.10)',
+                color: active ? l.color : '#8fa895',
               }}
             >
               {l.label}

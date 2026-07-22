@@ -67,10 +67,10 @@ export default function BeginnerPath({ locale }: { locale: string }) {
         </div>
 
         <div className="flex items-center gap-3">
-          {/* XP bar */}
-          <div className="w-[100px]">
-            <div className="flex justify-between text-[10px] mb-1" style={{ color: 'var(--text-muted)' }}>
-              <span>Progress</span>
+          {/* Step progress */}
+          <div className="w-[110px]">
+            <div className="flex justify-between text-[11px] mb-1" style={{ color: 'var(--text-muted)' }}>
+              <span>{locale === 'th' ? 'ขั้นตอน' : 'Step'}</span>
               <span style={{ color: 'var(--purple)' }}>{progress}/{guides.length}</span>
             </div>
             <div className="h-[4px] rounded-full" style={{ background: 'rgba(255,255,255,0.07)' }}>
@@ -79,16 +79,13 @@ export default function BeginnerPath({ locale }: { locale: string }) {
                 style={{ width: `${(progress / guides.length) * 100}%`, background: 'var(--purple)' }}
               />
             </div>
-            <div className="text-[10px] mt-1 text-right" style={{ color: 'var(--purple)' }}>
-              +{progress * 10} XP
-            </div>
           </div>
 
           {/* Reset */}
           <button
             onClick={reset}
-            className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[10px] transition-opacity hover:opacity-80"
-            style={{ color: 'var(--text-muted)', border: '0.5px solid rgba(255,255,255,0.08)' }}
+            className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] transition-all hover:bg-red-500/10 hover:border-red-400/30 hover:text-red-300"
+            style={{ color: 'var(--text-secondary)', border: '1px solid rgba(255,255,255,0.12)' }}
             title={locale === 'th' ? 'รีเซ็ต' : 'Reset'}
           >
             <IconRefresh size={12} />
@@ -98,8 +95,8 @@ export default function BeginnerPath({ locale }: { locale: string }) {
           {/* Collapse toggle */}
           <button
             onClick={() => setOpen(!open)}
-            className="flex items-center justify-center w-7 h-7 rounded-lg transition-opacity hover:opacity-80"
-            style={{ background: 'rgba(255,255,255,0.04)', border: '0.5px solid rgba(255,255,255,0.08)' }}
+            className="flex items-center justify-center w-7 h-7 rounded-lg transition-all hover:bg-white/10 hover:border-white/20"
+            style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.12)' }}
           >
             {open
               ? <IconChevronUp size={14} style={{ color: 'var(--text-muted)' }} />
@@ -183,14 +180,14 @@ export default function BeginnerPath({ locale }: { locale: string }) {
               <div className="flex items-center gap-2.5">
                 <button
                   onClick={skip}
-                  className="px-3 py-1.5 text-[11px] rounded-lg transition-colors"
+                  className="px-3 py-1.5 text-[11px] rounded-lg transition-all hover:bg-white/[0.08] hover:border-white/30 hover:text-white"
                   style={{ color: '#cfd8cc', border: '1px solid rgba(255,255,255,0.20)' }}
                 >
                   {locale === 'th' ? 'ข้าม' : 'Skip'}
                 </button>
                 <button
                   onClick={start}
-                  className="px-4 py-1.5 text-[11px] font-medium rounded-lg transition-opacity hover:opacity-90"
+                  className="px-4 py-1.5 text-[11px] font-semibold rounded-lg transition-all hover:brightness-110 hover:shadow-[0_0_12px_rgba(127,119,221,0.5)]"
                   style={{ background: 'var(--purple)', color: '#fff' }}
                 >
                   {locale === 'th' ? 'เริ่ม' : 'Start'}

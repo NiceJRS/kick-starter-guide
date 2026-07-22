@@ -20,7 +20,7 @@ export default function ModeTab({ mode, onChange }: { mode: Mode; onChange: (m: 
                 ? isStreamer
                   ? 'bg-[--kick-green-10] text-[--kick-green] border border-[--kick-green-22]'
                   : 'bg-[--blue-10] text-[--blue] border border-[--blue-25]'
-                : 'text-[--text-secondary] border border-transparent'
+                : 'text-[--text-secondary] border border-transparent hover:bg-white/[0.06] hover:text-[#cfd8cc]'
             }`}
           >
             {isStreamer ? <IconBroadcast size={12} /> : <IconCode size={12} />}

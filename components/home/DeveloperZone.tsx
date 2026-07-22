@@ -68,7 +68,7 @@ export default function DeveloperZone({
       <div className="px-4 pb-4">
         <button
           onClick={onSwitchMode}
-          className="w-full py-2 rounded-lg text-[12px] font-medium transition-all hover:opacity-90"
+          className="w-full py-2 rounded-lg text-[12px] font-semibold transition-all hover:bg-[--blue-25] hover:shadow-[0_0_12px_rgba(55,138,221,0.35)] hover:text-white"
           style={{ background: 'var(--blue-10)', color: 'var(--blue)', border: '1px solid var(--blue-25)' }}
         >
           {locale === 'th' ? 'สลับไป Developer mode →' : 'Switch to Developer mode →'}

@@ -71,11 +71,11 @@ export default function SearchHero({
           <button
             key={tag}
             onClick={() => submit(tag)}
-            className="px-2.5 py-1 rounded-full text-[11px] border transition-colors hover:border-white/20"
+            className="px-2.5 py-1 rounded-full text-[11px] border transition-all hover:bg-[--kick-green-10] hover:border-[--kick-green-22] hover:text-[--kick-green]"
             style={{
               background: 'rgba(255,255,255,0.04)',
-              borderColor: 'rgba(255,255,255,0.07)',
-              color: 'var(--text-secondary)',
+              borderColor: 'rgba(255,255,255,0.10)',
+              color: '#8fa895',
             }}
           >
             {tag}

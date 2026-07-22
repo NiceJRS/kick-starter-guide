@@ -3,7 +3,6 @@
 import { IconRadio } from '@tabler/icons-react'
 import { usePathname, useRouter } from 'next/navigation'
 import ModeTab from '@/components/home/ModeTab'
-import XPBar from '@/components/shared/XPBar'
 
 type Mode = 'streamer' | 'developer'
 
@@ -61,14 +60,14 @@ export default function Navbar({
         </div>
       </div>
 
-      {/* Center: mode tabs (home) or section links */}
+      {/* Center: section links (home streamer) */}
       {isHome && mode === 'streamer' ? (
         <div className="hidden md:flex items-center gap-1">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="px-3 py-1.5 rounded-lg text-sm font-medium transition-colors hover:text-[#cfd8cc]"
+              className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all hover:bg-white/[0.07] hover:text-[#cfd8cc]"
               style={{ color: '#8fa895' }}
             >
               {l.label}
@@ -79,20 +78,19 @@ export default function Navbar({
 
       <ModeTab mode={mode} onChange={onModeChange} />
 
-      {/* Right: locale + XP */}
-      <div className="flex items-center gap-2.5">
+      {/* Right: locale toggle only */}
+      <div className="flex items-center">
         <button
           onClick={toggleLocale}
-          className="px-3 py-1.5 rounded-lg text-[11px] border transition-colors hover:border-white/20"
+          className="px-4 py-1.5 rounded-lg text-[12px] font-medium border transition-all hover:bg-[--kick-green-10] hover:border-[--kick-green-22] hover:text-[--kick-green]"
           style={{
             background: 'rgba(255,255,255,0.04)',
-            borderColor: 'rgba(255,255,255,0.08)',
-            color: 'var(--text-secondary)',
+            borderColor: 'rgba(255,255,255,0.12)',
+            color: '#cfd8cc',
           }}
         >
           {locale === 'th' ? 'EN' : 'TH'}
         </button>
-        <XPBar />
       </div>
     </nav>
   )

@@ -67,10 +67,10 @@ export default function GuidePage({
             </div>
             <button
               onClick={toggleDone}
-              className="px-3 py-1 text-[10px] font-medium rounded-lg transition-all"
+              className={`px-4 py-1.5 text-[12px] font-semibold rounded-lg transition-all ${isDone ? 'hover:brightness-110' : 'hover:bg-[--kick-green-10] hover:border-[--kick-green-22] hover:text-[--kick-green]'}`}
               style={isDone
                 ? { background: 'var(--kick-green-10)', color: 'var(--kick-green)', border: '1px solid var(--kick-green-22)' }
-                : { background: 'rgba(255,255,255,0.04)', color: 'var(--text-secondary)', border: '1px solid rgba(255,255,255,0.08)' }
+                : { background: 'rgba(255,255,255,0.04)', color: '#cfd8cc', border: '1px solid rgba(255,255,255,0.20)' }
               }
             >
               {isDone
