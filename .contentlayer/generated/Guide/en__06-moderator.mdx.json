@@ -1,0 +1,28 @@
+{
+  "number": 6,
+  "slug": "moderator",
+  "level": "intermediate",
+  "title_th": "Moderator",
+  "title_en": "Moderator",
+  "description_th": "เพิ่ม Mod, คำสั่ง Mod และการจัดการ Ban/Timeout",
+  "description_en": "Add moderators, mod commands, and Ban/Timeout management",
+  "estimated_time": "15 นาที / 15 mins",
+  "prerequisites": [
+    "account-setup",
+    "chat-restrictions"
+  ],
+  "body": {
+    "raw": "\n{/* Content coming soon */}\n",
+    "code": "var Component=(()=>{var _=Object.create;var a=Object.defineProperty;var l=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,M=Object.prototype.hasOwnProperty;var f=(t,e)=>()=>{try{return e||t((e={exports:{}}).exports,e),e.exports}catch(n){throw e=0,n}},g=(t,e)=>{for(var n in e)a(t,n,{get:e[n],enumerable:!0})},m=(t,e,n,i)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let o of p(e))!M.call(t,o)&&o!==n&&a(t,o,{get:()=>e[o],enumerable:!(i=l(e,o))||i.enumerable});return t};var h=(t,e,n)=>(n=t!=null?_(x(t)):{},m(e||!t||!t.__esModule?a(n,\"default\",{value:t,enumerable:!0}):n,t)),j=t=>m(a({},\"__esModule\",{value:!0}),t);var d=f((F,s)=>{s.exports=_jsx_runtime});var C={};g(C,{default:()=>u,frontmatter:()=>B});var r=h(d()),B={number:6,slug:\"moderator\",level:\"intermediate\",title_th:\"Moderator\",title_en:\"Moderator\",description_th:\"\\u0E40\\u0E1E\\u0E34\\u0E48\\u0E21 Mod, \\u0E04\\u0E33\\u0E2A\\u0E31\\u0E48\\u0E07 Mod \\u0E41\\u0E25\\u0E30\\u0E01\\u0E32\\u0E23\\u0E08\\u0E31\\u0E14\\u0E01\\u0E32\\u0E23 Ban/Timeout\",description_en:\"Add moderators, mod commands, and Ban/Timeout management\",estimated_time:\"15 \\u0E19\\u0E32\\u0E17\\u0E35 / 15 mins\",prerequisites:[\"account-setup\",\"chat-restrictions\"]};function c(t){return(0,r.jsx)(r.Fragment,{})}function u(t={}){let{wrapper:e}=t.components||{};return e?(0,r.jsx)(e,{...t,children:(0,r.jsx)(c,{...t})}):c(t)}return j(C);})();\n;return Component;"
+  },
+  "_id": "en/06-moderator.mdx",
+  "_raw": {
+    "sourceFilePath": "en/06-moderator.mdx",
+    "sourceFileName": "06-moderator.mdx",
+    "sourceFileDir": "en",
+    "contentType": "mdx",
+    "flattenedPath": "en/06-moderator"
+  },
+  "type": "Guide",
+  "locale": "en"
+}

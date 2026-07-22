@@ -1,8 +1,11 @@
 import { withContentlayer } from 'next-contentlayer2'
+import createNextIntlPlugin from 'next-intl/plugin'
+
+const withNextIntl = createNextIntlPlugin('./i18n/request.ts')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: { mdxRs: false },
 }
 
-export default withContentlayer(nextConfig)
+export default withNextIntl(withContentlayer(nextConfig))

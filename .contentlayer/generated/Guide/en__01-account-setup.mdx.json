@@ -1,0 +1,25 @@
+{
+  "number": 1,
+  "slug": "account-setup",
+  "level": "beginner",
+  "title_th": "สมัครและตั้งค่าช่อง",
+  "title_en": "Account & Channel Setup",
+  "description_th": "วิธีสมัคร KICK และตั้งค่าช่องสตรีมของคุณตั้งแต่เริ่มต้น",
+  "description_en": "How to create your KICK account and set up your stream channel from scratch",
+  "estimated_time": "15 นาที / 15 mins",
+  "prerequisites": [],
+  "body": {
+    "raw": "\n{/* Content coming soon — fill via content-intake-template.md */}\n",
+    "code": "var Component=(()=>{var l=Object.create;var c=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var d=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,f=Object.prototype.hasOwnProperty;var h=(t,e)=>()=>{try{return e||t((e={exports:{}}).exports,e),e.exports}catch(n){throw e=0,n}},C=(t,e)=>{for(var n in e)c(t,n,{get:e[n],enumerable:!0})},s=(t,e,n,a)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let o of d(e))!f.call(t,o)&&o!==n&&c(t,o,{get:()=>e[o],enumerable:!(a=p(e,o))||a.enumerable});return t};var g=(t,e,n)=>(n=t!=null?l(x(t)):{},s(e||!t||!t.__esModule?c(n,\"default\",{value:t,enumerable:!0}):n,t)),K=t=>s(c({},\"__esModule\",{value:!0}),t);var i=h((b,u)=>{u.exports=_jsx_runtime});var y={};C(y,{default:()=>_,frontmatter:()=>j});var r=g(i()),j={number:1,slug:\"account-setup\",level:\"beginner\",title_th:\"\\u0E2A\\u0E21\\u0E31\\u0E04\\u0E23\\u0E41\\u0E25\\u0E30\\u0E15\\u0E31\\u0E49\\u0E07\\u0E04\\u0E48\\u0E32\\u0E0A\\u0E48\\u0E2D\\u0E07\",title_en:\"Account & Channel Setup\",description_th:\"\\u0E27\\u0E34\\u0E18\\u0E35\\u0E2A\\u0E21\\u0E31\\u0E04\\u0E23 KICK \\u0E41\\u0E25\\u0E30\\u0E15\\u0E31\\u0E49\\u0E07\\u0E04\\u0E48\\u0E32\\u0E0A\\u0E48\\u0E2D\\u0E07\\u0E2A\\u0E15\\u0E23\\u0E35\\u0E21\\u0E02\\u0E2D\\u0E07\\u0E04\\u0E38\\u0E13\\u0E15\\u0E31\\u0E49\\u0E07\\u0E41\\u0E15\\u0E48\\u0E40\\u0E23\\u0E34\\u0E48\\u0E21\\u0E15\\u0E49\\u0E19\",description_en:\"How to create your KICK account and set up your stream channel from scratch\",estimated_time:\"15 \\u0E19\\u0E32\\u0E17\\u0E35 / 15 mins\",prerequisites:[]};function m(t){return(0,r.jsx)(r.Fragment,{})}function _(t={}){let{wrapper:e}=t.components||{};return e?(0,r.jsx)(e,{...t,children:(0,r.jsx)(m,{...t})}):m(t)}return K(y);})();\n;return Component;"
+  },
+  "_id": "en/01-account-setup.mdx",
+  "_raw": {
+    "sourceFilePath": "en/01-account-setup.mdx",
+    "sourceFileName": "01-account-setup.mdx",
+    "sourceFileDir": "en",
+    "contentType": "mdx",
+    "flattenedPath": "en/01-account-setup"
+  },
+  "type": "Guide",
+  "locale": "en"
+}

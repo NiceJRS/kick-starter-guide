@@ -1,0 +1,28 @@
+{
+  "number": 5,
+  "slug": "chatbot",
+  "level": "intermediate",
+  "title_th": "CHATBOT",
+  "title_en": "CHATBOT (KICK / Nightbot / BotRix)",
+  "description_th": "ตั้งค่า KICK built-in bot, Nightbot และ BotRix",
+  "description_en": "Set up KICK built-in bot, Nightbot, and BotRix",
+  "estimated_time": "30 นาที / 30 mins",
+  "prerequisites": [
+    "account-setup",
+    "kick-features"
+  ],
+  "body": {
+    "raw": "\n{/* Content coming soon */}\n",
+    "code": "var Component=(()=>{var _=Object.create;var r=Object.defineProperty;var b=Object.getOwnPropertyDescriptor;var l=Object.getOwnPropertyNames;var d=Object.getPrototypeOf,p=Object.prototype.hasOwnProperty;var h=(t,e)=>()=>{try{return e||t((e={exports:{}}).exports,e),e.exports}catch(n){throw e=0,n}},C=(t,e)=>{for(var n in e)r(t,n,{get:e[n],enumerable:!0})},u=(t,e,n,s)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let o of l(e))!p.call(t,o)&&o!==n&&r(t,o,{get:()=>e[o],enumerable:!(s=b(e,o))||s.enumerable});return t};var f=(t,e,n)=>(n=t!=null?_(d(t)):{},u(e||!t||!t.__esModule?r(n,\"default\",{value:t,enumerable:!0}):n,t)),g=t=>u(r({},\"__esModule\",{value:!0}),t);var c=h((j,a)=>{a.exports=_jsx_runtime});var B={};C(B,{default:()=>x,frontmatter:()=>K});var i=f(c()),K={number:5,slug:\"chatbot\",level:\"intermediate\",title_th:\"CHATBOT\",title_en:\"CHATBOT (KICK / Nightbot / BotRix)\",description_th:\"\\u0E15\\u0E31\\u0E49\\u0E07\\u0E04\\u0E48\\u0E32 KICK built-in bot, Nightbot \\u0E41\\u0E25\\u0E30 BotRix\",description_en:\"Set up KICK built-in bot, Nightbot, and BotRix\",estimated_time:\"30 \\u0E19\\u0E32\\u0E17\\u0E35 / 30 mins\",prerequisites:[\"account-setup\",\"kick-features\"]};function m(t){return(0,i.jsx)(i.Fragment,{})}function x(t={}){let{wrapper:e}=t.components||{};return e?(0,i.jsx)(e,{...t,children:(0,i.jsx)(m,{...t})}):m(t)}return g(B);})();\n;return Component;"
+  },
+  "_id": "en/05-chatbot.mdx",
+  "_raw": {
+    "sourceFilePath": "en/05-chatbot.mdx",
+    "sourceFileName": "05-chatbot.mdx",
+    "sourceFileDir": "en",
+    "contentType": "mdx",
+    "flattenedPath": "en/05-chatbot"
+  },
+  "type": "Guide",
+  "locale": "en"
+}

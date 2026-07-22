@@ -1,0 +1,27 @@
+{
+  "number": 3,
+  "slug": "kick-features",
+  "level": "beginner",
+  "title_th": "ฟีเจอร์ KICK",
+  "title_en": "KICK Features",
+  "description_th": "Dashboard, Clips, VODs, Channel Points และฟีเจอร์อื่นๆ บน KICK",
+  "description_en": "Dashboard, Clips, VODs, Channel Points and other KICK features",
+  "estimated_time": "20 นาที / 20 mins",
+  "prerequisites": [
+    "account-setup"
+  ],
+  "body": {
+    "raw": "\n{/* Content coming soon */}\n",
+    "code": "var Component=(()=>{var C=Object.create;var i=Object.defineProperty;var _=Object.getOwnPropertyDescriptor;var d=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,h=Object.prototype.hasOwnProperty;var K=(e,t)=>()=>{try{return t||e((t={exports:{}}).exports,t),t.exports}catch(n){throw t=0,n}},f=(e,t)=>{for(var n in t)i(e,n,{get:t[n],enumerable:!0})},o=(e,t,n,a)=>{if(t&&typeof t==\"object\"||typeof t==\"function\")for(let s of d(t))!h.call(e,s)&&s!==n&&i(e,s,{get:()=>t[s],enumerable:!(a=_(t,s))||a.enumerable});return e};var x=(e,t,n)=>(n=e!=null?C(p(e)):{},o(t||!e||!e.__esModule?i(n,\"default\",{value:e,enumerable:!0}):n,e)),D=e=>o(i({},\"__esModule\",{value:!0}),e);var c=K((j,u)=>{u.exports=_jsx_runtime});var g={};f(g,{default:()=>m,frontmatter:()=>b});var r=x(c()),b={number:3,slug:\"kick-features\",level:\"beginner\",title_th:\"\\u0E1F\\u0E35\\u0E40\\u0E08\\u0E2D\\u0E23\\u0E4C KICK\",title_en:\"KICK Features\",description_th:\"Dashboard, Clips, VODs, Channel Points \\u0E41\\u0E25\\u0E30\\u0E1F\\u0E35\\u0E40\\u0E08\\u0E2D\\u0E23\\u0E4C\\u0E2D\\u0E37\\u0E48\\u0E19\\u0E46 \\u0E1A\\u0E19 KICK\",description_en:\"Dashboard, Clips, VODs, Channel Points and other KICK features\",estimated_time:\"20 \\u0E19\\u0E32\\u0E17\\u0E35 / 20 mins\",prerequisites:[\"account-setup\"]};function l(e){return(0,r.jsx)(r.Fragment,{})}function m(e={}){let{wrapper:t}=e.components||{};return t?(0,r.jsx)(t,{...e,children:(0,r.jsx)(l,{...e})}):l(e)}return D(g);})();\n;return Component;"
+  },
+  "_id": "en/03-kick-features.mdx",
+  "_raw": {
+    "sourceFilePath": "en/03-kick-features.mdx",
+    "sourceFileName": "03-kick-features.mdx",
+    "sourceFileDir": "en",
+    "contentType": "mdx",
+    "flattenedPath": "en/03-kick-features"
+  },
+  "type": "Guide",
+  "locale": "en"
+}
