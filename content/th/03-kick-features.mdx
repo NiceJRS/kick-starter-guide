@@ -2,13 +2,109 @@
 number: 3
 slug: kick-features
 level: beginner
-title_th: ฟีเจอร์ KICK
-title_en: KICK Features
-description_th: Dashboard, Clips, VODs, Channel Points และฟีเจอร์อื่นๆ บน KICK
-description_en: Dashboard, Clips, VODs, Channel Points and other KICK features
-estimated_time: 20 นาที / 20 mins
+title_th: "การใช้งานฟีเจอร์ KICK.com"
+title_en: "KICK.com Features & Dashboard"
+description_th: "คู่มือการใช้งาน Creator Dashboard บน KICK.com ตั้งแต่การตั้งชื่อสตรีม การจัดการคลิปไฮไลต์ VODs ย้อนหลัง จนถึงการตั้งค่า Channel Points และกิจกรรมกับคนดู"
+description_en: "Comprehensive guide to KICK.com Creator Dashboard, stream metadata configuration, VODs auto-archive, clips management, and Channel Points viewer engagement."
+estimated_time: "20 นาที / 20 mins"
 prerequisites:
-  - account-setup
+  - obs-studio
 ---
 
-{/* Content coming soon */}
+<SectionHeading id="s3-1">3.1 Creator Dashboard Overview</SectionHeading>
+
+<StepCard step={1} title="สำรวจแผงควบคุม Creator Dashboard และตั้งค่าสตรีม">
+  <SubSteps items={[
+    "เข้าไปที่หน้าเว็บไซต์ <a href='https://kick.com' target='_blank'>KICK.com</a> คลิกรูปโปรไฟล์มุมขวาบน เลือก <strong>Creator Dashboard</strong> (หรือเข้าตรงที่ <a href='https://kick.com/dashboard/stream' target='_blank'>kick.com/dashboard/stream</a>)",
+    "ทำความรู้จัก 4 แผงควบคุมหลัก: <strong>Stream Preview</strong> (จอมอนิเตอร์ตรวจเช็กภาพสัญญาณสด), <strong>Activity Feed</strong> (การแจ้งเตือน Follow/Sub/Raid real-time), <strong>Chat Dock</strong> (ช่องแชทอ่านและพิมพ์โต้ตอบ) และ <strong>Quick Actions</strong> (ปุ่มทางลัดควบคุมสตรีม)",
+    "ในแผง Quick Actions คลิกปุ่ม <strong>Edit Stream Info</strong> (หรือไอคอนรูปดินสอ) เพื่อตั้งค่าข้อมูลสตรีม",
+    "<strong>Title:</strong> ใส่ชื่อสตรีมดึงดูดคนดู เช่น <code>[TH/EN] มือใหม่หัดเล่น VALORANT | พูดคุยกับผู้ชม</code>",
+    "<strong>Category:</strong> ค้นหาและเลือกหมวดหมู่เกม หรือหมวดหมู่หลัก เช่น <code>Just Chatting</code> หรือ <code>VALORANT</code>",
+    "<strong>Language & Tags:</strong> เลือกภาษาหลักเป็น <strong>Thai</strong> และพิมพ์ใส่ Tag เช่น <code>Thai</code>, <code>VTuber</code>, <code>FPS</code> ช่วยให้ผู้ชมชาวไทยค้นเจอผ่านหน้า Discovery ได้ง่ายขึ้น",
+    "<strong>Content Classification:</strong> หากเล่นเกมที่มีเนื้อหารุนแรง หรือใช้คำหยาบคาย ให้เปิดสวิตช์เตือนเนื้อหา <strong>18+ (Mature Content)</strong> เพื่อป้องกันการถูกตักเตือนหรือแบนช่อง"
+  ]} />
+  <ImageCaption src="/images/ch3/s3_1_step1_dashboard_overview.jpg" alt="หน้าตา Creator Dashboard และการ Edit Stream Info บน KICK" caption="ภาพที่ 3.1: แผงควบคุม Creator Dashboard และการตั้งชื่อสตรีม หมวดหมู่ และภาษาบน KICK.com" />
+</StepCard>
+
+<StepCard step={2} title="จัดการ Emotes และ Subscriber Badges ประจำช่อง">
+  <SubSteps items={[
+    "ไปที่เมนูด้านซ้าย เลือก <strong>Community → Emotes</strong> (<a href='https://kick.com/dashboard/community/emotes' target='_blank'>kick.com/dashboard/community/emotes</a>)",
+    "<strong>Follower Emotes:</strong> คลิกแถบ Follower Emotes กดปุ่ม <strong>Add Emote</strong> อัปโหลดไฟล์ PNG พื้นหลังโปร่งใส (ขนาดแนะนำ 512x512 px) ตั้งชื่อโค้ดคำสั่ง แล้วกด Save",
+    "<strong>Subscriber Badges:</strong> ไปที่เมนูด้านซ้าย เลือก <strong>Community → Badges</strong> เพื่ออัปโหลดไอคอนยศหน้าชื่อผู้ชมตามอายุการ Sub (1 เดือน, 3 เดือน, 6 เดือน, 1 ปี)"
+  ]} />
+  <ImageCaption src="/images/ch3/s3_1_step2_emotes_badges.jpg" alt="การอัปโหลด Emotes และ Subscriber Badges บน KICK" caption="ภาพที่ 3.2: หน้าตั้งค่าอัปโหลด Follower Emotes และ Subscriber Badges ประจำช่อง" />
+</StepCard>
+
+<TipBox>
+การตั้งค่าภาษาเป็น 'Thai' และเลือก Category ให้ตรงกับเกมที่เล่นขณะนั้น เป็นปัจจัยสำคัญที่สุดที่ช่วยให้ระบบแนะนำช่อง (Algorithm Discovery) ดันช่องของคุณไปแสดงบนหน้าแรกของผู้ชมชาวไทย
+</TipBox>
+
+---
+
+<SectionHeading id="s3-2">3.2 Clips & VODs Management</SectionHeading>
+
+<StepCard step={3} title="การจัดเก็บบันทึกสตรีมย้อนหลัง (VODs Auto-Archive)">
+  <SubSteps items={[
+    "<strong>ระบบจัดเก็บอัตโนมัติ:</strong> บน KICK.com ระบบจะทำการบันทึกสตรีมย้อนหลัง (VODs) ให้โดยอัตโนมัติทันทีที่สตรีมจบ โดยเก็บบันทึกไฟล์ไว้ให้เป็นเวลา <strong>60 วัน</strong>",
+    "<strong>เข้าดูวิดีโอย้อนหลัง:</strong> เข้าไปที่ Creator Dashboard เลือกเมนูด้านซ้าย <strong>Studio → Videos</strong> (<a href='https://kick.com/dashboard/studio/videos' target='_blank'>kick.com/dashboard/studio/videos</a>) เพื่อดูรายการวิดีโอสตรีมย้อนหลังทั้งหมด",
+    "สตรีมเมอร์สามารถเลือกซ่อน ปรับสถานะ หรือดาวน์โหลดไฟล์ VODs ออกมาได้จากหน้านี้"
+  ]} />
+</StepCard>
+
+<StepCard step={4} title="ขั้นตอนการตัดคลิปไฮไลต์และดาวน์โหลดวิดีโอ (Clips Creation Workflow)">
+  <SubSteps items={[
+    "<strong>การตัดคลิประหว่างไลฟ์:</strong> ที่หน้าเล่นวิดีโอสตรีม คลิกไอคอน <strong>รูปกรรไกร (Clip)</strong> บริเวณมุมขวาล่างของวิดีโอ",
+    "ลากแถบระยะเวลาเพื่อเลือกช็อตเด็ด (ความยาวระหว่าง 5 ถึง 60 วินาที) ตั้งชื่อคลิป แล้วกดปุ่ม <strong>Publish Clip</strong>",
+    "<strong>การจัดการหลังบ้าน:</strong> เข้าไปที่ Creator Dashboard เลือกเมนูด้านซ้าย <strong>Studio → Clips</strong> (<a href='https://kick.com/dashboard/studio/clips' target='_blank'>kick.com/dashboard/studio/clips</a>) เพื่อดู แก้ไขชื่อ หรือลบคลิปที่ไม่ต้องการ",
+    "<strong>ดาวน์โหลดไปทำคอนเทนต์ต่อ:</strong> คลิกเลือกคลิปที่ต้องการ แล้วกดปุ่ม <strong>Download</strong> เพื่อเซฟไฟล์ HD (.mp4) นำไปตัดต่อแนวตั้งลง TikTok, YouTube Shorts หรือ Facebook Reels ได้ทันที"
+  ]} />
+  <ImageCaption src="/images/ch3/s3_2_step4_clips_management.jpg" alt="การจัดการและดาวน์โหลดคลิปใน Studio Clips" caption="ภาพที่ 3.3: หน้าการจัดการและดาวน์โหลดคลิปไฮไลต์ในเมนู Studio → Clips" />
+</StepCard>
+
+---
+
+<SectionHeading id="s3-3">3.3 Channel Points & Community Features</SectionHeading>
+
+<StepCard step={5} title="เปิดใช้งาน Channel Points และสร้างรางวัลแต่งเอง (Custom Rewards)">
+  <SubSteps items={[
+    "ไปที่ Creator Dashboard เลือกเมนูด้านซ้าย <strong>Community → Chat → Channel points</strong> (<a href='https://kick.com/dashboard/community/chat/channel-points' target='_blank'>kick.com/dashboard/community/chat/channel-points</a>)",
+    "เลื่อนสวิตช์เปิดใช้งาน <strong>Enable Channel Points</strong> เป็น <strong>ON</strong>",
+    "กดปุ่ม <strong>+ Add Custom Reward</strong> เพื่อสร้างรางวัลใหม่",
+    "กรอกชื่อรางวัล (เช่น <code>สตรีมเมอร์ดื่มน้ำ 1 จิบ</code>), กำหนดจำนวนแต้ม (Cost) และตั้งเวลาคูลดาวน์ (Cooldown) เพื่อป้องกันคนดูสแปมกดรัวๆ",
+    "กดปุ่ม <strong>Save</strong> เพื่อเปิดใช้งานรางวัล ให้ผู้ชมนำแต้มสะสมจากการนั่งดูสตรีมมาแลกกิจกรรมสนุกๆ ในไลฟ์"
+  ]} />
+  <ImageCaption src="/images/ch3/s3_3_step5_channel_points.jpg" alt="การตั้งค่า Channel Points และ Custom Rewards บน KICK" caption="ภาพที่ 3.4: หน้าตั้งค่า Channel Points และการสร้าง Custom Rewards ใน Community → Chat" />
+</StepCard>
+
+<StepCard step={6} title="การใช้งาน Polls, Predictions และส่งต่อผู้ชมด้วย Raid">
+  <SubSteps items={[
+    "<strong>Polls (โพลสำรวจ):</strong> ในช่องแชท พิมพ์คำสั่ง <code>/poll [คำถาม] | [ตัวเลือก1] | [ตัวเลือก2]</code> หรือกดปุ่ม <strong>Create a Poll</strong> ใน Quick Actions เพื่อถามความคิดเห็นคนดูแบบเร่งด่วน",
+    "<strong>Predictions (เกมทายผล):</strong> ใน Quick Actions กดปุ่ม <strong>Start Prediction</strong> กำหนดหัวข้อและตัวเลือกทายผล ให้คนดูนำแต้ม Channel Points มาร่วมทายผลกิจกรรมระหว่างไลฟ์",
+    "<strong>การ Raid ส่งต่อคนดู:</strong> เมื่อกำลังจะจบไลฟ์ ในช่องแชทพิมพ์คำสั่ง <code>/raid [ชื่อช่องเป้าหมาย]</code> (เช่น <code>/raid nicejrs</code>) หรือกดปุ่ม <strong>Raid Channel</strong> ใน Quick Actions",
+    "ระบบจะนับถอยหลัง 60 วินาที ให้สตรีมเมอร์บอกลาคนดู เมื่อครบกำหนดกดปุ่ม <strong>Raid Now</strong> หน้าจอและผู้ชมทั้งหมดจะถูกวาร์ปไปยังช่องเป้าหมายทันที"
+  ]} />
+  <ImageCaption src="/images/ch3/s3_3_step6_raid_workflow.jpg" alt="ขั้นตอนการเปิด Raid ส่งต่อคนดูบน KICK" caption="ภาพที่ 3.5: แถบนับถอยหลังการ Raid ส่งต่อผู้ชมไปยังช่องสตรีมเมอร์เพื่อนร่วมคอมมูนิตี้" />
+</StepCard>
+
+<TipBox>
+การทำ Raid เป็นธรรมเนียมสำคัญของสตรีมเมอร์บน KICK เพื่อสร้างมิตรภาพ ช่วยเหลือสตรีมเมอร์ด้วยกัน และขยายฐานแฟนคลับให้เติบโตไปพร้อมกัน
+</TipBox>
+
+---
+
+**Q: VODs สตรีมย้อนหลังบน KICK เก็บบันทึกไว้ได้นานกี่วัน?**  
+A: KICK จะจัดเก็บบันทึกวิดีโอสตรีมย้อนหลังให้อัตโนมัติเป็นเวลา 60 วัน โดยสามารถเข้าจัดการและดาวน์โหลดได้ที่เมนู Creator Dashboard → Studio → Videos
+
+**Q: จะหาเมนูตั้งค่า Channel Points และ Emotes ได้ตรงไหน?**  
+A: เมนูตั้งค่า Emotes อยู่ที่ `Community → Emotes` ส่วน Channel Points อยู่ที่ `Community → Chat → Channel points`
+
+---
+
+<References items={[
+  { label: "KICK Creator Dashboard", url: "https://kick.com/dashboard/stream" },
+  { label: "KICK Community – Emotes", url: "https://kick.com/dashboard/community/emotes" },
+  { label: "KICK Studio – Videos (VODs)", url: "https://kick.com/dashboard/studio/videos" },
+  { label: "KICK Studio – Clips", url: "https://kick.com/dashboard/studio/clips" },
+  { label: "KICK Channel Points Settings", url: "https://kick.com/dashboard/community/chat/channel-points" },
+  { label: "KICK Help Center", url: "https://help.kick.com" }
+]} />

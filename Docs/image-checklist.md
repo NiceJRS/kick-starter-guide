@@ -45,9 +45,22 @@ Referenced in `content/th/02-obs-studio.mdx` and `content/en/02-obs-studio.mdx`.
 
 ---
 
-## Chapter 3 — KICK Features (TBD)
+## Chapter 3 — KICK Features (`public/images/ch3/`)
 
-> Content not yet written. Add images here after receiving Ch3 content from Gemini.
+Referenced in `content/th/03-kick-features.mdx` and `content/en/03-kick-features.mdx`.
+
+| File | Description | Used in MDX | Status |
+|------|-------------|-------------|--------|
+| `s3_1_step1_dashboard_overview.jpg` | Creator Dashboard main interface + Edit Stream Info modal | StepCard 1 ImageCaption | ⬜ Needed |
+| `s3_1_step2_emotes_badges.jpg` | Emotes and Subscriber Badges upload page | StepCard 2 ImageCaption | ⬜ Needed |
+| `s3_2_step4_clips_management.jpg` | Studio → Clips management and download interface | StepCard 4 ImageCaption | ⬜ Needed |
+| `s3_3_step5_channel_points.jpg` | Channel Points settings and Custom Rewards | StepCard 5 ImageCaption | ⬜ Needed |
+| `s3_3_step6_raid_workflow.jpg` | Raid countdown banner and viewer transfer | StepCard 6 ImageCaption | ⬜ Needed |
+
+**Notes for Ch3 screenshots:**
+- All screenshots from kick.com dashboard (browser, logged-in account)
+- For `s3_1_step1_dashboard_overview.jpg`: show full dashboard with Edit Stream Info modal open
+- For `s3_3_step6_raid_workflow.jpg`: can mock the countdown banner if not live
 
 ---
 
@@ -93,4 +106,5 @@ Referenced in `content/th/02-obs-studio.mdx` and `content/en/02-obs-studio.mdx`.
 |---------|-------------|------|--------|
 | Ch1 Account Setup | 15 | 15 | 0 |
 | Ch2 OBS Studio | 4 | 0 | 4 |
-| Ch3–9 | TBD | — | — |
+| Ch3 KICK Features | 5 | 0 | 5 |
+| Ch4–9 | TBD | — | — |
