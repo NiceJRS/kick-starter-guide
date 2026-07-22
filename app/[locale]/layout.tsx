@@ -24,7 +24,11 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <div className="min-h-screen" style={{ background: 'var(--surface-page)' }}>
+            <div className="max-w-2xl mx-auto px-3 pt-3 pb-8">
+              {children}
+            </div>
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>

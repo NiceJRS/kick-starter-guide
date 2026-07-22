@@ -1,29 +1,39 @@
-const keyFor = (slug: string) => `kick-guide-progress-${slug}`
+export const PROGRESS_KEY = 'kick-guide-progress'
+export const MODE_KEY = 'kick-guide-mode'
 
-export function getProgress(slug: string): string[] {
+export function getCompletedGuides(): number[] {
   if (typeof window === 'undefined') return []
   try {
-    return JSON.parse(localStorage.getItem(keyFor(slug)) ?? '[]')
+    return JSON.parse(localStorage.getItem(PROGRESS_KEY) ?? '[]')
   } catch {
     return []
   }
 }
 
-export function markStep(slug: string, stepId: string): void {
+export function markGuideComplete(id: number): void {
   if (typeof window === 'undefined') return
-  const current = getProgress(slug)
-  if (!current.includes(stepId)) {
-    localStorage.setItem(keyFor(slug), JSON.stringify([...current, stepId]))
+  const current = getCompletedGuides()
+  if (!current.includes(id)) {
+    localStorage.setItem(PROGRESS_KEY, JSON.stringify([...current, id]))
   }
 }
 
-export function unmarkStep(slug: string, stepId: string): void {
+export function unmarkGuideComplete(id: number): void {
   if (typeof window === 'undefined') return
-  const current = getProgress(slug)
-  localStorage.setItem(keyFor(slug), JSON.stringify(current.filter((id) => id !== stepId)))
+  const current = getCompletedGuides()
+  localStorage.setItem(PROGRESS_KEY, JSON.stringify(current.filter((n) => n !== id)))
 }
 
-export function clearProgress(slug: string): void {
+export function isGuideComplete(id: number): boolean {
+  return getCompletedGuides().includes(id)
+}
+
+export function getMode(): 'streamer' | 'developer' {
+  if (typeof window === 'undefined') return 'streamer'
+  return (localStorage.getItem(MODE_KEY) as 'streamer' | 'developer') ?? 'streamer'
+}
+
+export function setMode(mode: 'streamer' | 'developer'): void {
   if (typeof window === 'undefined') return
-  localStorage.removeItem(keyFor(slug))
+  localStorage.setItem(MODE_KEY, mode)
 }
