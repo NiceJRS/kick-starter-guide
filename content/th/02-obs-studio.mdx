@@ -2,13 +2,109 @@
 number: 2
 slug: obs-studio
 level: beginner
-title_th: OBS Studio
-title_en: OBS Studio Setup
-description_th: ติดตั้งและตั้งค่า OBS Studio สำหรับสตรีมบน KICK
-description_en: Install and configure OBS Studio for streaming on KICK
-estimated_time: 20 นาที / 20 mins
+title_th: "การตั้งค่า OBS Studio สำหรับ KICK"
+title_en: "OBS Studio Setup for KICK"
+description_th: "คู่มือการตั้งค่า OBS Studio สำหรับผู้เริ่มต้นแบบ Zero Knowledge ตั้งแต่การติดตั้ง, การเลือก Encoder, ตาราง Bitrate 1080p60 จนถึงการเชื่อมต่อ Stream Key บน KICK.com"
+description_en: "Beginner-friendly OBS Studio setup guide covering encoders, 1080p60 bitrate recommendations, audio filters, and KICK RTMP streaming connection."
+estimated_time: "30 นาที / 30 mins"
 prerequisites:
   - account-setup
 ---
 
-{/* Content coming soon */}
+<SectionHeading id="s2-1">2.1 ติดตั้ง OBS Studio</SectionHeading>
+
+<StepCard step={1} title="ทำความเข้าใจและติดตั้งโปรแกรม OBS Studio">
+  <SubSteps items={[
+    "<strong>OBS Studio คืออะไร?</strong> เปรียบเสมือน 'ห้องควบคุมสัญญาณ' คอยรวบรวมภาพหน้าจอเกม กล้อง และเสียงไมโครโฟน เพื่อส่งสัญญาณไลฟ์ไปยัง KICK.com",
+    "ดาวน์โหลดโปรแกรมจากเว็บไซต์ทางการ <a href='https://obsproject.com/download' target='_blank'>obsproject.com/download</a> โดยเลือกเวอร์ชันตามระบบปฏิบัติการ (Windows / macOS)",
+    "เปิดไฟล์ติดตั้งและทำตามขั้นตอน บนป๊อปอัป Auto-Configuration Wizard ในการเปิดครั้งแรก ให้เลือก <strong>'Optimize for streaming, recording is secondary'</strong> เพื่อให้ระบบคำนวณสเปกให้อัตโนมัติ",
+    "ศึกษาคู่มือเบื้องต้นเพิ่มเติมได้ที่ <a href='https://obsproject.com/wiki/OBS-Studio-Overview' target='_blank'>Official OBS Studio Overview Guide</a>"
+  ]} />
+  <ImageCaption src="/images/ch2/s2_1_step1_obs_download.jpg" alt="หน้าดาวน์โหลดโปรแกรม OBS Studio" caption="การดาวน์โหลดตัวติดตั้ง OBS Studio จาก obsproject.com" />
+</StepCard>
+
+<TipBox>
+บน Windows ให้คลิกขวาที่ไอคอน OBS Studio แล้วเลือก <strong>Run as administrator</strong> ทุกครั้งก่อนเปิดไลฟ์ เพื่อให้ Windows จัดสรรทรัพยากร GPU ให้กับ OBS ก่อน เกมจะไม่กระตุก
+</TipBox>
+
+---
+
+<SectionHeading id="s2-2">2.2 ตั้งค่า Output (Encoder & Bitrate)</SectionHeading>
+
+<StepCard step={2} title="ปลดล็อกและเลือก Encoder ให้เหมาะกับคอมพิวเตอร์">
+  <SubSteps items={[
+    "เปิด OBS Studio ไปที่ <strong>Settings → Output</strong>",
+    "เปลี่ยน <strong>Output Mode</strong> จาก 'Simple' เป็น <strong>Advanced</strong> เพื่อเปิดการตั้งค่าแบบละเอียด",
+    "ในแถบ Streaming เลือก <strong>Encoder</strong> ของการ์ดจอที่ใช้: <strong>NVIDIA NVENC H.264</strong> (NVIDIA GeForce RTX/GTX), <strong>AMD HW H.264</strong> (AMD GPU), <strong>Apple VT H.264</strong> (Mac) หรือ <strong>x264</strong> (ไม่มีการ์ดจอแยก)"
+  ]} />
+</StepCard>
+
+<StepCard step={3} title="กำหนด Bitrate และความละเอียดภาพสตรีม">
+  <SubSteps items={[
+    "<strong>Rate Control:</strong> เลือก <strong>CBR (Constant Bitrate)</strong> เพื่อให้สัญญาณสตรีมนิ่ง",
+    "<strong>Keyframe Interval:</strong> ตั้งค่าเป็น <strong>2s</strong> (มาตรฐานสำหรับแพลตฟอร์มไลฟ์สตรีม)",
+    "<strong>Preset:</strong> เลือก <strong>P5: Slow (Good Quality)</strong> หรือ <strong>Quality</strong>",
+    "ไปที่ <strong>Settings → Video</strong> ตั้ง <strong>Base (Canvas) Resolution</strong> ให้ตรงกับหน้าจอ (เช่น 1920x1080) และตั้ง <strong>Output (Scaled) Resolution</strong> ตามคุณภาพสตรีมที่เลือก"
+  ]} />
+  <ImageCaption src="/images/ch2/s2_2_step2_output_settings.jpg" alt="หน้าตั้งค่า Output Advanced ใน OBS" caption="การตั้งค่า Output Mode แบบ Advanced และกำหนด Bitrate บน OBS Studio" />
+</StepCard>
+
+<BitrateTable locale="th" />
+
+<WarningBox>
+Bitrate เปรียบเหมือนความกว้างของท่อน้ำส่งข้อมูล ยิ่ง Bitrate สูงภาพยิ่งชัด แต่ต้องเผื่อความเร็ว Upload ของอินเทอร์เน็ตที่บ้านไว้มากกว่า Bitrate ที่ตั้งไว้ประมาณ <strong>1.5 เท่า</strong> เสมอ
+</WarningBox>
+
+---
+
+<SectionHeading id="s2-3">2.3 Scene & Sources</SectionHeading>
+
+<StepCard step={4} title="สร้าง Scene และเพิ่ม Sources">
+  <SubSteps items={[
+    "<strong>Scene (ฉาก):</strong> เหมือนสไลด์แต่ละหน้า กด '+' ในช่อง Scenes เพื่อสร้าง 4 ฉากหลัก: <code>Starting Soon</code>, <code>Main Gameplay</code>, <code>Be Right Back</code> และ <code>Stream Ended</code>",
+    "<strong>Source (องค์ประกอบ):</strong> สิ่งที่วางบนฉาก เลือกฉาก <code>Main Gameplay</code> แล้วกด '+' ใน Sources เพื่อเพิ่ม:",
+    "<strong>Game Capture:</strong> ดึงภาพเฉพาะตัวเกม (แนะนำที่สุด ภาพลื่นเสถียร)",
+    "<strong>Display Capture:</strong> ดึงภาพทั้งหน้าจอ (ใช้ง่าย แต่ระวังติดหน้าต่างข้อมูลส่วนตัว)",
+    "<strong>Video Capture Device:</strong> ดึงภาพจากกล้อง Webcam",
+    "ศึกษาประเภท Source เพิ่มเติมได้ที่ <a href='https://obsproject.com/wiki/Sources-Guide' target='_blank'>OBS Official Sources Guide</a>"
+  ]} />
+  <ImageCaption src="/images/ch2/s2_3_step4_scene_sources.jpg" alt="การจัดวาง Scene และ Source ใน OBS" caption="โครงสร้างการเรียงลำดับ Scenes และ Sources ในหน้าจอหลัก OBS Studio" />
+</StepCard>
+
+<StepCard step={5} title="ตั้งค่าระบบเสียงและใส่ Audio Filters ตัดเสียงรบกวน">
+  <SubSteps items={[
+    "ไปที่ <strong>Settings → Audio</strong> กำหนดค่า <strong>Mic/Auxiliary Audio</strong> ให้ตรงกับไมโครโฟนที่ใช้งาน",
+    "ในแผง Audio Mixer คลิกจุด 3 จุดที่ไมโครโฟน → เลือก <strong>Filters</strong>",
+    "กด '+' เพิ่ม Filter 2 ตัว: <strong>Noise Suppression</strong> (เลือก RNNoise ตัดเสียงพัดลม/แอร์) และ <strong>Limiter</strong> (ตั้ง Threshold ที่ -2.0 dB กันเสียงพีกจนลำโพงผู้ชมแตก)",
+    "ศึกษาการใช้งาน Filter เพิ่มได้ที่ <a href='https://obsproject.com/wiki/Filters-Guide' target='_blank'>OBS Official Audio Filters Guide</a>"
+  ]} />
+</StepCard>
+
+---
+
+<SectionHeading id="s2-4">2.4 เชื่อมต่อกับ KICK</SectionHeading>
+
+<StepCard step={6} title="ดึง Stream Key และเริ่ม Go Live บน KICK">
+  <SubSteps items={[
+    "เปิดเบราว์เซอร์ไปที่ <a href='https://kick.com/dashboard/settings/stream' target='_blank'>KICK Creator Dashboard → Settings → Stream Key</a>",
+    "คัดลอกค่า <strong>Stream URL</strong> และ <strong>Stream Key</strong>",
+    "กลับมาที่ OBS Studio ไปที่ <strong>Settings → Stream</strong> เปลี่ยน Service เป็น <strong>Custom...</strong>",
+    "วาง Stream URL ในช่อง <strong>Server</strong> (<code>rtmps://fa723fc1b171.global-contribute.live-video.net:443/app</code>) และวาง Stream Key ในช่อง <strong>Stream Key</strong> แล้วกด Apply",
+    "กดปุ่ม <strong>Start Streaming</strong> ใน OBS จากนั้นสลับไปหน้า KICK Creator Dashboard เพื่อตรวจสอบสัญญาณภาพและเสียงจริง"
+  ]} />
+  <ImageCaption src="/images/ch2/s2_4_step6_connect_kick.jpg" alt="การใส่ Custom Stream Key ใน OBS" caption="การผูก Custom RTMP Server และ Stream Key ของ KICK บน OBS Studio" />
+</StepCard>
+
+<WarningBox>
+Stream Key คือรหัสลับประจำช่อง <strong>ห้ามเปิดเผยบนหน้าจอสตรีมเด็ดขาด</strong> หากหลุด ให้รีบเข้า KICK Creator Dashboard แล้วกดปุ่ม <strong>Reset Key</strong> ทันที
+</WarningBox>
+
+---
+
+<SectionHeading id="s2-faq">คำถามที่พบบ่อย</SectionHeading>
+
+**Q: ทำไมภาพสตรีมกระตุกทั้งที่เน็ต Upload เร็ว?**  
+A: เกิดจาก GPU/CPU ทำงานหนักเกินไป ให้ลองปรับ Resolution เป็น 720p60 หรือเปลี่ยน Preset จาก P5 (Slow) เป็น P4/P3 (Medium/Fast) และคลิกขวาที่ OBS แล้วเลือก "Run as Administrator"
+
+**Q: KICK รองรับ Bitrate สูงสุดเท่าไหร่?**  
+A: KICK รองรับ Bitrate แนะนำสูงสุดที่ 8,000 Kbps สำหรับสตรีม 1080p 60fps ตรวจสอบเกณฑ์ทางการได้ที่ [KICK Help Center](https://help.kick.com)

@@ -2,13 +2,109 @@
 number: 2
 slug: obs-studio
 level: beginner
-title_th: OBS Studio
-title_en: OBS Studio Setup
-description_th: ติดตั้งและตั้งค่า OBS Studio สำหรับสตรีมบน KICK
-description_en: Install and configure OBS Studio for streaming on KICK
-estimated_time: 20 นาที / 20 mins
+title_th: "การตั้งค่า OBS Studio สำหรับ KICK"
+title_en: "OBS Studio Setup for KICK"
+description_th: "คู่มือการตั้งค่า OBS Studio สำหรับผู้เริ่มต้นแบบ Zero Knowledge ตั้งแต่การติดตั้ง, การเลือก Encoder, ตาราง Bitrate 1080p60 จนถึงการเชื่อมต่อ Stream Key บน KICK.com"
+description_en: "Beginner-friendly OBS Studio setup guide covering encoders, 1080p60 bitrate recommendations, audio filters, and KICK RTMP streaming connection."
+estimated_time: "30 นาที / 30 mins"
 prerequisites:
   - account-setup
 ---
 
-{/* Content coming soon */}
+<SectionHeading id="s2-1">2.1 Install OBS Studio</SectionHeading>
+
+<StepCard step={1} title="Understand and Install OBS Studio">
+  <SubSteps items={[
+    "<strong>What is OBS Studio?</strong> Think of it as your 'control room' that captures your game screen, webcam, and microphone, then broadcasts the video feed to KICK.com.",
+    "Download the installer from the official website <a href='https://obsproject.com/download' target='_blank'>obsproject.com/download</a> — select your OS (Windows / macOS).",
+    "Run the installer. On first launch, the Auto-Configuration Wizard will appear — select <strong>'Optimize for streaming, recording is secondary'</strong> so OBS auto-tunes settings for your hardware.",
+    "Read the full beginner guide at <a href='https://obsproject.com/wiki/OBS-Studio-Overview' target='_blank'>Official OBS Studio Overview Guide</a>."
+  ]} />
+  <ImageCaption src="/images/ch2/s2_1_step1_obs_download.jpg" alt="OBS Studio Download Page" caption="Downloading OBS Studio installer from obsproject.com" />
+</StepCard>
+
+<TipBox>
+On Windows, always right-click the OBS Studio icon and select <strong>Run as administrator</strong> before streaming. This gives OBS GPU priority over background tasks, preventing game frame drops.
+</TipBox>
+
+---
+
+<SectionHeading id="s2-2">2.2 Output Settings (Encoder & Bitrate)</SectionHeading>
+
+<StepCard step={2} title="Unlock Advanced Settings & Select Your Encoder">
+  <SubSteps items={[
+    "In OBS Studio, navigate to <strong>Settings → Output</strong>.",
+    "Change the <strong>Output Mode</strong> dropdown from 'Simple' to <strong>Advanced</strong> to unlock precise controls.",
+    "Under the Streaming tab, select your GPU <strong>Encoder</strong>: <strong>NVIDIA NVENC H.264</strong> (NVIDIA GeForce RTX/GTX), <strong>AMD HW H.264</strong> (AMD GPUs), <strong>Apple VT H.264</strong> (Apple Silicon Macs), or <strong>x264</strong> (software CPU encoding — no dedicated GPU)."
+  ]} />
+</StepCard>
+
+<StepCard step={3} title="Configure Bitrate & Resolution Parameters">
+  <SubSteps items={[
+    "<strong>Rate Control:</strong> Set to <strong>CBR (Constant Bitrate)</strong> to maintain a stable stream signal.",
+    "<strong>Keyframe Interval:</strong> Set to <strong>2s</strong> (standard requirement for streaming platforms).",
+    "<strong>Preset:</strong> Select <strong>P5: Slow (Good Quality)</strong> or <strong>Quality</strong>.",
+    "Navigate to <strong>Settings → Video</strong>. Set <strong>Base (Canvas) Resolution</strong> to match your monitor (e.g., 1920x1080) and set <strong>Output (Scaled) Resolution</strong> according to your target stream quality."
+  ]} />
+  <ImageCaption src="/images/ch2/s2_2_step2_output_settings.jpg" alt="OBS Advanced Output Settings" caption="Advanced Output Settings and Bitrate configuration in OBS Studio" />
+</StepCard>
+
+<BitrateTable locale="en" />
+
+<WarningBox>
+Bitrate acts like pipe bandwidth — higher bitrate means clearer video. Your home internet Upload speed should always be at least <strong>1.5× your configured bitrate</strong> to avoid dropped frames.
+</WarningBox>
+
+---
+
+<SectionHeading id="s2-3">2.3 Scene & Sources</SectionHeading>
+
+<StepCard step={4} title="Create Scenes and Add Essential Sources">
+  <SubSteps items={[
+    "<strong>Scene:</strong> Think of it as a stage layout. Click '+' in the Scenes panel to create 4 core scenes: <code>Starting Soon</code>, <code>Main Gameplay</code>, <code>Be Right Back</code>, and <code>Stream Ended</code>.",
+    "<strong>Source:</strong> Elements placed on stage. Select <code>Main Gameplay</code> and click '+' in Sources to add:",
+    "<strong>Game Capture:</strong> Captures a specific game window (most recommended — smooth and stable).",
+    "<strong>Display Capture:</strong> Captures your entire monitor (easy setup, but be cautious of private pop-ups).",
+    "<strong>Video Capture Device:</strong> Captures your webcam feed.",
+    "Learn more source types at <a href='https://obsproject.com/wiki/Sources-Guide' target='_blank'>OBS Official Sources Guide</a>."
+  ]} />
+  <ImageCaption src="/images/ch2/s2_3_step4_scene_sources.jpg" alt="OBS Scene and Source Layout" caption="Structural layout of Scenes and Sources in OBS Studio" />
+</StepCard>
+
+<StepCard step={5} title="Configure Audio Routing & Apply Noise Filters">
+  <SubSteps items={[
+    "Go to <strong>Settings → Audio</strong> and set <strong>Mic/Auxiliary Audio</strong> to your connected microphone.",
+    "In the Audio Mixer panel, click the 3 dots next to your mic → select <strong>Filters</strong>.",
+    "Click '+' to add 2 crucial filters: <strong>Noise Suppression</strong> (set to RNNoise to eliminate fan/AC noise) and <strong>Limiter</strong> (set Threshold to -2.0 dB to prevent loud screams/laughter from clipping).",
+    "Learn more about audio filters at <a href='https://obsproject.com/wiki/Filters-Guide' target='_blank'>OBS Official Audio Filters Guide</a>."
+  ]} />
+</StepCard>
+
+---
+
+<SectionHeading id="s2-4">2.4 Connect to KICK</SectionHeading>
+
+<StepCard step={6} title="Retrieve Stream Key & Go Live on KICK">
+  <SubSteps items={[
+    "Open your browser and go to <a href='https://kick.com/dashboard/settings/stream' target='_blank'>KICK Creator Dashboard → Settings → Stream Key</a>.",
+    "Copy both <strong>Stream URL</strong> and <strong>Stream Key</strong>.",
+    "In OBS Studio, open <strong>Settings → Stream</strong> and set Service to <strong>Custom...</strong>",
+    "Paste the Stream URL into <strong>Server</strong> (<code>rtmps://fa723fc1b171.global-contribute.live-video.net:443/app</code>) and paste your Stream Key into <strong>Stream Key</strong>, then click Apply.",
+    "Click <strong>Start Streaming</strong> in OBS Studio, then switch to KICK Creator Dashboard to confirm the live video feed and audio levels."
+  ]} />
+  <ImageCaption src="/images/ch2/s2_4_step6_connect_kick.jpg" alt="OBS Custom Stream Connection" caption="Connecting OBS Studio via Custom RTMP Server and KICK Stream Key" />
+</StepCard>
+
+<WarningBox>
+Your Stream Key is a private secret key. <strong>Never display it on screen during a stream.</strong> If accidentally leaked, go to KICK Creator Dashboard and click <strong>Reset Key</strong> immediately.
+</WarningBox>
+
+---
+
+<SectionHeading id="s2-faq">FAQ</SectionHeading>
+
+**Q: Why is my stream lagging despite having fast upload speed?**  
+A: GPU/CPU overload is the most common cause. Lower Output Resolution to 720p60, switch Encoder Preset from P5 to P4/P3, and launch OBS Studio as Administrator.
+
+**Q: What is the maximum recommended Bitrate for KICK?**  
+A: KICK recommends a maximum of 8,000 Kbps for 1080p 60fps. Official guidelines are available at [KICK Help Center](https://help.kick.com).
