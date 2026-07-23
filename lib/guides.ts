@@ -70,11 +70,11 @@ export const guides: GuideData[] = [
   {
     id: 5, slug: 'chatbot', level: 'intermediate', category: 'Tools & Bot', duration: 25,
     icon: 'ti-robot', color: 'amber', label: 'Chatbot',
-    title: { th: 'CHATBOT', en: 'CHATBOT Setup' },
-    description: { th: 'ตั้งค่า KICK built-in bot, Nightbot และ BotRix', en: 'Set up KICK built-in bot, Nightbot, and BotRix' },
+    title: { th: 'Chatbot Setup', en: 'Chatbot Setup' },
+    description: { th: 'เปรียบเทียบ KickBot vs BotRix และตั้งค่าฟีเจอร์สำคัญทีละขั้นตอน', en: 'KickBot vs BotRix comparison with step-by-step guides for essential functions' },
     sections: [
-      { id: 's5-1', label: { th: '5.1 KICK Built-in Bot', en: '5.1 KICK Built-in Bot' } },
-      { id: 's5-2', label: { th: '5.2 Nightbot', en: '5.2 Nightbot' } },
+      { id: 's5-1', label: { th: '5.1 เลือก Chatbot', en: '5.1 Chatbot Selection' } },
+      { id: 's5-2', label: { th: '5.2 KickBot', en: '5.2 KickBot' } },
       { id: 's5-3', label: { th: '5.3 BotRix', en: '5.3 BotRix' } },
     ],
   },

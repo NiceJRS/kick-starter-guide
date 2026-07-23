@@ -2,14 +2,298 @@
 number: 5
 slug: chatbot
 level: intermediate
-title_th: CHATBOT
-title_en: CHATBOT (KICK / Nightbot / BotRix)
-description_th: ตั้งค่า KICK built-in bot, Nightbot และ BotRix
-description_en: Set up KICK built-in bot, Nightbot, and BotRix
-estimated_time: 30 นาที / 30 mins
+title_th: "การตั้งค่า Chatbot สำหรับ KICK"
+title_en: "Chatbot Setup for KICK"
+description_th: "คู่มือการติดตั้งและตั้งค่า Chatbot สำหรับ KICK.com โดยเปรียบเทียบและสอนใช้งาน 2 บอทยอดนิยม KickBot และ BotRix พร้อมฟังก์ชั่นสำคัญจับมือทำ Step-by-Step"
+description_en: "Comprehensive guide to setting up Chatbots for KICK.com featuring KickBot and BotRix, with step-by-step guides for essential functions."
+estimated_time: "25 นาที / 25 mins"
 prerequisites:
-  - account-setup
-  - kick-features
+  - chat-restrictions
 ---
 
-{/* Content coming soon */}
+<SectionHeading id="s5-1">5.1 Chatbot Selection</SectionHeading>
+
+<StepCard step={1} title="Compare KickBot vs BotRix">
+  <SubSteps items={[
+    "Two purpose-built chatbots for KICK are <strong>KickBot</strong> and <strong>BotRix</strong> — each excels in different areas.",
+    "<strong>KickBot (<a href='https://kickbot.com' target='_blank'>kickbot.com</a>):</strong> Best for streamers who want AI Text-to-Speech (natural voice chat reader), automatic VOD clipping via the <code>!clip</code> command, and interactive gimmick commands.",
+    "<strong>BotRix (<a href='https://botrix.live' target='_blank'>botrix.live</a>):</strong> Best for streamers who want OBS Stream Alerts overlays, subscriber-exempt URL filters, PromptPay/TipMe donation timers, and a Now Playing music overlay."
+  ]} />
+  <ImageCaption src="/images/ch5/s5_1_step1_compare_bots.jpg" alt="KickBot and BotRix homepages side by side" caption="KickBot vs BotRix — choose based on the features you need most" />
+</StepCard>
+
+| Feature | KickBot (kickbot.com) | BotRix (botrix.live) |
+| :--- | :--- | :--- |
+| **Core Specialty** | AI Text-to-Speech & VOD Clipping | Alerts Overlay & Moderation |
+| **Custom Commands + Cooldown** | ✅ Easy setup + Cooldown support | ✅ Easy setup + Cooldown support |
+| **Timers (Auto-broadcast)** | ✅ Interval timers + AI voice readout | ✅ Interval timers + Min Chat Lines rule |
+| **Link Protection** | ✅ Spam & Link Filtering | ✅ **Outstanding** Role-based exemptions (Subs/Mods) |
+| **Emote Limit Protection** | ✅ Text spam protection | ✅ **Outstanding** Max emotes per message threshold |
+| **Highlight Feature** | ✅ **AI TTS** 150+ natural voices | ✅ **Stream Alerts Overlay** for OBS (Follow/Sub) |
+| **Gimmick Commands (!roll, !rps)** | ✅ Variable `$(random.1-100)` | ✅ Variable `$(rand.1-100)` |
+| **Live Chat Overlay Widget** | ✅ Transparent background / Custom themes | ✅ Transparent floating chat overlay themes |
+| **Music Overlay & Song Request (!sr)** | ❌ Requires external media player | ✅ **Outstanding** `!sr` YouTube queue + Now Playing OBS widget |
+
+<TipBox>
+You can run both bots at the same time — use KickBot for AI TTS + !clip, and BotRix for OBS Alerts + subscriber link exemptions + music overlay.
+</TipBox>
+
+---
+
+<StepCard step={2} title="Link KickBot to Your Channel">
+  <SubSteps items={[
+    "Open <a href='https://kickbot.com' target='_blank'>kickbot.com</a> in your browser.",
+    "Click <strong>Login with Kick</strong> and authorize the connection.",
+    "KickBot will display a verification command — e.g., <code>!verify abc123</code>.",
+    "Go to your KICK chat dock and type the verification command to complete linking."
+  ]} />
+  <ImageCaption src="/images/ch5/s5_1_step2_link_kickbot.jpg" alt="KickBot login and verification page" caption="kickbot.com — click Login with Kick and type the verification command in your chat" />
+</StepCard>
+
+<StepCard step={3} title="Link BotRix to Your Channel">
+  <SubSteps items={[
+    "Open <a href='https://botrix.live' target='_blank'>botrix.live</a> in your browser.",
+    "Click <strong>Profile</strong>, then sign in using your KICK account.",
+    "BotRix will display an account-link command to paste in your live chat.",
+    "Type the command in your chat to complete the connection."
+  ]} />
+  <ImageCaption src="/images/ch5/s5_1_step3_link_botrix.jpg" alt="BotRix login and link page" caption="botrix.live — sign in with KICK and paste the link command in your chat" />
+</StepCard>
+
+<StepCard step={4} title="Grant Moderator Status to Both Bots">
+  <SubSteps items={[
+    "Go to <a href='https://dashboard.kick.com/community/moderators' target='_blank'>dashboard.kick.com/community/moderators</a>.",
+    "Click <strong>Add New</strong>.",
+    "Search for <code>KickBot</code> and grant it <strong>Moderator</strong> status.",
+    "Click <strong>Add New</strong> again.",
+    "Search for <code>BotRix</code> and grant it <strong>Moderator</strong> status.",
+    "Without Moderator status, bots cannot delete spam or send any responses in chat."
+  ]} />
+  <ImageCaption src="/images/ch5/s5_1_step4_grant_mod.jpg" alt="KICK moderators dashboard — adding KickBot and BotRix" caption="dashboard.kick.com/community/moderators — add KickBot and BotRix as Moderators" />
+</StepCard>
+
+<WarningBox>
+<strong>The #1 setup mistake:</strong> Forgetting to grant Moderator status to KickBot or BotRix. Without it, the bot cannot send messages or delete spam — it will appear to do nothing in your chat.
+</WarningBox>
+
+---
+
+<SectionHeading id="s5-2">5.2 KickBot</SectionHeading>
+
+<StepCard step={5} title="KickBot — Custom Commands + Cooldown">
+  <SubSteps items={[
+    "Go to <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Commands</strong> → <strong>Custom Commands</strong>.",
+    "Click <strong>+ Add Command</strong>.",
+    "Set <strong>Command</strong>: <code>!discord</code>",
+    "Set <strong>Response</strong>: <code>Join our Discord: https://discord.gg/yourlink</code>",
+    "Set <strong>User Cooldown</strong>: <code>10s</code> (prevents the same viewer from spamming the command).",
+    "Click <strong>Save</strong>."
+  ]} />
+  <ImageCaption src="/images/ch5/s5_2_step5_custom_commands.jpg" alt="KickBot Custom Commands panel" caption="KickBot — Commands → Custom Commands — set trigger, response text, and user cooldown" />
+</StepCard>
+
+<StepCard step={6} title="KickBot — Timers (Scheduled Announcements)">
+  <SubSteps items={[
+    "Go to <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Timers</strong>.",
+    "Click <strong>+ Add Timer</strong>.",
+    "Set <strong>Name</strong>: <code>FacebookPromote</code>",
+    "Set <strong>Interval</strong>: <code>15m</code> — KickBot posts the message every 15 minutes.",
+    "Set <strong>Lines</strong>: <code>5</code> — only posts if at least 5 chat lines occurred, preventing dead-chat spam.",
+    "Set <strong>Message</strong>: <code>Follow our Facebook page: https://facebook.com/yourpage</code>",
+    "Click <strong>Save</strong>."
+  ]} />
+  <ImageCaption src="/images/ch5/s5_2_step6_timers.jpg" alt="KickBot Timers panel" caption="KickBot — Timers — auto-broadcast promotions at set intervals with a minimum chat-line guard" />
+</StepCard>
+
+<StepCard step={7} title="KickBot — AI Text-to-Speech (TTS)">
+  <SubSteps items={[
+    "Go to <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Text to Speech</strong>.",
+    "Toggle <strong>Enable TTS</strong> to ON.",
+    "Select a voice persona from the dropdown — KickBot offers 150+ natural voices including Thai.",
+    "Set the filter level: read <strong>all chat messages</strong>, or limit to <strong>subscribers and donations only</strong>."
+  ]} />
+  <ImageCaption src="/images/ch5/s5_2_step7_ai_tts.jpg" alt="KickBot AI TTS settings page" caption="KickBot — Text to Speech — enable TTS and select a voice for live chat audio reading" />
+</StepCard>
+
+<StepCard step={8} title="KickBot — VOD Clipping (!clip Command)">
+  <SubSteps items={[
+    "Go to <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Commands</strong>.",
+    "Find and enable the <strong>!clip</strong> command.",
+    "When a highlight moment happens during stream, type <code>!clip</code> in your chat.",
+    "KickBot clips the past 30 seconds and saves it to the <strong>Clips</strong> menu.",
+    "Go to KickBot's Clips menu to download the clip file directly for TikTok or YouTube Shorts."
+  ]} />
+  <ImageCaption src="/images/ch5/s5_2_step8_clip_command.jpg" alt="KickBot !clip command enabled in Commands panel" caption="KickBot — Commands → enable !clip — type in chat to instantly capture the past 30 seconds" />
+</StepCard>
+
+<StepCard step={9} title="KickBot — Link & Spam Protection">
+  <SubSteps items={[
+    "Go to <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Filters</strong>.",
+    "Enable <strong>Link Protection</strong> to automatically delete unauthorized URLs posted by viewers.",
+    "Enable <strong>Spam Protection</strong> to block repeated identical messages."
+  ]} />
+  <ImageCaption src="/images/ch5/s5_2_step9_link_protection.jpg" alt="KickBot Filters panel with Link Protection enabled" caption="KickBot — Filters — enable Link Protection and Spam Protection to auto-purge violations" />
+</StepCard>
+
+<StepCard step={10} title="KickBot — Gimmick Commands (!roll, !rps)">
+  <SubSteps items={[
+    "Go to <strong>Commands</strong> → <strong>Custom Commands</strong> → click <strong>+ Add Command</strong>.",
+    "<strong>Create !roll:</strong>",
+    "Set <strong>Command</strong>: <code>!roll</code>",
+    "Set <strong>Response</strong>: <code>@$(user) rolled today's luck: $(random.1-100) pts! 🎲</code>",
+    "Set <strong>User Cooldown</strong>: <code>30s</code> — prevents spam.",
+    "Click <strong>Save</strong>.",
+    "<strong>Create !rps:</strong>",
+    "Click <strong>+ Add Command</strong> again.",
+    "Set <strong>Command</strong>: <code>!rps</code>",
+    "Set <strong>Response</strong>: <code>@$(user) played: $(random.Rock,Paper,Scissors) ✂️🔨📄</code>",
+    "Click <strong>Save</strong>."
+  ]} />
+  <ImageCaption src="/images/ch5/s5_2_step10_gimmick_commands.jpg" alt="KickBot !roll command with $(random.1-100) variable" caption="KickBot — !roll using $(random.1-100) — outputs a random number for each viewer" />
+</StepCard>
+
+<StepCard step={11} title="KickBot — Live Chat Overlay Widget">
+  <SubSteps items={[
+    "Go to <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Widgets</strong> → <strong>Chat Overlay</strong>.",
+    "Customize font, colors, and background transparency.",
+    "Click <strong>Copy Widget URL</strong>.",
+    "Open OBS Studio → click <strong>+ Add Source</strong> → select <strong>Browser</strong>.",
+    "Paste the Widget URL into the Browser source URL field.",
+    "Set the resolution to <strong>400×600</strong> and click OK.",
+    "The floating transparent chat box will now appear over your stream in OBS."
+  ]} />
+  <ImageCaption src="/images/ch5/s5_2_step11_chat_overlay.jpg" alt="KickBot Chat Overlay widget URL and preview" caption="KickBot — Widgets → Chat Overlay — copy URL and add as OBS Browser source at 400×600" />
+</StepCard>
+
+<TipBox>
+KickBot's AI TTS + !clip combination is ideal for entertainment streamers — viewers summon voice reading and instantly clip your best moments without you having to do anything.
+</TipBox>
+
+---
+
+<SectionHeading id="s5-3">5.3 BotRix</SectionHeading>
+
+<StepCard step={12} title="BotRix — Custom Commands + Cooldown">
+  <SubSteps items={[
+    "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Chatbot</strong> → <strong>Commands</strong>.",
+    "Click <strong>+ Add Command</strong>.",
+    "Set <strong>Command</strong>: <code>!specs</code>",
+    "Set <strong>Response</strong>: <code>CPU: i7-14700K | GPU: RTX 4070 Ti Super</code>",
+    "Set <strong>Cooldown</strong>: <code>10s</code>.",
+    "Click <strong>Save</strong>."
+  ]} />
+  <ImageCaption src="/images/ch5/s5_3_step12_custom_commands.jpg" alt="BotRix Commands panel" caption="BotRix — Chatbot → Commands — set command trigger, response text, and cooldown" />
+</StepCard>
+
+<StepCard step={13} title="BotRix — Timers (PromptPay / TipMe Donation Link)">
+  <SubSteps items={[
+    "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Chatbot</strong> → <strong>Timers</strong>.",
+    "Click <strong>+ Create</strong>.",
+    "Set <strong>Name</strong>: <code>DonateLink</code>",
+    "Set <strong>Interval</strong>: <code>20 minutes</code>.",
+    "Set <strong>Lines</strong>: <code>5 lines</code> — minimum chat activity before the timer posts.",
+    "Set <strong>Message</strong>: <code>Support via PromptPay (TipMe): https://tipme.in.th/yourchannel</code>",
+    "Click <strong>Save</strong>."
+  ]} />
+  <ImageCaption src="/images/ch5/s5_3_step13_timers.jpg" alt="BotRix Timers panel — donation link timer setup" caption="BotRix — Chatbot → Timers — auto-broadcast your PromptPay/TipMe link every 20 minutes" />
+</StepCard>
+
+<StepCard step={14} title="BotRix — Subscriber-Exempt Link Protection">
+  <SubSteps items={[
+    "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Modules</strong> → <strong>Moderation</strong> → <strong>Link Protection</strong>.",
+    "Toggle <strong>Link Protection</strong> to ON.",
+    "Under <strong>Exempted Roles</strong>, check both <strong>Subscribers</strong> and <strong>Moderators</strong>.",
+    "General viewers who post links will have their messages auto-deleted.",
+    "Subscribers and Moderators can post links freely — no action taken on their messages."
+  ]} />
+  <ImageCaption src="/images/ch5/s5_3_step14_link_protection.jpg" alt="BotRix Link Protection with Exempted Roles checked" caption="BotRix — Link Protection — Subscribers and Mods exempted; general viewer links auto-purged" />
+</StepCard>
+
+<StepCard step={15} title="BotRix — Emote Limit Protection">
+  <SubSteps items={[
+    "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Modules</strong> → <strong>Moderation</strong>.",
+    "Select <strong>Emote Protection</strong>.",
+    "Set <strong>Limit</strong>: <code>5</code> — maximum number of emotes allowed per message.",
+    "Set <strong>Action</strong>: <code>Delete Message & Timeout 10s</code>.",
+    "Any message with more than 5 emotes will be deleted and the sender timed out for 10 seconds."
+  ]} />
+  <ImageCaption src="/images/ch5/s5_3_step15_emote_limit.jpg" alt="BotRix Emote Protection settings panel" caption="BotRix — Emote Protection — max 5 emotes per message, auto-delete + 10s timeout" />
+</StepCard>
+
+<StepCard step={16} title="BotRix — Stream Alerts Overlay (OBS)">
+  <SubSteps items={[
+    "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Widgets</strong> → <strong>Alerts</strong>.",
+    "Customize the alert animation, images, and sounds for Follow and Subscription events.",
+    "Click <strong>Copy Widget URL</strong>.",
+    "Open OBS Studio → click <strong>+ Add Source</strong> → select <strong>Browser</strong>.",
+    "Paste the Widget URL into the Browser source URL field.",
+    "Set the resolution to <strong>1920×1080</strong> and click OK.",
+    "Follow and Subscribe alerts will now pop up as overlays on your stream."
+  ]} />
+  <ImageCaption src="/images/ch5/s5_3_step16_alerts_overlay.jpg" alt="BotRix Alerts widget customization and URL page" caption="BotRix — Widgets → Alerts — copy URL and add as OBS Browser source at 1920×1080" />
+</StepCard>
+
+<StepCard step={17} title="BotRix — Gimmick Commands (!roll, !rps)">
+  <SubSteps items={[
+    "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Chatbot</strong> → <strong>Commands</strong> → click <strong>+ Add Command</strong>.",
+    "<strong>Create !roll:</strong>",
+    "Set <strong>Command</strong>: <code>!roll</code>",
+    "Set <strong>Response</strong>: <code>@$(user) rolled: $(rand.1-100) pts! 🎲</code>",
+    "Set <strong>Cooldown</strong>: <code>30s</code>.",
+    "Click <strong>Save</strong>.",
+    "<strong>Create !rps:</strong>",
+    "Click <strong>+ Add Command</strong> again.",
+    "Set <strong>Command</strong>: <code>!rps</code>",
+    "Set <strong>Response</strong>: <code>@$(user) played: $(rand.pick Rock,Paper,Scissors) ✂️🔨📄</code>",
+    "Click <strong>Save</strong>."
+  ]} />
+  <ImageCaption src="/images/ch5/s5_3_step17_gimmick_commands.jpg" alt="BotRix !roll command with $(rand..) variable" caption="BotRix — !roll using $(rand.1-100) — note BotRix uses $(rand) not $(random)" />
+</StepCard>
+
+<StepCard step={18} title="BotRix — Live Chat Overlay Widget">
+  <SubSteps items={[
+    "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Widgets</strong> → <strong>Chat</strong>.",
+    "Select a chat overlay theme from the options.",
+    "Click <strong>Copy Widget URL</strong>.",
+    "Open OBS Studio → click <strong>+ Add Source</strong> → select <strong>Browser</strong>.",
+    "Paste the Widget URL and set resolution to <strong>400×600</strong>.",
+    "Click OK — the floating chat overlay will appear on your stream."
+  ]} />
+  <ImageCaption src="/images/ch5/s5_3_step18_chat_overlay.jpg" alt="BotRix Chat Overlay widget theme selection" caption="BotRix — Widgets → Chat — choose a theme, copy URL, add as OBS Browser source at 400×600" />
+</StepCard>
+
+<StepCard step={19} title="BotRix — Music Overlay & Song Request (!sr)">
+  <SubSteps items={[
+    "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Modules</strong> → <strong>Song Request</strong>.",
+    "Toggle Song Request to ON.",
+    "Viewers can now type <code>!sr [YouTube URL]</code> in chat to add songs to the queue.",
+    "Go to <strong>Widgets</strong> → <strong>Music</strong>.",
+    "Customize the Now Playing banner appearance.",
+    "Click <strong>Copy Widget URL</strong>.",
+    "Open OBS Studio → click <strong>+ Add Source</strong> → select <strong>Browser</strong>.",
+    "Paste the Widget URL and set resolution to <strong>500×150</strong>.",
+    "The currently playing song name will now display as an overlay banner on your stream."
+  ]} />
+  <ImageCaption src="/images/ch5/s5_3_step19_music_overlay.jpg" alt="BotRix Music Overlay widget and Song Request module" caption="BotRix — Widgets → Music — Now Playing banner + !sr YouTube song request queue as OBS overlay" />
+</StepCard>
+
+<TipBox>
+BotRix's subscriber-exempt Link Protection solves a common problem: blocking scam links from general viewers while still allowing Subscribers to post links freely — something KICK's native Block Links cannot do alone.
+</TipBox>
+
+---
+
+**Q: Why is my chatbot not responding or deleting spam in live chat?**  
+A: Ensure you have granted Moderator status to `KickBot` or `BotRix` at [dashboard.kick.com/community/moderators](https://dashboard.kick.com/community/moderators). Without moderator privileges, the bot cannot send messages or purge chat spam.
+
+**Q: Can I run both KickBot and BotRix at the same time?**  
+A: Yes. A recommended setup: use KickBot for AI TTS voice reading + !clip tools, and BotRix for OBS Alerts, subscriber-exempt link protection, and the Now Playing music overlay.
+
+---
+
+<References items={[
+  { label: "KickBot", url: "https://kickbot.com" },
+  { label: "BotRix", url: "https://botrix.live" },
+  { label: "KICK Moderators Dashboard", url: "https://dashboard.kick.com/community/moderators" },
+  { label: "KICK Moderation Features Guide", url: "https://help.kick.com/en/articles/10162074-moderation-features-guide" }
+]} />
