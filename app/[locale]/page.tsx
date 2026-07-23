@@ -36,37 +36,33 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
     }
     setMode(m)
   }
-  const [search, setSearch] = useState('')
   const [category, setCategory] = useState<GuideCategory | 'All'>('All')
   const [level, setLevel] = useState<GuideLevel | 'All'>('All')
 
   const filtered = useMemo(() => {
     return guides.filter((g) => {
-      const title = locale === 'th' ? g.title.th : g.title.en
-      const desc = locale === 'th' ? g.description.th : g.description.en
-      const matchSearch = !search || title.toLowerCase().includes(search.toLowerCase()) || desc.toLowerCase().includes(search.toLowerCase())
       const matchCat = category === 'All' || g.category === category
       const matchLevel = level === 'All' || g.level === level
-      return matchSearch && matchCat && matchLevel
+      return matchCat && matchLevel
     })
-  }, [search, category, level, locale])
+  }, [category, level])
 
   return (
     <>
       <Navbar locale={locale} mode={mode} onModeChange={handleModeChange} />
 
       {/* Streamer Path */}
-      <section id="path">
-          <SectionDivider label={locale === 'th' ? 'เส้นทาง Streamer' : 'Streamer Path'} />
-          <BeginnerPath locale={locale} />
-        </section>
+      <section id="path" style={{ scrollMarginTop: '80px' }}>
+        <SectionDivider label={locale === 'th' ? 'เส้นทาง Streamer' : 'Streamer Path'} />
+        <BeginnerPath locale={locale} />
+      </section>
 
         {/* Search */}
         <SectionDivider label={locale === 'th' ? 'ค้นหา' : 'Search'} />
-        <SearchHero locale={locale} onSearch={setSearch} />
+        <SearchHero locale={locale} />
 
         {/* Highlights */}
-        <section id="featured">
+        <section id="featured" style={{ scrollMarginTop: '80px' }}>
           <SectionDivider label={locale === 'th' ? 'แนะนำ' : 'Featured'} />
           <HighlightSection locale={locale} />
         </section>
@@ -76,7 +72,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
         <SuggestionRow locale={locale} />
 
         {/* All Guides */}
-        <section id="guides">
+        <section id="guides" style={{ scrollMarginTop: '80px' }}>
           <SectionDivider label={locale === 'th' ? 'คู่มือทั้งหมด' : 'All Guides'} />
           <CategoryFilter
             category={category}
