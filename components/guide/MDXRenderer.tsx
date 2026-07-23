@@ -12,8 +12,9 @@ import BitrateTable from './BitrateTable'
 import References from './References'
 import FaqItem from './FaqItem'
 import BotComparisonTable from './BotComparisonTable'
+import ModCommandsTable from './ModCommandsTable'
 
-const components = { StepCard, ImageCaption, TipBox, WarningBox, SubSteps, SectionHeading, AffiliateRequirements, BitrateTable, References, FaqItem, BotComparisonTable }
+const components = { StepCard, ImageCaption, TipBox, WarningBox, SubSteps, SectionHeading, AffiliateRequirements, BitrateTable, References, FaqItem, BotComparisonTable, ModCommandsTable }
 
 export default function MDXRenderer({ code }: { code: string }) {
   const MDXContent = useMDXComponent(code)
