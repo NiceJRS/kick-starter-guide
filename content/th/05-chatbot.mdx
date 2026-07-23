@@ -22,17 +22,64 @@ prerequisites:
   <ImageCaption src="/images/ch5/s5_1_step1_compare_bots.jpg" alt="หน้าหลัก KickBot และ BotRix เปรียบเทียบกัน" caption="KickBot vs BotRix — เลือกตามฟีเจอร์ที่ต้องการใช้มากที่สุด" />
 </StepCard>
 
-| ฟังก์ชั่น | KickBot (kickbot.com) | BotRix (botrix.live) |
-| :--- | :--- | :--- |
-| **จุดเด่นหลัก** | AI Text-to-Speech & VOD Clipping | Alerts Overlay & Moderation |
-| **Custom Commands + Cooldown** | ✅ ตั้งค่าง่าย + ตั้ง Cooldown กันสแปมได้ | ✅ ตั้งค่าง่าย + ตั้ง Cooldown กันสแปมได้ |
-| **Timers (ส่งข้อความประกาศ)** | ✅ ตั้งเวลาเว้นระยะ + รองรับเสียง AI อ่าน | ✅ ตั้งเวลาเว้นระยะ + กำหนด Chat Lines ได้ |
-| **Link Protection (คัดกรองลิงก์)** | ✅ มีระบบ Spam & Link Protection | ✅ **เด่นมาก** ปลดล็อกสิทธิ์แปะลิงก์เฉพาะ Sub/Mod ได้ |
-| **Emote Limit Protection** | ✅ บล็อกการสแปมข้อความซ้ำ | ✅ **เด่นมาก** กำหนดจำนวน Emote สูงสุดต่อข้อความได้ |
-| **ฟีเจอร์เด่น** | ✅ **AI TTS** อ่านแชทสดธรรมชาติ 150+ เสียง | ✅ **Stream Alerts Overlay** แจ้งเตือน Follow/Sub บน OBS |
-| **Gimmick Commands (!roll, !rps)** | ✅ ใช้ Variable `$(random.1-100)` | ✅ ใช้ Variable `$(rand.1-100)` |
-| **Live Chat Overlay Widget** | ✅ ปรับแต่งธีม/พื้นหลังโปร่งใสได้ | ✅ ปรับแต่งสไตล์ธีมแชทลอยได้ |
-| **Music Overlay & Song Request (!sr)** | ❌ ต้องใช้แอปเล่นวิดีโอภายนอก | ✅ **เด่นมาก** ระบบ `!sr` ขอเพลง + กรอบ Now Playing บน OBS |
+<div className="overflow-x-auto my-6">
+<table className="w-full text-sm border-collapse">
+<thead>
+<tr className="border-b border-border">
+<th className="text-left py-2 pr-6 font-semibold w-[200px]">ฟังก์ชั่น</th>
+<th className="text-left py-2 pr-6 font-semibold">KickBot (kickbot.com)</th>
+<th className="text-left py-2 font-semibold">BotRix (botrix.live)</th>
+</tr>
+</thead>
+<tbody>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-6 font-medium">จุดเด่นหลัก</td>
+<td className="py-2 pr-6">AI Text-to-Speech & VOD Clipping</td>
+<td className="py-2">Alerts Overlay & Moderation</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-6 font-medium">Custom Commands + Cooldown</td>
+<td className="py-2 pr-6">✅ ตั้งค่าง่าย + ตั้ง Cooldown กันสแปมได้</td>
+<td className="py-2">✅ ตั้งค่าง่าย + ตั้ง Cooldown กันสแปมได้</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-6 font-medium">Timers (ส่งข้อความประกาศ)</td>
+<td className="py-2 pr-6">✅ ตั้งเวลาเว้นระยะ + รองรับเสียง AI อ่าน</td>
+<td className="py-2">✅ ตั้งเวลาเว้นระยะ + กำหนด Chat Lines ได้</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-6 font-medium">Link Protection (คัดกรองลิงก์)</td>
+<td className="py-2 pr-6">✅ มีระบบ Spam & Link Protection</td>
+<td className="py-2">✅ <strong>เด่นมาก</strong> — ปลดล็อกสิทธิ์แปะลิงก์เฉพาะ Sub/Mod ได้</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-6 font-medium">Emote Limit Protection</td>
+<td className="py-2 pr-6">✅ บล็อกการสแปมข้อความซ้ำ</td>
+<td className="py-2">✅ <strong>เด่นมาก</strong> — กำหนดจำนวน Emote สูงสุดต่อข้อความได้</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-6 font-medium">ฟีเจอร์เด่น</td>
+<td className="py-2 pr-6">✅ <strong>AI TTS</strong> — อ่านแชทสดธรรมชาติ 150+ เสียง</td>
+<td className="py-2">✅ <strong>Stream Alerts Overlay</strong> — แจ้งเตือน Follow/Sub บน OBS</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-6 font-medium">Gimmick Commands (!roll, !rps)</td>
+<td className="py-2 pr-6">✅ ใช้ Variable <code>$(random.1-100)</code></td>
+<td className="py-2">✅ ใช้ Variable <code>$(rand.1-100)</code></td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-6 font-medium">Live Chat Overlay Widget</td>
+<td className="py-2 pr-6">✅ ปรับแต่งธีม/พื้นหลังโปร่งใสได้</td>
+<td className="py-2">✅ ปรับแต่งสไตล์ธีมแชทลอยได้</td>
+</tr>
+<tr>
+<td className="py-2 pr-6 font-medium">Music Overlay & Song Request (!sr)</td>
+<td className="py-2 pr-6">❌ ต้องใช้แอปเล่นวิดีโอภายนอก</td>
+<td className="py-2">✅ <strong>เด่นมาก</strong> — ระบบ <code>!sr</code> ขอเพลง + กรอบ Now Playing บน OBS</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 <TipBox>
 คุณสามารถใช้งานทั้งสองบอทพร้อมกันได้ — ใช้ KickBot สำหรับ AI TTS + !clip และใช้ BotRix สำหรับ OBS Alerts + คัดกรองลิงก์แยกยศ + กรอบเพลง
@@ -80,6 +127,19 @@ prerequisites:
 
 <SectionHeading id="s5-2">5.2 KickBot</SectionHeading>
 
+**KickBot ครอบคลุม 7 ฟังก์ชั่น — กดเพื่อข้ามไปยังเนื้อหา:**
+
+1. [Custom Commands + Cooldown](#kb-commands)
+2. [Timers (ส่งข้อความโปรโมตอัตโนมัติ)](#kb-timers)
+3. [AI Text-to-Speech (เสียงอ่านแชทสด)](#kb-tts)
+4. [VOD Clipping (คำสั่ง !clip)](#kb-clip)
+5. [Link & Spam Protection](#kb-links)
+6. [Gimmick Commands (!roll, !rps)](#kb-gimmicks)
+7. [Live Chat Overlay Widget](#kb-overlay)
+
+---
+
+<div id="kb-commands" />
 <StepCard step={5} title="KickBot — Custom Commands + Cooldown">
   <SubSteps items={[
     "ไปที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Commands</strong> → <strong>Custom Commands</strong>",
@@ -92,6 +152,7 @@ prerequisites:
   <ImageCaption src="/images/ch5/s5_2_step5_custom_commands.jpg" alt="หน้า Custom Commands ของ KickBot" caption="KickBot — Commands → Custom Commands — ตั้งคำสั่ง, ข้อความตอบกลับ และ Cooldown" />
 </StepCard>
 
+<div id="kb-timers" />
 <StepCard step={6} title="KickBot — Timers (ส่งข้อความโปรโมตอัตโนมัติ)">
   <SubSteps items={[
     "ไปที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Timers</strong>",
@@ -105,6 +166,7 @@ prerequisites:
   <ImageCaption src="/images/ch5/s5_2_step6_timers.jpg" alt="หน้า Timers ของ KickBot" caption="KickBot — Timers — ส่งข้อความโปรโมตอัตโนมัติทุก 15 นาที พร้อมเงื่อนไขขั้นต่ำแชท" />
 </StepCard>
 
+<div id="kb-tts" />
 <StepCard step={7} title="KickBot — AI Text-to-Speech (เสียงอ่านแชทสด)">
   <SubSteps items={[
     "ไปที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Text to Speech</strong>",
@@ -115,6 +177,7 @@ prerequisites:
   <ImageCaption src="/images/ch5/s5_2_step7_ai_tts.jpg" alt="หน้าตั้งค่า AI TTS ของ KickBot" caption="KickBot — Text to Speech — เปิด TTS และเลือกเสียงพูดสำหรับอ่านแชทสด" />
 </StepCard>
 
+<div id="kb-clip" />
 <StepCard step={8} title="KickBot — VOD Clipping (คำสั่ง !clip)">
   <SubSteps items={[
     "ไปที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Commands</strong>",
@@ -126,6 +189,7 @@ prerequisites:
   <ImageCaption src="/images/ch5/s5_2_step8_clip_command.jpg" alt="คำสั่ง !clip เปิดใช้งานใน KickBot Commands" caption="KickBot — Commands → เปิด !clip — พิมพ์ในแชทเพื่อตัดคลิปย้อนหลัง 30 วินาทีทันที" />
 </StepCard>
 
+<div id="kb-links" />
 <StepCard step={9} title="KickBot — Link & Spam Protection">
   <SubSteps items={[
     "ไปที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Filters</strong>",
@@ -135,6 +199,7 @@ prerequisites:
   <ImageCaption src="/images/ch5/s5_2_step9_link_protection.jpg" alt="หน้า Filters ของ KickBot — เปิด Link Protection" caption="KickBot — Filters — เปิด Link Protection และ Spam Protection เพื่อลบสแปมอัตโนมัติ" />
 </StepCard>
 
+<div id="kb-gimmicks" />
 <StepCard step={10} title="KickBot — Gimmick Commands (!roll, !rps)">
   <SubSteps items={[
     "ไปที่ <strong>Commands</strong> → <strong>Custom Commands</strong> → กด <strong>+ Add Command</strong>",
@@ -152,6 +217,7 @@ prerequisites:
   <ImageCaption src="/images/ch5/s5_2_step10_gimmick_commands.jpg" alt="คำสั่ง !roll ของ KickBot ใช้ Variable $(random.1-100)" caption="KickBot — คำสั่ง !roll ใช้ $(random.1-100) เพื่อสุ่มตัวเลขให้คนดูแต่ละคน" />
 </StepCard>
 
+<div id="kb-overlay" />
 <StepCard step={11} title="KickBot — Live Chat Overlay Widget">
   <SubSteps items={[
     "ไปที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Widgets</strong> → <strong>Chat Overlay</strong>",
@@ -173,6 +239,20 @@ AI TTS + !clip ของ KickBot เป็นคู่หูที่ดีม�
 
 <SectionHeading id="s5-3">5.3 BotRix</SectionHeading>
 
+**BotRix ครอบคลุม 8 ฟังก์ชั่น — กดเพื่อข้ามไปยังเนื้อหา:**
+
+1. [Custom Commands + Cooldown](#br-commands)
+2. [Timers (ลิงก์โดเนท PromptPay / TipMe)](#br-timers)
+3. [Subscriber-Exempt Link Protection](#br-links)
+4. [Emote Limit Protection](#br-emotes)
+5. [Stream Alerts Overlay (กรอบแจ้งเตือนบน OBS)](#br-alerts)
+6. [Gimmick Commands (!roll, !rps)](#br-gimmicks)
+7. [Live Chat Overlay Widget](#br-overlay)
+8. [Music Overlay & Song Request (!sr)](#br-music)
+
+---
+
+<div id="br-commands" />
 <StepCard step={12} title="BotRix — Custom Commands + Cooldown">
   <SubSteps items={[
     "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Chatbot</strong> → <strong>Commands</strong>",
@@ -185,6 +265,7 @@ AI TTS + !clip ของ KickBot เป็นคู่หูที่ดีม�
   <ImageCaption src="/images/ch5/s5_3_step12_custom_commands.jpg" alt="หน้า Commands ของ BotRix" caption="BotRix — Chatbot → Commands — ตั้งคำสั่ง, ข้อความตอบกลับ และ Cooldown" />
 </StepCard>
 
+<div id="br-timers" />
 <StepCard step={13} title="BotRix — Timers (ลิงก์โดเนท PromptPay / TipMe)">
   <SubSteps items={[
     "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Chatbot</strong> → <strong>Timers</strong>",
@@ -198,6 +279,7 @@ AI TTS + !clip ของ KickBot เป็นคู่หูที่ดีม�
   <ImageCaption src="/images/ch5/s5_3_step13_timers.jpg" alt="หน้า Timers ของ BotRix — ตั้งค่าลิงก์โดเนท" caption="BotRix — Chatbot → Timers — ส่งลิงก์ PromptPay/TipMe โดยอัตโนมัติทุก 20 นาที" />
 </StepCard>
 
+<div id="br-links" />
 <StepCard step={14} title="BotRix — Subscriber-Exempt Link Protection">
   <SubSteps items={[
     "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Modules</strong> → <strong>Moderation</strong> → <strong>Link Protection</strong>",
@@ -209,6 +291,7 @@ AI TTS + !clip ของ KickBot เป็นคู่หูที่ดีม�
   <ImageCaption src="/images/ch5/s5_3_step14_link_protection.jpg" alt="BotRix Link Protection พร้อม Exempted Roles ที่ติ๊กแล้ว" caption="BotRix — Link Protection — Sub/Mod ได้รับยกเว้น คนดูทั่วไปแปะลิงก์โดนลบอัตโนมัติ" />
 </StepCard>
 
+<div id="br-emotes" />
 <StepCard step={15} title="BotRix — Emote Limit Protection">
   <SubSteps items={[
     "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Modules</strong> → <strong>Moderation</strong>",
@@ -220,6 +303,7 @@ AI TTS + !clip ของ KickBot เป็นคู่หูที่ดีม�
   <ImageCaption src="/images/ch5/s5_3_step15_emote_limit.jpg" alt="หน้า Emote Protection ของ BotRix" caption="BotRix — Emote Protection — จำกัด 5 Emote/ข้อความ, เกินโดนลบ + Timeout 10 วินาที" />
 </StepCard>
 
+<div id="br-alerts" />
 <StepCard step={16} title="BotRix — Stream Alerts Overlay (กรอบแจ้งเตือนบน OBS)">
   <SubSteps items={[
     "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Widgets</strong> → <strong>Alerts</strong>",
@@ -233,6 +317,7 @@ AI TTS + !clip ของ KickBot เป็นคู่หูที่ดีม�
   <ImageCaption src="/images/ch5/s5_3_step16_alerts_overlay.jpg" alt="หน้า Alerts Widget ของ BotRix พร้อม URL" caption="BotRix — Widgets → Alerts — คัดลอก URL แล้วเพิ่มใน OBS เป็น Browser Source (1920×1080)" />
 </StepCard>
 
+<div id="br-gimmicks" />
 <StepCard step={17} title="BotRix — Gimmick Commands (!roll, !rps)">
   <SubSteps items={[
     "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Chatbot</strong> → <strong>Commands</strong> → กด <strong>+ Add Command</strong>",
@@ -250,6 +335,7 @@ AI TTS + !clip ของ KickBot เป็นคู่หูที่ดีม�
   <ImageCaption src="/images/ch5/s5_3_step17_gimmick_commands.jpg" alt="คำสั่ง !roll ของ BotRix ใช้ Variable $(rand..)" caption="BotRix — คำสั่ง !roll ใช้ $(rand.1-100) — สังเกตว่า BotRix ใช้ $(rand) ต่างจาก KickBot ที่ใช้ $(random)" />
 </StepCard>
 
+<div id="br-overlay" />
 <StepCard step={18} title="BotRix — Live Chat Overlay Widget">
   <SubSteps items={[
     "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Widgets</strong> → <strong>Chat</strong>",
@@ -262,6 +348,7 @@ AI TTS + !clip ของ KickBot เป็นคู่หูที่ดีม�
   <ImageCaption src="/images/ch5/s5_3_step18_chat_overlay.jpg" alt="หน้าเลือกธีม Chat Overlay ของ BotRix" caption="BotRix — Widgets → Chat — เลือกธีม คัดลอก URL เพิ่มใน OBS เป็น Browser Source (400×600)" />
 </StepCard>
 
+<div id="br-music" />
 <StepCard step={19} title="BotRix — Music Overlay & Song Request (!sr)">
   <SubSteps items={[
     "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Modules</strong> → <strong>Song Request</strong>",

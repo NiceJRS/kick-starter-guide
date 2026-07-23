@@ -22,17 +22,64 @@ prerequisites:
   <ImageCaption src="/images/ch5/s5_1_step1_compare_bots.jpg" alt="KickBot and BotRix homepages side by side" caption="KickBot vs BotRix — choose based on the features you need most" />
 </StepCard>
 
-| Feature | KickBot (kickbot.com) | BotRix (botrix.live) |
-| :--- | :--- | :--- |
-| **Core Specialty** | AI Text-to-Speech & VOD Clipping | Alerts Overlay & Moderation |
-| **Custom Commands + Cooldown** | ✅ Easy setup + Cooldown support | ✅ Easy setup + Cooldown support |
-| **Timers (Auto-broadcast)** | ✅ Interval timers + AI voice readout | ✅ Interval timers + Min Chat Lines rule |
-| **Link Protection** | ✅ Spam & Link Filtering | ✅ **Outstanding** Role-based exemptions (Subs/Mods) |
-| **Emote Limit Protection** | ✅ Text spam protection | ✅ **Outstanding** Max emotes per message threshold |
-| **Highlight Feature** | ✅ **AI TTS** 150+ natural voices | ✅ **Stream Alerts Overlay** for OBS (Follow/Sub) |
-| **Gimmick Commands (!roll, !rps)** | ✅ Variable `$(random.1-100)` | ✅ Variable `$(rand.1-100)` |
-| **Live Chat Overlay Widget** | ✅ Transparent background / Custom themes | ✅ Transparent floating chat overlay themes |
-| **Music Overlay & Song Request (!sr)** | ❌ Requires external media player | ✅ **Outstanding** `!sr` YouTube queue + Now Playing OBS widget |
+<div className="overflow-x-auto my-6">
+<table className="w-full text-sm border-collapse">
+<thead>
+<tr className="border-b border-border">
+<th className="text-left py-2 pr-6 font-semibold w-[200px]">Feature</th>
+<th className="text-left py-2 pr-6 font-semibold">KickBot (kickbot.com)</th>
+<th className="text-left py-2 font-semibold">BotRix (botrix.live)</th>
+</tr>
+</thead>
+<tbody>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-6 font-medium">Core Specialty</td>
+<td className="py-2 pr-6">AI Text-to-Speech & VOD Clipping</td>
+<td className="py-2">Alerts Overlay & Moderation</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-6 font-medium">Custom Commands + Cooldown</td>
+<td className="py-2 pr-6">✅ Easy setup + Cooldown support</td>
+<td className="py-2">✅ Easy setup + Cooldown support</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-6 font-medium">Timers (Auto-broadcast)</td>
+<td className="py-2 pr-6">✅ Interval timers + AI voice readout</td>
+<td className="py-2">✅ Interval timers + Min Chat Lines rule</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-6 font-medium">Link Protection</td>
+<td className="py-2 pr-6">✅ Spam & Link Filtering</td>
+<td className="py-2">✅ <strong>Outstanding</strong> — Role-based exemptions (Subs/Mods)</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-6 font-medium">Emote Limit Protection</td>
+<td className="py-2 pr-6">✅ Text spam protection</td>
+<td className="py-2">✅ <strong>Outstanding</strong> — Max emotes per message threshold</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-6 font-medium">Highlight Feature</td>
+<td className="py-2 pr-6">✅ <strong>AI TTS</strong> — 150+ natural voices</td>
+<td className="py-2">✅ <strong>Stream Alerts Overlay</strong> for OBS (Follow/Sub)</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-6 font-medium">Gimmick Commands (!roll, !rps)</td>
+<td className="py-2 pr-6">✅ Variable <code>$(random.1-100)</code></td>
+<td className="py-2">✅ Variable <code>$(rand.1-100)</code></td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-6 font-medium">Live Chat Overlay Widget</td>
+<td className="py-2 pr-6">✅ Transparent background / Custom themes</td>
+<td className="py-2">✅ Transparent floating chat overlay themes</td>
+</tr>
+<tr>
+<td className="py-2 pr-6 font-medium">Music Overlay & Song Request (!sr)</td>
+<td className="py-2 pr-6">❌ Requires external media player</td>
+<td className="py-2">✅ <strong>Outstanding</strong> — <code>!sr</code> YouTube queue + Now Playing OBS widget</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 <TipBox>
 You can run both bots at the same time — use KickBot for AI TTS + !clip, and BotRix for OBS Alerts + subscriber link exemptions + music overlay.
@@ -80,6 +127,19 @@ You can run both bots at the same time — use KickBot for AI TTS + !clip, and B
 
 <SectionHeading id="s5-2">5.2 KickBot</SectionHeading>
 
+**KickBot covers 7 functions — click to jump:**
+
+1. [Custom Commands + Cooldown](#kb-commands)
+2. [Timers (Scheduled Announcements)](#kb-timers)
+3. [AI Text-to-Speech (TTS)](#kb-tts)
+4. [VOD Clipping (!clip)](#kb-clip)
+5. [Link & Spam Protection](#kb-links)
+6. [Gimmick Commands (!roll, !rps)](#kb-gimmicks)
+7. [Live Chat Overlay Widget](#kb-overlay)
+
+---
+
+<div id="kb-commands" />
 <StepCard step={5} title="KickBot — Custom Commands + Cooldown">
   <SubSteps items={[
     "Go to <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Commands</strong> → <strong>Custom Commands</strong>.",
@@ -92,6 +152,7 @@ You can run both bots at the same time — use KickBot for AI TTS + !clip, and B
   <ImageCaption src="/images/ch5/s5_2_step5_custom_commands.jpg" alt="KickBot Custom Commands panel" caption="KickBot — Commands → Custom Commands — set trigger, response text, and user cooldown" />
 </StepCard>
 
+<div id="kb-timers" />
 <StepCard step={6} title="KickBot — Timers (Scheduled Announcements)">
   <SubSteps items={[
     "Go to <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Timers</strong>.",
@@ -105,6 +166,7 @@ You can run both bots at the same time — use KickBot for AI TTS + !clip, and B
   <ImageCaption src="/images/ch5/s5_2_step6_timers.jpg" alt="KickBot Timers panel" caption="KickBot — Timers — auto-broadcast promotions at set intervals with a minimum chat-line guard" />
 </StepCard>
 
+<div id="kb-tts" />
 <StepCard step={7} title="KickBot — AI Text-to-Speech (TTS)">
   <SubSteps items={[
     "Go to <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Text to Speech</strong>.",
@@ -115,6 +177,7 @@ You can run both bots at the same time — use KickBot for AI TTS + !clip, and B
   <ImageCaption src="/images/ch5/s5_2_step7_ai_tts.jpg" alt="KickBot AI TTS settings page" caption="KickBot — Text to Speech — enable TTS and select a voice for live chat audio reading" />
 </StepCard>
 
+<div id="kb-clip" />
 <StepCard step={8} title="KickBot — VOD Clipping (!clip Command)">
   <SubSteps items={[
     "Go to <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Commands</strong>.",
@@ -126,6 +189,7 @@ You can run both bots at the same time — use KickBot for AI TTS + !clip, and B
   <ImageCaption src="/images/ch5/s5_2_step8_clip_command.jpg" alt="KickBot !clip command enabled in Commands panel" caption="KickBot — Commands → enable !clip — type in chat to instantly capture the past 30 seconds" />
 </StepCard>
 
+<div id="kb-links" />
 <StepCard step={9} title="KickBot — Link & Spam Protection">
   <SubSteps items={[
     "Go to <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Filters</strong>.",
@@ -135,6 +199,7 @@ You can run both bots at the same time — use KickBot for AI TTS + !clip, and B
   <ImageCaption src="/images/ch5/s5_2_step9_link_protection.jpg" alt="KickBot Filters panel with Link Protection enabled" caption="KickBot — Filters — enable Link Protection and Spam Protection to auto-purge violations" />
 </StepCard>
 
+<div id="kb-gimmicks" />
 <StepCard step={10} title="KickBot — Gimmick Commands (!roll, !rps)">
   <SubSteps items={[
     "Go to <strong>Commands</strong> → <strong>Custom Commands</strong> → click <strong>+ Add Command</strong>.",
@@ -152,6 +217,7 @@ You can run both bots at the same time — use KickBot for AI TTS + !clip, and B
   <ImageCaption src="/images/ch5/s5_2_step10_gimmick_commands.jpg" alt="KickBot !roll command with $(random.1-100) variable" caption="KickBot — !roll using $(random.1-100) — outputs a random number for each viewer" />
 </StepCard>
 
+<div id="kb-overlay" />
 <StepCard step={11} title="KickBot — Live Chat Overlay Widget">
   <SubSteps items={[
     "Go to <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Widgets</strong> → <strong>Chat Overlay</strong>.",
@@ -173,6 +239,20 @@ KickBot's AI TTS + !clip combination is ideal for entertainment streamers — vi
 
 <SectionHeading id="s5-3">5.3 BotRix</SectionHeading>
 
+**BotRix covers 8 functions — click to jump:**
+
+1. [Custom Commands + Cooldown](#br-commands)
+2. [Timers (PromptPay / TipMe Donation Link)](#br-timers)
+3. [Subscriber-Exempt Link Protection](#br-links)
+4. [Emote Limit Protection](#br-emotes)
+5. [Stream Alerts Overlay (OBS)](#br-alerts)
+6. [Gimmick Commands (!roll, !rps)](#br-gimmicks)
+7. [Live Chat Overlay Widget](#br-overlay)
+8. [Music Overlay & Song Request (!sr)](#br-music)
+
+---
+
+<div id="br-commands" />
 <StepCard step={12} title="BotRix — Custom Commands + Cooldown">
   <SubSteps items={[
     "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Chatbot</strong> → <strong>Commands</strong>.",
@@ -185,6 +265,7 @@ KickBot's AI TTS + !clip combination is ideal for entertainment streamers — vi
   <ImageCaption src="/images/ch5/s5_3_step12_custom_commands.jpg" alt="BotRix Commands panel" caption="BotRix — Chatbot → Commands — set command trigger, response text, and cooldown" />
 </StepCard>
 
+<div id="br-timers" />
 <StepCard step={13} title="BotRix — Timers (PromptPay / TipMe Donation Link)">
   <SubSteps items={[
     "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Chatbot</strong> → <strong>Timers</strong>.",
@@ -198,6 +279,7 @@ KickBot's AI TTS + !clip combination is ideal for entertainment streamers — vi
   <ImageCaption src="/images/ch5/s5_3_step13_timers.jpg" alt="BotRix Timers panel — donation link timer setup" caption="BotRix — Chatbot → Timers — auto-broadcast your PromptPay/TipMe link every 20 minutes" />
 </StepCard>
 
+<div id="br-links" />
 <StepCard step={14} title="BotRix — Subscriber-Exempt Link Protection">
   <SubSteps items={[
     "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Modules</strong> → <strong>Moderation</strong> → <strong>Link Protection</strong>.",
@@ -209,6 +291,7 @@ KickBot's AI TTS + !clip combination is ideal for entertainment streamers — vi
   <ImageCaption src="/images/ch5/s5_3_step14_link_protection.jpg" alt="BotRix Link Protection with Exempted Roles checked" caption="BotRix — Link Protection — Subscribers and Mods exempted; general viewer links auto-purged" />
 </StepCard>
 
+<div id="br-emotes" />
 <StepCard step={15} title="BotRix — Emote Limit Protection">
   <SubSteps items={[
     "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Modules</strong> → <strong>Moderation</strong>.",
@@ -220,6 +303,7 @@ KickBot's AI TTS + !clip combination is ideal for entertainment streamers — vi
   <ImageCaption src="/images/ch5/s5_3_step15_emote_limit.jpg" alt="BotRix Emote Protection settings panel" caption="BotRix — Emote Protection — max 5 emotes per message, auto-delete + 10s timeout" />
 </StepCard>
 
+<div id="br-alerts" />
 <StepCard step={16} title="BotRix — Stream Alerts Overlay (OBS)">
   <SubSteps items={[
     "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Widgets</strong> → <strong>Alerts</strong>.",
@@ -233,6 +317,7 @@ KickBot's AI TTS + !clip combination is ideal for entertainment streamers — vi
   <ImageCaption src="/images/ch5/s5_3_step16_alerts_overlay.jpg" alt="BotRix Alerts widget customization and URL page" caption="BotRix — Widgets → Alerts — copy URL and add as OBS Browser source at 1920×1080" />
 </StepCard>
 
+<div id="br-gimmicks" />
 <StepCard step={17} title="BotRix — Gimmick Commands (!roll, !rps)">
   <SubSteps items={[
     "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Chatbot</strong> → <strong>Commands</strong> → click <strong>+ Add Command</strong>.",
@@ -250,6 +335,7 @@ KickBot's AI TTS + !clip combination is ideal for entertainment streamers — vi
   <ImageCaption src="/images/ch5/s5_3_step17_gimmick_commands.jpg" alt="BotRix !roll command with $(rand..) variable" caption="BotRix — !roll using $(rand.1-100) — note BotRix uses $(rand) not $(random)" />
 </StepCard>
 
+<div id="br-overlay" />
 <StepCard step={18} title="BotRix — Live Chat Overlay Widget">
   <SubSteps items={[
     "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Widgets</strong> → <strong>Chat</strong>.",
@@ -262,6 +348,7 @@ KickBot's AI TTS + !clip combination is ideal for entertainment streamers — vi
   <ImageCaption src="/images/ch5/s5_3_step18_chat_overlay.jpg" alt="BotRix Chat Overlay widget theme selection" caption="BotRix — Widgets → Chat — choose a theme, copy URL, add as OBS Browser source at 400×600" />
 </StepCard>
 
+<div id="br-music" />
 <StepCard step={19} title="BotRix — Music Overlay & Song Request (!sr)">
   <SubSteps items={[
     "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Modules</strong> → <strong>Song Request</strong>.",
