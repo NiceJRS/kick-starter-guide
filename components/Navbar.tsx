@@ -50,10 +50,10 @@ export default function Navbar({
           className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
           style={{ background: 'var(--kick-green-10)', border: '1px solid var(--kick-green-22)' }}
         >
-          <IconRadio size={16} style={{ color: 'var(--kick-green)' }} />
+          <IconRadio size={16} style={{ color: 'var(--kick-green-text)' }} />
         </div>
         <div>
-          <div className="text-[14px] font-semibold leading-tight" style={{ color: 'var(--kick-green)' }}>
+          <div className="text-[14px] font-semibold leading-tight" style={{ color: 'var(--kick-green-text)' }}>
             KICK Guide TH
           </div>
           <div className="text-[10px]" style={{ color: 'var(--text-muted)' }}>Streamer&apos;s HQ</div>
@@ -67,8 +67,8 @@ export default function Navbar({
             <a
               key={l.href}
               href={l.href}
-              className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all hover:bg-white/[0.07] hover:text-[#cfd8cc]"
-              style={{ color: '#8fa895' }}
+              className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all hover:bg-[--surface-card2] hover:text-[--text-primary]"
+              style={{ color: 'var(--text-secondary)' }}
             >
               {l.label}
             </a>
@@ -84,9 +84,9 @@ export default function Navbar({
           onClick={toggleLocale}
           className="px-4 py-1.5 rounded-lg text-[12px] font-medium border transition-all hover:bg-[--kick-green-10] hover:border-[--kick-green-22] hover:text-[--kick-green]"
           style={{
-            background: 'rgba(255,255,255,0.04)',
-            borderColor: 'rgba(255,255,255,0.12)',
-            color: '#cfd8cc',
+            background: 'var(--surface-card2)',
+            borderColor: 'var(--border-strong)',
+            color: 'var(--text-primary)',
           }}
         >
           {locale === 'th' ? 'EN' : 'TH'}

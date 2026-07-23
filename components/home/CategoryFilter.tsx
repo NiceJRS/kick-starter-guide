@@ -32,7 +32,7 @@ export default function CategoryFilter({
   return (
     <div
       className="p-3 rounded-xl mb-3"
-      style={{ background: 'var(--surface-page)', border: '1px solid rgba(255,255,255,0.07)' }}
+      style={{ background: 'var(--surface-page)', border: '1px solid var(--border-default)' }}
     >
       {/* Category pills */}
       <div className="flex flex-wrap gap-1.5 mb-2.5">
@@ -43,11 +43,11 @@ export default function CategoryFilter({
             <button
               key={c.value}
               onClick={() => onCategory(c.value)}
-              className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] border transition-all hover:bg-[--kick-green-10] hover:border-[--kick-green-22] hover:text-[--kick-green]"
+              className="flex items-center gap-1 px-2.5 py-1 rounded-full text-xs border transition-all hover:bg-[--kick-green-10] hover:border-[--kick-green-22] hover:text-[--kick-green]"
               style={{
-                background: active ? 'var(--kick-green-10)' : 'rgba(255,255,255,0.03)',
-                borderColor: active ? 'var(--kick-green-22)' : 'rgba(255,255,255,0.10)',
-                color: active ? 'var(--kick-green)' : '#8fa895',
+                background: active ? 'var(--kick-green-10)' : 'var(--surface-card2)',
+                borderColor: active ? 'var(--kick-green-22)' : 'var(--border-strong)',
+                color: active ? 'var(--kick-green)' : 'var(--text-muted)',
               }}
             >
               <Icon size={10} />
@@ -58,20 +58,20 @@ export default function CategoryFilter({
       </div>
 
       {/* Divider */}
-      <div className="mb-2.5" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} />
+      <div className="mb-2.5" style={{ borderTop: '1px solid var(--border-default)' }} />
 
       {/* Level pills */}
       <div className="flex items-center gap-1.5">
-        <span className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
+        <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
           {locale === 'th' ? 'ระดับ' : 'Level'}
         </span>
         <button
           onClick={() => onLevel('All')}
-          className="px-2.5 py-0.5 rounded-full text-[11px] border transition-all hover:bg-white/[0.08] hover:border-white/20 hover:text-[#cfd8cc]"
+          className="px-2.5 py-0.5 rounded-full text-xs border transition-all hover:bg-[--surface-card2] hover:border-[--border-strong] hover:text-[--text-primary]"
           style={{
-            background: level === 'All' ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.02)',
-            borderColor: level === 'All' ? 'rgba(255,255,255,0.20)' : 'rgba(255,255,255,0.10)',
-            color: level === 'All' ? '#cfd8cc' : '#8fa895',
+            background: level === 'All' ? 'var(--surface-card2)' : 'transparent',
+            borderColor: level === 'All' ? 'var(--border-strong)' : 'var(--border-default)',
+            color: level === 'All' ? 'var(--text-primary)' : 'var(--text-muted)',
           }}
         >
           All
@@ -82,18 +82,18 @@ export default function CategoryFilter({
             <button
               key={l.value}
               onClick={() => onLevel(l.value)}
-              className="px-2.5 py-0.5 rounded-full text-[11px] border transition-all hover:opacity-80"
+              className="px-2.5 py-0.5 rounded-full text-xs border transition-all hover:opacity-80"
               style={{
-                background: active ? l.bg : 'rgba(255,255,255,0.02)',
-                borderColor: active ? l.border : 'rgba(255,255,255,0.10)',
-                color: active ? l.color : '#8fa895',
+                background: active ? l.bg : 'transparent',
+                borderColor: active ? l.border : 'var(--border-default)',
+                color: active ? l.color : 'var(--text-muted)',
               }}
             >
               {l.label}
             </button>
           )
         })}
-        <span className="ml-auto text-[11px]" style={{ color: 'var(--text-muted)' }}>
+        <span className="ml-auto text-xs" style={{ color: 'var(--text-muted)' }}>
           {count} {locale === 'th' ? 'บทเรียน' : 'guides'}
         </span>
       </div>

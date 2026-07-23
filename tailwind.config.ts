@@ -29,9 +29,8 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      fontSize: {
-        "2xs": ["9px", { lineHeight: "1.4" }],
-        "3xs": ["8px", { lineHeight: "1.3" }],
+      fontFamily: {
+        sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
     },
   },

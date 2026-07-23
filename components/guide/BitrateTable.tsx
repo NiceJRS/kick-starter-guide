@@ -57,13 +57,13 @@ export default function BitrateTable({ locale = 'en' }: { locale?: string }) {
 
   return (
     <div className="my-4">
-      <p className="text-[11px] font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>
+      <p className="text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>
         {th ? '📊 ตารางเปรียบเทียบ Bitrate สำหรับ KICK' : '📊 Stream Quality & Bitrate Comparison for KICK'}
       </p>
-      <div className="overflow-x-auto rounded-xl" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
-        <table className="w-full text-[11px] border-collapse min-w-[640px]">
+      <div className="overflow-x-auto rounded-xl" style={{ border: '1px solid var(--border-default)' }}>
+        <table className="w-full text-sm border-collapse min-w-[640px]">
           <thead>
-            <tr style={{ background: 'rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+            <tr style={{ background: 'var(--surface-card2)', borderBottom: '1px solid var(--border-default)' }}>
               {headers.map((h) => (
                 <th key={h} className="text-left px-3 py-2 font-medium whitespace-nowrap" style={{ color: 'var(--text-muted)' }}>
                   {h}
@@ -76,28 +76,28 @@ export default function BitrateTable({ locale = 'en' }: { locale?: string }) {
               <tr
                 key={i}
                 style={{
-                  background: row.highlight ? 'var(--kick-green-10)' : i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.02)',
-                  borderBottom: i < rows.length - 1 ? '1px solid rgba(255,255,255,0.05)' : undefined,
+                  background: row.highlight ? 'var(--kick-green-10)' : i % 2 === 0 ? 'transparent' : 'var(--surface-card2)',
+                  borderBottom: i < rows.length - 1 ? '1px solid var(--border-default)' : undefined,
                 }}
               >
                 <td className="px-3 py-2.5">
-                  <div className="font-semibold" style={{ color: row.highlight ? 'var(--kick-green)' : '#cfd8cc' }}>
+                  <div className="font-semibold" style={{ color: row.highlight ? 'var(--kick-green)' : 'var(--text-primary)' }}>
                     {row.quality[th ? 'th' : 'en']}
                   </div>
-                  <div className="text-[10px]" style={{ color: 'var(--text-muted)' }}>{row.tag[th ? 'th' : 'en']}</div>
+                  <div className="text-xs" style={{ color: 'var(--text-muted)' }}>{row.tag[th ? 'th' : 'en']}</div>
                   {row.highlight && (
-                    <span className="inline-block mt-0.5 px-1.5 py-0.5 rounded text-[9px] font-bold" style={{ background: 'var(--kick-green-10)', color: 'var(--kick-green)', border: '1px solid var(--kick-green-22)' }}>
+                    <span className="inline-block mt-0.5 px-1.5 py-0.5 rounded text-[11px] font-bold" style={{ background: 'var(--kick-green-10)', color: 'var(--kick-green)', border: '1px solid var(--kick-green-22)' }}>
                       {th ? 'แนะนำ' : 'Recommended'}
                     </span>
                   )}
                 </td>
-                <td className="px-3 py-2.5 font-mono font-medium" style={{ color: '#cfd8cc' }}>{row.bitrate}</td>
+                <td className="px-3 py-2.5 font-mono font-medium" style={{ color: 'var(--text-primary)' }}>{row.bitrate}</td>
                 <td className="px-3 py-2.5" style={{ color: 'var(--text-secondary)' }}>{row.rateControl}</td>
                 <td className="px-3 py-2.5" style={{ color: 'var(--text-secondary)' }}>{row.keyframe}</td>
                 <td className="px-3 py-2.5" style={{ color: 'var(--text-secondary)' }}>{row.preset}</td>
                 <td className="px-3 py-2.5" style={{ color: 'var(--text-secondary)' }}>{row.audioBitrate}</td>
                 <td className="px-3 py-2.5 font-mono" style={{ color: 'var(--text-secondary)' }}>{row.upload}</td>
-                <td className="px-3 py-2.5 text-[10px]" style={{ color: 'var(--text-muted)' }}>{row.note[th ? 'th' : 'en']}</td>
+                <td className="px-3 py-2.5 text-xs" style={{ color: 'var(--text-muted)' }}>{row.note[th ? 'th' : 'en']}</td>
               </tr>
             ))}
           </tbody>

@@ -1,8 +1,11 @@
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
+import { Inter } from 'next/font/google'
 import type { ReactNode } from 'react'
 import '../globals.css'
+
+const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' })
 
 const locales = ['th', 'en']
 
@@ -21,8 +24,8 @@ export default async function LocaleLayout({
   const messages = await getMessages()
 
   return (
-    <html lang={locale}>
-      <body>
+    <html lang={locale} className={inter.variable}>
+      <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
           <div className="min-h-screen" style={{ background: 'var(--surface-page)' }}>
             <div className="max-w-5xl mx-auto px-5 pt-4 pb-12">

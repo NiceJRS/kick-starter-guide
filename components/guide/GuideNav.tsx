@@ -13,11 +13,11 @@ export default function GuideNav({
 }) {
   return (
     <div className="flex items-center justify-between gap-3 mt-8 pt-4"
-      style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+      style={{ borderTop: '1px solid var(--border-default)' }}>
       {prev ? (
         <Link href={`/${locale}/guide/${prev.slug}`}>
-          <div className="flex items-center gap-2 px-3 py-2 rounded-lg text-[11px] border transition-all hover:border-white/20"
-            style={{ background: 'transparent', borderColor: 'rgba(255,255,255,0.07)', color: 'var(--text-secondary)' }}>
+          <div className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm border transition-all hover:border-[--border-strong]"
+            style={{ background: 'transparent', borderColor: 'var(--border-default)', color: 'var(--text-secondary)' }}>
             <IconArrowLeft size={13} />
             <span>{locale === 'th' ? prev.title.th : prev.title.en}</span>
           </div>
@@ -26,11 +26,11 @@ export default function GuideNav({
 
       {next ? (
         <Link href={`/${locale}/guide/${next.slug}`}>
-          <div className="flex items-center gap-2 px-3 py-2 rounded-lg text-[11px] border transition-all"
+          <div className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm border transition-all"
             style={{
-              background: 'rgba(83,252,24,0.08)',
+              background: 'var(--kick-green-bg)',
               borderColor: 'var(--kick-green-22)',
-              color: 'var(--kick-green)',
+              color: 'var(--kick-green-text)',
             }}>
             <span>{locale === 'th' ? next.title.th : next.title.en}</span>
             <IconArrowRight size={13} />

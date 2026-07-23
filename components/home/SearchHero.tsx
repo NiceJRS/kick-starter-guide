@@ -22,22 +22,22 @@ export default function SearchHero({
   return (
     <div
       className="rounded-xl p-5 text-center mb-3"
-      style={{ background: 'var(--surface-page)', border: '0.5px solid var(--kick-green-22)' }}
+      style={{ background: 'var(--surface-card)', border: '1px solid var(--kick-green-22)' }}
     >
       {/* Eyebrow */}
       <div className="flex items-center justify-center gap-1 mb-2">
         <IconRocket size={10} style={{ color: 'var(--kick-green)' }} />
-        <span className="text-[11px] uppercase tracking-widest font-medium" style={{ color: 'var(--kick-green)' }}>
+        <span className="text-xs uppercase tracking-widest font-medium" style={{ color: 'var(--kick-green)' }}>
           {locale === 'th' ? 'คู่มือสตรีมเมอร์ไทย' : 'Thai Streamer Guide'}
         </span>
       </div>
 
       {/* Heading */}
-      <h1 className="mb-4" style={{ color: '#cfd8cc' }}>
+      <h1 className="mb-4" style={{ color: 'var(--text-primary)' }}>
         {locale === 'th' ? (
-          <>มีปัญหาอะไร <span style={{ color: 'var(--kick-green)' }}>ค้นหาได้เลย</span></>
+          <>มีปัญหาอะไร <span style={{ color: 'var(--kick-green-text)' }}>ค้นหาได้เลย</span></>
         ) : (
-          <>Got questions? <span style={{ color: 'var(--kick-green)' }}>Search here</span></>
+          <>Got questions? <span style={{ color: 'var(--kick-green-text)' }}>Search here</span></>
         )}
       </h1>
 
@@ -48,17 +48,17 @@ export default function SearchHero({
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && submit(query)}
           placeholder={locale === 'th' ? 'ค้นหา...' : 'Search guides...'}
-          className="flex-1 h-10 px-3 rounded-lg text-[13px] outline-none"
+          className="flex-1 h-10 px-3 rounded-lg text-sm outline-none"
           style={{
-            background: 'rgba(255,255,255,0.04)',
+            background: 'var(--surface-card2)',
             border: '1px solid var(--kick-green-22)',
-            color: '#cfd8cc',
+            color: 'var(--text-primary)',
           }}
         />
         <button
           onClick={() => submit(query)}
-          className="h-10 px-4 rounded-lg flex items-center gap-1.5 text-[13px] font-medium transition-opacity hover:opacity-90"
-          style={{ background: 'var(--kick-green)', color: 'var(--surface-page)' }}
+          className="h-10 px-4 rounded-lg flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-90"
+          style={{ background: 'var(--kick-green-text)', color: '#fff' }}
         >
           <IconSearch size={14} />
           {locale === 'th' ? 'ค้นหา' : 'Search'}
@@ -71,11 +71,11 @@ export default function SearchHero({
           <button
             key={tag}
             onClick={() => submit(tag)}
-            className="px-2.5 py-1 rounded-full text-[11px] border transition-all hover:bg-[--kick-green-10] hover:border-[--kick-green-22] hover:text-[--kick-green]"
+            className="px-2.5 py-1 rounded-full text-xs border transition-all hover:bg-[--kick-green-10] hover:border-[--kick-green-22] hover:text-[--kick-green]"
             style={{
-              background: 'rgba(255,255,255,0.04)',
-              borderColor: 'rgba(255,255,255,0.10)',
-              color: '#8fa895',
+              background: 'var(--surface-card2)',
+              borderColor: 'var(--border-strong)',
+              color: 'var(--text-muted)',
             }}
           >
             {tag}

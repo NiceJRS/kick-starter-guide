@@ -42,17 +42,17 @@ export default function GuideCard({ guide, locale }: { guide: GuideData; locale:
   return (
     <Link href={`/${locale}/guide/${guide.slug}`}>
       <div
-        className="p-3.5 rounded-xl cursor-pointer transition-all duration-200 h-full hover:-translate-y-0.5"
+        className="p-3.5 rounded-xl cursor-pointer transition-all duration-200 h-full hover:-translate-y-0.5 hover:shadow-md"
         style={{
-          background: 'var(--surface-page)',
-          border: '1px solid rgba(255,255,255,0.06)',
+          background: 'var(--surface-card)',
+          border: '1px solid var(--border-default)',
         }}
-        onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(83,252,24,0.30)')}
-        onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)')}
+        onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(30,122,10,0.3)')}
+        onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--border-default)')}
       >
         {/* Top row */}
         <div className="flex items-center justify-between mb-2">
-          <span className="text-[11px]" style={{ color: 'var(--text-muted)' }}>#{guide.id}</span>
+          <span className="text-xs" style={{ color: 'var(--text-muted)' }}>#{guide.id}</span>
           <LevelBadge level={guide.level} locale={locale} />
         </div>
 
@@ -62,22 +62,22 @@ export default function GuideCard({ guide, locale }: { guide: GuideData; locale:
         </div>
 
         {/* Text */}
-        <h3 className="text-[13px] font-medium mb-1" style={{ color: '#cfd8cc' }}>
+        <h3 className="text-base font-medium mb-1" style={{ color: 'var(--text-primary)' }}>
           {locale === 'th' ? guide.title.th : guide.title.en}
         </h3>
-        <p className="text-[12px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+        <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
           {locale === 'th' ? guide.description.th : guide.description.en}
         </p>
 
         {/* Footer */}
         <div
           className="flex items-center justify-between mt-3 pt-2.5"
-          style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}
+          style={{ borderTop: '1px solid var(--border-default)' }}
         >
-          <span className="text-[11px]" style={{ color: 'var(--text-muted)' }}>
+          <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
             {CATEGORY_LABELS[guide.category]}
           </span>
-          <span className="text-[11px]" style={{ color: 'var(--text-muted)' }}>~{guide.duration}m</span>
+          <span className="text-xs" style={{ color: 'var(--text-muted)' }}>~{guide.duration}m</span>
         </div>
       </div>
     </Link>

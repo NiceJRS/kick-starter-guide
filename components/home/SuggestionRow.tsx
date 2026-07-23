@@ -12,7 +12,7 @@ const suggestions = [
 export default function SuggestionRow({ locale }: { locale: string }) {
   return (
     <div className="mb-3">
-      <div className="flex items-center gap-1.5 mb-3 text-[13px] font-medium" style={{ color: '#cfd8cc' }}>
+      <div className="flex items-center gap-1.5 mb-3 text-base font-medium" style={{ color: 'var(--text-primary)' }}>
         <IconSparkles size={14} style={{ color: 'var(--kick-green)' }} />
         {locale === 'th' ? 'แนะนำตามปัญหาที่พบบ่อย' : 'Common problems solved'}
       </div>
@@ -23,18 +23,18 @@ export default function SuggestionRow({ locale }: { locale: string }) {
             <Link key={s.slug} href={`/${locale}/guide/${s.slug}`} className="flex-shrink-0 w-[148px]">
               <div
                 className="p-3 rounded-xl cursor-pointer transition-all h-full"
-                style={{ background: 'var(--surface-page)', border: '1px solid rgba(255,255,255,0.06)' }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(83,252,24,0.30)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)' }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.06)'; (e.currentTarget as HTMLElement).style.transform = '' }}
+                style={{ background: 'var(--surface-card)', border: '1px solid var(--border-default)' }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(30,122,10,0.3)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)' }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--border-default)'; (e.currentTarget as HTMLElement).style.transform = '' }}
               >
                 <div className="w-7 h-7 rounded-md flex items-center justify-center mb-2.5"
                   style={{ background: s.bg }}>
                   <Icon size={14} style={{ color: s.color }} />
                 </div>
-                <h4 className="text-[12px] font-medium mb-0.5" style={{ color: '#cfd8cc' }}>
+                <h4 className="text-sm font-medium mb-0.5" style={{ color: 'var(--text-primary)' }}>
                   {locale === 'th' ? s.th : s.en}
                 </h4>
-                <p className="text-[11px]" style={{ color: 'var(--text-secondary)' }}>{s.sub}</p>
+                <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>{s.sub}</p>
               </div>
             </Link>
           )

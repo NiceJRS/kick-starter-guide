@@ -15,11 +15,11 @@ export default function ImageCaption({
 }) {
   return (
     <figure className="my-4">
-      <div className="rounded-xl overflow-hidden border" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
+      <div className="rounded-xl overflow-hidden border shadow-sm" style={{ borderColor: 'var(--border-default)' }}>
         <Image src={src} alt={alt} width={width} height={height} className="w-full h-auto object-cover" />
       </div>
       {caption && (
-        <figcaption className="text-center text-[11px] mt-1.5" style={{ color: 'var(--text-muted)' }}>
+        <figcaption className="text-center text-sm mt-1.5" style={{ color: 'var(--text-muted)' }}>
           {caption}
         </figcaption>
       )}

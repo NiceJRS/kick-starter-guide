@@ -1,207 +1,107 @@
 /*
  * ux-fixes.patch.css — KICK Guide TH
- * ============================================================
- * UX/Accessibility patches identified from live review of
- * https://kick-starter-guide.vercel.app/th
- *
- * HOW TO APPLY:
- *   Import this file at the top of app/globals.css:
- *   @import './ux-fixes.patch.css';
- *
- * Or copy each section into the relevant component.
- * Each section has a comment pointing to the file/component.
- * ============================================================
+ * Light theme overrides and Thai text accessibility patches.
  */
 
-/* ============================================================
- * 1. COLOR TOKEN OVERRIDES
- * File: app/globals.css  (inside :root { ... })
- *
- * PROBLEM: --text-muted (#3d5441) contrast ratio ~1.8:1 on
- *          #0a0f0b background. WCAG AA requires 4.5:1 (normal)
- *          or 3:1 (large text / UI components).
- *
- * FIX: Promote text-muted upward. Use old muted ONLY for
- *      purely decorative/ornamental elements (dividers, icons
- *      that have a label next to them, etc.)
- * ============================================================ */
-
 :root {
-  /* OLD: #3d5441  ~1.8:1 contrast  ← FAILS WCAG AA */
-  /* NEW: #8fa895  ~4.9:1 contrast  ✅ PASSES WCAG AA */
-  --text-muted: #8fa895;
-
-  /* Introduce a new "ornamental" token for truly decorative
-     elements that don't carry meaning on their own. */
-  --text-ornamental: #3d5441;
-
-  /* Bump secondary slightly for small Thai text */
-  /* OLD: #6b8870  ~3.1:1 — ok for large but not body Thai */
-  /* NEW: #8fa895 shared with muted upgrade above */
-  --text-secondary: #8fa895;
-
-  /* Thai body text needs a touch more size. Bump base if
-     the app uses a CSS variable for font-size: */
-  --font-size-body-th: 14px;
-  --font-size-label-th: 11px;
-  --font-size-meta-th: 11px;
+  --text-ornamental: #A0ADA3;
+  --font-size-body-th: 16px;
+  --font-size-label-th: 12px;
+  --font-size-meta-th: 12px;
 }
 
-
-/* ============================================================
- * 2. THAI FONT SIZE UTILITIES
- * Problem: Thai script (เ, แ, vowels above/below) at 9-11px
- *          causes glyphs to overlap and become unreadable.
- *          Minimum: 13px body, 11px labels.
- *
- * Apply these classes (or add to tailwind.config.js theme.extend)
- * in place of Tailwind's text-xs (12px) where Thai text appears.
- * ============================================================ */
-
-/* Card description text */
-/* Selector: .card-description, [class*="card"] p, etc. */
-/* Replace Tailwind class: text-xs → text-sm (14px) */
-
-/* Category/time tags at the bottom of cards */
-/* Replace: text-[9px] or text-xs → use these: */
+/* Thai font size utilities */
 .tag-th {
-  font-size: 11px !important;
+  font-size: 12px !important;
   line-height: 1.6;
 }
 
-/* Step tracker labels (OBS, Chat, Bot, etc.) */
 .step-label-th {
-  font-size: 11px !important;
+  font-size: 12px !important;
   line-height: 1.5;
 }
 
-/* Sidebar items on guide page */
 .sidebar-item-th {
-  font-size: 13px !important;
+  font-size: 14px !important;
   line-height: 1.6;
 }
 
-/* Nav links */
 .nav-link-th {
-  font-size: 14px !important;
+  font-size: 15px !important;
   font-weight: 500;
 }
 
-/* Breadcrumb */
 .breadcrumb-th {
-  font-size: 12px !important;
+  font-size: 13px !important;
 }
 
-/* Tailwind class swap cheatsheet (search & replace in codebase):
-   text-[8px]  → text-[11px]
-   text-[9px]  → text-[11px]
-   text-[10px] → text-[12px]
-   text-xs     → text-sm        (for Thai body/description)
-   text-xs     → text-[11px]    (for Thai labels/tags)
-*/
-
-
-/* ============================================================
- * 3. GHOST BUTTON FIX
- * File: components/BeginnerPath.tsx (or wherever "ข้าม" button is)
- * Problem: Ghost buttons on dark background have no visible
- *          border → look like plain text, not interactive.
- *
- * Tailwind class change:
- *   BEFORE: className="... text-muted"
- *   AFTER:  className="... border border-white/20 text-[#cfd8cc]
- *                       hover:border-white/35 hover:text-white
- *                       transition-colors"
- * ============================================================ */
-
-/* CSS equivalent for ghost buttons: */
+/* Ghost buttons */
 .btn-ghost-th {
-  border: 0.5px solid rgba(255, 255, 255, 0.20);
-  color: #cfd8cc;
+  border: 1px solid var(--border-strong);
+  color: var(--text-primary);
   background: transparent;
   border-radius: 8px;
   padding: 6px 14px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
   cursor: pointer;
-  transition: border-color 0.15s, color 0.15s;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
 }
 
 .btn-ghost-th:hover {
-  border-color: rgba(255, 255, 255, 0.35);
-  color: #ffffff;
+  border-color: var(--kick-green-text);
+  color: var(--kick-green-text);
+  background: var(--kick-green-10);
 }
 
-
-/* ============================================================
- * 4. STEP DOTS (PENDING STATE)
- * File: components/BeginnerPath.tsx — step number circles
- * Problem: Pending dots (steps 2–9) at 22px with near-invisible
- *          border and text. Not scannable.
- *
- * Tailwind change — pending dot:
- *   BEFORE: "w-5 h-5 border border-white/5 text-muted text-[9px]"
- *   AFTER:  "w-6 h-6 border border-white/18 text-[#8fa895] text-[11px]"
- * ============================================================ */
-
+/* Step dots */
 .step-dot-pending {
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  border: 1.5px solid rgba(255, 255, 255, 0.18);
-  color: #8fa895;
-  font-size: 11px;
+  border: 1.5px solid var(--border-strong);
+  color: var(--text-muted);
+  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #111811;
+  background: var(--surface-card);
   flex-shrink: 0;
 }
 
-/* Active/current step dot — keep existing green style, just bump size */
 .step-dot-active {
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  border: 1.5px solid #53FC18;
-  color: #53FC18;
-  font-size: 11px;
-  background: rgba(83, 252, 24, 0.10);
+  border: 2px solid var(--kick-green-text);
+  color: var(--kick-green-text);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--kick-green-10);
 }
 
-/* Completed step dot */
 .step-dot-done {
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  background: rgba(83, 252, 24, 0.15);
-  border: 1.5px solid rgba(83, 252, 24, 0.40);
-  color: #53FC18;
-  font-size: 11px;
+  background: var(--kick-green-bg);
+  border: 1.5px solid rgba(30, 122, 10, 0.3);
+  color: var(--kick-green-text);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-/* ============================================================
- * 5. SIDEBAR — GUIDE PAGE
- * File: components/GuideSidebar.tsx (or app/[lang]/guide/[slug])
- * Problem: Inactive sidebar items are nearly invisible
- *          (color ~#2a3c2e on #0f1a0f bg → ~1.2:1 ratio).
- *
- * Tailwind change for inactive items:
- *   BEFORE: "text-muted text-xs"
- *   AFTER:  "text-[#6b8870] text-[13px] bg-white/[0.02]
- *            border border-white/[0.05] rounded-lg
- *            hover:text-[#8fa895] hover:bg-white/[0.04]
- *            transition-colors"
- * ============================================================ */
-
+/* Sidebar */
 .sidebar-item-inactive {
-  color: #6b8870;
-  font-size: 13px;
-  padding: 6px 10px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  padding: 7px 12px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 0.5px solid rgba(255, 255, 255, 0.05);
+  background: transparent;
   cursor: pointer;
   transition: color 0.15s, background 0.15s;
   display: block;
@@ -210,38 +110,26 @@
 }
 
 .sidebar-item-inactive:hover {
-  color: #8fa895;
-  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  background: var(--surface-card2);
 }
 
-/* Active sidebar item — keep green bg, ensure text is white */
 .sidebar-item-active {
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 500;
-  padding: 6px 10px;
+  color: var(--kick-green-text);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 7px 12px;
   border-radius: 8px;
-  background: rgba(83, 252, 24, 0.12);
-  border: 0.5px solid rgba(83, 252, 24, 0.25);
+  background: var(--kick-green-bg);
+  border: 1px solid rgba(30, 122, 10, 0.2);
   display: block;
   width: 100%;
 }
 
-
-/* ============================================================
- * 6. NAV LINKS
- * File: components/Navbar.tsx
- * Problem: "เส้นทาง", "แนะนำ", "คู่มือ" look disabled.
- *
- * Tailwind change:
- *   BEFORE: "text-muted text-xs"
- *   AFTER:  "text-[#8fa895] text-sm font-medium
- *            hover:text-[#cfd8cc] transition-colors"
- * ============================================================ */
-
+/* Nav links */
 .nav-link-main {
-  color: #8fa895;
-  font-size: 14px;
+  color: var(--text-secondary);
+  font-size: 15px;
   font-weight: 500;
   text-decoration: none;
   transition: color 0.15s;
@@ -249,105 +137,38 @@
 
 .nav-link-main:hover,
 .nav-link-main.active {
-  color: #cfd8cc;
+  color: var(--text-primary);
 }
 
-
-/* ============================================================
- * 7. CARD HOVER STATE
- * File: components/GuideCard.tsx
- * Problem: Cards have no hover feedback → user unsure they're clickable.
- *
- * Tailwind change:
- *   BEFORE: "border border-white/8"
- *   AFTER:  "border border-white/8 cursor-pointer
- *            hover:border-kick-green/30 hover:-translate-y-[2px]
- *            transition-all duration-200"
- * ============================================================ */
-
+/* Card hover */
 .guide-card {
   cursor: pointer;
-  transition: border-color 0.2s, transform 0.2s;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .guide-card:hover {
-  border-color: rgba(83, 252, 24, 0.30);
+  border-color: rgba(30, 122, 10, 0.3);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-
-/* ============================================================
- * 8. PLACEHOLDER CONTENT (Guide page)
- * File: app/[lang]/guide/[slug]/page.tsx
- * Problem: "เนื้อหากำลังมา" helper text is very low contrast.
- *
- * Tailwind change on the sub-description:
- *   BEFORE: "text-muted text-xs text-center"
- *   AFTER:  "text-[#6b8870] text-sm text-center"
- * ============================================================ */
-
+/* Placeholder content */
 .placeholder-description {
-  color: #6b8870;
-  font-size: 13px;
+  color: var(--text-muted);
+  font-size: 14px;
   text-align: center;
   line-height: 1.7;
 }
 
-
-/* ============================================================
- * 9. BEGINNER PATH — SUBTITLE / META TEXT
- * "ทำตามลำดับหรือข้ามบทได้" subtitle contrast too low
- * "บทที่ 1 · ~20 นาที" chapter meta too small
- *
- * Tailwind change:
- *   subtitle: "text-muted text-xs" → "text-[#6b8870] text-sm"
- *   chapter meta: "text-[9px] text-muted" → "text-[11px] text-[#6b8870]"
- * ============================================================ */
-
+/* Path subtitle */
 .path-subtitle {
-  color: #6b8870;
-  font-size: 13px;
+  color: var(--text-secondary);
+  font-size: 14px;
   line-height: 1.6;
 }
 
 .chapter-meta {
-  color: #6b8870;
-  font-size: 11px;
+  color: var(--text-muted);
+  font-size: 12px;
   line-height: 1.5;
 }
-
-
-/* ============================================================
- * SUMMARY OF ALL TAILWIND CLASS SWAPS
- * (Quick reference for Claude Code — search & replace)
- * ============================================================
- *
- * COLOR:
- *   text-muted             → keep only for ornamental (decorative icons)
- *   any Thai body text     → text-secondary (#8fa895) minimum
- *   any Thai label/tag     → text-[#6b8870] minimum
- *
- * FONT SIZE (Thai text):
- *   text-[8px] or text-[9px]    → text-[11px]
- *   text-[10px] or text-[11px]  → text-[12px] or text-[13px]
- *   text-xs (12px) for body     → text-sm (14px)
- *   text-xs (12px) for labels   → text-[11px]
- *
- * BUTTONS:
- *   Ghost btn class   → add: border border-white/20 text-[#cfd8cc]
- *   Ghost btn hover   → add: hover:border-white/35 hover:text-white
- *
- * STEP DOTS:
- *   Pending: w-5 h-5 → w-6 h-6, border-white/5 → border-white/18
- *   All dots: text-[9px] → text-[11px]
- *
- * SIDEBAR:
- *   Inactive: text-muted → text-[#6b8870], add bg-white/[0.02] border
- *   All: text-xs → text-[13px]
- *
- * NAV LINKS:
- *   text-muted → text-[#8fa895] font-medium
- *
- * CARDS:
- *   Add: cursor-pointer hover:border-kick-green/30 transition-all
- * ============================================================ */

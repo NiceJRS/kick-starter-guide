@@ -34,7 +34,7 @@ export default function AffiliateRequirements({ locale = 'en' }: { locale?: stri
           >
             <div
               className="w-9 h-9 rounded-full flex items-center justify-center"
-              style={{ background: 'rgba(83,252,24,0.12)', border: '1px solid rgba(83,252,24,0.3)' }}
+              style={{ background: 'var(--kick-green-bg)', border: '1px solid var(--kick-green-22)' }}
             >
               {req.icon === 'clock'
                 ? <IconClock size={18} style={{ color: 'var(--kick-green)' }} />
@@ -43,7 +43,7 @@ export default function AffiliateRequirements({ locale = 'en' }: { locale?: stri
             <div>
               <div className="text-[22px] font-bold leading-none" style={{ color: 'var(--kick-green)' }}>
                 {req.value}
-                <span className="text-[12px] font-normal ml-1" style={{ color: 'rgba(83,252,24,0.7)' }}>
+                <span className="text-[12px] font-normal ml-1" style={{ color: 'var(--kick-green-text)' }}>
                   {req.icon === 'clock'
                     ? (locale === 'th' ? 'ชม.' : 'hrs')
                     : (locale === 'th' ? 'คน' : 'followers')}
@@ -60,15 +60,15 @@ export default function AffiliateRequirements({ locale = 'en' }: { locale?: stri
       {/* Revenue split highlight */}
       <div
         className="flex items-center gap-3 px-4 py-3 rounded-xl"
-        style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}
+        style={{ background: 'var(--surface-card2)', border: '1px solid var(--border-default)' }}
       >
         <div className="text-center flex-shrink-0">
           <div className="text-[20px] font-bold" style={{ color: 'var(--kick-green)' }}>95%</div>
-          <div className="text-[9px] uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>
+          <div className="text-[11px] uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>
             {locale === 'th' ? 'ส่วนแบ่ง' : 'Your cut'}
           </div>
         </div>
-        <div className="w-px self-stretch" style={{ background: 'rgba(255,255,255,0.08)' }} />
+        <div className="w-px self-stretch" style={{ background: 'var(--border-default)' }} />
         <div className="text-[11px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
           {locale === 'th'
             ? 'คุณได้รับ 95% ของทุก Sub ($4.75 จาก $5) และ KICK รับภาระค่า FX 1.5% ของ Stripe ให้ทั้งหมด'
@@ -76,7 +76,7 @@ export default function AffiliateRequirements({ locale = 'en' }: { locale?: stri
         </div>
       </div>
 
-      <p className="text-[12px] mt-4 mb-1 font-medium" style={{ color: '#cfd8cc' }}>
+      <p className="text-[12px] mt-4 mb-1 font-medium" style={{ color: 'var(--text-primary)' }}>
         {locale === 'th' ? 'เมื่อผ่านเงื่อนไขแล้ว:' : 'Once you qualify:'}
       </p>
     </div>
