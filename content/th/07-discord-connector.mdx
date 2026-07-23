@@ -2,13 +2,109 @@
 number: 7
 slug: discord-connector
 level: intermediate
-title_th: Discord Connector
-title_en: Discord Connector
-description_th: เชื่อมต่อ KICK กับ Discord Server และตั้งค่า Live Notifications
-description_en: Connect KICK to Discord Server and set up Live Notifications
-estimated_time: 20 นาที / 20 mins
+title_th: "การเชื่อมต่อ Discord กับช่อง KICK"
+title_en: "Discord Connector Setup"
+description_th: "คู่มือการสร้าง Discord Server สำหรับสตรีมเมอร์ KICK ระบบยืนยันตัวตน Onboarding การตั้งค่าแจ้งเตือนไลฟ์สดด้วย Webhook และการแจกยศ Subscriber อัตโนมัติ"
+description_en: "Complete guide to setting up a KICK streamer Discord Server, onboarding verification, automated Go-Live webhook notifications, and automated Sub Role sync."
+estimated_time: "20 นาที / 20 mins"
 prerequisites:
-  - account-setup
+  - moderator
 ---
 
-{/* Content coming soon */}
+<SectionHeading id="s7-1">7.1 โครงสร้าง Discord Server และระบบ Onboarding</SectionHeading>
+
+<StepCard step={1} title="สร้าง Discord Server และตั้งค่าโครงสร้างยศ (Role Hierarchy)">
+  <SubSteps items={[
+    "เปิดแอป Discord คลิกไอคอน <code>+</code> ด้านซ้าย เลือก <strong>Create My Own → For a club or community</strong> แล้วตั้งชื่อเซิร์ฟเวอร์",
+    "<strong>ตั้งค่าลำดับยศ (Server Settings → Roles):</strong>",
+    "🥇 <code>@Streamer</code> — ยศเจ้าของช่อง (สิทธิ์สูงสุดในการควบคุมเซิร์ฟเวอร์)",
+    "🛡️ <code>@Moderator</code> — ยศทีมงานดูแล Discord และแชทสด",
+    "💎 <code>@Subscriber</code> — ยศพิเศษเฉพาะคนสมัครสมาชิก KICK Sub (ดึงยศอัตโนมัติผ่านบอท)",
+    "🔔 <code>@Live Alert</code> — ยศ Opt-in สำหรับคนดูที่เลือกรับการแจ้งเตือนสตรีมสด",
+    "⭐️ <code>@Member</code> — ยศผู้ติดตามทั่วไปที่ผ่านการยืนยันตัวตนในช่อง <code>#verify</code>"
+  ]} />
+</StepCard>
+
+<StepCard step={2} title="ตั้งระบบยืนยันตัวตน #verify และจัดหมวดหมู่ห้อง">
+  <SubSteps items={[
+    "<strong>ระบบป้องกันสแปมบอท (#verify):</strong> สร้างช่อง <code>#verify</code> ตั้งค่าให้ยศ <code>@everyone</code> มองเห็นแค่ห้องนี้ เพื่อให้คนดูกดยอมรับกฎรับยศ <code>@Member</code> ก่อนเข้าสู่ห้องสาธารณะ ป้องกันบอทสล็อตเข้ามาสแปม",
+    "<strong>จัดหมวดหมู่ห้องหลัก:</strong>",
+    "<strong>📢 INFORMATION:</strong> <code>#verify</code>, <code>#rules</code>, <code>#live-notifications</code>, <code>#get-roles</code> (กดรับยศ <code>@Live Alert</code>)",
+    "<strong>💬 PUBLIC COMMUNITY:</strong> <code>#general-chat</code>, <code>#game-discussion</code>, <code>#clips-and-highlights</code>",
+    "<strong>🔒 VIP SUBSCRIBERS:</strong> ตั้งค่า Private Category อนุญาตเฉพาะยศ <code>@Subscriber</code> เช่น <code>#sub-lounge</code> และ <code>#sub-perks</code>",
+    "<strong>🔊 TEMP VOICE CHANNELS:</strong> ใช้บอทตั้งค่าห้อง <code>➕ กดเพื่อสร้างห้องเสียง</code> เพื่อสร้างและลบห้องเสียงส่วนตัวอัตโนมัติ"
+  ]} />
+  <ImageCaption src="/images/ch7/s7_1_step2_verification_reaction_roles.jpg" alt="การตั้งค่าระบบ Onboarding และช่อง #verify บน Discord" caption="ภาพที่ 7.1: การตั้งค่าช่อง #verify เพื่อยืนยันตัวตนรับยศ @Member ป้องกันสแปมบอทใน Discord" />
+</StepCard>
+
+<TipBox>
+การใช้ระบบยืนยันตัวตนในช่อง #verify ร่วมกับการตั้งค่า Private Category ล็อกห้อง VIP สำหรับยศ @Subscriber ช่วยป้องกันการก่อกวนจากสแปมบอทได้ 100%
+</TipBox>
+
+---
+
+<SectionHeading id="s7-2">7.2 ระบบแจ้งเตือนสตรีมสดอัตโนมัติ</SectionHeading>
+
+<StepCard step={3} title="การสร้าง Discord Webhook สำหรับแจ้งเตือนสตรีมสด">
+  <SubSteps items={[
+    "ไปที่ Discord Server เลือกห้อง <code>#live-notifications</code> → คลิกไอคอนรูปเฟือง <strong>Edit Channel</strong>",
+    "เลือกเมนูด้านซ้าย <strong>Integrations → Webhooks → New Webhook</strong>",
+    "ตั้งชื่อบอท เช่น <code>KICK Live Alert</code> จากนั้นคัดลอกค่า <strong>Webhook URL</strong> เก็บไว้"
+  ]} />
+  <ImageCaption src="/images/ch7/s7_2_step1_discord_webhook_setup.jpg" alt="การสร้าง Discord Webhook URL ใน Channel Settings" caption="ภาพที่ 7.2: หน้าตั้งค่า Integrations → Webhooks ใน Discord Channel Settings" />
+</StepCard>
+
+<StepCard step={4} title="เชื่อมต่อ Webhook กับ KickBot และใช้เทคนิค Opt-In และ Direct Mobile Sub Link">
+  <SubSteps items={[
+    "ล็อกอินที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → เมนูด้านซ้ายเลือก <strong>Notifications → Discord</strong>",
+    "วาง <strong>Discord Webhook URL</strong> ลงในช่องข้อความ",
+    "<strong>ใช้ยศ Opt-In แทน <code>@everyone</code>:</strong> แท็กยศ <code>@Live Alert</code> เพื่อป้องกันคนดูกด Mute Server ทิ้งจากการโดนแท็กรบกวนบ่อยเกินไป",
+    "<strong>แนบ Direct Mobile Sub Link:</strong> เนื่องจากแอป KICK บนมือถือยังไม่รองรับการกด Sub ในแอป ให้แนบลิงก์ตรง <code>https://kick.com/[username]/subscribe</code> ในการ์ดแจ้งเตือนเพื่อให้คนดูเปิด Browser ชำระเงินได้ทันที",
+    "กดปุ่ม <strong>Save & Test</strong> เพื่อทดสอบยิงข้อความการ์ดแจ้งเตือนสด"
+  ]} />
+  <ImageCaption src="/images/ch7/s7_2_step2_kickbot_live_notification.jpg" alt="การ์ดข้อความแจ้งเตือนไลฟ์สดพร้อม Direct Mobile Sub Link" caption="ภาพที่ 7.3: การ์ดข้อความแจ้งเตือนสตรีมสดพร้อมลิงก์ตรงสำหรับเปิดหน้า Subscribe บนมือถือ" />
+</StepCard>
+
+---
+
+<SectionHeading id="s7-3">7.3 ซิงก์ยศ Sub อัตโนมัติและ Community Perks</SectionHeading>
+
+<StepCard step={5} title="ตั้งค่าแจกยศ Sub อัตโนมัติด้วย BotRix Role Sync">
+  <SubSteps items={[
+    "เข้าไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → เมนูด้านซ้ายเลือก <strong>Integrations → Discord</strong>",
+    "กดผูกเซิร์ฟเวอร์ Discord ของช่องคุณ",
+    "<strong>Role Mapping:</strong> ในหัวข้อ Subscribers Role เลือกจับคู่ <strong>KICK Subscriber ➔ Discord Role: <code>@Subscriber</code></strong>",
+    "เมื่อคนดูเปย์ Sub บน KICK บอทจะตรวจสอบและมอบยศ <code>@Subscriber</code> ให้ใน Discord อัตโนมัติภายใน 1–5 นาที (และถอดยศออกอัตโนมัติหาก Sub หมดอายุ)"
+  ]} />
+  <ImageCaption src="/images/ch7/s7_3_step1_botrix_role_sync.jpg" alt="การตั้งค่า Role Mapping สังเคราะห์ยศ Sub บน BotRix" caption="ภาพที่ 7.4: หน้าตั้งค่า Role Mapping จับคู่ยศ KICK Subscriber กับยศ @Subscriber ใน Discord บน BotRix.live" />
+</StepCard>
+
+<StepCard step={6} title="Troubleshooting เคสยศไม่ขึ้น และไอเดียเพิ่มยอดซับด้วย Sub Perks">
+  <SubSteps items={[
+    "<strong>Troubleshooting (ยศไม่ขึ้น):</strong> หากคนดูเปย์ Sub แล้วยศไม่ขึ้น ให้คนดูเข้าไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> แล้วกด Link Account ผูก Discord หรือพิมพ์คำสั่ง <code>!sync</code> ในแชทสด หากไม่ได้จริงๆ สตรีมเมอร์สามารถมอบยศ <code>@Subscriber</code> ให้ด้วยตัวเองได้ทันที",
+    "<strong>Sub Perks เพิ่มยอดซับรายเดือน:</strong>",
+    "<strong>KICK Emotes Sync:</strong> อัปโหลดภาพ Emotes ประจำช่อง KICK ลง Discord ให้ยศ Subscriber นำไปใช้ส่งในดิสคอร์ดอื่นได้",
+    "<strong>Discord Soundboard Access:</strong> เปิดสิทธิ์ใช้ Discord Soundboard (เปิดเสียงเอฟเฟกต์ในห้องเสียง) ให้เฉพาะยศ <code>@Subscriber</code>",
+    "<strong>Sub Game Night:</strong> จัดกิจกรรมเล่นเกมปิดห้องเสียงคุยกับกลุ่ม Subscriber สัปดาห์ละ 1 ครั้ง"
+  ]} />
+</StepCard>
+
+<TipBox>
+การมอบสิทธิ์ Discord Soundboard และ Custom Emotes ประจำช่องให้กับยศ @Subscriber เป็นกิมมิกที่ทรงพลังที่สุดในการสร้างความรู้สึกคุ้มค่าให้คนดูต่ออายุ Sub ทุกเดือน
+</TipBox>
+
+---
+
+**Q: ทำไมคนดูเปย์ Sub บน KICK แล้ว แต่ไม่ได้ยศ @Subscriber ใน Discord อัตโนมัติ?**  
+A: สาเหตุเกิดจากคนดูยังไม่ได้ผูกบัญชี KICK เข้ากับ Discord ในระบบของ BotRix ให้คนดูเข้าไปกด Link Account ในหน้า botrix.live หรือพิมพ์คำสั่ง `!sync` ในแชท หากไม่ได้จริงๆ สตรีมเมอร์สามารถกดมอบยศ `@Subscriber` ให้ด้วยตัวเองใน Discord ได้
+
+**Q: ทำไมไม่ควรใส่แท็ก @everyone ในการ์ดแจ้งเตือนเปิดไลฟ์สด?**  
+A: การแท็ก `@everyone` ทุกครั้งที่เปิดไลฟ์จะสร้างความรำคาญจนคนดูกด Mute Notification ทิ้ง แนะนำให้สร้างยศ `@Live Alert` ให้คนดูเลือกกดรับยศเองในห้อง `#get-roles` แล้วให้บอทแท็กเฉพาะยศนั้น
+
+---
+
+<References items={[
+  { label: "Discord Webhooks Guide", url: "https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks" },
+  { label: "KickBot Notifications", url: "https://kickbot.com" },
+  { label: "BotRix Discord Integration", url: "https://botrix.live" }
+]} />

@@ -2,14 +2,213 @@
 number: 6
 slug: moderator
 level: intermediate
-title_th: Moderator
-title_en: Moderator
-description_th: เพิ่ม Mod, คำสั่ง Mod และการจัดการ Ban/Timeout
-description_en: Add moderators, mod commands, and Ban/Timeout management
-estimated_time: 15 นาที / 15 mins
+title_th: "การตั้งค่าและการจัดการ Moderator"
+title_en: "Moderator Setup & Management"
+description_th: "คู่มือการแต่งตั้งทีมงาน Moderator บทบาทหน้าที่ คำสั่งแชตควบคุมสตรีมสด การใช้งาน Mod View Dashboard และลำดับขั้นตอนการจัดการคนเกรียนอย่างเป็นระบบ"
+description_en: "Appointing moderators, live chat commands, Mod View Dashboard tools, and structured moderation workflows."
+estimated_time: "20 นาที / 20 mins"
 prerequisites:
-  - account-setup
-  - chat-restrictions
+  - chatbot
 ---
 
-{/* Content coming soon */}
+<SectionHeading id="s6-1">6.1 การแต่งตั้ง Moderator และการตั้งค่าความปลอดภัย</SectionHeading>
+
+<StepCard step={1} title="แต่งตั้ง Moderator ให้ช่องของคุณ">
+  <SubSteps items={[
+    "<strong>วิธีที่ 1 — ผ่าน Creator Dashboard:</strong> ไปที่ <a href='https://dashboard.kick.com/community/moderators' target='_blank'>dashboard.kick.com/community/moderators</a>",
+    "กดปุ่ม <strong>Add New</strong> ค้นหาชื่อผู้ใช้ที่ต้องการแต่งตั้ง แล้วมอบตำแหน่ง Moderator",
+    "<strong>วิธีที่ 2 — ผ่านคำสั่งในแชทสด:</strong> พิมพ์ <code>/mod [username]</code> ในแชทสดโดยตรงเพื่อมอบสิทธิ์ Mod ทันที",
+    "หากต้องการถอดถอน พิมพ์ <code>/unmod [username]</code>"
+  ]} />
+  <ImageCaption src="/images/ch6/s6_1_step1_add_moderator.jpg" alt="การแต่งตั้ง Moderator ใน KICK Community Dashboard" caption="dashboard.kick.com/community/moderators — กด Add New เพื่อแต่งตั้ง Moderator ให้ช่อง" />
+</StepCard>
+
+<StepCard step={2} title="บทบาท Moderator มารยาท และการบังคับใช้ 2FA">
+  <SubSteps items={[
+    "<strong>การเลือก Mod:</strong> เลือกคนดูที่เข้ามาสม่ำเสมอ สุภาพ มีเหตุผล และน่าเชื่อถือ — ทีม Mod คือคนที่กำหนดวัฒนธรรมแชทของคุณ",
+    "<strong>บังคับใช้ 2FA (สำคัญมาก):</strong> กำหนดให้ Moderator ทุกคนเปิดใช้งาน 2-Factor Authentication บนบัญชี KICK ก่อนรับตำแหน่ง",
+    "บัญชี Mod ที่ถูกแฮกโดยไม่มี 2FA สามารถแบนคนดูทั้งหมดหรือล้างแชทระหว่างสตรีมสดได้",
+    "<strong>ช่องทางประสานงาน:</strong> สร้างช่อง Discord ส่วนตัว (Mod Room) ให้ทีมประสานงาน รายงานผู้ก่อกวน และวางนโยบายการดูแลแชทร่วมกัน"
+  ]} />
+</StepCard>
+
+<WarningBox>
+<strong>ห้ามข้ามการบังคับ 2FA สำหรับ Mod เด็ดขาด</strong> บัญชี Mod ที่ถูกแฮกสามารถล้างแชทหรือแบนผู้ชมหลักร้อยคนได้ในไม่กี่วินาที ต้องกำหนดเป็นเงื่อนไขบังคับก่อนมอบตำแหน่งทุกครั้ง
+</WarningBox>
+
+---
+
+<SectionHeading id="s6-2">6.2 คำสั่ง Mod และเครื่องมือ Interactive</SectionHeading>
+
+<StepCard step={3} title="คำสั่งแชท KICK — ตารางอ้างอิงฉบับสมบูรณ์">
+  <SubSteps items={[
+    "Moderator และสตรีมเมอร์สามารถพิมพ์คำสั่งเหล่านี้ในแชทสดโดยตรงเพื่อควบคุมแชทและจัดกิจกรรมกับคนดู"
+  ]} />
+</StepCard>
+
+<div className="overflow-x-auto my-4">
+<table className="w-full text-sm border-collapse">
+<thead>
+<tr className="border-b border-border">
+<th className="text-left py-2 pr-3 font-semibold w-[120px]">หมวดหมู่</th>
+<th className="text-left py-2 pr-3 font-semibold w-[130px]">คำสั่ง</th>
+<th className="text-left py-2 pr-3 font-semibold">ตัวอย่าง</th>
+<th className="text-left py-2 pr-3 font-semibold">คำอธิบาย</th>
+<th className="text-left py-2 font-semibold w-[110px]">สิทธิ์</th>
+</tr>
+</thead>
+<tbody>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3 font-medium align-top" rowSpan={4}>จัดการผู้ใช้</td>
+<td className="py-2 pr-3"><code>/ban</code></td>
+<td className="py-2 pr-3"><code>/ban nicejrs profanity</code></td>
+<td className="py-2 pr-3">แบนผู้ใช้ออกจากแชทถาวร</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/unban</code></td>
+<td className="py-2 pr-3"><code>/unban nicejrs</code></td>
+<td className="py-2 pr-3">ยกเลิกการแบนผู้ใช้</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/timeout</code></td>
+<td className="py-2 pr-3"><code>/timeout nicejrs 600 spamming</code></td>
+<td className="py-2 pr-3">จำกัดสิทธิ์แชทชั่วคราว (วินาที — 600 = 10 นาที)</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/untimeout</code></td>
+<td className="py-2 pr-3"><code>/untimeout nicejrs</code></td>
+<td className="py-2 pr-3">ยกเลิก timeout ก่อนหมดเวลา</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3 font-medium align-top" rowSpan={6}>ควบคุมแชท</td>
+<td className="py-2 pr-3"><code>/clear</code></td>
+<td className="py-2 pr-3"><code>/clear</code></td>
+<td className="py-2 pr-3">ล้างข้อความแชททั้งหมด</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/slow</code></td>
+<td className="py-2 pr-3"><code>/slow 10</code></td>
+<td className="py-2 pr-3">จำกัดความเร็วแชท (วินาทีต่อข้อความ)</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/slowoff</code></td>
+<td className="py-2 pr-3"><code>/slowoff</code></td>
+<td className="py-2 pr-3">ปิด Slow Mode</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/followers</code></td>
+<td className="py-2 pr-3"><code>/followers 15</code></td>
+<td className="py-2 pr-3">แชทเฉพาะผู้ติดตาม (ระบุนาทีขั้นต่ำ)</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/subscribers</code></td>
+<td className="py-2 pr-3"><code>/subscribers</code></td>
+<td className="py-2 pr-3">แชทเฉพาะ Subscriber</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/emotesonly</code></td>
+<td className="py-2 pr-3"><code>/emotesonly</code></td>
+<td className="py-2 pr-3">แชทได้เฉพาะ Emote</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3 font-medium align-top" rowSpan={2}>มอบยศ</td>
+<td className="py-2 pr-3"><code>/mod</code> / <code>/unmod</code></td>
+<td className="py-2 pr-3"><code>/mod nicejrs</code></td>
+<td className="py-2 pr-3">มอบหรือถอดถอนยศ Moderator</td>
+<td className="py-2">Streamer เท่านั้น</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/vip</code> / <code>/unvip</code></td>
+<td className="py-2 pr-3"><code>/vip nicejrs</code></td>
+<td className="py-2 pr-3">มอบหรือถอดถอนยศ VIP</td>
+<td className="py-2">Streamer เท่านั้น</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3 font-medium align-top" rowSpan={3}>กิจกรรม Interactive</td>
+<td className="py-2 pr-3"><code>/raid</code></td>
+<td className="py-2 pr-3"><code>/raid target_channel</code></td>
+<td className="py-2 pr-3">ส่งคนดูไปช่องอื่น</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/poll</code></td>
+<td className="py-2 pr-3"><code>/poll Question | Option1 | Option2</code></td>
+<td className="py-2 pr-3">เปิดโหวตทันที</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr>
+<td className="py-2 pr-3"><code>/prediction</code></td>
+<td className="py-2 pr-3"><code>/prediction Win? | Win | Loss</code></td>
+<td className="py-2 pr-3">เปิด Prediction ใช้ Channel Points</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<StepCard step={4} title="เปิด Prediction และ Poll กับคนดู">
+  <SubSteps items={[
+    "<strong>Prediction (เดิมพัน Channel Points):</strong> พิมพ์ <code>/prediction [หัวข้อ] | [ตัวเลือก 1] | [ตัวเลือก 2]</code> ในแชท",
+    "ตัวอย่าง: <code>/prediction สตรีมเมอร์จะชนะไหม? | ชนะ | แพ้</code>",
+    "คนดูนำ Channel Points มาเดิมพัน เมื่อจบเกมให้เลือกผลลัพธ์ที่ถูกต้องเพื่อแจกแต้ม",
+    "<strong>Poll (โหวตทันที):</strong> พิมพ์ <code>/poll [คำถาม] | [ตัวเลือก 1] | [ตัวเลือก 2]</code> ในแชท",
+    "ตัวอย่าง: <code>/poll สตรีมต่ออีก 1 ชั่วโมงไหม? | ใช่ | ไม่ใช่</code> — ผลโหวตจะปรากฏในแชทสด"
+  ]} />
+  <ImageCaption src="/images/ch6/s6_2_step4_prediction_poll_chat.jpg" alt="การเปิด Prediction และ Poll ในแชทสด KICK" caption="Prediction และ Poll แบบ Real-Time ที่แสดงผลในช่องแชทสดระหว่างสตรีม" />
+</StepCard>
+
+---
+
+<SectionHeading id="s6-3">6.3 Mod Dashboard และขั้นตอนการดูแลแชท</SectionHeading>
+
+<StepCard step={5} title="ใช้งาน Mod View Dashboard และ Action Log">
+  <SubSteps items={[
+    "<strong>เปิด Mod View:</strong> ไปที่ <code>kick.com/moderator/[ชื่อช่องสตรีมเมอร์]</code> หรือคลิกไอคอนดาบในช่องแชท",
+    "<strong>User Cards:</strong> คลิกชื่อผู้ใช้ใดก็ได้เพื่อเปิด User Card — แสดงวันที่ Follow ข้อความล่าสุด และประวัติการถูก timeout/ban",
+    "<strong>Mod Actions Log:</strong> ตรวจสอบแผง Action Log ใน Mod View เพื่อดูว่า Mod คนใดสั่ง timeout หรือ ban พร้อม timestamp แบบละเอียด"
+  ]} />
+  <ImageCaption src="/images/ch6/s6_3_step5_mod_view_dashboard.jpg" alt="Mod View Dashboard และ Mod Actions Log" caption="kick.com/moderator/[username] — พื้นที่ทำงาน Mod แบบ Multi-Dock พร้อมบันทึกการดำเนินการทั้งหมด" />
+</StepCard>
+
+<StepCard step={6} title="ขั้นตอนการดูแลแชทและการ Unban">
+  <SubSteps items={[
+    "<strong>นโยบายการใช้มาตรการแบบขั้นบันได:</strong> ปฏิบัติตามลำดับ <strong>เตือน → Timeout → Ban ถาวร</strong>",
+    "<strong>1. Timeout ชั่วคราว:</strong> พิมพ์ <code>/timeout [username] [วินาที]</code>",
+    "ตัวอย่าง: <code>/timeout troll123 60</code> (1 นาที) หรือ <code>/timeout troll123 600</code> (10 นาที)",
+    "<strong>2. Ban ถาวร:</strong> พิมพ์ <code>/ban [username] [เหตุผล]</code> — ผู้ใช้จะไม่สามารถแชทในช่องได้อีก",
+    "<strong>3. Unban:</strong> KICK ไม่มีระบบ Unban Request แบบ Native พิมพ์ <code>/unban [username]</code> ในแชท หรือไปที่ <a href='https://dashboard.kick.com/moderation/banned-users' target='_blank'>dashboard.kick.com/moderation/banned-users</a> แล้วลบรายชื่อออก"
+  ]} />
+</StepCard>
+
+<TipBox>
+ตรวจสอบ Mod Actions Log เป็นประจำ หาก Mod คนใดสั่ง Timeout คนดูบ่อยผิดปกติหรือขาดความสม่ำเสมอ คุณจะจับสัญญาณได้ก่อนที่จะกระทบวัฒนธรรมคอมมูนิตี้
+</TipBox>
+
+---
+
+**Q: Moderator สามารถเปิด Prediction หรือแก้ไขรายละเอียดสตรีมได้ไหม?**  
+A: ได้ Mod สามารถรัน `/prediction`, เปิด `/poll`, ใช้คำสั่ง `/raid` และอัปเดตชื่อสตรีม/หมวดหมู่ผ่าน Mod View Dashboard
+
+**Q: จะรู้ได้อย่างไรว่า Mod คนไหนแบนหรือ Timeout คนดู?**  
+A: ตรวจสอบได้ที่ Mod Actions Log ใน Mod View ที่ `kick.com/moderator/[username]` — ทุกการกระทำจะถูกบันทึกพร้อมชื่อ Mod และ timestamp
+
+**Q: จะ Unban คนที่ถูก Ban ไปแล้วได้อย่างไร?**  
+A: พิมพ์ `/unban [username]` ในแชทสด หรือไปที่ Creator Dashboard → Moderation → Banned users แล้วลบรายชื่อออก
+
+---
+
+<References items={[
+  { label: "KICK Moderators Dashboard", url: "https://dashboard.kick.com/community/moderators" },
+  { label: "KICK Banned Users Dashboard", url: "https://dashboard.kick.com/moderation/banned-users" },
+  { label: "KICK Moderation Features Guide", url: "https://help.kick.com/en/articles/10162074-moderation-features-guide" }
+]} />

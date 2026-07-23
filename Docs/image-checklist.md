@@ -151,15 +151,38 @@ Referenced in `content/th/11-botrix-functions.mdx` and `content/en/11-botrix-fun
 
 ---
 
-## Chapter 6 — Moderator (TBD)
+## Chapter 6 — Moderator (`public/images/ch6/`)
 
-> Content not yet written. Add images here after receiving Ch6 content from Gemini.
+Referenced in `content/th/06-moderator.mdx` and `content/en/06-moderator.mdx`.
+
+| File | Description | Step | Status |
+|------|-------------|------|--------|
+| `s6_1_step1_add_moderator.jpg` | dashboard.kick.com/community/moderators — Add New dialog with moderator being searched | StepCard 1 | ⬜ Needed |
+| `s6_2_step4_prediction_poll_chat.jpg` | Live Prediction and Poll overlay rendered inside the chat dock during a stream | StepCard 4 | ⬜ Needed |
+| `s6_3_step5_mod_view_dashboard.jpg` | kick.com/moderator/[username] — Mod View dashboard with Action Log panel visible | StepCard 5 | ⬜ Needed |
+
+**Notes for Ch6 screenshots:**
+- `s6_1_step1_add_moderator.jpg`: show dashboard.kick.com/community/moderators with Add New button clicked
+- `s6_2_step4_prediction_poll_chat.jpg`: must be captured live — show prediction or poll active in chat dock
+- `s6_3_step5_mod_view_dashboard.jpg`: show full Mod View layout at kick.com/moderator/[username]
 
 ---
 
-## Chapter 7 — Discord Connector (TBD)
+## Chapter 7 — Discord Connector (`public/images/ch7/`)
 
-> Content not yet written. Add images here after receiving Ch7 content from Gemini.
+Referenced in `content/th/07-discord-connector.mdx` and `content/en/07-discord-connector.mdx`.
+
+| File | Description | Step | Status |
+|------|-------------|------|--------|
+| `s7_1_step2_verification_reaction_roles.jpg` | Discord #verify channel setup — Onboarding gate with role assignment visible | StepCard 2 | ⬜ Needed |
+| `s7_2_step1_discord_webhook_setup.jpg` | Discord Channel Settings → Integrations → Webhooks page with New Webhook dialog | StepCard 3 | ⬜ Needed |
+| `s7_2_step2_kickbot_live_notification.jpg` | KickBot notification card in #live-notifications with Direct Mobile Sub Link | StepCard 4 | ⬜ Needed |
+| `s7_3_step1_botrix_role_sync.jpg` | BotRix.live → Integrations → Discord → Role Mapping panel (KICK Subscriber → @Subscriber) | StepCard 5 | ⬜ Needed |
+
+**Notes for Ch7 screenshots:**
+- `s7_1_step2_verification_reaction_roles.jpg`: show Discord Onboarding or #verify channel with role assignment buttons
+- `s7_2_step2_kickbot_live_notification.jpg`: show actual notification embed card in Discord with subscribe link visible
+- `s7_3_step1_botrix_role_sync.jpg`: show BotRix Role Mapping UI at botrix.live/integrations/discord
 
 ---
 
@@ -186,4 +209,6 @@ Referenced in `content/th/11-botrix-functions.mdx` and `content/en/11-botrix-fun
 | Ch5 Chatbot | 5 | 0 | 5 |
 | Ch10 KickBot Functions | 7 | 0 | 7 |
 | Ch11 BotRix Functions | 8 | 0 | 8 |
-| Ch6–9 | TBD | — | — |
+| Ch6 Moderator | 3 | 0 | 3 |
+| Ch7 Discord Connector | 4 | 0 | 4 |
+| Ch8–9 | TBD | — | — |

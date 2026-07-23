@@ -2,13 +2,109 @@
 number: 7
 slug: discord-connector
 level: intermediate
-title_th: Discord Connector
-title_en: Discord Connector
-description_th: เชื่อมต่อ KICK กับ Discord Server และตั้งค่า Live Notifications
-description_en: Connect KICK to Discord Server and set up Live Notifications
-estimated_time: 20 นาที / 20 mins
+title_th: "การเชื่อมต่อ Discord กับช่อง KICK"
+title_en: "Discord Connector Setup"
+description_th: "คู่มือการสร้าง Discord Server สำหรับสตรีมเมอร์ KICK ระบบยืนยันตัวตน Onboarding การตั้งค่าแจ้งเตือนไลฟ์สดด้วย Webhook และการแจกยศ Subscriber อัตโนมัติ"
+description_en: "Complete guide to setting up a KICK streamer Discord Server, onboarding verification, automated Go-Live webhook notifications, and automated Sub Role sync."
+estimated_time: "20 นาที / 20 mins"
 prerequisites:
-  - account-setup
+  - moderator
 ---
 
-{/* Content coming soon */}
+<SectionHeading id="s7-1">7.1 Discord Server Structure & Onboarding</SectionHeading>
+
+<StepCard step={1} title="Create Discord Server & Configure Role Hierarchy">
+  <SubSteps items={[
+    "Open Discord app, click the <code>+</code> icon on the left navigation bar → select <strong>Create My Own → For a club or community</strong>, and name your server.",
+    "<strong>Configure Role Hierarchy (Server Settings → Roles):</strong>",
+    "🥇 <code>@Streamer</code> — Channel owner role (Full server control permissions)",
+    "🛡️ <code>@Moderator</code> — Moderation staff overseeing Discord and live chat",
+    "💎 <code>@Subscriber</code> — Exclusive role for active KICK subscribers (Auto-synced via bot)",
+    "🔔 <code>@Live Alert</code> — Opt-in role for viewers choosing to receive live stream notifications",
+    "⭐️ <code>@Member</code> — Verified regular viewers who completed the <code>#verify</code> gate"
+  ]} />
+</StepCard>
+
+<StepCard step={2} title="Set Up #verify Gate & Organize Channel Categories">
+  <SubSteps items={[
+    "<strong>Anti-Spam Verification Gate (#verify):</strong> Create a <code>#verify</code> channel and set permissions so <code>@everyone</code> can only see this channel. Prompt new members to accept community rules to unlock the <code>@Member</code> role, protecting your server from crypto/slot spam bots.",
+    "<strong>Channel Categories Organization:</strong>",
+    "<strong>📢 INFORMATION:</strong> <code>#verify</code>, <code>#rules</code>, <code>#live-notifications</code>, <code>#get-roles</code> (Self-assign <code>@Live Alert</code>)",
+    "<strong>💬 PUBLIC COMMUNITY:</strong> <code>#general-chat</code>, <code>#game-discussion</code>, <code>#clips-and-highlights</code>",
+    "<strong>🔒 VIP SUBSCRIBERS:</strong> Private Category restricted to <code>@Subscriber</code> role, including <code>#sub-lounge</code> and <code>#sub-perks</code>",
+    "<strong>🔊 TEMP VOICE CHANNELS:</strong> Use voice bots (e.g. MasterVoice) configured with a <code>➕ Join to Create</code> hub to generate and destroy private temp voice channels dynamically."
+  ]} />
+  <ImageCaption src="/images/ch7/s7_1_step2_verification_reaction_roles.jpg" alt="Discord Onboarding and #verify Gate Setup" caption="Figure 7.1: Setting up the #verify onboarding gate to grant @Member role and block spam bots" />
+</StepCard>
+
+<TipBox>
+Combining an onboarding verification gate in #verify with private VIP category locks for @Subscriber prevents spam bot raids while protecting subscriber perks.
+</TipBox>
+
+---
+
+<SectionHeading id="s7-2">7.2 Automated Go-Live Notifications</SectionHeading>
+
+<StepCard step={3} title="Create Discord Webhook for Automated Stream Alerts">
+  <SubSteps items={[
+    "In your Discord Server, navigate to <code>#live-notifications</code> channel → click gear icon <strong>Edit Channel</strong>.",
+    "Select left menu <strong>Integrations → Webhooks → New Webhook</strong>.",
+    "Name your bot (e.g. <code>KICK Live Alert</code>) and copy the <strong>Webhook URL</strong>."
+  ]} />
+  <ImageCaption src="/images/ch7/s7_2_step1_discord_webhook_setup.jpg" alt="Creating Discord Webhook URL in Channel Settings" caption="Figure 7.2: Integrations → Webhooks configuration interface in Discord Channel Settings" />
+</StepCard>
+
+<StepCard step={4} title="Connect Webhook to KickBot & Apply Opt-In / Direct Sub Link Strategy">
+  <SubSteps items={[
+    "Sign in at <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → select left menu <strong>Notifications → Discord</strong>.",
+    "Paste your <strong>Discord Webhook URL</strong> into the webhook field.",
+    "<strong>Use Opt-In Tag instead of <code>@everyone</code>:</strong> Tag <code>@Live Alert</code> role (by Role ID) to prevent viewer notification fatigue and server muting.",
+    "<strong>Attach Direct Mobile Sub Link:</strong> Since KICK mobile apps do not support native in-app subscribing, attach <code>https://kick.com/[username]/subscribe</code> in the notification card so mobile viewers can pay directly via mobile browser.",
+    "Click <strong>Save & Test</strong> to trigger a test notification card."
+  ]} />
+  <ImageCaption src="/images/ch7/s7_2_step2_kickbot_live_notification.jpg" alt="Go-Live Notification Card with Direct Mobile Sub Link" caption="Figure 7.3: Live notification embed card featuring a Direct Mobile Subscription URL" />
+</StepCard>
+
+---
+
+<SectionHeading id="s7-3">7.3 KICK Sub Role Sync & Community Perks</SectionHeading>
+
+<StepCard step={5} title="Configure Automated Sub Role Sync via BotRix">
+  <SubSteps items={[
+    "Visit <a href='https://botrix.live' target='_blank'>botrix.live</a> → select left menu <strong>Integrations → Discord</strong>.",
+    "Link your Discord Server.",
+    "<strong>Role Mapping:</strong> Under Subscribers Role, map <strong>KICK Subscriber ➔ Discord Role: <code>@Subscriber</code></strong>.",
+    "When a viewer subscribes on KICK, BotRix verifies and automatically grants the <code>@Subscriber</code> Discord role within 1–5 minutes (and revokes it upon sub expiration)."
+  ]} />
+  <ImageCaption src="/images/ch7/s7_3_step1_botrix_role_sync.jpg" alt="BotRix Discord Integration Role Mapping Interface" caption="Figure 7.4: Role Mapping setup pairing KICK Subscribers with Discord @Subscriber role on BotRix.live" />
+</StepCard>
+
+<StepCard step={6} title="Troubleshooting Missing Roles & Community Sub Perks Strategy">
+  <SubSteps items={[
+    "<strong>Troubleshooting Role Sync:</strong> If a subscriber's role fails to appear, instruct them to visit <a href='https://botrix.live' target='_blank'>botrix.live</a> to Link Accounts or type <code>!sync</code> in chat. Streamers or mods can also manually assign the <code>@Subscriber</code> role as a fallback.",
+    "<strong>Sub Perks to Boost Monthly Retention:</strong>",
+    "<strong>KICK Emotes Sync:</strong> Upload channel KICK emotes to Discord Server, allowing Subscribers to use your custom emotes across other Discord servers.",
+    "<strong>Discord Soundboard Access:</strong> Grant Discord Soundboard usage rights exclusively to the <code>@Subscriber</code> role.",
+    "<strong>Sub Game Night:</strong> Host weekly private voice lounge gaming sessions exclusive to Subscribers."
+  ]} />
+</StepCard>
+
+<TipBox>
+Granting Discord Soundboard access and Custom Channel Emotes to the @Subscriber role is one of the most effective incentives for driving monthly subscriber renewals.
+</TipBox>
+
+---
+
+**Q: Why didn't a viewer receive the @Subscriber Discord role automatically after subscribing on KICK?**  
+A: This usually happens because the viewer hasn't linked their KICK and Discord accounts via BotRix yet. Instruct viewers to pair accounts on botrix.live or type `!sync` in chat, or manually assign the `@Subscriber` role in Discord as a fallback.
+
+**Q: Why shouldn't I use the @everyone tag in Go-Live notification messages?**  
+A: Tagging `@everyone` every time you go live causes notification fatigue, leading viewers to mute your server. Create an opt-in `@Live Alert` role in a `#get-roles` channel and tag only that role instead.
+
+---
+
+<References items={[
+  { label: "Discord Webhooks Guide", url: "https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks" },
+  { label: "KickBot Notifications", url: "https://kickbot.com" },
+  { label: "BotRix Discord Integration", url: "https://botrix.live" }
+]} />

@@ -81,23 +81,23 @@ export const guides: GuideData[] = [
   {
     id: 6, slug: 'moderator', level: 'intermediate', category: 'Chat', duration: 20,
     icon: 'ti-shield', color: 'teal', label: 'Mod',
-    title: { th: 'Moderator', en: 'Moderator' },
-    description: { th: 'เพิ่ม Mod, คำสั่ง Mod และการจัดการ Ban/Timeout', en: 'Add moderators, mod commands, Ban/Timeout management' },
+    title: { th: 'การตั้งค่าและการจัดการ Moderator', en: 'Moderator Setup & Management' },
+    description: { th: 'คู่มือการแต่งตั้งทีมงาน Moderator คำสั่งแชต Mod View Dashboard และขั้นตอนการจัดการคนเกรียนอย่างเป็นระบบ', en: 'Appointing moderators, live chat commands, Mod View Dashboard tools, and structured moderation workflows' },
     sections: [
-      { id: 's6-1', label: { th: '6.1 เพิ่ม Moderator', en: '6.1 Add Moderators' } },
-      { id: 's6-2', label: { th: '6.2 คำสั่ง Mod', en: '6.2 Mod Commands' } },
-      { id: 's6-3', label: { th: '6.3 Ban & Timeout', en: '6.3 Ban & Timeout' } },
+      { id: 's6-1', label: { th: '6.1 แต่งตั้ง Mod และความปลอดภัย', en: '6.1 Add Moderators & Security' } },
+      { id: 's6-2', label: { th: '6.2 คำสั่ง Mod และ Interactive', en: '6.2 Mod Commands & Tools' } },
+      { id: 's6-3', label: { th: '6.3 Mod Dashboard และ Workflow', en: '6.3 Mod Dashboard & Workflow' } },
     ],
   },
   {
     id: 7, slug: 'discord-connector', level: 'intermediate', category: 'Tools & Bot', duration: 20,
     icon: 'ti-brand-discord', color: 'blue', label: 'Discord',
-    title: { th: 'Discord Connector', en: 'Discord Connector' },
-    description: { th: 'เชื่อมต่อ KICK กับ Discord และตั้งค่า Live Notifications', en: 'Connect KICK to Discord and set up Live Notifications' },
+    title: { th: 'การเชื่อมต่อ Discord กับช่อง KICK', en: 'Discord Connector Setup' },
+    description: { th: 'สร้าง Discord Server ระบบ Onboarding ยืนยันตัวตน แจ้งเตือนไลฟ์สดอัตโนมัติ และซิงก์ยศ Subscriber', en: 'Discord Server setup, onboarding verification, automated Go-Live webhooks, and Sub Role sync' },
     sections: [
-      { id: 's7-1', label: { th: '7.1 เชื่อมต่อ Discord', en: '7.1 Connect Discord' } },
-      { id: 's7-2', label: { th: '7.2 Live Notifications', en: '7.2 Live Notifications' } },
-      { id: 's7-3', label: { th: '7.3 Bot Permissions', en: '7.3 Bot Permissions' } },
+      { id: 's7-1', label: { th: '7.1 โครงสร้าง Server และ Onboarding', en: '7.1 Server Structure & Onboarding' } },
+      { id: 's7-2', label: { th: '7.2 แจ้งเตือนสตรีมสดอัตโนมัติ', en: '7.2 Automated Go-Live Notifications' } },
+      { id: 's7-3', label: { th: '7.3 ซิงก์ยศ Sub และ Community Perks', en: '7.3 Sub Role Sync & Community Perks' } },
     ],
   },
   {

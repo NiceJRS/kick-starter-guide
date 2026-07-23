@@ -2,14 +2,213 @@
 number: 6
 slug: moderator
 level: intermediate
-title_th: Moderator
-title_en: Moderator
-description_th: เพิ่ม Mod, คำสั่ง Mod และการจัดการ Ban/Timeout
-description_en: Add moderators, mod commands, and Ban/Timeout management
-estimated_time: 15 นาที / 15 mins
+title_th: "การตั้งค่าและการจัดการ Moderator"
+title_en: "Moderator Setup & Management"
+description_th: "คู่มือการแต่งตั้งทีมงาน Moderator บทบาทหน้าที่ คำสั่งแชตควบคุมสตรีมสด การใช้งาน Mod View Dashboard และลำดับขั้นตอนการจัดการคนเกรียนอย่างเป็นระบบ"
+description_en: "Appointing moderators, live chat commands, Mod View Dashboard tools, and structured moderation workflows."
+estimated_time: "20 นาที / 20 mins"
 prerequisites:
-  - account-setup
-  - chat-restrictions
+  - chatbot
 ---
 
-{/* Content coming soon */}
+<SectionHeading id="s6-1">6.1 Adding Moderators & Security Roles</SectionHeading>
+
+<StepCard step={1} title="Appoint Moderators to Your Channel">
+  <SubSteps items={[
+    "<strong>Option 1 — via Creator Dashboard:</strong> Go to <a href='https://dashboard.kick.com/community/moderators' target='_blank'>dashboard.kick.com/community/moderators</a>.",
+    "Click <strong>Add New</strong>, search the target viewer's username, and appoint them as Moderator.",
+    "<strong>Option 2 — via Live Chat Command:</strong> Type <code>/mod [username]</code> directly in your live chat to grant mod privileges instantly.",
+    "To revoke, type <code>/unmod [username]</code>."
+  ]} />
+  <ImageCaption src="/images/ch6/s6_1_step1_add_moderator.jpg" alt="Adding a Moderator in KICK Community Dashboard" caption="dashboard.kick.com/community/moderators — click Add New to appoint a channel Moderator" />
+</StepCard>
+
+<StepCard step={2} title="Moderator Roles, Etiquette, and 2FA Security">
+  <SubSteps items={[
+    "<strong>Choosing Mods:</strong> Select regular viewers who are polite, rational, and trustworthy — your mod team sets the tone of your chat culture.",
+    "<strong>Mandatory 2FA (CRITICAL):</strong> Require all Moderators to enable 2-Factor Authentication on their KICK accounts before granting mod status.",
+    "A hijacked mod account without 2FA can mass-ban viewers or clear your entire chat during a live stream.",
+    "<strong>Backstage Communication:</strong> Create a private Discord channel (Mod Room) for your team to coordinate, report trolls, and align on moderation policies."
+  ]} />
+</StepCard>
+
+<WarningBox>
+<strong>Never skip 2FA enforcement for mods.</strong> A compromised mod account can purge your entire chat or ban hundreds of viewers in seconds. Make it a hard requirement before assigning mod status.
+</WarningBox>
+
+---
+
+<SectionHeading id="s6-2">6.2 Mod Commands & Interactive Tools</SectionHeading>
+
+<StepCard step={3} title="KICK Chat Commands — Complete Reference">
+  <SubSteps items={[
+    "Moderators and streamers can type these commands directly in the live chat dock to control chat flow and run viewer engagement activities."
+  ]} />
+</StepCard>
+
+<div className="overflow-x-auto my-4">
+<table className="w-full text-sm border-collapse">
+<thead>
+<tr className="border-b border-border">
+<th className="text-left py-2 pr-3 font-semibold w-[110px]">Category</th>
+<th className="text-left py-2 pr-3 font-semibold w-[130px]">Command</th>
+<th className="text-left py-2 pr-3 font-semibold">Example</th>
+<th className="text-left py-2 pr-3 font-semibold">Description</th>
+<th className="text-left py-2 font-semibold w-[105px]">Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3 font-medium align-top" rowSpan={4}>User Moderation</td>
+<td className="py-2 pr-3"><code>/ban</code></td>
+<td className="py-2 pr-3"><code>/ban nicejrs profanity</code></td>
+<td className="py-2 pr-3">Permanently ban user from chat</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/unban</code></td>
+<td className="py-2 pr-3"><code>/unban nicejrs</code></td>
+<td className="py-2 pr-3">Lift ban from a user</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/timeout</code></td>
+<td className="py-2 pr-3"><code>/timeout nicejrs 600 spamming</code></td>
+<td className="py-2 pr-3">Restrict chat temporarily (seconds — 600 = 10 min)</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/untimeout</code></td>
+<td className="py-2 pr-3"><code>/untimeout nicejrs</code></td>
+<td className="py-2 pr-3">Cancel an active timeout early</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3 font-medium align-top" rowSpan={6}>Chat Control</td>
+<td className="py-2 pr-3"><code>/clear</code></td>
+<td className="py-2 pr-3"><code>/clear</code></td>
+<td className="py-2 pr-3">Purge all visible chat messages</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/slow</code></td>
+<td className="py-2 pr-3"><code>/slow 10</code></td>
+<td className="py-2 pr-3">Rate limit (seconds between messages)</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/slowoff</code></td>
+<td className="py-2 pr-3"><code>/slowoff</code></td>
+<td className="py-2 pr-3">Turn off slow mode</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/followers</code></td>
+<td className="py-2 pr-3"><code>/followers 15</code></td>
+<td className="py-2 pr-3">Followers-only chat (min follow minutes)</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/subscribers</code></td>
+<td className="py-2 pr-3"><code>/subscribers</code></td>
+<td className="py-2 pr-3">Subscribers-only chat</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/emotesonly</code></td>
+<td className="py-2 pr-3"><code>/emotesonly</code></td>
+<td className="py-2 pr-3">Emotes-only chat</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3 font-medium align-top" rowSpan={2}>Role Assignment</td>
+<td className="py-2 pr-3"><code>/mod</code> / <code>/unmod</code></td>
+<td className="py-2 pr-3"><code>/mod nicejrs</code></td>
+<td className="py-2 pr-3">Assign or revoke Moderator role</td>
+<td className="py-2">Streamer Only</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/vip</code> / <code>/unvip</code></td>
+<td className="py-2 pr-3"><code>/vip nicejrs</code></td>
+<td className="py-2 pr-3">Assign or revoke VIP role</td>
+<td className="py-2">Streamer Only</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3 font-medium align-top" rowSpan={3}>Interactive</td>
+<td className="py-2 pr-3"><code>/raid</code></td>
+<td className="py-2 pr-3"><code>/raid target_channel</code></td>
+<td className="py-2 pr-3">Transfer viewers to another stream</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr className="border-b border-border/40">
+<td className="py-2 pr-3"><code>/poll</code></td>
+<td className="py-2 pr-3"><code>/poll Question | Option1 | Option2</code></td>
+<td className="py-2 pr-3">Launch instant viewer poll</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+<tr>
+<td className="py-2 pr-3"><code>/prediction</code></td>
+<td className="py-2 pr-3"><code>/prediction Win? | Win | Loss</code></td>
+<td className="py-2 pr-3">Channel Points prediction event</td>
+<td className="py-2">Streamer / Mod</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<StepCard step={4} title="Run Predictions and Viewer Polls">
+  <SubSteps items={[
+    "<strong>Predictions (Channel Points Stake):</strong> Type <code>/prediction [Topic] | [Option 1] | [Option 2]</code> in chat.",
+    "Example: <code>/prediction Will streamer win this match? | Win | Loss</code>",
+    "Viewers stake Channel Points on their pick. When the match ends, select the correct outcome to distribute points.",
+    "<strong>Polls (Instant Voting):</strong> Type <code>/poll [Question] | [Option 1] | [Option 2]</code> in chat.",
+    "Example: <code>/poll Stream 1 more hour? | Yes | No</code> — results appear in the chat dock in real time."
+  ]} />
+  <ImageCaption src="/images/ch6/s6_2_step4_prediction_poll_chat.jpg" alt="Running Predictions and Polls in KICK live chat" caption="Live Predictions and Polls overlays rendered inside the chat dock during a stream" />
+</StepCard>
+
+---
+
+<SectionHeading id="s6-3">6.3 Mod Dashboard & Moderation Workflow</SectionHeading>
+
+<StepCard step={5} title="Use Mod View Dashboard and Action Logs">
+  <SubSteps items={[
+    "<strong>Open Mod View:</strong> Go to <code>kick.com/moderator/[streamer_username]</code> — or click the sword icon inside the chat dock.",
+    "<strong>User Cards:</strong> Click any viewer's username to open their User Card — shows follow date, recent messages, and past timeout/ban history.",
+    "<strong>Mod Actions Log:</strong> Check the Action Log panel in Mod View to see which mod executed each timeout or ban, with exact timestamps."
+  ]} />
+  <ImageCaption src="/images/ch6/s6_3_step5_mod_view_dashboard.jpg" alt="Mod View Dashboard and Mod Actions Log" caption="kick.com/moderator/[username] — multi-dock mod workspace with full audit trail" />
+</StepCard>
+
+<StepCard step={6} title="Standard Moderation Workflow & Unbanning Users">
+  <SubSteps items={[
+    "<strong>Progressive Escalation Policy:</strong> Follow the sequence: <strong>Warn → Timeout → Permanent Ban</strong>.",
+    "<strong>1. Temporary Timeout:</strong> Type <code>/timeout [username] [seconds]</code>.",
+    "Example: <code>/timeout troll123 60</code> (1-minute) or <code>/timeout troll123 600</code> (10-minute).",
+    "<strong>2. Permanent Ban:</strong> Type <code>/ban [username] [reason]</code> — the user can no longer chat in your channel.",
+    "<strong>3. Unban:</strong> KICK has no native Unban Request form. Type <code>/unban [username]</code> in live chat, or go to <a href='https://dashboard.kick.com/moderation/banned-users' target='_blank'>dashboard.kick.com/moderation/banned-users</a> and remove the user from the list."
+  ]} />
+</StepCard>
+
+<TipBox>
+Review the Mod Actions Log periodically. If a mod is timing out viewers too aggressively or inconsistently, you can spot the pattern and address it before it damages your community culture.
+</TipBox>
+
+---
+
+**Q: Can Moderators initiate Predictions or edit stream details?**  
+A: Yes. Mods can run `/prediction`, start `/poll`, execute `/raid`, and update stream title/category via the Mod View Dashboard.
+
+**Q: How do I find out which Moderator banned or timed out a viewer?**  
+A: Check the Mod Actions Log inside Mod View at `kick.com/moderator/[username]` — every action is logged with the mod's name and timestamp.
+
+**Q: How do I unban someone who was previously banned?**  
+A: Type `/unban [username]` in live chat, or go to Creator Dashboard → Moderation → Banned users and remove them from the list.
+
+---
+
+<References items={[
+  { label: "KICK Moderators Dashboard", url: "https://dashboard.kick.com/community/moderators" },
+  { label: "KICK Banned Users Dashboard", url: "https://dashboard.kick.com/moderation/banned-users" },
+  { label: "KICK Moderation Features Guide", url: "https://help.kick.com/en/articles/10162074-moderation-features-guide" }
+]} />
