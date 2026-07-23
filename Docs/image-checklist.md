@@ -186,9 +186,20 @@ Referenced in `content/th/07-discord-connector.mdx` and `content/en/07-discord-c
 
 ---
 
-## Chapter 8 — Subscription & Donation (TBD)
+## Chapter 8 — Subscription & Donation (`public/images/ch8/`)
 
-> Content not yet written. Add images here after receiving Ch8 content from Gemini.
+Referenced in `content/th/08-subscription-donation.mdx` and `content/en/08-subscription-donation.mdx`.
+
+| File | Description | Step | Status |
+|------|-------------|------|--------|
+| `s8_1_step1_revenue_dashboard.jpg` | dashboard.kick.com/revenue/payout — Revenue share breakdown and eligibility status | StepCard 1 | ⬜ Needed |
+| `s8_2_step3_stripe_connect.jpg` | Stripe Connect Thailand setup form — Country: Thailand + bank details fields | StepCard 3 | ⬜ Needed |
+| `s8_3_step5_tipme_setup.jpg` | tipme.in.th dashboard — PromptPay setup, Slip Verification toggle, Widget URL | StepCard 5 | ⬜ Needed |
+
+**Notes for Ch8 screenshots:**
+- `s8_1_step1_revenue_dashboard.jpg`: show the payout page with revenue breakdown — must be logged in as a monetized streamer
+- `s8_2_step3_stripe_connect.jpg`: show the Stripe Connect form with Country: Thailand selected and bank fields visible
+- `s8_3_step5_tipme_setup.jpg`: show tipme.in.th dashboard with PromptPay number linked and Widget URL visible
 
 ---
 
@@ -211,4 +222,5 @@ Referenced in `content/th/07-discord-connector.mdx` and `content/en/07-discord-c
 | Ch11 BotRix Functions | 8 | 0 | 8 |
 | Ch6 Moderator | 3 | 0 | 3 |
 | Ch7 Discord Connector | 4 | 0 | 4 |
-| Ch8–9 | TBD | — | — |
+| Ch8 Subscription & Donation | 3 | 0 | 3 |
+| Ch9 API Connector | TBD | — | — |

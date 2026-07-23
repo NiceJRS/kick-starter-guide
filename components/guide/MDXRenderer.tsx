@@ -13,8 +13,9 @@ import References from './References'
 import FaqItem from './FaqItem'
 import BotComparisonTable from './BotComparisonTable'
 import ModCommandsTable from './ModCommandsTable'
+import RevenueOverviewTable from './RevenueOverviewTable'
 
-const components = { StepCard, ImageCaption, TipBox, WarningBox, SubSteps, SectionHeading, AffiliateRequirements, BitrateTable, References, FaqItem, BotComparisonTable, ModCommandsTable }
+const components = { StepCard, ImageCaption, TipBox, WarningBox, SubSteps, SectionHeading, AffiliateRequirements, BitrateTable, References, FaqItem, BotComparisonTable, ModCommandsTable, RevenueOverviewTable }
 
 export default function MDXRenderer({ code }: { code: string }) {
   const MDXContent = useMDXComponent(code)

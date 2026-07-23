@@ -2,13 +2,110 @@
 number: 8
 slug: subscription-donation
 level: intermediate
-title_th: Subscription & Donation
-title_en: Subscription & Donation Fees
-description_th: KICK Revenue Share 95/5, Subscription Tiers และการรับเงินสำหรับสตรีมเมอร์ไทย
-description_en: KICK 95/5 Revenue Share, Subscription Tiers, and payout setup for Thai streamers
-estimated_time: 25 นาที / 25 mins
+title_th: "ระบบซับและการรับรายได้"
+title_en: "Subscription & Donation Fees"
+description_th: "คู่มือส่วนแบ่งรายได้ 95/5 บน KICK, แก้ปัญหาซับมือถือด้วย Direct Link, ผูกบัญชีธนาคารผ่าน Stripe Connect Thailand และโดเนทพร้อมเพย์ 100%"
+description_en: "KICK's 95/5 revenue share, solving mobile sub issues with Direct Links, Thai bank payout via Stripe Connect, and 100% PromptPay donations."
+estimated_time: "25 นาที / 25 mins"
 prerequisites:
   - account-setup
 ---
 
-{/* Content coming soon */}
+<SectionHeading id="s8-1">8.1 KICK Revenue Share & Direct Sub Link</SectionHeading>
+
+<RevenueOverviewTable lang="th" />
+
+<StepCard step={1} title="ทำความเข้าใจโมเดลส่วนแบ่งรายได้ 95/5 และเงื่อนไขการปลดล็อก">
+  <SubSteps items={[
+    "<strong>ส่วนแบ่งรายได้ที่ดีที่สุดในวงการ:</strong> แพลตฟอร์มสตรีมมิ่งส่วนใหญ่หักรายได้ 50/50 แต่ KICK ให้สตรีมเมอร์ถึง <strong>95%</strong> โดยหักค่าธรรมเนียมแค่ 5% เท่านั้น",
+    "<strong>ราคา Sub มาตรฐาน:</strong> ราคา Subscription อยู่ที่ประมาณ <code>$4.99 USD/เดือน</code> (ราว 170–180 บาท) สตรีมเมอร์จะได้รับส่วนแบ่งประมาณ <code>$4.74 USD</code> ต่อ 1 Subscription",
+    "<strong>เงื่อนไขการปลดล็อก (Monetization Eligibility):</strong> สตรีมเมอร์ต้องสตรีมสะสมครบ <strong>5 ชั่วโมง</strong> และมีผู้ติดตามครบ <strong>75 Followers</strong> ระบบถึงจะเปิดปุ่มผูก Stripe Connect ใน Creator Dashboard",
+    "เมื่อครบเงื่อนไขแล้ว ไปที่ <a href='https://dashboard.kick.com/revenue/payout' target='_blank'>dashboard.kick.com/revenue/payout</a> เพื่อเริ่มผูกบัญชีรับเงิน"
+  ]} />
+  <ImageCaption src="/images/ch8/s8_1_step1_revenue_dashboard.jpg" alt="หน้า Revenue ใน KICK Creator Dashboard แสดงส่วนแบ่ง 95/5" caption="dashboard.kick.com/revenue/payout — แสดงสัดส่วนรายได้และสถานะความพร้อมรับเงิน" />
+</StepCard>
+
+<StepCard step={2} title="แก้ Pain Point คนดูบนมือถือด้วย Direct Subscription Link">
+  <SubSteps items={[
+    "<strong>ทำไมคนดูบนแอปมือถือกด Subscribe ใน KICK ไม่ได้?</strong> Apple (App Store) และ Google (Play Store) บังคับหักค่าธรรมเนียม In-App Purchase 15%–30% KICK จึงปิดระบบชำระเงินในแอปมือถือเพื่อรักษาโมเดล 95/5",
+    "<strong>ทางออก — Direct Sub Link:</strong> แชร์ลิงก์นี้ให้คนดู: <code>https://kick.com/[ชื่อช่องของคุณ]/subscribe</code>",
+    "<strong>ตั้งคำสั่ง !sub ใน Chatbot (BotRix / KickBot) อัตโนมัติ:</strong>",
+    "เข้าหน้าจัดการบอท <a href='https://botrix.live' target='_blank'>botrix.live</a> หรือ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → Chatbot → Commands → Custom Commands",
+    "กด <strong>+ Add Command</strong> แล้วตั้งค่า: <strong>Command:</strong> <code>!sub</code> | <strong>Response:</strong> <code>อยากซับสนับสนุนช่อง (ส่วนแบ่ง 95/5)? กดซับผ่าน Browser ได้ที่: https://kick.com/[username]/subscribe</code> | <strong>User Cooldown:</strong> <code>30s</code>",
+    "กด <strong>Save</strong> และตั้งค่า <strong>Timer</strong> ให้บอทประกาศลิงก์นี้อัตโนมัติทุก 20 นาทีระหว่างสตรีม"
+  ]} />
+</StepCard>
+
+<TipBox>
+ตั้งทั้งคำสั่ง <code>!sub</code> และ Timer ประกาศทุก 20 นาที คนดูมือถือส่วนใหญ่ไม่รู้ว่ากดซับในแอปไม่ได้ ปล่อยให้บอทเตือนแทนจะช่วยดักจับ Subscription ที่หายไปได้มาก
+</TipBox>
+
+---
+
+<SectionHeading id="s8-2">8.2 ผูกบัญชีรับเงินผ่าน Stripe Connect Thailand</SectionHeading>
+
+<StepCard step={3} title="ขั้นตอนการผูกบัญชีธนาคารไทยผ่าน Stripe Connect">
+  <SubSteps items={[
+    "ไปที่ <a href='https://dashboard.kick.com/revenue/payout' target='_blank'>dashboard.kick.com/revenue/payout</a> แล้วคลิกปุ่ม <strong>Set Up Account</strong> (หรือ Enable Subscriptions) หน้าต่าง Stripe Connect จะเปิดขึ้น",
+    "<strong>Country:</strong> เลือก <code>Thailand</code>",
+    "<strong>Type of Entity:</strong> เลือก <code>Individual / Sole Proprietorship</code> (บุคคลธรรมดา)",
+    "<strong>ข้อมูลส่วนตัว (สำคัญมาก):</strong> กรอกชื่อ-นามสกุลภาษาอังกฤษ <strong>ให้ตรงกับหน้าสมุดบัญชีธนาคารและบัตรประชาชน</strong> การสะกดชื่อภาษาอังกฤษไม่ตรงกันคือสาเหตุอันดับ 1 ที่สตรีมเมอร์ไทยถอนเงินไม่ได้",
+    "<strong>Bank Details:</strong> เลือกธนาคารไทย กรอกเลขบัญชีและ Swift Code ของธนาคาร",
+    "<strong>ยืนยันตัวตน (KYC):</strong> อัปโหลดรูปถ่ายบัตรประชาชนหรือพาสปอร์ตไทย (ถ่ายให้ชัดไม่สะท้อนแสง อ่านข้อความได้ครบ) → กด <strong>Submit</strong>",
+    "<strong>รอบการตัดจ่าย (Payout Schedule):</strong> KICK และ Stripe โอนเงินเข้าธนาคารไทยอัตโนมัติใน <strong>วันที่ 1 และ 15 ของทุกเดือน</strong> ยอดขั้นต่ำในการตัดจ่ายคือ <code>$25 USD</code>"
+  ]} />
+  <ImageCaption src="/images/ch8/s8_2_step3_stripe_connect.jpg" alt="หน้าฟอร์ม Stripe Connect Thailand" caption="Stripe Connect — เลือก Country: Thailand + Individual + กรอกข้อมูลธนาคารไทย" />
+</StepCard>
+
+<WarningBox>
+<strong>ชื่อภาษาอังกฤษไม่ตรง = โอนเงินไม่ผ่าน</strong> ตรวจสอบการสะกดชื่อจากหน้าสมุดบัญชีธนาคารก่อนกรอก Stripe Connect กรอกให้เหมือนกันทุกตัวอักษร แม้แค่ตัวเดียวต่างกันก็อาจทำให้การโอนถูกปฏิเสธ
+</WarningBox>
+
+---
+
+<SectionHeading id="s8-3">8.3 โดเนท PromptPay และ TrueMoney Mastercard</SectionHeading>
+
+<StepCard step={4} title="วิธีให้คนดูใช้ True Wallet กด Subscribe ช่อง KICK">
+  <SubSteps items={[
+    "<strong>ปัญหา:</strong> การกด Sub บนเว็บ KICK ต้องชำระผ่านบัตรเครดิต/เดบิตสากล คนดูที่ไม่มีบัตรเครดิตสามารถใช้ TrueMoney Wallet สร้างบัตร Mastercard เสมือน",
+    "<strong>ขั้นตอนที่ 1 — สร้าง TrueMoney Mastercard (ฝั่งคนดู):</strong>",
+    "เปิดแอป TrueMoney → ไปที่เมนู <strong>ฉัน (Me)</strong> → เลือกไอคอน <strong>TrueMoney Mastercard</strong> (หรือเมนูบัตร Virtual)",
+    "กดปุ่ม <strong>สร้างบัตรนี้</strong> → กรอกชื่อ-นามสกุลภาษาอังกฤษ → กดยืนยัน ระบบออกหมายเลขบัตร 16 หลัก วันหมดอายุ และ CVV ให้ทันที",
+    "<strong>ขั้นตอนที่ 2 — กด Subscribe บน KICK:</strong>",
+    "เปิดลิงก์ Direct Sub ผ่านเว็บเบราว์เซอร์: <code>https://kick.com/[username]/subscribe</code>",
+    "เลือกช่องทางชำระเงินเป็น <strong>Credit / Debit Card</strong> แล้วกรอกหมายเลขบัตร 16 หลัก วันหมดอายุ และ CVV จาก TrueMoney (ตัดเงินจาก TrueWallet ทันที)"
+  ]} />
+</StepCard>
+
+<StepCard step={5} title="ตั้งค่าระบบโดเนทพร้อมเพย์ผ่าน TipMe (100% Revenue)">
+  <SubSteps items={[
+    "เข้าไปที่ <a href='https://tipme.in.th' target='_blank'>tipme.in.th</a> → สมัครสมาชิกและผูกบัญชี KICK",
+    "ใส่เลข PromptPay หรือเลขบัญชีธนาคารไทยของคุณ",
+    "<strong>เปิดใช้งาน Slip Verification:</strong> เปิดระบบตรวจสอบสลิปอัตโนมัติ เพื่อป้องกันเกรียนส่งสลิปโอนเงินปลอมขึ้นหน้าจอไลฟ์",
+    "คัดลอก <strong>Widget URL</strong> นำไปวางใน OBS Studio เป็น Browser Source — แสดงกรอบแจ้งเตือนพร้อมยอดโดเนทระหว่างสตรีม",
+    "นำลิงก์โดเนทส่วนตัวไปแปะในแชทสดและ Discord เพื่อให้คนดูโอนได้ตลอดเวลา",
+    "<strong>ข้อดี:</strong> เงินเข้าบัญชีธนาคารไทยทันทีแบบ Real-time โดย <strong>ไม่โดนหักส่วนแบ่งใดๆ จากแพลตฟอร์ม</strong>"
+  ]} />
+  <ImageCaption src="/images/ch8/s8_3_step5_tipme_setup.jpg" alt="หน้า TipMe แสดงการตั้งค่า PromptPay และ Widget URL" caption="tipme.in.th — ผูก PromptPay เปิด Slip Verification และคัดลอก Widget URL สำหรับ OBS" />
+</StepCard>
+
+<TipBox>
+ใช้ทั้ง Stripe Connect Sub และ TipMe PromptPay พร้อมกัน Subscription ให้รายได้ประจำรายเดือน ส่วน PromptPay จับคนดูที่ไม่มีบัตรเครดิตหรืออยากส่งยอดโดเนทก้อนใหญ่ครั้งเดียว
+</TipBox>
+
+---
+
+**Q: ทำไมคนดูบอกว่ากด Subscribe บนแอปมือถือ KICK ไม่ได้?**  
+A: เพราะ KICK ปิดระบบชำระเงินในแอปเพื่อหลีกเลี่ยงค่าธรรมเนียม App Store/Play Store 15%–30% และรักษาโมเดล 95/5 แก้โดยตั้งคำสั่งบอท `!sub` หรือแนบ Direct Sub Link (`https://kick.com/[username]/subscribe`) ในแชทสดและ Discord
+
+**Q: คนดูที่ไม่มีบัตรเครดิต จะกด Subscribe ได้อย่างไร?**  
+A: ใช้แอป TrueMoney Wallet สร้างบัตรเสมือน **TrueMoney Mastercard** แล้วนำเลขบัตร 16 หลัก + CVV มากรอกในหน้าเว็บ Subscribe ของ KICK ได้เลยครับ
+
+---
+
+<References items={[
+  { label: "KICK Revenue & Payout Dashboard", url: "https://dashboard.kick.com/revenue/payout" },
+  { label: "TipMe — ระบบโดเนทพร้อมเพย์สำหรับสตรีมเมอร์ไทย", url: "https://tipme.in.th" },
+  { label: "BotRix Custom Commands", url: "https://botrix.live" },
+  { label: "KickBot Custom Commands", url: "https://kickbot.com" }
+]} />

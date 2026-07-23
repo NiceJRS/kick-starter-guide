@@ -2,13 +2,110 @@
 number: 8
 slug: subscription-donation
 level: intermediate
-title_th: Subscription & Donation
-title_en: Subscription & Donation Fees
-description_th: KICK Revenue Share 95/5, Subscription Tiers และการรับเงินสำหรับสตรีมเมอร์ไทย
-description_en: KICK 95/5 Revenue Share, Subscription Tiers, and payout setup for Thai streamers
-estimated_time: 25 นาที / 25 mins
+title_th: "ระบบซับและการรับรายได้"
+title_en: "Subscription & Donation Fees"
+description_th: "คู่มือส่วนแบ่งรายได้ 95/5 บน KICK, แก้ปัญหาซับมือถือด้วย Direct Link, ผูกบัญชีธนาคารผ่าน Stripe Connect Thailand และโดเนทพร้อมเพย์ 100%"
+description_en: "KICK's 95/5 revenue share, solving mobile sub issues with Direct Links, Thai bank payout via Stripe Connect, and 100% PromptPay donations."
+estimated_time: "25 นาที / 25 mins"
 prerequisites:
   - account-setup
 ---
 
-{/* Content coming soon */}
+<SectionHeading id="s8-1">8.1 KICK Revenue Share & Direct Sub Link</SectionHeading>
+
+<RevenueOverviewTable />
+
+<StepCard step={1} title="Understanding the 95/5 Revenue Model & Eligibility">
+  <SubSteps items={[
+    "<strong>Industry-Leading Revenue Share:</strong> Most streaming platforms split revenue 50/50. KICK gives streamers <strong>95%</strong> of every subscription, taking only a 5% fee.",
+    "<strong>Standard Sub Price:</strong> A standard subscription costs approximately <code>$4.99 USD/month</code> (~170–180 THB). The streamer receives approximately <code>$4.74 USD</code> per subscription.",
+    "<strong>Monetization Eligibility:</strong> Streamers must accumulate at least <strong>5 streaming hours</strong> and reach <strong>75 Followers</strong> to unlock the Stripe Connect setup button in the Creator Dashboard.",
+    "Once eligible, go to <a href='https://dashboard.kick.com/revenue/payout' target='_blank'>dashboard.kick.com/revenue/payout</a> to see the Set Up Account button."
+  ]} />
+  <ImageCaption src="/images/ch8/s8_1_step1_revenue_dashboard.jpg" alt="KICK Creator Dashboard Revenue page showing 95/5 split" caption="dashboard.kick.com/revenue/payout — Revenue share breakdown and eligibility status" />
+</StepCard>
+
+<StepCard step={2} title="Solving Mobile Sub Pain Points with Direct Sub Links">
+  <SubSteps items={[
+    "<strong>Why can't mobile viewers subscribe inside the KICK app?</strong> Apple (App Store) and Google (Play Store) enforce a 15%–30% in-app purchase fee. To preserve the 95/5 model, KICK restricts subscriptions to web browsers only.",
+    "<strong>The Fix — Direct Sub Link:</strong> Share this URL structure with your viewers: <code>https://kick.com/[your_username]/subscribe</code>",
+    "<strong>Set Up a !sub Chatbot Command (BotRix / KickBot):</strong>",
+    "Open your bot dashboard at <a href='https://botrix.live' target='_blank'>botrix.live</a> or <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → Chatbot → Commands → Custom Commands",
+    "Click <strong>+ Add Command</strong> and set: <strong>Command:</strong> <code>!sub</code> | <strong>Response:</strong> <code>Support with a 95/5 sub! Mobile & PC viewers subscribe via browser: https://kick.com/[username]/subscribe</code> | <strong>User Cooldown:</strong> <code>30s</code>",
+    "Click <strong>Save</strong>. Also set a <strong>Timer</strong> to auto-broadcast this link every 20 minutes during streams."
+  ]} />
+</StepCard>
+
+<TipBox>
+Set up both the <code>!sub</code> command AND a 20-minute timer. Most mobile viewers won't know they can't subscribe in-app — they just think the button is broken. The chatbot reminder converts these lost subs.
+</TipBox>
+
+---
+
+<SectionHeading id="s8-2">8.2 Stripe Connect Thailand Payout Setup</SectionHeading>
+
+<StepCard step={3} title="Connect Your Thai Bank Account via Stripe Connect">
+  <SubSteps items={[
+    "Go to <a href='https://dashboard.kick.com/revenue/payout' target='_blank'>dashboard.kick.com/revenue/payout</a> and click <strong>Set Up Account</strong> (or Enable Subscriptions). The Stripe Connect window will open.",
+    "<strong>Country:</strong> Select <code>Thailand</code>.",
+    "<strong>Type of Entity:</strong> Select <code>Individual / Sole Proprietorship</code> (individual streamer).",
+    "<strong>Personal Info (CRITICAL):</strong> Enter your English first and last name <strong>exactly matching your bank passbook and national ID card</strong>. Mismatched English spellings are the #1 reason Thai streamer payouts fail.",
+    "<strong>Bank Details:</strong> Select your Thai bank, input your Account Number and the bank's Swift Code.",
+    "<strong>KYC Verification:</strong> Upload a clear photo of your Thai National ID card or Passport (no glare, all text readable) → click <strong>Submit</strong>.",
+    "<strong>Payout Schedule:</strong> KICK and Stripe automatically transfer funds to your Thai bank on the <strong>1st and 15th of every month</strong>. Minimum payout threshold: <code>$25 USD</code>."
+  ]} />
+  <ImageCaption src="/images/ch8/s8_2_step3_stripe_connect.jpg" alt="Stripe Connect Thailand setup form" caption="Stripe Connect — fill Country: Thailand + Individual entity + Thai bank details" />
+</StepCard>
+
+<WarningBox>
+<strong>English name mismatch = payout failure.</strong> Check your bank passbook for the exact English spelling of your name. Enter it identically into Stripe Connect — even a single character difference can cause the transfer to be rejected.
+</WarningBox>
+
+---
+
+<SectionHeading id="s8-3">8.3 PromptPay Donations & TrueMoney Mastercard</SectionHeading>
+
+<StepCard step={4} title="How Viewers Use TrueMoney Wallet to Subscribe on KICK">
+  <SubSteps items={[
+    "<strong>The Problem:</strong> KICK web subscriptions require an international credit/debit card. Thai viewers without traditional credit cards can use TrueMoney Wallet's Virtual Mastercard.",
+    "<strong>Step 1 — Generate TrueMoney Mastercard (Viewer side):</strong>",
+    "Open TrueMoney app → tap <strong>Me</strong> → select <strong>TrueMoney Mastercard</strong> (or Virtual Card menu)",
+    "Tap <strong>Create Card</strong> → enter English name → confirm. The app instantly generates a 16-digit card number, expiration date, and CVV.",
+    "<strong>Step 2 — Subscribe on KICK:</strong>",
+    "Open the Direct Sub link via mobile or desktop browser: <code>https://kick.com/[username]/subscribe</code>",
+    "Select <strong>Credit / Debit Card</strong> at checkout, enter the 16-digit TrueMoney card number, expiry, and CVV to complete payment (deducted instantly from TrueWallet balance)."
+  ]} />
+</StepCard>
+
+<StepCard step={5} title="Set Up PromptPay Donations via TipMe (100% Revenue)">
+  <SubSteps items={[
+    "Go to <a href='https://tipme.in.th' target='_blank'>tipme.in.th</a> → Register and link your KICK account.",
+    "Enter your PromptPay number or Thai bank account details.",
+    "<strong>Enable Slip Verification:</strong> Turn on the Slip Verification feature to auto-validate payment slips and prevent viewers from uploading fake transfer screenshots during your stream.",
+    "Copy the <strong>Widget URL</strong> and add it to OBS Studio as a Browser Source — displays donation alerts with amounts during live stream.",
+    "Paste your personal donation link in chat (and Discord) so viewers can send PromptPay donations at any time.",
+    "<strong>Advantage:</strong> Funds transfer directly to your Thai bank account in real-time with <strong>zero platform fee deductions</strong>."
+  ]} />
+  <ImageCaption src="/images/ch8/s8_3_step5_tipme_setup.jpg" alt="TipMe dashboard showing PromptPay and Widget URL setup" caption="tipme.in.th — Link PromptPay, enable Slip Verification, copy Widget URL for OBS" />
+</StepCard>
+
+<TipBox>
+Run both Stripe Connect Sub revenue AND TipMe PromptPay donations simultaneously. Subs give you recurring income; PromptPay donations capture Thai viewers who prefer not to use credit cards or who want to send larger one-time amounts.
+</TipBox>
+
+---
+
+**Q: Why can't mobile app viewers find the Subscribe button on KICK?**  
+A: To avoid Apple and Google's 15%–30% In-App Purchase fees and preserve the 95/5 revenue split, KICK restricts subscriptions to web browsers. Set up a `!sub` chatbot command with a Direct Subscription URL (`https://kick.com/[username]/subscribe`) and share it in chat and Discord.
+
+**Q: Can viewers without a credit card subscribe on KICK?**  
+A: Yes. Thai viewers can open the TrueMoney Wallet app, generate a virtual **TrueMoney Mastercard** (16-digit card number + CVV), and use those card details to subscribe via web browser.
+
+---
+
+<References items={[
+  { label: "KICK Revenue & Payout Dashboard", url: "https://dashboard.kick.com/revenue/payout" },
+  { label: "TipMe — Thai PromptPay Donation Platform", url: "https://tipme.in.th" },
+  { label: "BotRix Custom Commands", url: "https://botrix.live" },
+  { label: "KickBot Custom Commands", url: "https://kickbot.com" }
+]} />

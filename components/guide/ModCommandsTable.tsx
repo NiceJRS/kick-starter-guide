@@ -41,41 +41,71 @@ const headers = {
   th: { category: 'หมวดหมู่', command: 'คำสั่ง', example: 'ตัวอย่าง', description: 'คำอธิบาย', permission: 'สิทธิ์' },
 }
 
+const codeStyle: React.CSSProperties = {
+  fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+  fontSize: '0.78rem',
+  background: 'var(--surface-card)',
+  padding: '1px 5px',
+  borderRadius: '4px',
+  border: '1px solid var(--border-default)',
+  whiteSpace: 'nowrap',
+}
+
 export default function ModCommandsTable({ lang = 'en' }: { lang?: 'en' | 'th' }) {
   const rows = lang === 'th' ? rowsTh : rowsEn
   const h = headers[lang]
 
   return (
-    <div style={{ overflowX: 'auto', margin: '1rem 0' }}>
-      <table style={{ width: '100%', fontSize: '0.8125rem', borderCollapse: 'collapse', tableLayout: 'auto' }}>
+    <div className="overflow-x-auto my-6 rounded-lg" style={{ border: '1px solid var(--border-default)' }}>
+      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '12px' }}>
         <thead>
-          <tr>
-            <th style={{ textAlign: 'left', padding: '8px 10px 8px 0', fontWeight: 600, whiteSpace: 'nowrap', borderBottom: '1px solid hsl(var(--border))', color: 'hsl(var(--foreground))' }}>{h.category}</th>
-            <th style={{ textAlign: 'left', padding: '8px 10px 8px 0', fontWeight: 600, whiteSpace: 'nowrap', borderBottom: '1px solid hsl(var(--border))', color: 'hsl(var(--foreground))' }}>{h.command}</th>
-            <th style={{ textAlign: 'left', padding: '8px 10px 8px 0', fontWeight: 600, borderBottom: '1px solid hsl(var(--border))', color: 'hsl(var(--foreground))' }}>{h.example}</th>
-            <th style={{ textAlign: 'left', padding: '8px 10px 8px 0', fontWeight: 600, borderBottom: '1px solid hsl(var(--border))', color: 'hsl(var(--foreground))' }}>{h.description}</th>
-            <th style={{ textAlign: 'left', padding: '8px 0', fontWeight: 600, whiteSpace: 'nowrap', borderBottom: '1px solid hsl(var(--border))', color: 'hsl(var(--foreground))' }}>{h.permission}</th>
+          <tr style={{ background: 'var(--surface-card)' }}>
+            {[h.category, h.command, h.example, h.description, h.permission].map((label) => (
+              <th key={label} style={{
+                padding: '9px 12px',
+                textAlign: 'left',
+                fontWeight: 600,
+                fontSize: '11px',
+                textTransform: 'uppercase' as const,
+                letterSpacing: '0.05em',
+                color: 'var(--text-secondary)',
+                borderBottom: '1px solid var(--border-default)',
+                whiteSpace: 'nowrap',
+              }}>{label}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
           {rows.map((row, i) => (
-            <tr key={i}>
+            <tr
+              key={i}
+              style={{ borderBottom: i < rows.length - 1 ? '1px solid var(--border-default)' : undefined }}
+              onMouseEnter={e => (e.currentTarget.style.background = 'var(--surface-card)')}
+              onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
+            >
               {row.category !== null && (
                 <td
                   rowSpan={row.rowSpanCat}
-                  style={{ padding: '7px 10px 7px 0', fontWeight: 500, verticalAlign: 'top', borderBottom: '1px solid hsl(var(--border) / 0.35)', color: 'hsl(var(--foreground)))', whiteSpace: 'nowrap' }}
+                  style={{
+                    padding: '8px 12px',
+                    fontWeight: 600,
+                    verticalAlign: 'top',
+                    color: 'var(--text-primary)',
+                    whiteSpace: 'nowrap',
+                    borderRight: '1px solid var(--border-default)',
+                  }}
                 >
                   {row.category}
                 </td>
               )}
-              <td style={{ padding: '7px 10px 7px 0', borderBottom: '1px solid hsl(var(--border) / 0.35)' }}>
-                <code style={{ fontFamily: 'monospace', fontSize: '0.8rem', background: 'hsl(var(--muted))', padding: '1px 5px', borderRadius: '4px' }}>{row.command}</code>
+              <td style={{ padding: '8px 12px', whiteSpace: 'nowrap' }}>
+                <code style={codeStyle}>{row.command}</code>
               </td>
-              <td style={{ padding: '7px 10px 7px 0', borderBottom: '1px solid hsl(var(--border) / 0.35)' }}>
-                <code style={{ fontFamily: 'monospace', fontSize: '0.75rem', background: 'hsl(var(--muted))', padding: '1px 5px', borderRadius: '4px' }}>{row.example}</code>
+              <td style={{ padding: '8px 12px' }}>
+                <code style={{ ...codeStyle, color: 'var(--text-secondary)', fontSize: '0.73rem' }}>{row.example}</code>
               </td>
-              <td style={{ padding: '7px 10px 7px 0', borderBottom: '1px solid hsl(var(--border) / 0.35)', color: 'hsl(var(--muted-foreground))' }}>{row.description}</td>
-              <td style={{ padding: '7px 0', whiteSpace: 'nowrap', borderBottom: '1px solid hsl(var(--border) / 0.35)', color: 'hsl(var(--muted-foreground))' }}>{row.permission}</td>
+              <td style={{ padding: '8px 12px', color: 'var(--text-secondary)' }}>{row.description}</td>
+              <td style={{ padding: '8px 12px', whiteSpace: 'nowrap', color: 'var(--text-muted)', fontSize: '11px' }}>{row.permission}</td>
             </tr>
           ))}
         </tbody>
