@@ -28,7 +28,8 @@ function search(q: string, locale: string): Result[] {
   for (const g of guides) {
     const title = locale === 'th' ? g.title.th : g.title.en
     const desc = locale === 'th' ? g.description.th : g.description.en
-    if (title.toLowerCase().includes(lq) || desc.toLowerCase().includes(lq)) {
+    const tagHit = g.tags.some((t) => t.toLowerCase().includes(lq))
+    if (title.toLowerCase().includes(lq) || desc.toLowerCase().includes(lq) || tagHit) {
       out.push({ guideSlug: g.slug, guideTitle: title })
     }
     for (const sec of g.sections) {

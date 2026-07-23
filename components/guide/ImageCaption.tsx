@@ -15,8 +15,8 @@ export default function ImageCaption({
 }) {
   return (
     <figure className="my-4">
-      <div className="rounded-xl overflow-hidden border shadow-sm" style={{ borderColor: 'var(--border-default)', maxHeight: '300px' }}>
-        <Image src={src} alt={alt} width={width} height={height} className="w-full object-cover" style={{ maxHeight: '300px', objectFit: 'cover' }} />
+      <div className="rounded-xl overflow-hidden border shadow-sm" style={{ borderColor: 'var(--border-default)' }}>
+        <Image src={src} alt={alt} width={width} height={height} className="block mx-auto" style={{ maxHeight: '400px', width: 'auto', maxWidth: '100%', height: 'auto' }} />
       </div>
       {caption && (
         <figcaption className="text-center text-sm mt-1.5" style={{ color: 'var(--text-muted)' }}>
