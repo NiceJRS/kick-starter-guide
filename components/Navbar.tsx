@@ -56,7 +56,7 @@ export default function Navbar({
           <div className="text-[14px] font-semibold leading-tight" style={{ color: 'var(--kick-green-text)' }}>
             KICK Guide TH
           </div>
-          <div className="text-[10px]" style={{ color: 'var(--text-muted)' }}>Streamer&apos;s HQ</div>
+          <div className="text-[10px]" style={{ color: 'var(--text-muted)' }}>By NiceJRS · Community Guide</div>
         </div>
       </div>
 

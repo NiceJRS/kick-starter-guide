@@ -42,7 +42,7 @@ export default function GuideCard({ guide, locale }: { guide: GuideData; locale:
   return (
     <Link href={`/${locale}/guide/${guide.slug}`}>
       <div
-        className="p-3.5 rounded-xl cursor-pointer transition-all duration-200 h-full hover:-translate-y-0.5 hover:shadow-md"
+        className="rounded-xl cursor-pointer transition-all duration-200 h-full hover:-translate-y-0.5 hover:shadow-md overflow-hidden"
         style={{
           background: 'var(--surface-card)',
           border: '1px solid var(--border-default)',
@@ -50,16 +50,23 @@ export default function GuideCard({ guide, locale }: { guide: GuideData; locale:
         onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(30,122,10,0.3)')}
         onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--border-default)')}
       >
-        {/* Top row */}
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-xs" style={{ color: 'var(--text-muted)' }}>#{guide.id}</span>
-          <LevelBadge level={guide.level} locale={locale} />
+        {/* Cover gradient accent */}
+        <div
+          className="h-10 w-full flex items-center px-3.5 gap-2"
+          style={{ background: `linear-gradient(135deg, ${bg} 0%, transparent 100%)` }}
+        >
+          <div className="w-6 h-6 rounded flex items-center justify-center" style={{ background: bg }}>
+            <Icon size={13} style={{ color: fg }} />
+          </div>
+          <span className="text-[10px] font-semibold" style={{ color: fg }}>
+            #{guide.id}
+          </span>
+          <div className="ml-auto">
+            <LevelBadge level={guide.level} locale={locale} />
+          </div>
         </div>
 
-        {/* Icon */}
-        <div className="w-8 h-8 rounded-md flex items-center justify-center mb-2.5" style={{ background: bg }}>
-          <Icon size={16} style={{ color: fg }} />
-        </div>
+        <div className="p-3.5 pt-2.5">
 
         {/* Text */}
         <h3 className="text-base font-medium mb-1" style={{ color: 'var(--text-primary)' }}>
@@ -78,6 +85,7 @@ export default function GuideCard({ guide, locale }: { guide: GuideData; locale:
             {CATEGORY_LABELS[guide.category]}
           </span>
           <span className="text-xs" style={{ color: 'var(--text-muted)' }}>~{guide.duration}m</span>
+        </div>
         </div>
       </div>
     </Link>

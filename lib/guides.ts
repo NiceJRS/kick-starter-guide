@@ -142,17 +142,6 @@ export const guides: GuideData[] = [
       { id: 's11-8', label: { th: '11.8 ระบบขอเพลง + กรอบชื่อเพลง', en: '11.8 Music Overlay (!sr)' } },
     ],
   },
-  {
-    id: 9, slug: 'api-connector', level: 'pro', category: 'Advanced', duration: 45,
-    icon: 'ti-api', color: 'purple', label: 'API',
-    title: { th: 'API Connector', en: 'API Connector' },
-    description: { th: 'KICK API Overview, Webhooks และการ Integrate กับ Third-party', en: 'KICK API Overview, Webhooks, and third-party integrations' },
-    sections: [
-      { id: 's9-1', label: { th: '9.1 KICK API Overview', en: '9.1 KICK API Overview' } },
-      { id: 's9-2', label: { th: '9.2 Webhooks', en: '9.2 Webhooks' } },
-      { id: 's9-3', label: { th: '9.3 Third-party Integration', en: '9.3 Third-party Integration' } },
-    ],
-  },
 ]
 
 export function getGuideBySlug(slug: string): GuideData | undefined {

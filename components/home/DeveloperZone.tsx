@@ -8,10 +8,8 @@ const DEV_CARDS = [
 
 export default function DeveloperZone({
   locale,
-  onSwitchMode,
 }: {
   locale: string
-  onSwitchMode: () => void
 }) {
   return (
     <div
@@ -66,13 +64,15 @@ export default function DeveloperZone({
 
       {/* Footer */}
       <div className="px-4 pb-4">
-        <button
-          onClick={onSwitchMode}
-          className="w-full py-2 rounded-lg text-sm font-semibold transition-all hover:bg-[--blue-25] hover:shadow-[0_0_12px_rgba(55,138,221,0.35)] hover:text-white"
+        <a
+          href="https://docs.kick.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full py-2 rounded-lg text-sm font-semibold text-center transition-all hover:bg-[--blue-25] hover:shadow-[0_0_12px_rgba(55,138,221,0.35)] hover:text-white"
           style={{ background: 'var(--blue-10)', color: 'var(--blue)', border: '1px solid var(--blue-25)' }}
         >
-          {locale === 'th' ? 'สลับไป Developer mode →' : 'Switch to Developer mode →'}
-        </button>
+          {locale === 'th' ? 'เปิด KICK API Docs →' : 'Open KICK API Docs →'}
+        </a>
       </div>
     </div>
   )
