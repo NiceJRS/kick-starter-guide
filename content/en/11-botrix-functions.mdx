@@ -1,0 +1,191 @@
+---
+number: 11
+slug: botrix-functions
+level: intermediate
+title_th: "BotRix Functions"
+title_en: "BotRix Functions"
+description_th: "คู่มือฟังก์ชั่น BotRix ครบทุกฟีเจอร์: Custom Commands, Timers, Link Protection, Emote Limit, Alerts Overlay, Gimmicks, Chat Overlay และ Music Overlay"
+description_en: "Full BotRix function guide: Custom Commands, Timers, Link Protection, Emote Limit, Alerts Overlay, Gimmicks, Chat Overlay and Music Overlay"
+estimated_time: "20 นาที / 20 mins"
+prerequisites:
+  - chatbot
+---
+
+<SectionHeading id="s11-1">11.1 Custom Commands + Cooldown</SectionHeading>
+
+<StepCard step={1} title="BotRix — Set Up a Custom Command with Cooldown">
+  <SubSteps items={[
+    "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Chatbot</strong> → <strong>Commands</strong>.",
+    "Click <strong>+ Add Command</strong>.",
+    "Set <strong>Command</strong>: <code>!specs</code>",
+    "Set <strong>Response</strong>: <code>CPU: i7-14700K | GPU: RTX 4070 Ti Super</code>",
+    "Set <strong>Cooldown</strong>: <code>10s</code>.",
+    "Click <strong>Save</strong>."
+  ]} />
+  <ImageCaption src="/images/ch11/s11_1_step1_custom_commands.jpg" alt="BotRix Commands panel" caption="BotRix — Chatbot → Commands — set command trigger, response text, and cooldown" />
+</StepCard>
+
+<TipBox>
+Popular commands to add: <code>!specs</code> for your PC build, <code>!discord</code> for your server link, <code>!donate</code> for your PromptPay/TipMe link, and <code>!schedule</code> for your stream calendar.
+</TipBox>
+
+---
+
+<SectionHeading id="s11-2">11.2 Timers (PromptPay / TipMe Donation Link)</SectionHeading>
+
+<StepCard step={2} title="BotRix — Auto-Broadcast Your Donation Link on a Timer">
+  <SubSteps items={[
+    "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Chatbot</strong> → <strong>Timers</strong>.",
+    "Click <strong>+ Create</strong>.",
+    "Set <strong>Name</strong>: <code>DonateLink</code>",
+    "Set <strong>Interval</strong>: <code>20 minutes</code>.",
+    "Set <strong>Lines</strong>: <code>5 lines</code> — minimum chat activity before the timer posts.",
+    "Set <strong>Message</strong>: <code>Support via PromptPay (TipMe): https://tipme.in.th/yourchannel</code>",
+    "Click <strong>Save</strong>."
+  ]} />
+  <ImageCaption src="/images/ch11/s11_2_step1_timers.jpg" alt="BotRix Timers panel — donation link timer setup" caption="BotRix — Chatbot → Timers — auto-broadcast your PromptPay/TipMe link every 20 minutes" />
+</StepCard>
+
+<TipBox>
+BotRix's timer uses a Lines threshold — it only posts when at least N chat messages have occurred since the last post. This prevents the bot from spamming donation links during quiet chat periods.
+</TipBox>
+
+---
+
+<SectionHeading id="s11-3">11.3 Subscriber-Exempt Link Protection</SectionHeading>
+
+<StepCard step={3} title="BotRix — Enable Link Protection with Subscriber Exemption">
+  <SubSteps items={[
+    "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Modules</strong> → <strong>Moderation</strong> → <strong>Link Protection</strong>.",
+    "Toggle <strong>Link Protection</strong> to ON.",
+    "Under <strong>Exempted Roles</strong>, check both <strong>Subscribers</strong> and <strong>Moderators</strong>.",
+    "General viewers who post links will have their messages auto-deleted.",
+    "Subscribers and Moderators can post links freely — no action taken on their messages."
+  ]} />
+  <ImageCaption src="/images/ch11/s11_3_step1_link_protection.jpg" alt="BotRix Link Protection with Exempted Roles checked" caption="BotRix — Link Protection — Subscribers and Mods exempted; general viewer links auto-purged" />
+</StepCard>
+
+<TipBox>
+This is BotRix's standout feature — KICK's native Block Links cannot distinguish between viewer types. BotRix lets Subscribers post links freely while blocking everyone else, which rewards your paying viewers.
+</TipBox>
+
+---
+
+<SectionHeading id="s11-4">11.4 Emote Limit Protection</SectionHeading>
+
+<StepCard step={4} title="BotRix — Limit Emote Spam Per Message">
+  <SubSteps items={[
+    "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Modules</strong> → <strong>Moderation</strong>.",
+    "Select <strong>Emote Protection</strong>.",
+    "Set <strong>Limit</strong>: <code>5</code> — maximum number of emotes allowed per message.",
+    "Set <strong>Action</strong>: <code>Delete Message & Timeout 10s</code>.",
+    "Any message with more than 5 emotes will be deleted and the sender timed out for 10 seconds."
+  ]} />
+  <ImageCaption src="/images/ch11/s11_4_step1_emote_limit.jpg" alt="BotRix Emote Protection settings panel" caption="BotRix — Emote Protection — max 5 emotes per message, auto-delete + 10s timeout" />
+</StepCard>
+
+<TipBox>
+Adjust the Limit to match your community norms. A limit of 5 works well for most chats; increase it to 10 if your audience loves emote spam during hype moments.
+</TipBox>
+
+---
+
+<SectionHeading id="s11-5">11.5 Stream Alerts Overlay (OBS)</SectionHeading>
+
+<StepCard step={5} title="BotRix — Set Up Follow and Subscribe Alert Overlays">
+  <SubSteps items={[
+    "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Widgets</strong> → <strong>Alerts</strong>.",
+    "Customize the alert animation, images, and sounds for Follow and Subscription events.",
+    "Click <strong>Copy Widget URL</strong>.",
+    "Open OBS Studio → click <strong>+ Add Source</strong> → select <strong>Browser</strong>.",
+    "Paste the Widget URL into the Browser source URL field.",
+    "Set the resolution to <strong>1920×1080</strong> and click OK.",
+    "Follow and Subscribe alerts will now pop up as overlays on your stream whenever someone follows or subscribes."
+  ]} />
+  <ImageCaption src="/images/ch11/s11_5_step1_alerts_overlay.jpg" alt="BotRix Alerts widget customization and URL page" caption="BotRix — Widgets → Alerts — copy URL and add as OBS Browser source at 1920×1080" />
+</StepCard>
+
+<TipBox>
+Set the Alerts Browser source as the top-most layer in your OBS Scene. This ensures alerts always appear in front of your game, camera, and other overlays.
+</TipBox>
+
+---
+
+<SectionHeading id="s11-6">11.6 Gimmick Commands (!roll, !rps)</SectionHeading>
+
+<StepCard step={6} title="BotRix — Create Interactive Gimmick Commands">
+  <SubSteps items={[
+    "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Chatbot</strong> → <strong>Commands</strong> → click <strong>+ Add Command</strong>.",
+    "<strong>Create !roll:</strong>",
+    "Set <strong>Command</strong>: <code>!roll</code>",
+    "Set <strong>Response</strong>: <code>@$(user) rolled: $(rand.1-100) pts! 🎲</code>",
+    "Set <strong>Cooldown</strong>: <code>30s</code>.",
+    "Click <strong>Save</strong>.",
+    "<strong>Create !rps (Rock Paper Scissors):</strong>",
+    "Click <strong>+ Add Command</strong> again.",
+    "Set <strong>Command</strong>: <code>!rps</code>",
+    "Set <strong>Response</strong>: <code>@$(user) played: $(rand.pick Rock,Paper,Scissors) ✂️🔨📄</code>",
+    "Set <strong>Cooldown</strong>: <code>10s</code>.",
+    "Click <strong>Save</strong>."
+  ]} />
+  <ImageCaption src="/images/ch11/s11_6_step1_gimmick_commands.jpg" alt="BotRix !roll command with $(rand..) variable" caption="BotRix — !roll using $(rand.1-100) — note BotRix uses $(rand) not $(random) like KickBot" />
+</StepCard>
+
+<TipBox>
+BotRix uses <code>$(rand.1-100)</code> and <code>$(rand.pick ...)</code> for random values. KickBot uses <code>$(random.1-100)</code> — the syntax differs, so keep this in mind if you run both bots at once.
+</TipBox>
+
+---
+
+<SectionHeading id="s11-7">11.7 Live Chat Overlay Widget</SectionHeading>
+
+<StepCard step={7} title="BotRix — Add a Themed Chat Overlay to OBS">
+  <SubSteps items={[
+    "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Widgets</strong> → <strong>Chat</strong>.",
+    "Select a chat overlay theme from the options.",
+    "Click <strong>Copy Widget URL</strong>.",
+    "Open OBS Studio → click <strong>+ Add Source</strong> → select <strong>Browser</strong>.",
+    "Paste the Widget URL and set resolution to <strong>400×600</strong>.",
+    "Click OK — the floating chat overlay will appear on your stream."
+  ]} />
+  <ImageCaption src="/images/ch11/s11_7_step1_chat_overlay.jpg" alt="BotRix Chat Overlay widget theme selection" caption="BotRix — Widgets → Chat — choose a theme, copy URL, add as OBS Browser source at 400×600" />
+</StepCard>
+
+---
+
+<SectionHeading id="s11-8">11.8 Music Overlay & Song Request (!sr)</SectionHeading>
+
+<StepCard step={8} title="BotRix — Enable Song Request and Now Playing Overlay">
+  <SubSteps items={[
+    "Go to <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Modules</strong> → <strong>Song Request</strong>.",
+    "Toggle Song Request to ON.",
+    "Viewers can now type <code>!sr [YouTube URL]</code> in chat to add songs to the queue.",
+    "Go to <strong>Widgets</strong> → <strong>Music</strong>.",
+    "Customize the Now Playing banner appearance (colors, font, scroll speed).",
+    "Click <strong>Copy Widget URL</strong>.",
+    "Open OBS Studio → click <strong>+ Add Source</strong> → select <strong>Browser</strong>.",
+    "Paste the Widget URL and set resolution to <strong>500×150</strong>.",
+    "The currently playing song name will now display as an overlay banner on your stream."
+  ]} />
+  <ImageCaption src="/images/ch11/s11_8_step1_music_overlay.jpg" alt="BotRix Music Overlay widget and Song Request module" caption="BotRix — Widgets → Music — Now Playing banner + !sr YouTube song request queue as OBS overlay" />
+</StepCard>
+
+<TipBox>
+Add the Music Widget Browser source to the bottom of your stream layout (resolution 500×150 fits well as a lower-third banner). Viewers will see the current song scrolling across the screen, which encourages more song requests.
+</TipBox>
+
+---
+
+**Q: BotRix alerts aren't showing in OBS — what's wrong?**  
+A: Check two things: (1) BotRix must have Moderator status at [dashboard.kick.com/community/moderators](https://dashboard.kick.com/community/moderators), and (2) the Alerts Browser source must be the topmost layer in your OBS scene so it's not hidden behind other sources.
+
+**Q: Can viewers skip songs in the !sr queue?**  
+A: BotRix's !sr queue is managed by the streamer — you control playback. The bot queues requests from viewers, but only you can skip or remove songs from the list.
+
+---
+
+<References items={[
+  { label: "BotRix Dashboard", url: "https://botrix.live" },
+  { label: "Chapter 5 — Chatbot Setup (Install Guide)", url: "/en/guide/chatbot" },
+  { label: "Chapter 10 — KickBot Functions", url: "/en/guide/kickbot-functions" }
+]} />

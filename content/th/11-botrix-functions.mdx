@@ -1,0 +1,191 @@
+---
+number: 11
+slug: botrix-functions
+level: intermediate
+title_th: "BotRix Functions"
+title_en: "BotRix Functions"
+description_th: "คู่มือฟังก์ชั่น BotRix ครบทุกฟีเจอร์: Custom Commands, Timers, Link Protection, Emote Limit, Alerts Overlay, Gimmicks, Chat Overlay และ Music Overlay"
+description_en: "Full BotRix function guide: Custom Commands, Timers, Link Protection, Emote Limit, Alerts Overlay, Gimmicks, Chat Overlay and Music Overlay"
+estimated_time: "20 นาที / 20 mins"
+prerequisites:
+  - chatbot
+---
+
+<SectionHeading id="s11-1">11.1 Custom Commands + Cooldown</SectionHeading>
+
+<StepCard step={1} title="BotRix — ตั้งค่า Custom Command พร้อม Cooldown">
+  <SubSteps items={[
+    "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Chatbot</strong> → <strong>Commands</strong>",
+    "กด <strong>+ Add Command</strong>",
+    "ตั้ง <strong>Command</strong>: <code>!specs</code>",
+    "ตั้ง <strong>Response</strong>: <code>CPU: i7-14700K | GPU: RTX 4070 Ti Super</code>",
+    "ตั้ง <strong>Cooldown</strong>: <code>10s</code>",
+    "กด <strong>Save</strong>"
+  ]} />
+  <ImageCaption src="/images/ch11/s11_1_step1_custom_commands.jpg" alt="หน้า Commands ของ BotRix" caption="BotRix — Chatbot → Commands — ตั้งคำสั่ง, ข้อความตอบกลับ และ Cooldown" />
+</StepCard>
+
+<TipBox>
+คำสั่งยอดนิยมที่แนะนำให้สร้าง: <code>!specs</code> สเปกคอม, <code>!discord</code> ลิงก์เซิร์ฟเวอร์, <code>!donate</code> ลิงก์ PromptPay/TipMe และ <code>!schedule</code> ตารางสตรีม
+</TipBox>
+
+---
+
+<SectionHeading id="s11-2">11.2 Timers (ลิงก์โดเนท PromptPay / TipMe)</SectionHeading>
+
+<StepCard step={2} title="BotRix — ตั้ง Timer ส่งลิงก์โดเนทอัตโนมัติ">
+  <SubSteps items={[
+    "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Chatbot</strong> → <strong>Timers</strong>",
+    "กด <strong>+ Create</strong>",
+    "ตั้ง <strong>Name</strong>: <code>DonateLink</code>",
+    "ตั้ง <strong>Interval</strong>: <code>20 minutes</code>",
+    "ตั้ง <strong>Lines</strong>: <code>5 lines</code> — โพสต์เฉพาะเมื่อมีแชทขั้นต่ำ 5 ข้อความ",
+    "ตั้ง <strong>Message</strong>: <code>สนับสนุนค่ากาแฟสตรีมเมอร์ผ่าน PromptPay (TipMe): https://tipme.in.th/yourchannel</code>",
+    "กด <strong>Save</strong>"
+  ]} />
+  <ImageCaption src="/images/ch11/s11_2_step1_timers.jpg" alt="หน้า Timers ของ BotRix — ตั้งค่าลิงก์โดเนท" caption="BotRix — Chatbot → Timers — ส่งลิงก์ PromptPay/TipMe โดยอัตโนมัติทุก 20 นาที" />
+</StepCard>
+
+<TipBox>
+Timer ของ BotRix ใช้เงื่อนไข Lines — โพสต์เฉพาะเมื่อมีแชทอย่างน้อย N ข้อความนับตั้งแต่โพสต์ล่าสุด ช่วยป้องกันบอทสแปมลิงก์โดเนทในช่วงที่แชทเงียบ
+</TipBox>
+
+---
+
+<SectionHeading id="s11-3">11.3 Subscriber-Exempt Link Protection</SectionHeading>
+
+<StepCard step={3} title="BotRix — เปิด Link Protection แบบยกเว้น Subscriber">
+  <SubSteps items={[
+    "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Modules</strong> → <strong>Moderation</strong> → <strong>Link Protection</strong>",
+    "เปิดสวิตช์ <strong>Link Protection</strong> เป็น ON",
+    "ในช่อง <strong>Exempted Roles</strong> ติ๊กเลือกทั้ง <strong>Subscribers</strong> และ <strong>Moderators</strong>",
+    "คนดูทั่วไปที่แปะลิงก์จะถูกลบข้อความอัตโนมัติ",
+    "Subscriber และ Moderator แปะลิงก์ได้ปกติ — ไม่มีการลงโทษ"
+  ]} />
+  <ImageCaption src="/images/ch11/s11_3_step1_link_protection.jpg" alt="BotRix Link Protection พร้อม Exempted Roles ที่ติ๊กแล้ว" caption="BotRix — Link Protection — Sub/Mod ได้รับยกเว้น คนดูทั่วไปแปะลิงก์โดนลบอัตโนมัติ" />
+</StepCard>
+
+<TipBox>
+นี่คือฟีเจอร์เด่นสุดของ BotRix — Block Links ของ KICK เองไม่สามารถแยกแยะยศผู้ใช้ได้ BotRix ให้ Subscriber แปะลิงก์ได้อิสระในขณะที่บล็อกคนดูทั่วไป เป็นการตอบแทนผู้สนับสนุนช่อง
+</TipBox>
+
+---
+
+<SectionHeading id="s11-4">11.4 Emote Limit Protection</SectionHeading>
+
+<StepCard step={4} title="BotRix — จำกัดจำนวน Emote ต่อข้อความ">
+  <SubSteps items={[
+    "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Modules</strong> → <strong>Moderation</strong>",
+    "เลือก <strong>Emote Protection</strong>",
+    "ตั้ง <strong>Limit</strong>: <code>5</code> — จำนวน Emote สูงสุดต่อข้อความ",
+    "ตั้ง <strong>Action</strong>: <code>Delete Message & Timeout 10s</code>",
+    "ข้อความที่มี Emote เกิน 5 ตัวจะถูกลบและผู้ส่งถูก Timeout 10 วินาทีทันที"
+  ]} />
+  <ImageCaption src="/images/ch11/s11_4_step1_emote_limit.jpg" alt="หน้า Emote Protection ของ BotRix" caption="BotRix — Emote Protection — จำกัด 5 Emote/ข้อความ, เกินโดนลบ + Timeout 10 วินาที" />
+</StepCard>
+
+<TipBox>
+ปรับค่า Limit ให้เหมาะกับชุมชนของคุณ ค่า 5 เหมาะกับแชทส่วนใหญ่ หากชุมชนของคุณชอบสแปม Emote ช่วงช็อตเด็ด ลองเพิ่มเป็น 10
+</TipBox>
+
+---
+
+<SectionHeading id="s11-5">11.5 Stream Alerts Overlay (กรอบแจ้งเตือนบน OBS)</SectionHeading>
+
+<StepCard step={5} title="BotRix — ตั้งค่ากรอบแจ้งเตือน Follow และ Subscribe บน OBS">
+  <SubSteps items={[
+    "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Widgets</strong> → <strong>Alerts</strong>",
+    "ปรับแต่งภาพแอนิเมชันและเสียงแจ้งเตือนสำหรับ Follow และ Subscribe",
+    "กด <strong>Copy Widget URL</strong>",
+    "เปิด OBS Studio → กด <strong>+ Add Source</strong> → เลือก <strong>Browser</strong>",
+    "วาง Widget URL ลงในช่อง URL ของ Browser Source",
+    "ตั้งความละเอียดเป็น <strong>1920×1080</strong> แล้วกด OK",
+    "กรอบแจ้งเตือน Follow/Sub จะโผล่ขึ้นบนสตรีมใน OBS เมื่อมีคนกด"
+  ]} />
+  <ImageCaption src="/images/ch11/s11_5_step1_alerts_overlay.jpg" alt="หน้า Alerts Widget ของ BotRix พร้อม URL" caption="BotRix — Widgets → Alerts — คัดลอก URL แล้วเพิ่มใน OBS เป็น Browser Source (1920×1080)" />
+</StepCard>
+
+<TipBox>
+ตั้ง Alerts Browser Source เป็นชั้นบนสุดใน OBS Scene เพื่อให้กรอบแจ้งเตือนแสดงอยู่หน้าเกม กล้อง และ Overlay อื่นๆ เสมอ
+</TipBox>
+
+---
+
+<SectionHeading id="s11-6">11.6 Gimmick Commands (!roll, !rps)</SectionHeading>
+
+<StepCard step={6} title="BotRix — สร้างคำสั่งกิมมิกแบบ Interactive">
+  <SubSteps items={[
+    "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Chatbot</strong> → <strong>Commands</strong> → กด <strong>+ Add Command</strong>",
+    "<strong>สร้างคำสั่ง !roll:</strong>",
+    "ตั้ง <strong>Command</strong>: <code>!roll</code>",
+    "ตั้ง <strong>Response</strong>: <code>@$(user) ทอยเต๋าได้: $(rand.1-100) แต้ม! 🎲</code>",
+    "ตั้ง <strong>Cooldown</strong>: <code>30s</code>",
+    "กด <strong>Save</strong>",
+    "<strong>สร้างคำสั่ง !rps (เป่ายิงฉุบ):</strong>",
+    "กด <strong>+ Add Command</strong> อีกครั้ง",
+    "ตั้ง <strong>Command</strong>: <code>!rps</code>",
+    "ตั้ง <strong>Response</strong>: <code>@$(user) เป่ายิงฉุบออก: $(rand.pick ค้อน,กรรไกร,กระดาษ) ✂️🔨📄</code>",
+    "ตั้ง <strong>Cooldown</strong>: <code>10s</code>",
+    "กด <strong>Save</strong>"
+  ]} />
+  <ImageCaption src="/images/ch11/s11_6_step1_gimmick_commands.jpg" alt="คำสั่ง !roll ของ BotRix ใช้ Variable $(rand..)" caption="BotRix — คำสั่ง !roll ใช้ $(rand.1-100) — สังเกตว่า BotRix ใช้ $(rand) ต่างจาก KickBot ที่ใช้ $(random)" />
+</StepCard>
+
+<TipBox>
+BotRix ใช้ <code>$(rand.1-100)</code> และ <code>$(rand.pick ...)</code> สำหรับค่าสุ่ม ส่วน KickBot ใช้ <code>$(random.1-100)</code> — syntax ต่างกัน สังเกตให้ดีถ้าเปิดทั้งสองบอทพร้อมกัน
+</TipBox>
+
+---
+
+<SectionHeading id="s11-7">11.7 Live Chat Overlay Widget</SectionHeading>
+
+<StepCard step={7} title="BotRix — เพิ่มกล่องแชทลอยธีมสวยงามใน OBS">
+  <SubSteps items={[
+    "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Widgets</strong> → <strong>Chat</strong>",
+    "เลือกธีมแชท Overlay ที่ต้องการ",
+    "กด <strong>Copy Widget URL</strong>",
+    "เปิด OBS Studio → กด <strong>+ Add Source</strong> → เลือก <strong>Browser</strong>",
+    "วาง Widget URL และตั้งความละเอียดเป็น <strong>400×600</strong>",
+    "กด OK — กล่องแชทลอยจะปรากฏบนสตรีมใน OBS"
+  ]} />
+  <ImageCaption src="/images/ch11/s11_7_step1_chat_overlay.jpg" alt="หน้าเลือกธีม Chat Overlay ของ BotRix" caption="BotRix — Widgets → Chat — เลือกธีม คัดลอก URL เพิ่มใน OBS เป็น Browser Source (400×600)" />
+</StepCard>
+
+---
+
+<SectionHeading id="s11-8">11.8 Music Overlay & Song Request (!sr)</SectionHeading>
+
+<StepCard step={8} title="BotRix — เปิดระบบขอเพลงและกรอบ Now Playing บน OBS">
+  <SubSteps items={[
+    "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Modules</strong> → <strong>Song Request</strong>",
+    "เปิดสวิตช์ Song Request เป็น ON",
+    "คนดูสามารถพิมพ์ <code>!sr [ลิงก์ YouTube]</code> ในแชทเพื่อขอเพลงเข้าคิวได้ทันที",
+    "ไปที่ <strong>Widgets</strong> → <strong>Music</strong>",
+    "ปรับแต่งกรอบแสดงชื่อเพลงที่กำลังเล่น (สี, ฟอนต์, ความเร็ว Scroll)",
+    "กด <strong>Copy Widget URL</strong>",
+    "เปิด OBS Studio → กด <strong>+ Add Source</strong> → เลือก <strong>Browser</strong>",
+    "วาง Widget URL และตั้งความละเอียดเป็น <strong>500×150</strong>",
+    "ชื่อเพลงที่กำลังเล่นอยู่จะแสดงเป็นแถบ Overlay บนสตรีมของคุณ"
+  ]} />
+  <ImageCaption src="/images/ch11/s11_8_step1_music_overlay.jpg" alt="หน้า Music Overlay Widget ของ BotRix" caption="BotRix — Widgets → Music — กรอบ Now Playing + คิวเพลง !sr จาก YouTube เป็น OBS Overlay" />
+</StepCard>
+
+<TipBox>
+เพิ่ม Music Widget Browser Source ที่ส่วนล่างของ Layout สตรีม (ความละเอียด 500×150 เหมาะสำหรับแถบ Lower-Third) คนดูจะเห็นชื่อเพลงที่กำลังเล่นอยู่ ซึ่งกระตุ้นให้มีการขอเพลงมากขึ้น
+</TipBox>
+
+---
+
+**Q: Alerts ของ BotRix ไม่ขึ้นใน OBS — เกิดอะไรขึ้น?**  
+A: ตรวจสอบสองอย่าง: (1) BotRix ต้องมียศ Moderator ที่ [dashboard.kick.com/community/moderators](https://dashboard.kick.com/community/moderators) และ (2) Alerts Browser Source ต้องเป็นชั้นบนสุดใน OBS Scene เพื่อไม่ให้ถูก Source อื่นบัง
+
+**Q: คนดูสามารถข้ามเพลงใน !sr Queue ได้ไหม?**  
+A: Queue !sr ของ BotRix จัดการโดยสตรีมเมอร์ — คุณควบคุมการเล่น บอทรับคำขอจากคนดูเข้าคิว แต่เฉพาะคุณเท่านั้นที่ข้ามหรือลบเพลงออกจากรายการได้
+
+---
+
+<References items={[
+  { label: "BotRix Dashboard", url: "https://botrix.live" },
+  { label: "บทที่ 5 — Chatbot Setup (ติดตั้งบอท)", url: "/th/guide/chatbot" },
+  { label: "บทที่ 10 — KickBot Functions", url: "/th/guide/kickbot-functions" }
+]} />

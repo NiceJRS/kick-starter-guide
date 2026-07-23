@@ -4,88 +4,33 @@ slug: chatbot
 level: intermediate
 title_th: "การตั้งค่า Chatbot สำหรับ KICK"
 title_en: "Chatbot Setup for KICK"
-description_th: "คู่มือการติดตั้งและตั้งค่า Chatbot สำหรับ KICK.com โดยเปรียบเทียบและสอนใช้งาน 2 บอทยอดนิยม KickBot และ BotRix พร้อมฟังก์ชั่นสำคัญจับมือทำ Step-by-Step"
-description_en: "Comprehensive guide to setting up Chatbots for KICK.com featuring KickBot and BotRix, with step-by-step guides for essential functions."
-estimated_time: "25 นาที / 25 mins"
+description_th: "เปรียบเทียบ KickBot vs BotRix และวิธีติดตั้งบอทเข้ากับช่องของคุณ"
+description_en: "Compare KickBot vs BotRix and install your chosen chatbot on your KICK channel."
+estimated_time: "10 นาที / 10 mins"
 prerequisites:
   - chat-restrictions
 ---
 
-<SectionHeading id="s5-1">5.1 Chatbot Selection</SectionHeading>
+<SectionHeading id="s5-1">5.1 เปรียบเทียบ Chatbot</SectionHeading>
 
-<StepCard step={1} title="เปรียบเทียบ KickBot vs BotRix">
+<StepCard step={1} title="เปรียบเทียบ KickBot vs BotRix — เลือกบอทที่เหมาะกับคุณ">
   <SubSteps items={[
     "บอทยอดนิยมที่ออกแบบมาสำหรับ KICK โดยเฉพาะมี 2 ตัวหลัก ได้แก่ <strong>KickBot</strong> และ <strong>BotRix</strong> — แต่ละตัวเด่นคนละด้าน",
     "<strong>KickBot (<a href='https://kickbot.com' target='_blank'>kickbot.com</a>):</strong> เหมาะกับสายเอนเตอร์เทนที่ต้องการ AI เสียงอ่านแชทสด (TTS), คำสั่งตัดคลิป VOD อัตโนมัติ (<code>!clip</code>) และกิมมิกสุ่มตัวเลขในแชท",
     "<strong>BotRix (<a href='https://botrix.live' target='_blank'>botrix.live</a>):</strong> เหมาะกับคนที่ต้องการกรอบแจ้งเตือน Follow/Sub บน OBS Studio, ระบบคัดกรองลิงก์แยกยศ Subscriber, ตั้งเวลาโพสต์ลิงก์โดเนทพร้อมเพย์ (TipMe) และกรอบซิงก์ชื่อเพลง Now Playing"
   ]} />
-  <ImageCaption src="/images/ch5/s5_1_step1_compare_bots.jpg" alt="หน้าหลัก KickBot และ BotRix เปรียบเทียบกัน" caption="KickBot vs BotRix — เลือกตามฟีเจอร์ที่ต้องการใช้มากที่สุด" />
+  <ImageCaption src="/images/ch5/s5_1_step1_compare_bots.jpg" alt="หน้าหลัก KickBot และ BotRix" caption="KickBot vs BotRix — แต่ละตัวเชี่ยวชาญเครื่องมือสตรีมคนละด้าน" />
 </StepCard>
 
-<div className="overflow-x-auto my-6">
-<table className="w-full text-sm border-collapse">
-<thead>
-<tr className="border-b border-border">
-<th className="text-left py-2 pr-6 font-semibold w-[200px]">ฟังก์ชั่น</th>
-<th className="text-left py-2 pr-6 font-semibold">KickBot (kickbot.com)</th>
-<th className="text-left py-2 font-semibold">BotRix (botrix.live)</th>
-</tr>
-</thead>
-<tbody>
-<tr className="border-b border-border/40">
-<td className="py-2 pr-6 font-medium">จุดเด่นหลัก</td>
-<td className="py-2 pr-6">AI Text-to-Speech & VOD Clipping</td>
-<td className="py-2">Alerts Overlay & Moderation</td>
-</tr>
-<tr className="border-b border-border/40">
-<td className="py-2 pr-6 font-medium">Custom Commands + Cooldown</td>
-<td className="py-2 pr-6">✅ ตั้งค่าง่าย + ตั้ง Cooldown กันสแปมได้</td>
-<td className="py-2">✅ ตั้งค่าง่าย + ตั้ง Cooldown กันสแปมได้</td>
-</tr>
-<tr className="border-b border-border/40">
-<td className="py-2 pr-6 font-medium">Timers (ส่งข้อความประกาศ)</td>
-<td className="py-2 pr-6">✅ ตั้งเวลาเว้นระยะ + รองรับเสียง AI อ่าน</td>
-<td className="py-2">✅ ตั้งเวลาเว้นระยะ + กำหนด Chat Lines ได้</td>
-</tr>
-<tr className="border-b border-border/40">
-<td className="py-2 pr-6 font-medium">Link Protection (คัดกรองลิงก์)</td>
-<td className="py-2 pr-6">✅ มีระบบ Spam & Link Protection</td>
-<td className="py-2">✅ <strong>เด่นมาก</strong> — ปลดล็อกสิทธิ์แปะลิงก์เฉพาะ Sub/Mod ได้</td>
-</tr>
-<tr className="border-b border-border/40">
-<td className="py-2 pr-6 font-medium">Emote Limit Protection</td>
-<td className="py-2 pr-6">✅ บล็อกการสแปมข้อความซ้ำ</td>
-<td className="py-2">✅ <strong>เด่นมาก</strong> — กำหนดจำนวน Emote สูงสุดต่อข้อความได้</td>
-</tr>
-<tr className="border-b border-border/40">
-<td className="py-2 pr-6 font-medium">ฟีเจอร์เด่น</td>
-<td className="py-2 pr-6">✅ <strong>AI TTS</strong> — อ่านแชทสดธรรมชาติ 150+ เสียง</td>
-<td className="py-2">✅ <strong>Stream Alerts Overlay</strong> — แจ้งเตือน Follow/Sub บน OBS</td>
-</tr>
-<tr className="border-b border-border/40">
-<td className="py-2 pr-6 font-medium">Gimmick Commands (!roll, !rps)</td>
-<td className="py-2 pr-6">✅ ใช้ Variable <code>$(random.1-100)</code></td>
-<td className="py-2">✅ ใช้ Variable <code>$(rand.1-100)</code></td>
-</tr>
-<tr className="border-b border-border/40">
-<td className="py-2 pr-6 font-medium">Live Chat Overlay Widget</td>
-<td className="py-2 pr-6">✅ ปรับแต่งธีม/พื้นหลังโปร่งใสได้</td>
-<td className="py-2">✅ ปรับแต่งสไตล์ธีมแชทลอยได้</td>
-</tr>
-<tr>
-<td className="py-2 pr-6 font-medium">Music Overlay & Song Request (!sr)</td>
-<td className="py-2 pr-6">❌ ต้องใช้แอปเล่นวิดีโอภายนอก</td>
-<td className="py-2">✅ <strong>เด่นมาก</strong> — ระบบ <code>!sr</code> ขอเพลง + กรอบ Now Playing บน OBS</td>
-</tr>
-</tbody>
-</table>
-</div>
+<BotComparisonTable />
 
 <TipBox>
-คุณสามารถใช้งานทั้งสองบอทพร้อมกันได้ — ใช้ KickBot สำหรับ AI TTS + !clip และใช้ BotRix สำหรับ OBS Alerts + คัดกรองลิงก์แยกยศ + กรอบเพลง
+คุณสามารถใช้งานทั้งสองบอทพร้อมกันได้ — ใช้ KickBot สำหรับ AI TTS + !clip และใช้ BotRix สำหรับ OBS Alerts + คัดกรองลิงก์แยกยศ + กรอบเพลง ดูขั้นตอนติดตั้งแต่ละบอทด้านล่าง
 </TipBox>
 
 ---
+
+<SectionHeading id="s5-2">5.2 ติดตั้ง KickBot</SectionHeading>
 
 <StepCard step={2} title="เชื่อมต่อ KickBot กับช่องของคุณ">
   <SubSteps items={[
@@ -94,278 +39,53 @@ prerequisites:
     "KickBot จะแสดงคำสั่งยืนยันตัวตน เช่น <code>!verify abc123</code>",
     "เปิด Chat Dock ของ KICK แล้วพิมพ์คำสั่งนั้นในแชท เพื่อเสร็จสิ้นการเชื่อมต่อ"
   ]} />
-  <ImageCaption src="/images/ch5/s5_1_step2_link_kickbot.jpg" alt="หน้า Login และยืนยันตัวตน KickBot" caption="kickbot.com — กด Login with Kick แล้วพิมพ์คำสั่งยืนยันในแชท" />
+  <ImageCaption src="/images/ch5/s5_2_step1_link_kickbot.jpg" alt="หน้า Login และยืนยันตัวตน KickBot" caption="kickbot.com — กด Login with Kick แล้วพิมพ์คำสั่งยืนยันในแชท" />
 </StepCard>
 
-<StepCard step={3} title="เชื่อมต่อ BotRix กับช่องของคุณ">
+<StepCard step={3} title="แต่งตั้งยศ Moderator ให้ KickBot">
+  <SubSteps items={[
+    "ไปที่ <a href='https://dashboard.kick.com/community/moderators' target='_blank'>dashboard.kick.com/community/moderators</a>",
+    "กดปุ่ม <strong>Add New</strong>",
+    "ค้นหา <code>KickBot</code> แล้วแต่งตั้งเป็น <strong>Moderator</strong>",
+    "หากไม่มียศ Moderator KickBot จะลบสแปมหรือส่งข้อความตอบกลับในแชทไม่ได้"
+  ]} />
+  <ImageCaption src="/images/ch5/s5_2_step2_grant_mod_kickbot.jpg" alt="หน้า Moderators ใน KICK Dashboard — เพิ่ม KickBot" caption="dashboard.kick.com/community/moderators — เพิ่ม KickBot เป็น Moderator" />
+</StepCard>
+
+<WarningBox>
+<strong>ข้อผิดพลาดอันดับ 1 ในการตั้งค่า:</strong> ลืมแต่งตั้งยศ Moderator ให้บอท — หากไม่มียศมอด บอทจะไม่สามารถส่งข้อความหรือลบสแปมได้ และจะดูเหมือนไม่ทำงานเลย
+</WarningBox>
+
+<TipBox>
+<strong>พร้อมตั้งค่าฟังก์ชั่น KickBot แล้วใช่ไหม?</strong> ไปที่ <a href='/th/guide/kickbot-functions'>บทที่ 10 — KickBot Functions</a> สำหรับคู่มือ Custom Commands, Timers, AI TTS, !clip, Link Protection, Gimmick Commands และ Chat Overlay Widget แบบ Step-by-Step
+</TipBox>
+
+---
+
+<SectionHeading id="s5-3">5.3 ติดตั้ง BotRix</SectionHeading>
+
+<StepCard step={4} title="เชื่อมต่อ BotRix กับช่องของคุณ">
   <SubSteps items={[
     "เปิดเบราว์เซอร์แล้วไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a>",
     "กด <strong>Profile</strong> แล้วเลือกเข้าสู่ระบบด้วยบัญชี KICK ของคุณ",
     "BotRix จะแสดงคำสั่งเชื่อมต่อบัญชีให้คุณนำไปวางในแชทสด",
     "พิมพ์คำสั่งนั้นในแชท เพื่อเสร็จสิ้นการเชื่อมต่อ"
   ]} />
-  <ImageCaption src="/images/ch5/s5_1_step3_link_botrix.jpg" alt="หน้า Login และเชื่อมต่อบัญชี BotRix" caption="botrix.live — เข้าสู่ระบบด้วย KICK แล้วพิมพ์คำสั่งเชื่อมต่อในแชท" />
+  <ImageCaption src="/images/ch5/s5_3_step1_link_botrix.jpg" alt="หน้า Login และเชื่อมต่อบัญชี BotRix" caption="botrix.live — เข้าสู่ระบบด้วย KICK แล้วพิมพ์คำสั่งเชื่อมต่อในแชท" />
 </StepCard>
 
-<StepCard step={4} title="แต่งตั้งยศ Moderator ให้ทั้งสองบอท">
+<StepCard step={5} title="แต่งตั้งยศ Moderator ให้ BotRix">
   <SubSteps items={[
     "ไปที่ <a href='https://dashboard.kick.com/community/moderators' target='_blank'>dashboard.kick.com/community/moderators</a>",
     "กดปุ่ม <strong>Add New</strong>",
-    "ค้นหา <code>KickBot</code> แล้วแต่งตั้งเป็น <strong>Moderator</strong>",
-    "กด <strong>Add New</strong> อีกครั้ง",
-    "ค้นหา <code>BotRix</code> แล้วแต่งตั้งเป็น <strong>Moderator</strong> เช่นกัน",
-    "หากไม่มียศ Moderator บอทจะส่งข้อความตอบกลับหรือลบสแปมในแชทไม่ได้"
+    "ค้นหา <code>BotRix</code> แล้วแต่งตั้งเป็น <strong>Moderator</strong>",
+    "หากไม่มียศ Moderator BotRix จะลบสแปมหรือส่งข้อความตอบกลับในแชทไม่ได้"
   ]} />
-  <ImageCaption src="/images/ch5/s5_1_step4_grant_mod.jpg" alt="หน้า Moderators ใน KICK Dashboard — เพิ่ม KickBot และ BotRix" caption="dashboard.kick.com/community/moderators — เพิ่ม KickBot และ BotRix เป็น Moderator" />
-</StepCard>
-
-<WarningBox>
-<strong>ข้อผิดพลาดอันดับ 1 ในการตั้งค่า:</strong> ลืมแต่งตั้งยศ Moderator ให้ KickBot หรือ BotRix — หากไม่มียศมอด บอทจะไม่สามารถส่งข้อความหรือลบสแปมได้ และจะดูเหมือนไม่ทำงานเลย
-</WarningBox>
-
----
-
-<SectionHeading id="s5-2">5.2 KickBot</SectionHeading>
-
-**KickBot ครอบคลุม 7 ฟังก์ชั่น — กดเพื่อข้ามไปยังเนื้อหา:**
-
-1. [Custom Commands + Cooldown](#kb-commands)
-2. [Timers (ส่งข้อความโปรโมตอัตโนมัติ)](#kb-timers)
-3. [AI Text-to-Speech (เสียงอ่านแชทสด)](#kb-tts)
-4. [VOD Clipping (คำสั่ง !clip)](#kb-clip)
-5. [Link & Spam Protection](#kb-links)
-6. [Gimmick Commands (!roll, !rps)](#kb-gimmicks)
-7. [Live Chat Overlay Widget](#kb-overlay)
-
----
-
-<div id="kb-commands" />
-<StepCard step={5} title="KickBot — Custom Commands + Cooldown">
-  <SubSteps items={[
-    "ไปที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Commands</strong> → <strong>Custom Commands</strong>",
-    "กด <strong>+ Add Command</strong>",
-    "ตั้ง <strong>Command</strong>: <code>!discord</code>",
-    "ตั้ง <strong>Response</strong>: <code>เข้ามาร่วมคุยใน Discord: https://discord.gg/yourlink</code>",
-    "ตั้ง <strong>User Cooldown</strong>: <code>10s</code> — ป้องกันคนดูสแปมคำสั่งซ้ำๆ",
-    "กด <strong>Save</strong>"
-  ]} />
-  <ImageCaption src="/images/ch5/s5_2_step5_custom_commands.jpg" alt="หน้า Custom Commands ของ KickBot" caption="KickBot — Commands → Custom Commands — ตั้งคำสั่ง, ข้อความตอบกลับ และ Cooldown" />
-</StepCard>
-
-<div id="kb-timers" />
-<StepCard step={6} title="KickBot — Timers (ส่งข้อความโปรโมตอัตโนมัติ)">
-  <SubSteps items={[
-    "ไปที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Timers</strong>",
-    "กด <strong>+ Add Timer</strong>",
-    "ตั้ง <strong>Name</strong>: <code>FacebookPromote</code>",
-    "ตั้ง <strong>Interval</strong>: <code>15m</code> — KickBot จะโพสต์ข้อความนี้ทุก 15 นาที",
-    "ตั้ง <strong>Lines</strong>: <code>5</code> — โพสต์เฉพาะเมื่อมีแชทอย่างน้อย 5 ข้อความ ป้องกันสแปมช่วงแชทเงียบ",
-    "ตั้ง <strong>Message</strong>: <code>กดติดตามเพจ Facebook: https://facebook.com/yourpage</code>",
-    "กด <strong>Save</strong>"
-  ]} />
-  <ImageCaption src="/images/ch5/s5_2_step6_timers.jpg" alt="หน้า Timers ของ KickBot" caption="KickBot — Timers — ส่งข้อความโปรโมตอัตโนมัติทุก 15 นาที พร้อมเงื่อนไขขั้นต่ำแชท" />
-</StepCard>
-
-<div id="kb-tts" />
-<StepCard step={7} title="KickBot — AI Text-to-Speech (เสียงอ่านแชทสด)">
-  <SubSteps items={[
-    "ไปที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Text to Speech</strong>",
-    "เปิดสวิตช์ <strong>Enable TTS</strong> เป็น ON",
-    "เลือกเสียงพูดจาก Dropdown — KickBot มีให้เลือกกว่า 150 เสียง รวมถึงภาษาไทย",
-    "ตั้งระดับการกรอง: อ่าน <strong>แชทข้อความทั้งหมด</strong> หรือเฉพาะ <strong>Subscriber และ Donation</strong>"
-  ]} />
-  <ImageCaption src="/images/ch5/s5_2_step7_ai_tts.jpg" alt="หน้าตั้งค่า AI TTS ของ KickBot" caption="KickBot — Text to Speech — เปิด TTS และเลือกเสียงพูดสำหรับอ่านแชทสด" />
-</StepCard>
-
-<div id="kb-clip" />
-<StepCard step={8} title="KickBot — VOD Clipping (คำสั่ง !clip)">
-  <SubSteps items={[
-    "ไปที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Commands</strong>",
-    "หาและเปิดใช้งานคำสั่ง <strong>!clip</strong>",
-    "เมื่อเกิดช็อตเด็ดระหว่างสตรีม พิมพ์ <code>!clip</code> ในแชทสด",
-    "KickBot จะตัดวิดีโอย้อนหลัง 30 วินาที และบันทึกไว้ในเมนู <strong>Clips</strong>",
-    "เข้าไปดาวน์โหลดคลิปจากเมนู Clips ของ KickBot เพื่อนำไปลง TikTok หรือ YouTube Shorts"
-  ]} />
-  <ImageCaption src="/images/ch5/s5_2_step8_clip_command.jpg" alt="คำสั่ง !clip เปิดใช้งานใน KickBot Commands" caption="KickBot — Commands → เปิด !clip — พิมพ์ในแชทเพื่อตัดคลิปย้อนหลัง 30 วินาทีทันที" />
-</StepCard>
-
-<div id="kb-links" />
-<StepCard step={9} title="KickBot — Link & Spam Protection">
-  <SubSteps items={[
-    "ไปที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Filters</strong>",
-    "เปิดใช้งาน <strong>Link Protection</strong> เพื่อลบลิงก์ที่ไม่ได้รับอนุญาตอัตโนมัติ",
-    "เปิดใช้งาน <strong>Spam Protection</strong> เพื่อบล็อกข้อความซ้ำๆ"
-  ]} />
-  <ImageCaption src="/images/ch5/s5_2_step9_link_protection.jpg" alt="หน้า Filters ของ KickBot — เปิด Link Protection" caption="KickBot — Filters — เปิด Link Protection และ Spam Protection เพื่อลบสแปมอัตโนมัติ" />
-</StepCard>
-
-<div id="kb-gimmicks" />
-<StepCard step={10} title="KickBot — Gimmick Commands (!roll, !rps)">
-  <SubSteps items={[
-    "ไปที่ <strong>Commands</strong> → <strong>Custom Commands</strong> → กด <strong>+ Add Command</strong>",
-    "<strong>สร้างคำสั่ง !roll:</strong>",
-    "ตั้ง <strong>Command</strong>: <code>!roll</code>",
-    "ตั้ง <strong>Response</strong>: <code>@$(user) สุ่มดวงวันนี้ได้: $(random.1-100) แต้ม! 🎲</code>",
-    "ตั้ง <strong>User Cooldown</strong>: <code>30s</code> — ป้องกันสแปม",
-    "กด <strong>Save</strong>",
-    "<strong>สร้างคำสั่ง !rps:</strong>",
-    "กด <strong>+ Add Command</strong> อีกครั้ง",
-    "ตั้ง <strong>Command</strong>: <code>!rps</code>",
-    "ตั้ง <strong>Response</strong>: <code>@$(user) เป่ายิงฉุบออก: $(random.ค้อน,กรรไกร,กระดาษ) ✂️🔨📄</code>",
-    "กด <strong>Save</strong>"
-  ]} />
-  <ImageCaption src="/images/ch5/s5_2_step10_gimmick_commands.jpg" alt="คำสั่ง !roll ของ KickBot ใช้ Variable $(random.1-100)" caption="KickBot — คำสั่ง !roll ใช้ $(random.1-100) เพื่อสุ่มตัวเลขให้คนดูแต่ละคน" />
-</StepCard>
-
-<div id="kb-overlay" />
-<StepCard step={11} title="KickBot — Live Chat Overlay Widget">
-  <SubSteps items={[
-    "ไปที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Widgets</strong> → <strong>Chat Overlay</strong>",
-    "ปรับแต่งฟอนต์ สี และความโปร่งใสของพื้นหลัง",
-    "กด <strong>Copy Widget URL</strong>",
-    "เปิด OBS Studio → กด <strong>+ Add Source</strong> → เลือก <strong>Browser</strong>",
-    "วาง Widget URL ลงในช่อง URL ของ Browser Source",
-    "ตั้งความละเอียดเป็น <strong>400×600</strong> แล้วกด OK",
-    "กล่องแชทลอยพื้นหลังโปร่งใสจะปรากฏขึ้นบนสตรีมใน OBS"
-  ]} />
-  <ImageCaption src="/images/ch5/s5_2_step11_chat_overlay.jpg" alt="หน้า Chat Overlay Widget ของ KickBot และ URL" caption="KickBot — Widgets → Chat Overlay — คัดลอก URL แล้วเพิ่มใน OBS เป็น Browser Source (400×600)" />
+  <ImageCaption src="/images/ch5/s5_3_step2_grant_mod_botrix.jpg" alt="หน้า Moderators ใน KICK Dashboard — เพิ่ม BotRix" caption="dashboard.kick.com/community/moderators — เพิ่ม BotRix เป็น Moderator" />
 </StepCard>
 
 <TipBox>
-AI TTS + !clip ของ KickBot เป็นคู่หูที่ดีมากสำหรับสายเอนเตอร์เทน — คนดูสามารถเรียกเสียงอ่านแชทและตัดคลิปช็อตเด็ดของคุณได้เองในระหว่างสตรีม
-</TipBox>
-
----
-
-<SectionHeading id="s5-3">5.3 BotRix</SectionHeading>
-
-**BotRix ครอบคลุม 8 ฟังก์ชั่น — กดเพื่อข้ามไปยังเนื้อหา:**
-
-1. [Custom Commands + Cooldown](#br-commands)
-2. [Timers (ลิงก์โดเนท PromptPay / TipMe)](#br-timers)
-3. [Subscriber-Exempt Link Protection](#br-links)
-4. [Emote Limit Protection](#br-emotes)
-5. [Stream Alerts Overlay (กรอบแจ้งเตือนบน OBS)](#br-alerts)
-6. [Gimmick Commands (!roll, !rps)](#br-gimmicks)
-7. [Live Chat Overlay Widget](#br-overlay)
-8. [Music Overlay & Song Request (!sr)](#br-music)
-
----
-
-<div id="br-commands" />
-<StepCard step={12} title="BotRix — Custom Commands + Cooldown">
-  <SubSteps items={[
-    "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Chatbot</strong> → <strong>Commands</strong>",
-    "กด <strong>+ Add Command</strong>",
-    "ตั้ง <strong>Command</strong>: <code>!specs</code>",
-    "ตั้ง <strong>Response</strong>: <code>CPU: i7-14700K | GPU: RTX 4070 Ti Super</code>",
-    "ตั้ง <strong>Cooldown</strong>: <code>10s</code>",
-    "กด <strong>Save</strong>"
-  ]} />
-  <ImageCaption src="/images/ch5/s5_3_step12_custom_commands.jpg" alt="หน้า Commands ของ BotRix" caption="BotRix — Chatbot → Commands — ตั้งคำสั่ง, ข้อความตอบกลับ และ Cooldown" />
-</StepCard>
-
-<div id="br-timers" />
-<StepCard step={13} title="BotRix — Timers (ลิงก์โดเนท PromptPay / TipMe)">
-  <SubSteps items={[
-    "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Chatbot</strong> → <strong>Timers</strong>",
-    "กด <strong>+ Create</strong>",
-    "ตั้ง <strong>Name</strong>: <code>DonateLink</code>",
-    "ตั้ง <strong>Interval</strong>: <code>20 minutes</code>",
-    "ตั้ง <strong>Lines</strong>: <code>5 lines</code> — โพสต์เฉพาะเมื่อมีแชทขั้นต่ำ 5 ข้อความ",
-    "ตั้ง <strong>Message</strong>: <code>สนับสนุนค่ากาแฟสตรีมเมอร์ผ่าน PromptPay (TipMe): https://tipme.in.th/yourchannel</code>",
-    "กด <strong>Save</strong>"
-  ]} />
-  <ImageCaption src="/images/ch5/s5_3_step13_timers.jpg" alt="หน้า Timers ของ BotRix — ตั้งค่าลิงก์โดเนท" caption="BotRix — Chatbot → Timers — ส่งลิงก์ PromptPay/TipMe โดยอัตโนมัติทุก 20 นาที" />
-</StepCard>
-
-<div id="br-links" />
-<StepCard step={14} title="BotRix — Subscriber-Exempt Link Protection">
-  <SubSteps items={[
-    "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Modules</strong> → <strong>Moderation</strong> → <strong>Link Protection</strong>",
-    "เปิดสวิตช์ <strong>Link Protection</strong> เป็น ON",
-    "ในช่อง <strong>Exempted Roles</strong> ติ๊กเลือกทั้ง <strong>Subscribers</strong> และ <strong>Moderators</strong>",
-    "คนดูทั่วไปที่แปะลิงก์จะถูกลบข้อความอัตโนมัติ",
-    "Subscriber และ Moderator แปะลิงก์ได้ปกติ — ไม่มีการลงโทษ"
-  ]} />
-  <ImageCaption src="/images/ch5/s5_3_step14_link_protection.jpg" alt="BotRix Link Protection พร้อม Exempted Roles ที่ติ๊กแล้ว" caption="BotRix — Link Protection — Sub/Mod ได้รับยกเว้น คนดูทั่วไปแปะลิงก์โดนลบอัตโนมัติ" />
-</StepCard>
-
-<div id="br-emotes" />
-<StepCard step={15} title="BotRix — Emote Limit Protection">
-  <SubSteps items={[
-    "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Modules</strong> → <strong>Moderation</strong>",
-    "เลือก <strong>Emote Protection</strong>",
-    "ตั้ง <strong>Limit</strong>: <code>5</code> — จำนวน Emote สูงสุดต่อข้อความ",
-    "ตั้ง <strong>Action</strong>: <code>Delete Message & Timeout 10s</code>",
-    "ข้อความที่มี Emote เกิน 5 ตัวจะถูกลบและผู้ส่งถูก Timeout 10 วินาทีทันที"
-  ]} />
-  <ImageCaption src="/images/ch5/s5_3_step15_emote_limit.jpg" alt="หน้า Emote Protection ของ BotRix" caption="BotRix — Emote Protection — จำกัด 5 Emote/ข้อความ, เกินโดนลบ + Timeout 10 วินาที" />
-</StepCard>
-
-<div id="br-alerts" />
-<StepCard step={16} title="BotRix — Stream Alerts Overlay (กรอบแจ้งเตือนบน OBS)">
-  <SubSteps items={[
-    "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Widgets</strong> → <strong>Alerts</strong>",
-    "ปรับแต่งภาพแอนิเมชันและเสียงแจ้งเตือนสำหรับ Follow และ Subscribe",
-    "กด <strong>Copy Widget URL</strong>",
-    "เปิด OBS Studio → กด <strong>+ Add Source</strong> → เลือก <strong>Browser</strong>",
-    "วาง Widget URL ลงในช่อง URL ของ Browser Source",
-    "ตั้งความละเอียดเป็น <strong>1920×1080</strong> แล้วกด OK",
-    "กรอบแจ้งเตือน Follow/Sub จะโผล่ขึ้นบนสตรีมใน OBS เมื่อมีคนกด"
-  ]} />
-  <ImageCaption src="/images/ch5/s5_3_step16_alerts_overlay.jpg" alt="หน้า Alerts Widget ของ BotRix พร้อม URL" caption="BotRix — Widgets → Alerts — คัดลอก URL แล้วเพิ่มใน OBS เป็น Browser Source (1920×1080)" />
-</StepCard>
-
-<div id="br-gimmicks" />
-<StepCard step={17} title="BotRix — Gimmick Commands (!roll, !rps)">
-  <SubSteps items={[
-    "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Chatbot</strong> → <strong>Commands</strong> → กด <strong>+ Add Command</strong>",
-    "<strong>สร้างคำสั่ง !roll:</strong>",
-    "ตั้ง <strong>Command</strong>: <code>!roll</code>",
-    "ตั้ง <strong>Response</strong>: <code>@$(user) ทอยเต๋าได้: $(rand.1-100) แต้ม! 🎲</code>",
-    "ตั้ง <strong>Cooldown</strong>: <code>30s</code>",
-    "กด <strong>Save</strong>",
-    "<strong>สร้างคำสั่ง !rps:</strong>",
-    "กด <strong>+ Add Command</strong> อีกครั้ง",
-    "ตั้ง <strong>Command</strong>: <code>!rps</code>",
-    "ตั้ง <strong>Response</strong>: <code>@$(user) เป่ายิงฉุบออก: $(rand.pick ค้อน,กรรไกร,กระดาษ) ✂️🔨📄</code>",
-    "กด <strong>Save</strong>"
-  ]} />
-  <ImageCaption src="/images/ch5/s5_3_step17_gimmick_commands.jpg" alt="คำสั่ง !roll ของ BotRix ใช้ Variable $(rand..)" caption="BotRix — คำสั่ง !roll ใช้ $(rand.1-100) — สังเกตว่า BotRix ใช้ $(rand) ต่างจาก KickBot ที่ใช้ $(random)" />
-</StepCard>
-
-<div id="br-overlay" />
-<StepCard step={18} title="BotRix — Live Chat Overlay Widget">
-  <SubSteps items={[
-    "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Widgets</strong> → <strong>Chat</strong>",
-    "เลือกธีมแชท Overlay ที่ต้องการ",
-    "กด <strong>Copy Widget URL</strong>",
-    "เปิด OBS Studio → กด <strong>+ Add Source</strong> → เลือก <strong>Browser</strong>",
-    "วาง Widget URL และตั้งความละเอียดเป็น <strong>400×600</strong>",
-    "กด OK — กล่องแชทลอยจะปรากฏบนสตรีมใน OBS"
-  ]} />
-  <ImageCaption src="/images/ch5/s5_3_step18_chat_overlay.jpg" alt="หน้าเลือกธีม Chat Overlay ของ BotRix" caption="BotRix — Widgets → Chat — เลือกธีม คัดลอก URL เพิ่มใน OBS เป็น Browser Source (400×600)" />
-</StepCard>
-
-<div id="br-music" />
-<StepCard step={19} title="BotRix — Music Overlay & Song Request (!sr)">
-  <SubSteps items={[
-    "ไปที่ <a href='https://botrix.live' target='_blank'>botrix.live</a> → <strong>Modules</strong> → <strong>Song Request</strong>",
-    "เปิดสวิตช์ Song Request เป็น ON",
-    "คนดูสามารถพิมพ์ <code>!sr [ลิงก์ YouTube]</code> ในแชทเพื่อขอเพลงเข้าคิวได้ทันที",
-    "ไปที่ <strong>Widgets</strong> → <strong>Music</strong>",
-    "ปรับแต่งกรอบแสดงชื่อเพลงที่กำลังเล่น",
-    "กด <strong>Copy Widget URL</strong>",
-    "เปิด OBS Studio → กด <strong>+ Add Source</strong> → เลือก <strong>Browser</strong>",
-    "วาง Widget URL และตั้งความละเอียดเป็น <strong>500×150</strong>",
-    "ชื่อเพลงที่กำลังเล่นอยู่จะแสดงเป็นแถบ Overlay บนสตรีมของคุณ"
-  ]} />
-  <ImageCaption src="/images/ch5/s5_3_step19_music_overlay.jpg" alt="หน้า Music Overlay Widget ของ BotRix" caption="BotRix — Widgets → Music — กรอบ Now Playing + คิวเพลง !sr จาก YouTube เป็น OBS Overlay" />
-</StepCard>
-
-<TipBox>
-Link Protection ของ BotRix แบบแยกยศแก้ปัญหาที่ KICK Native ทำไม่ได้ — คนดูทั่วไปแปะลิงก์โดนลบ แต่ Subscriber แปะได้อิสระ ตรงตามที่หลายช่องต้องการ
+<strong>พร้อมตั้งค่าฟังก์ชั่น BotRix แล้วใช่ไหม?</strong> ไปที่ <a href='/th/guide/botrix-functions'>บทที่ 11 — BotRix Functions</a> สำหรับคู่มือ Custom Commands, Timers, Link Protection, Emote Limit, Stream Alerts Overlay, Gimmick Commands, Chat Overlay และ Music Overlay (!sr) แบบ Step-by-Step
 </TipBox>
 
 ---
@@ -382,5 +102,6 @@ A: ได้เลย — แนะนำให้แบ่งหน้าที
   { label: "KickBot", url: "https://kickbot.com" },
   { label: "BotRix", url: "https://botrix.live" },
   { label: "KICK Moderators Dashboard", url: "https://dashboard.kick.com/community/moderators" },
-  { label: "คู่มือฟีเจอร์ Moderation (KICK)", url: "https://help.kick.com/en/articles/10162074-moderation-features-guide" }
+  { label: "บทที่ 10 — KickBot Functions", url: "/th/guide/kickbot-functions" },
+  { label: "บทที่ 11 — BotRix Functions", url: "/th/guide/botrix-functions" }
 ]} />

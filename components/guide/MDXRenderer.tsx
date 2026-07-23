@@ -11,8 +11,9 @@ import AffiliateRequirements from './AffiliateRequirements'
 import BitrateTable from './BitrateTable'
 import References from './References'
 import FaqItem from './FaqItem'
+import BotComparisonTable from './BotComparisonTable'
 
-const components = { StepCard, ImageCaption, TipBox, WarningBox, SubSteps, SectionHeading, AffiliateRequirements, BitrateTable, References, FaqItem }
+const components = { StepCard, ImageCaption, TipBox, WarningBox, SubSteps, SectionHeading, AffiliateRequirements, BitrateTable, References, FaqItem, BotComparisonTable }
 
 export default function MDXRenderer({ code }: { code: string }) {
   const MDXContent = useMDXComponent(code)

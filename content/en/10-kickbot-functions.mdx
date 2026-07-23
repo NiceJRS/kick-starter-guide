@@ -1,0 +1,168 @@
+---
+number: 10
+slug: kickbot-functions
+level: intermediate
+title_th: "KickBot Functions"
+title_en: "KickBot Functions"
+description_th: "คู่มือฟังก์ชั่น KickBot ครบทุกฟีเจอร์: Custom Commands, Timers, AI TTS, !clip, Link Protection, Gimmicks และ Chat Overlay"
+description_en: "Full KickBot function guide: Custom Commands, Timers, AI TTS, !clip, Link Protection, Gimmicks and Chat Overlay"
+estimated_time: "20 นาที / 20 mins"
+prerequisites:
+  - chatbot
+---
+
+<SectionHeading id="s10-1">10.1 Custom Commands + Cooldown</SectionHeading>
+
+<StepCard step={1} title="KickBot — Set Up a Custom Command with Cooldown">
+  <SubSteps items={[
+    "Go to <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Commands</strong> → <strong>Custom Commands</strong>.",
+    "Click <strong>+ Add Command</strong>.",
+    "Set <strong>Command</strong>: <code>!discord</code>",
+    "Set <strong>Response</strong>: <code>Join our Discord: https://discord.gg/yourlink</code>",
+    "Set <strong>User Cooldown</strong>: <code>10s</code> — prevents the same viewer from spamming the command.",
+    "Click <strong>Save</strong>."
+  ]} />
+  <ImageCaption src="/images/ch10/s10_1_step1_custom_commands.jpg" alt="KickBot Custom Commands panel" caption="KickBot — Commands → Custom Commands — set trigger, response text, and user cooldown" />
+</StepCard>
+
+<TipBox>
+Create as many commands as you need: <code>!specs</code> for your PC build, <code>!social</code> for your social links, <code>!schedule</code> for your stream days. Each can have its own cooldown.
+</TipBox>
+
+---
+
+<SectionHeading id="s10-2">10.2 Timers (Scheduled Announcements)</SectionHeading>
+
+<StepCard step={2} title="KickBot — Create a Scheduled Announcement Timer">
+  <SubSteps items={[
+    "Go to <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Timers</strong>.",
+    "Click <strong>+ Add Timer</strong>.",
+    "Set <strong>Name</strong>: <code>FacebookPromote</code>",
+    "Set <strong>Interval</strong>: <code>15m</code> — KickBot posts the message every 15 minutes.",
+    "Set <strong>Lines</strong>: <code>5</code> — only posts if at least 5 chat lines occurred, preventing dead-chat spam.",
+    "Set <strong>Message</strong>: <code>Follow our Facebook page: https://facebook.com/yourpage</code>",
+    "Click <strong>Save</strong>."
+  ]} />
+  <ImageCaption src="/images/ch10/s10_2_step1_timers.jpg" alt="KickBot Timers panel" caption="KickBot — Timers — auto-broadcast promotions at set intervals with a minimum chat-line guard" />
+</StepCard>
+
+<TipBox>
+Set the Lines threshold to match your average chat activity. If your chat typically gets 10+ messages per minute, use Lines: 10 to ensure the timer only fires during active sessions.
+</TipBox>
+
+---
+
+<SectionHeading id="s10-3">10.3 AI Text-to-Speech (TTS)</SectionHeading>
+
+<StepCard step={3} title="KickBot — Enable AI Voice Chat Reading">
+  <SubSteps items={[
+    "Go to <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Text to Speech</strong>.",
+    "Toggle <strong>Enable TTS</strong> to ON.",
+    "Select a voice persona from the dropdown — KickBot offers 150+ natural voices including Thai.",
+    "Set the filter level: read <strong>all chat messages</strong>, or limit to <strong>subscribers and donations only</strong>."
+  ]} />
+  <ImageCaption src="/images/ch10/s10_3_step1_ai_tts.jpg" alt="KickBot AI TTS settings page" caption="KickBot — Text to Speech — enable TTS and select a voice for live chat audio reading" />
+</StepCard>
+
+<TipBox>
+Thai streamers: KickBot's TTS includes Thai language voices. Try a few to find one that sounds natural — some AI voices handle Thai pronunciation better than others.
+</TipBox>
+
+---
+
+<SectionHeading id="s10-4">10.4 VOD Clipping (!clip Command)</SectionHeading>
+
+<StepCard step={4} title="KickBot — Enable !clip for Instant VOD Highlights">
+  <SubSteps items={[
+    "Go to <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Commands</strong>.",
+    "Find the <strong>!clip</strong> command in the list and enable it.",
+    "When a highlight moment happens during stream, type <code>!clip</code> in your chat.",
+    "KickBot clips the past 30 seconds and saves it to the <strong>Clips</strong> menu.",
+    "Go to KickBot's Clips menu to download the clip file for TikTok or YouTube Shorts."
+  ]} />
+  <ImageCaption src="/images/ch10/s10_4_step1_clip_command.jpg" alt="KickBot !clip command enabled in Commands panel" caption="KickBot — Commands → enable !clip — type in chat to instantly capture the past 30 seconds" />
+</StepCard>
+
+<TipBox>
+Let your viewers use <code>!clip</code> too — when the chat types it during a great moment, you get the clip automatically without having to notice it yourself.
+</TipBox>
+
+---
+
+<SectionHeading id="s10-5">10.5 Link & Spam Protection</SectionHeading>
+
+<StepCard step={5} title="KickBot — Enable Link and Spam Filtering">
+  <SubSteps items={[
+    "Go to <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Filters</strong>.",
+    "Enable <strong>Link Protection</strong> — KickBot will automatically delete unauthorized URLs posted by viewers.",
+    "Enable <strong>Spam Protection</strong> — blocks repeated identical messages from the same viewer."
+  ]} />
+  <ImageCaption src="/images/ch10/s10_5_step1_link_protection.jpg" alt="KickBot Filters panel with Link Protection enabled" caption="KickBot — Filters — enable Link Protection and Spam Protection to auto-purge violations" />
+</StepCard>
+
+<TipBox>
+KickBot's Link Protection is basic — it blocks all links from all viewers equally. If you need subscriber-exempt link protection (Subs can post links freely), use BotRix's Link Protection instead. See <a href='/en/guide/botrix-functions#s11-3'>Ch11 §11.3 — BotRix Link Protection</a>.
+</TipBox>
+
+---
+
+<SectionHeading id="s10-6">10.6 Gimmick Commands (!roll, !rps)</SectionHeading>
+
+<StepCard step={6} title="KickBot — Create Interactive Gimmick Commands">
+  <SubSteps items={[
+    "Go to <strong>Commands</strong> → <strong>Custom Commands</strong> → click <strong>+ Add Command</strong>.",
+    "<strong>Create !roll:</strong>",
+    "Set <strong>Command</strong>: <code>!roll</code>",
+    "Set <strong>Response</strong>: <code>@$(user) rolled today's luck: $(random.1-100) pts! 🎲</code>",
+    "Set <strong>User Cooldown</strong>: <code>30s</code> — prevents spam.",
+    "Click <strong>Save</strong>.",
+    "<strong>Create !rps (Rock Paper Scissors):</strong>",
+    "Click <strong>+ Add Command</strong> again.",
+    "Set <strong>Command</strong>: <code>!rps</code>",
+    "Set <strong>Response</strong>: <code>@$(user) played: $(random.Rock,Paper,Scissors) ✂️🔨📄</code>",
+    "Set <strong>User Cooldown</strong>: <code>10s</code>.",
+    "Click <strong>Save</strong>."
+  ]} />
+  <ImageCaption src="/images/ch10/s10_6_step1_gimmick_commands.jpg" alt="KickBot !roll command with $(random.1-100) variable" caption="KickBot — !roll using $(random.1-100) — outputs a random number for each viewer who types the command" />
+</StepCard>
+
+<TipBox>
+KickBot uses <code>$(random.1-100)</code> for random numbers. BotRix uses <code>$(rand.1-100)</code> — note the difference if you run both bots simultaneously.
+</TipBox>
+
+---
+
+<SectionHeading id="s10-7">10.7 Live Chat Overlay Widget</SectionHeading>
+
+<StepCard step={7} title="KickBot — Add a Floating Chat Overlay to OBS">
+  <SubSteps items={[
+    "Go to <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Widgets</strong> → <strong>Chat Overlay</strong>.",
+    "Customize the font, colors, and background transparency.",
+    "Click <strong>Copy Widget URL</strong>.",
+    "Open OBS Studio → click <strong>+ Add Source</strong> → select <strong>Browser</strong>.",
+    "Paste the Widget URL into the Browser source URL field.",
+    "Set the resolution to <strong>400×600</strong> and click OK.",
+    "The floating transparent chat box will now appear over your stream in OBS."
+  ]} />
+  <ImageCaption src="/images/ch10/s10_7_step1_chat_overlay.jpg" alt="KickBot Chat Overlay widget URL and preview" caption="KickBot — Widgets → Chat Overlay — copy URL and add as OBS Browser source at 400×600" />
+</StepCard>
+
+<TipBox>
+Position the chat overlay on the left or right edge of your stream layout. Set <strong>Scenes</strong> visibility so the overlay only shows during gameplay, not during BRB or Starting Soon screens.
+</TipBox>
+
+---
+
+**Q: KickBot isn't responding to commands — what's wrong?**  
+A: First check that KickBot has Moderator status at [dashboard.kick.com/community/moderators](https://dashboard.kick.com/community/moderators). Without it, KickBot cannot send any messages in chat.
+
+**Q: Can I set different cooldowns for different viewers?**  
+A: Yes — KickBot supports both User Cooldown (per viewer) and Global Cooldown (all viewers share). Set the global cooldown lower for popular commands like `!discord`, and user cooldown lower for gimmicks like `!roll`.
+
+---
+
+<References items={[
+  { label: "KickBot Dashboard", url: "https://kickbot.com" },
+  { label: "Chapter 5 — Chatbot Setup (Install Guide)", url: "/en/guide/chatbot" },
+  { label: "Chapter 11 — BotRix Functions", url: "/en/guide/botrix-functions" }
+]} />

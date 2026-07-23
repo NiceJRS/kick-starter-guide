@@ -97,31 +97,57 @@ Referenced in `content/th/05-chatbot.mdx` and `content/en/05-chatbot.mdx`.
 | File | Description | Step | Status |
 |------|-------------|------|--------|
 | `s5_1_step1_compare_bots.jpg` | KickBot homepage + BotRix homepage side by side (or comparison overview) | StepCard 1 | ⬜ Needed |
-| `s5_1_step2_link_kickbot.jpg` | kickbot.com — Login with Kick button and verification command prompt | StepCard 2 | ⬜ Needed |
-| `s5_1_step3_link_botrix.jpg` | botrix.live — Profile page / KICK sign-in screen | StepCard 3 | ⬜ Needed |
-| `s5_1_step4_grant_mod.jpg` | dashboard.kick.com/community/moderators — Add New dialog with KickBot or BotRix added | StepCard 4 | ⬜ Needed |
-| `s5_2_step5_custom_commands.jpg` | KickBot — Commands → Custom Commands panel with !discord command filled in | StepCard 5 | ⬜ Needed |
-| `s5_2_step6_timers.jpg` | KickBot — Timers panel with FacebookPromote timer configured (interval + lines visible) | StepCard 6 | ⬜ Needed |
-| `s5_2_step7_ai_tts.jpg` | KickBot — Text to Speech settings, Enable TTS ON, voice dropdown visible | StepCard 7 | ⬜ Needed |
-| `s5_2_step8_clip_command.jpg` | KickBot — Commands panel with !clip command enabled | StepCard 8 | ⬜ Needed |
-| `s5_2_step9_link_protection.jpg` | KickBot — Filters panel with Link Protection and Spam Protection toggled ON | StepCard 9 | ⬜ Needed |
-| `s5_2_step10_gimmick_commands.jpg` | KickBot — !roll command showing $(random.1-100) variable in Response field | StepCard 10 | ⬜ Needed |
-| `s5_2_step11_chat_overlay.jpg` | KickBot — Widgets → Chat Overlay page with Copy Widget URL button visible | StepCard 11 | ⬜ Needed |
-| `s5_3_step12_custom_commands.jpg` | BotRix — Chatbot → Commands panel with !specs command filled in | StepCard 12 | ⬜ Needed |
-| `s5_3_step13_timers.jpg` | BotRix — Chatbot → Timers panel with DonateLink timer configured | StepCard 13 | ⬜ Needed |
-| `s5_3_step14_link_protection.jpg` | BotRix — Modules → Moderation → Link Protection, Exempted Roles showing Subscribers + Moderators checked | StepCard 14 | ⬜ Needed |
-| `s5_3_step15_emote_limit.jpg` | BotRix — Emote Protection panel, Limit: 5, Action: Delete + Timeout 10s | StepCard 15 | ⬜ Needed |
-| `s5_3_step16_alerts_overlay.jpg` | BotRix — Widgets → Alerts page with customization options and Copy Widget URL visible | StepCard 16 | ⬜ Needed |
-| `s5_3_step17_gimmick_commands.jpg` | BotRix — !roll command showing $(rand.1-100) variable in Response field | StepCard 17 | ⬜ Needed |
-| `s5_3_step18_chat_overlay.jpg` | BotRix — Widgets → Chat page with theme options and Copy Widget URL visible | StepCard 18 | ⬜ Needed |
-| `s5_3_step19_music_overlay.jpg` | BotRix — Modules → Song Request ON + Widgets → Music with Now Playing preview and Copy Widget URL | StepCard 19 | ⬜ Needed |
+| `s5_2_step1_link_kickbot.jpg` | kickbot.com — Login with Kick button and verification command prompt | StepCard 2 | ⬜ Needed |
+| `s5_2_step2_grant_mod_kickbot.jpg` | dashboard.kick.com/community/moderators — Add New dialog with KickBot added | StepCard 3 | ⬜ Needed |
+| `s5_3_step1_link_botrix.jpg` | botrix.live — Profile page / KICK sign-in screen | StepCard 4 | ⬜ Needed |
+| `s5_3_step2_grant_mod_botrix.jpg` | dashboard.kick.com/community/moderators — Add New dialog with BotRix added | StepCard 5 | ⬜ Needed |
 
 **Notes for Ch5 screenshots:**
-- Steps 1-4 from kickbot.com, botrix.live, and dashboard.kick.com (logged-in)
-- KickBot screenshots: must be logged in to kickbot.com dashboard
-- BotRix screenshots: must be logged in to botrix.live dashboard
-- `s5_1_step1_compare_bots.jpg`: can be two separate screenshots stitched side by side, or just both homepages visible
-- `s5_1_step4_grant_mod.jpg`: must show both bots already listed as Moderators, or the Add New dialog with one being added
+- `s5_1_step1_compare_bots.jpg`: two screenshots stitched side by side, or both homepages visible
+- Grant mod screenshots: show the Add New dialog with the respective bot being searched/added
+
+---
+
+## Chapter 10 — KickBot Functions (`public/images/ch10/`)
+
+Referenced in `content/th/10-kickbot-functions.mdx` and `content/en/10-kickbot-functions.mdx`.
+
+| File | Description | Step | Status |
+|------|-------------|------|--------|
+| `s10_1_step1_custom_commands.jpg` | KickBot — Commands → Custom Commands panel with !discord command filled in | StepCard 1 | ⬜ Needed |
+| `s10_2_step1_timers.jpg` | KickBot — Timers panel with FacebookPromote timer configured (Interval 15m + Lines 5 visible) | StepCard 2 | ⬜ Needed |
+| `s10_3_step1_ai_tts.jpg` | KickBot — Text to Speech settings, Enable TTS ON, voice dropdown visible | StepCard 3 | ⬜ Needed |
+| `s10_4_step1_clip_command.jpg` | KickBot — Commands panel with !clip command enabled and highlighted | StepCard 4 | ⬜ Needed |
+| `s10_5_step1_link_protection.jpg` | KickBot — Filters panel with Link Protection and Spam Protection toggled ON | StepCard 5 | ⬜ Needed |
+| `s10_6_step1_gimmick_commands.jpg` | KickBot — !roll command showing $(random.1-100) variable in Response field | StepCard 6 | ⬜ Needed |
+| `s10_7_step1_chat_overlay.jpg` | KickBot — Widgets → Chat Overlay page with Copy Widget URL button visible | StepCard 7 | ⬜ Needed |
+
+**Notes for Ch10 screenshots:**
+- All from kickbot.com dashboard (must be logged in)
+- `s10_3_step1_ai_tts.jpg`: show Enable TTS toggle ON + voice dropdown open showing Thai voice options
+- `s10_6_step1_gimmick_commands.jpg`: show !roll command with $(random.1-100) visible in Response field
+
+---
+
+## Chapter 11 — BotRix Functions (`public/images/ch11/`)
+
+Referenced in `content/th/11-botrix-functions.mdx` and `content/en/11-botrix-functions.mdx`.
+
+| File | Description | Step | Status |
+|------|-------------|------|--------|
+| `s11_1_step1_custom_commands.jpg` | BotRix — Chatbot → Commands panel with !specs command filled in | StepCard 1 | ⬜ Needed |
+| `s11_2_step1_timers.jpg` | BotRix — Chatbot → Timers panel with DonateLink timer configured (Interval + Lines visible) | StepCard 2 | ⬜ Needed |
+| `s11_3_step1_link_protection.jpg` | BotRix — Modules → Moderation → Link Protection, Exempted Roles showing Subscribers + Moderators checked | StepCard 3 | ⬜ Needed |
+| `s11_4_step1_emote_limit.jpg` | BotRix — Emote Protection panel, Limit: 5, Action: Delete + Timeout 10s | StepCard 4 | ⬜ Needed |
+| `s11_5_step1_alerts_overlay.jpg` | BotRix — Widgets → Alerts page with customization options and Copy Widget URL visible | StepCard 5 | ⬜ Needed |
+| `s11_6_step1_gimmick_commands.jpg` | BotRix — !roll command showing $(rand.1-100) variable in Response field | StepCard 6 | ⬜ Needed |
+| `s11_7_step1_chat_overlay.jpg` | BotRix — Widgets → Chat page with theme options and Copy Widget URL visible | StepCard 7 | ⬜ Needed |
+| `s11_8_step1_music_overlay.jpg` | BotRix — Modules → Song Request ON + Widgets → Music with Now Playing preview and Copy Widget URL | StepCard 8 | ⬜ Needed |
+
+**Notes for Ch11 screenshots:**
+- All from botrix.live dashboard (must be logged in)
+- `s11_3_step1_link_protection.jpg`: show Exempted Roles with both Subscribers and Moderators checkboxes ticked
+- `s11_5_step1_alerts_overlay.jpg`: show Alerts widget customization panel — alert animation preview + Copy Widget URL button
 
 ---
 
@@ -157,5 +183,7 @@ Referenced in `content/th/05-chatbot.mdx` and `content/en/05-chatbot.mdx`.
 | Ch2 OBS Studio | 4 | 0 | 4 |
 | Ch3 KICK Features | 8 | 0 | 8 |
 | Ch4 Chat Restrictions | 9 | 0 | 9 |
-| Ch5 Chatbot | 19 | 0 | 19 |
+| Ch5 Chatbot | 5 | 0 | 5 |
+| Ch10 KickBot Functions | 7 | 0 | 7 |
+| Ch11 BotRix Functions | 8 | 0 | 8 |
 | Ch6–9 | TBD | — | — |

@@ -1,0 +1,168 @@
+---
+number: 10
+slug: kickbot-functions
+level: intermediate
+title_th: "KickBot Functions"
+title_en: "KickBot Functions"
+description_th: "คู่มือฟังก์ชั่น KickBot ครบทุกฟีเจอร์: Custom Commands, Timers, AI TTS, !clip, Link Protection, Gimmicks และ Chat Overlay"
+description_en: "Full KickBot function guide: Custom Commands, Timers, AI TTS, !clip, Link Protection, Gimmicks and Chat Overlay"
+estimated_time: "20 นาที / 20 mins"
+prerequisites:
+  - chatbot
+---
+
+<SectionHeading id="s10-1">10.1 Custom Commands + Cooldown</SectionHeading>
+
+<StepCard step={1} title="KickBot — ตั้งค่า Custom Command พร้อม Cooldown">
+  <SubSteps items={[
+    "ไปที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Commands</strong> → <strong>Custom Commands</strong>",
+    "กด <strong>+ Add Command</strong>",
+    "ตั้ง <strong>Command</strong>: <code>!discord</code>",
+    "ตั้ง <strong>Response</strong>: <code>เข้ามาร่วมคุยใน Discord: https://discord.gg/yourlink</code>",
+    "ตั้ง <strong>User Cooldown</strong>: <code>10s</code> — ป้องกันคนดูสแปมคำสั่งซ้ำๆ",
+    "กด <strong>Save</strong>"
+  ]} />
+  <ImageCaption src="/images/ch10/s10_1_step1_custom_commands.jpg" alt="หน้า Custom Commands ของ KickBot" caption="KickBot — Commands → Custom Commands — ตั้งคำสั่ง, ข้อความตอบกลับ และ Cooldown" />
+</StepCard>
+
+<TipBox>
+สร้างคำสั่งได้หลายอย่าง เช่น <code>!specs</code> สำหรับสเปกคอมพิวเตอร์, <code>!social</code> สำหรับโซเชียลมีเดีย, <code>!schedule</code> สำหรับตารางสตรีม แต่ละคำสั่งตั้ง Cooldown แยกกันได้
+</TipBox>
+
+---
+
+<SectionHeading id="s10-2">10.2 Timers (ส่งข้อความโปรโมตอัตโนมัติ)</SectionHeading>
+
+<StepCard step={2} title="KickBot — ตั้ง Timer ส่งข้อความโปรโมตอัตโนมัติ">
+  <SubSteps items={[
+    "ไปที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Timers</strong>",
+    "กด <strong>+ Add Timer</strong>",
+    "ตั้ง <strong>Name</strong>: <code>FacebookPromote</code>",
+    "ตั้ง <strong>Interval</strong>: <code>15m</code> — KickBot จะโพสต์ข้อความนี้ทุก 15 นาที",
+    "ตั้ง <strong>Lines</strong>: <code>5</code> — โพสต์เฉพาะเมื่อมีแชทอย่างน้อย 5 ข้อความ ป้องกันสแปมช่วงแชทเงียบ",
+    "ตั้ง <strong>Message</strong>: <code>กดติดตามเพจ Facebook: https://facebook.com/yourpage</code>",
+    "กด <strong>Save</strong>"
+  ]} />
+  <ImageCaption src="/images/ch10/s10_2_step1_timers.jpg" alt="หน้า Timers ของ KickBot" caption="KickBot — Timers — ส่งข้อความโปรโมตอัตโนมัติทุก 15 นาที พร้อมเงื่อนไขขั้นต่ำแชท" />
+</StepCard>
+
+<TipBox>
+ตั้งค่า Lines ให้เหมาะกับความคึกคักของแชทคุณ หากแชทปกติได้ 10+ ข้อความต่อนาที ให้ตั้ง Lines: 10 เพื่อให้ Timer ทำงานเฉพาะช่วงแชทคึกคักเท่านั้น
+</TipBox>
+
+---
+
+<SectionHeading id="s10-3">10.3 AI Text-to-Speech (เสียงอ่านแชทสด)</SectionHeading>
+
+<StepCard step={3} title="KickBot — เปิดใช้งาน AI เสียงอ่านแชท">
+  <SubSteps items={[
+    "ไปที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Text to Speech</strong>",
+    "เปิดสวิตช์ <strong>Enable TTS</strong> เป็น ON",
+    "เลือกเสียงพูดจาก Dropdown — KickBot มีให้เลือกกว่า 150 เสียง รวมถึงภาษาไทย",
+    "ตั้งระดับการกรอง: อ่าน <strong>แชทข้อความทั้งหมด</strong> หรือเฉพาะ <strong>Subscriber และ Donation</strong>"
+  ]} />
+  <ImageCaption src="/images/ch10/s10_3_step1_ai_tts.jpg" alt="หน้าตั้งค่า AI TTS ของ KickBot" caption="KickBot — Text to Speech — เปิด TTS และเลือกเสียงพูดสำหรับอ่านแชทสด" />
+</StepCard>
+
+<TipBox>
+สตรีมเมอร์ไทย: KickBot มีเสียง TTS ภาษาไทยให้เลือก ลองฟังหลายๆ เสียงเพื่อหาเสียงที่ออกเสียงภาษาไทยได้ธรรมชาติที่สุด
+</TipBox>
+
+---
+
+<SectionHeading id="s10-4">10.4 VOD Clipping (คำสั่ง !clip)</SectionHeading>
+
+<StepCard step={4} title="KickBot — เปิดใช้งาน !clip สำหรับตัดคลิปช็อตเด็ดทันที">
+  <SubSteps items={[
+    "ไปที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Commands</strong>",
+    "หาคำสั่ง <strong>!clip</strong> ในรายการแล้วเปิดใช้งาน",
+    "เมื่อเกิดช็อตเด็ดระหว่างสตรีม พิมพ์ <code>!clip</code> ในแชทสด",
+    "KickBot จะตัดวิดีโอย้อนหลัง 30 วินาที และบันทึกไว้ในเมนู <strong>Clips</strong>",
+    "เข้าไปดาวน์โหลดคลิปจากเมนู Clips ของ KickBot เพื่อนำไปลง TikTok หรือ YouTube Shorts"
+  ]} />
+  <ImageCaption src="/images/ch10/s10_4_step1_clip_command.jpg" alt="คำสั่ง !clip เปิดใช้งานใน KickBot Commands" caption="KickBot — Commands → เปิด !clip — พิมพ์ในแชทเพื่อตัดคลิปย้อนหลัง 30 วินาทีทันที" />
+</StepCard>
+
+<TipBox>
+ให้คนดูพิมพ์ <code>!clip</code> ได้ด้วย — เมื่อแชทพิมพ์ช่วงช็อตเด็ด คุณจะได้คลิปโดยอัตโนมัติโดยไม่ต้องสังเกตเองทุกช็อต
+</TipBox>
+
+---
+
+<SectionHeading id="s10-5">10.5 Link & Spam Protection</SectionHeading>
+
+<StepCard step={5} title="KickBot — เปิดใช้งานระบบคัดกรองลิงก์และสแปม">
+  <SubSteps items={[
+    "ไปที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Filters</strong>",
+    "เปิดใช้งาน <strong>Link Protection</strong> — KickBot จะลบลิงก์ที่ไม่ได้รับอนุญาตจากคนดูอัตโนมัติ",
+    "เปิดใช้งาน <strong>Spam Protection</strong> — บล็อกข้อความซ้ำๆ จากคนดูคนเดียวกัน"
+  ]} />
+  <ImageCaption src="/images/ch10/s10_5_step1_link_protection.jpg" alt="หน้า Filters ของ KickBot — เปิด Link Protection" caption="KickBot — Filters — เปิด Link Protection และ Spam Protection เพื่อลบสแปมอัตโนมัติ" />
+</StepCard>
+
+<TipBox>
+Link Protection ของ KickBot เป็นแบบพื้นฐาน — บล็อกลิงก์จากทุกคนเท่ากัน หากต้องการให้ Subscriber แปะลิงก์ได้ฟรี ให้ใช้ Link Protection ของ BotRix แทน ดู <a href='/th/guide/botrix-functions#s11-3'>บทที่ 11 §11.3 — BotRix Link Protection</a>
+</TipBox>
+
+---
+
+<SectionHeading id="s10-6">10.6 Gimmick Commands (!roll, !rps)</SectionHeading>
+
+<StepCard step={6} title="KickBot — สร้างคำสั่งกิมมิกแบบ Interactive">
+  <SubSteps items={[
+    "ไปที่ <strong>Commands</strong> → <strong>Custom Commands</strong> → กด <strong>+ Add Command</strong>",
+    "<strong>สร้างคำสั่ง !roll:</strong>",
+    "ตั้ง <strong>Command</strong>: <code>!roll</code>",
+    "ตั้ง <strong>Response</strong>: <code>@$(user) สุ่มดวงวันนี้ได้: $(random.1-100) แต้ม! 🎲</code>",
+    "ตั้ง <strong>User Cooldown</strong>: <code>30s</code> — ป้องกันสแปม",
+    "กด <strong>Save</strong>",
+    "<strong>สร้างคำสั่ง !rps (เป่ายิงฉุบ):</strong>",
+    "กด <strong>+ Add Command</strong> อีกครั้ง",
+    "ตั้ง <strong>Command</strong>: <code>!rps</code>",
+    "ตั้ง <strong>Response</strong>: <code>@$(user) เป่ายิงฉุบออก: $(random.ค้อน,กรรไกร,กระดาษ) ✂️🔨📄</code>",
+    "ตั้ง <strong>User Cooldown</strong>: <code>10s</code>",
+    "กด <strong>Save</strong>"
+  ]} />
+  <ImageCaption src="/images/ch10/s10_6_step1_gimmick_commands.jpg" alt="คำสั่ง !roll ของ KickBot ใช้ Variable $(random.1-100)" caption="KickBot — คำสั่ง !roll ใช้ $(random.1-100) เพื่อสุ่มตัวเลขให้คนดูแต่ละคน" />
+</StepCard>
+
+<TipBox>
+KickBot ใช้ <code>$(random.1-100)</code> สำหรับสุ่มตัวเลข ส่วน BotRix ใช้ <code>$(rand.1-100)</code> — สังเกตความต่างไว้ถ้าคุณเปิดทั้งสองบอทพร้อมกัน
+</TipBox>
+
+---
+
+<SectionHeading id="s10-7">10.7 Live Chat Overlay Widget</SectionHeading>
+
+<StepCard step={7} title="KickBot — เพิ่มกล่องแชทลอยใน OBS Studio">
+  <SubSteps items={[
+    "ไปที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a> → <strong>Widgets</strong> → <strong>Chat Overlay</strong>",
+    "ปรับแต่งฟอนต์ สี และความโปร่งใสของพื้นหลัง",
+    "กด <strong>Copy Widget URL</strong>",
+    "เปิด OBS Studio → กด <strong>+ Add Source</strong> → เลือก <strong>Browser</strong>",
+    "วาง Widget URL ลงในช่อง URL ของ Browser Source",
+    "ตั้งความละเอียดเป็น <strong>400×600</strong> แล้วกด OK",
+    "กล่องแชทลอยพื้นหลังโปร่งใสจะปรากฏขึ้นบนสตรีมใน OBS"
+  ]} />
+  <ImageCaption src="/images/ch10/s10_7_step1_chat_overlay.jpg" alt="หน้า Chat Overlay Widget ของ KickBot และ URL" caption="KickBot — Widgets → Chat Overlay — คัดลอก URL แล้วเพิ่มใน OBS เป็น Browser Source (400×600)" />
+</StepCard>
+
+<TipBox>
+วาง Chat Overlay ที่ขอบซ้ายหรือขวาของ Layout สตรีม ตั้งการมองเห็นตาม Scene เพื่อให้กล่องแชทแสดงเฉพาะตอนเล่นเกม ไม่แสดงตอน BRB หรือ Starting Soon
+</TipBox>
+
+---
+
+**Q: KickBot ไม่ตอบคำสั่ง — เกิดอะไรขึ้น?**  
+A: ตรวจสอบก่อนว่า KickBot มียศ Moderator ที่ [dashboard.kick.com/community/moderators](https://dashboard.kick.com/community/moderators) แล้วหรือยัง หากไม่มี KickBot จะส่งข้อความในแชทไม่ได้เลย
+
+**Q: ตั้ง Cooldown แยกสำหรับคนดูแต่ละคนได้ไหม?**  
+A: ได้ — KickBot รองรับทั้ง User Cooldown (ต่อคนดูหนึ่งคน) และ Global Cooldown (ทุกคนดูรวมกัน) ตั้ง Global Cooldown ต่ำสำหรับคำสั่งยอดนิยมอย่าง `!discord` และ User Cooldown สำหรับกิมมิกอย่าง `!roll`
+
+---
+
+<References items={[
+  { label: "KickBot Dashboard", url: "https://kickbot.com" },
+  { label: "บทที่ 5 — Chatbot Setup (ติดตั้งบอท)", url: "/th/guide/chatbot" },
+  { label: "บทที่ 11 — BotRix Functions", url: "/th/guide/botrix-functions" }
+]} />
