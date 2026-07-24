@@ -20,12 +20,12 @@ sidebar_category: chat-community
 
 <StepCard step={1} title="Appoint Moderators to Your Channel">
   <SubSteps items={[
-    "<strong>Option 1 — via Creator Dashboard:</strong> Go to <a href='https://dashboard.kick.com/community/moderators' target='_blank'>dashboard.kick.com/community/moderators</a>.",
+    "<strong>Option 1 — via Creator Dashboard:</strong> Go to <a href='https://dashboard.kick.com/community/roles/moderator' target='_blank'>dashboard.kick.com/community/roles/moderator</a>.",
     "Click <strong>Add New</strong>, search the target viewer's username, and appoint them as Moderator.",
     "<strong>Option 2 — via Live Chat Command:</strong> Type <code>/mod [username]</code> directly in your live chat to grant mod privileges instantly.",
     "To revoke, type <code>/unmod [username]</code>."
   ]} />
-  <ImageCaption src="/images/ch6/s6_1_step1_add_moderator.jpg" alt="Adding a Moderator in KICK Community Dashboard" caption="dashboard.kick.com/community/moderators — click Add New to appoint a channel Moderator" />
+  <ImageCaption src="/images/ch6/6.1.modpage.jpg" alt="Adding a Moderator in KICK Community Dashboard" caption="dashboard.kick.com/community/roles/moderator — click Add New to appoint a channel Moderator" />
 </StepCard>
 
 <StepCard step={2} title="Moderator Roles, Etiquette, and 2FA Security">
@@ -61,23 +61,15 @@ sidebar_category: chat-community
     "<strong>Polls (Instant Voting):</strong> Type <code>/poll [Question] | [Option 1] | [Option 2]</code> in chat.",
     "Example: <code>/poll Stream 1 more hour? | Yes | No</code> — results appear in the chat dock in real time."
   ]} />
-  <ImageCaption src="/images/ch6/s6_2_step4_prediction_poll_chat.jpg" alt="Running Predictions and Polls in KICK live chat" caption="Live Predictions and Polls overlays rendered inside the chat dock during a stream" />
+  <ImageCaption src="/images/ch6/6.2.1poll.jpg" alt="Running a Poll in KICK live chat" caption="A real-time Poll rendered inside the chat dock during a stream" />
+  <ImageCaption src="/images/ch6/6.2.2.predict.jpg" alt="Running a Prediction in KICK live chat" caption="A real-time Prediction rendered inside the chat dock during a stream" />
 </StepCard>
 
 ---
 
-<SectionHeading id="s6-3">6.3 Mod Dashboard & Moderation Workflow</SectionHeading>
+<SectionHeading id="s6-3">6.3 Standard Moderation Workflow & Unbanning Users</SectionHeading>
 
-<StepCard step={5} title="Use Mod View Dashboard and Action Logs">
-  <SubSteps items={[
-    "<strong>Open Mod View:</strong> Go to <code>kick.com/moderator/[streamer_username]</code> — or click the sword icon inside the chat dock.",
-    "<strong>User Cards:</strong> Click any viewer's username to open their User Card — shows follow date, recent messages, and past timeout/ban history.",
-    "<strong>Mod Actions Log:</strong> Check the Action Log panel in Mod View to see which mod executed each timeout or ban, with exact timestamps."
-  ]} />
-  <ImageCaption src="/images/ch6/s6_3_step5_mod_view_dashboard.jpg" alt="Mod View Dashboard and Mod Actions Log" caption="kick.com/moderator/[username] — multi-dock mod workspace with full audit trail" />
-</StepCard>
-
-<StepCard step={6} title="Standard Moderation Workflow & Unbanning Users">
+<StepCard step={5} title="Progressive Escalation: Timeout, Ban & Unban">
   <SubSteps items={[
     "<strong>Progressive Escalation Policy:</strong> Follow the sequence: <strong>Warn → Timeout → Permanent Ban</strong>.",
     "<strong>1. Temporary Timeout:</strong> Type <code>/timeout [username] [seconds]</code>.",
@@ -94,11 +86,11 @@ Review the Mod Actions Log periodically. If a mod is timing out viewers too aggr
 ---
 
 <FaqItem q="Can Moderators initiate Predictions or edit stream details?">
-Yes. Mods can run `/prediction`, start `/poll`, execute `/raid`, and update stream title/category via the Mod View Dashboard.
+Yes. Mods can run `/prediction`, start `/poll`, execute `/raid`, and update stream title/category via the Creator Dashboard.
 </FaqItem>
 
 <FaqItem q="How do I find out which Moderator banned or timed out a viewer?">
-Check the Mod Actions Log inside Mod View at `kick.com/moderator/[username]` — every action is logged with the mod's name and timestamp.
+Check the Mod Actions Log — open `https://dashboard.kick.com/popout/[username]/mod-actions` (replace `[username]` with your channel name). Every action is logged with the mod's name and timestamp.
 </FaqItem>
 
 <FaqItem q="How do I unban someone who was previously banned?">
@@ -108,7 +100,7 @@ Type `/unban [username]` in live chat, or go to Creator Dashboard → Moderation
 ---
 
 <References items={[
-  { label: "KICK Moderators Dashboard", url: "https://dashboard.kick.com/community/moderators" },
+  { label: "KICK Moderators Dashboard", url: "https://dashboard.kick.com/community/roles/moderator" },
   { label: "KICK Banned Users Dashboard", url: "https://dashboard.kick.com/moderation/banned-users" },
   { label: "KICK Moderation Features Guide", url: "https://help.kick.com/en/articles/10162074-moderation-features-guide" }
 ]} />

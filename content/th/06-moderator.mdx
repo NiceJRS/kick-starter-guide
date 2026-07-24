@@ -20,12 +20,12 @@ sidebar_category: chat-community
 
 <StepCard step={1} title="แต่งตั้ง Moderator ให้ช่องของคุณ">
   <SubSteps items={[
-    "<strong>วิธีที่ 1 — ผ่าน Creator Dashboard:</strong> ไปที่ <a href='https://dashboard.kick.com/community/moderators' target='_blank'>dashboard.kick.com/community/moderators</a>",
+    "<strong>วิธีที่ 1 — ผ่าน Creator Dashboard:</strong> ไปที่ <a href='https://dashboard.kick.com/community/roles/moderator' target='_blank'>dashboard.kick.com/community/roles/moderator</a>",
     "กดปุ่ม <strong>Add New</strong> ค้นหาชื่อผู้ใช้ที่ต้องการแต่งตั้ง แล้วมอบตำแหน่ง Moderator",
     "<strong>วิธีที่ 2 — ผ่านคำสั่งในแชทสด:</strong> พิมพ์ <code>/mod [username]</code> ในแชทสดโดยตรงเพื่อมอบสิทธิ์ Mod ทันที",
     "หากต้องการถอดถอน พิมพ์ <code>/unmod [username]</code>"
   ]} />
-  <ImageCaption src="/images/ch6/s6_1_step1_add_moderator.jpg" alt="การแต่งตั้ง Moderator ใน KICK Community Dashboard" caption="dashboard.kick.com/community/moderators — กด Add New เพื่อแต่งตั้ง Moderator ให้ช่อง" />
+  <ImageCaption src="/images/ch6/6.1.modpage.jpg" alt="การแต่งตั้ง Moderator ใน KICK Community Dashboard" caption="dashboard.kick.com/community/roles/moderator — กด Add New เพื่อแต่งตั้ง Moderator ให้ช่อง" />
 </StepCard>
 
 <StepCard step={2} title="บทบาท Moderator มารยาท และการบังคับใช้ 2FA">
@@ -61,23 +61,15 @@ sidebar_category: chat-community
     "<strong>Poll (โหวตทันที):</strong> พิมพ์ <code>/poll [คำถาม] | [ตัวเลือก 1] | [ตัวเลือก 2]</code> ในแชท",
     "ตัวอย่าง: <code>/poll สตรีมต่ออีก 1 ชั่วโมงไหม? | ใช่ | ไม่ใช่</code> — ผลโหวตจะปรากฏในแชทสด"
   ]} />
-  <ImageCaption src="/images/ch6/s6_2_step4_prediction_poll_chat.jpg" alt="การเปิด Prediction และ Poll ในแชทสด KICK" caption="Prediction และ Poll แบบ Real-Time ที่แสดงผลในช่องแชทสดระหว่างสตรีม" />
+  <ImageCaption src="/images/ch6/6.2.1poll.jpg" alt="การเปิด Poll ในแชทสด KICK" caption="Poll แบบ Real-Time ที่แสดงผลในช่องแชทสดระหว่างสตรีม" />
+  <ImageCaption src="/images/ch6/6.2.2.predict.jpg" alt="การเปิด Prediction ในแชทสด KICK" caption="Prediction แบบ Real-Time ที่แสดงผลในช่องแชทสดระหว่างสตรีม" />
 </StepCard>
 
 ---
 
-<SectionHeading id="s6-3">6.3 Mod Dashboard และขั้นตอนการดูแลแชท</SectionHeading>
+<SectionHeading id="s6-3">6.3 ขั้นตอนการดูแลแชทและการ Unban</SectionHeading>
 
-<StepCard step={5} title="ใช้งาน Mod View Dashboard และ Action Log">
-  <SubSteps items={[
-    "<strong>เปิด Mod View:</strong> ไปที่ <code>kick.com/moderator/[ชื่อช่องสตรีมเมอร์]</code> หรือคลิกไอคอนดาบในช่องแชท",
-    "<strong>User Cards:</strong> คลิกชื่อผู้ใช้ใดก็ได้เพื่อเปิด User Card — แสดงวันที่ Follow ข้อความล่าสุด และประวัติการถูก timeout/ban",
-    "<strong>Mod Actions Log:</strong> ตรวจสอบแผง Action Log ใน Mod View เพื่อดูว่า Mod คนใดสั่ง timeout หรือ ban พร้อม timestamp แบบละเอียด"
-  ]} />
-  <ImageCaption src="/images/ch6/s6_3_step5_mod_view_dashboard.jpg" alt="Mod View Dashboard และ Mod Actions Log" caption="kick.com/moderator/[username] — พื้นที่ทำงาน Mod แบบ Multi-Dock พร้อมบันทึกการดำเนินการทั้งหมด" />
-</StepCard>
-
-<StepCard step={6} title="ขั้นตอนการดูแลแชทและการ Unban">
+<StepCard step={5} title="นโยบายมาตรการขั้นบันได Timeout, Ban และ Unban">
   <SubSteps items={[
     "<strong>นโยบายการใช้มาตรการแบบขั้นบันได:</strong> ปฏิบัติตามลำดับ <strong>เตือน → Timeout → Ban ถาวร</strong>",
     "<strong>1. Timeout ชั่วคราว:</strong> พิมพ์ <code>/timeout [username] [วินาที]</code>",
@@ -94,11 +86,11 @@ sidebar_category: chat-community
 ---
 
 <FaqItem q="Moderator สามารถเปิด Prediction หรือแก้ไขรายละเอียดสตรีมได้ไหม?">
-ได้ Mod สามารถรัน `/prediction`, เปิด `/poll`, ใช้คำสั่ง `/raid` และอัปเดตชื่อสตรีม/หมวดหมู่ผ่าน Mod View Dashboard
+ได้ Mod สามารถรัน `/prediction`, เปิด `/poll`, ใช้คำสั่ง `/raid` และอัปเดตชื่อสตรีม/หมวดหมู่ผ่าน Creator Dashboard
 </FaqItem>
 
 <FaqItem q="จะรู้ได้อย่างไรว่า Mod คนไหนแบนหรือ Timeout คนดู?">
-ตรวจสอบได้ที่ Mod Actions Log ใน Mod View ที่ `kick.com/moderator/[username]` — ทุกการกระทำจะถูกบันทึกพร้อมชื่อ Mod และ timestamp
+ตรวจสอบได้ที่ Mod Actions Log — เปิดลิงก์ `https://dashboard.kick.com/popout/[username]/mod-actions` (แทน `[username]` ด้วยชื่อช่องของคุณ) ทุกการกระทำจะถูกบันทึกพร้อมชื่อ Mod และ timestamp
 </FaqItem>
 
 <FaqItem q="จะ Unban คนที่ถูก Ban ไปแล้วได้อย่างไร?">
@@ -108,7 +100,7 @@ sidebar_category: chat-community
 ---
 
 <References items={[
-  { label: "KICK Moderators Dashboard", url: "https://dashboard.kick.com/community/moderators" },
+  { label: "KICK Moderators Dashboard", url: "https://dashboard.kick.com/community/roles/moderator" },
   { label: "KICK Banned Users Dashboard", url: "https://dashboard.kick.com/moderation/banned-users" },
   { label: "KICK Moderation Features Guide", url: "https://help.kick.com/en/articles/10162074-moderation-features-guide" }
 ]} />
