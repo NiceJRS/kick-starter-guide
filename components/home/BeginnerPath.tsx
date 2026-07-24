@@ -94,9 +94,8 @@ export default function BeginnerPath({ locale }: { locale: string }) {
   }
 
   const start = () => {
-    const currentStep = guides.find((g) => !completed.includes(g.id))
-    if (!currentStep) return
-    router.push(`/${locale}/guide/${currentStep.slug}`)
+    const target = guides.find((g) => !completed.includes(g.id)) ?? guides[0]
+    router.push(`/${locale}/guide/${target.slug}`)
   }
 
   const reset = () => {
@@ -146,59 +145,75 @@ export default function BeginnerPath({ locale }: { locale: string }) {
       )}
 
       {/* Header */}
-      <div
-        className="flex items-center justify-between px-5 py-3.5"
-        style={{ background: 'var(--surface-card)', borderBottom: open ? '0.5px solid var(--purple-28)' : 'none' }}
-      >
-        <div className="flex items-center gap-3">
-          <IconMap2 size={16} style={{ color: 'var(--purple)' }} />
-          <div>
-            <div className="text-base font-medium" style={{ color: 'var(--text-primary)' }}>
-              Streamer Path
+      <div style={{ background: 'var(--surface-card)', borderBottom: open ? '0.5px solid var(--purple-28)' : 'none' }}>
+        <div className="flex items-center justify-between px-5 py-3">
+          <div className="flex items-center gap-3">
+            <IconMap2 size={16} style={{ color: 'var(--purple)' }} />
+            <div>
+              <div className="text-base font-medium" style={{ color: 'var(--text-primary)' }}>
+                Streamer Path
+              </div>
+              <div className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>
+                {locale === 'th'
+                  ? `ทำ ${totalStarter} บทแรก (Starter) แล้วไปสตรีมได้เลย — ที่เหลือเป็น optional`
+                  : `Complete ${totalStarter} Starter chapters to go live — rest is optional`}
+              </div>
             </div>
-            <div className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>
-              {locale === 'th'
-                ? `ทำ ${totalStarter} บทแรก (Starter) แล้วไปสตรีมได้เลย — ที่เหลือเป็น optional`
-                : `Complete ${totalStarter} Starter chapters to go live — rest is optional`}
+          </div>
+
+          <div className="flex items-center gap-3">
+            {/* Starter progress */}
+            <div className="w-[110px]">
+              <div className="flex justify-between text-xs mb-1" style={{ color: 'var(--text-muted)' }}>
+                <span>Starter</span>
+                <span style={{ color: 'var(--kick-green-text)' }}>{starterDone}/{totalStarter}</span>
+              </div>
+              <div className="h-[4px] rounded-full" style={{ background: 'var(--border-default)' }}>
+                <div
+                  className="h-full rounded-full transition-all"
+                  style={{ width: `${(starterDone / totalStarter) * 100}%`, background: 'var(--kick-green-text)' }}
+                />
+              </div>
             </div>
+
+            {/* Reset */}
+            <button
+              onClick={reset}
+              className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs transition-all hover:bg-red-500/10 hover:border-red-400/30 hover:text-red-300"
+              style={{ color: 'var(--text-secondary)', border: '1px solid var(--border-strong)' }}
+              title={locale === 'th' ? 'รีเซ็ต' : 'Reset'}
+            >
+              <IconRefresh size={12} />
+              <span>{locale === 'th' ? 'รีเซ็ต' : 'Reset'}</span>
+            </button>
+
+            {/* Collapse toggle */}
+            <button
+              onClick={() => setOpen(!open)}
+              className="flex items-center justify-center w-7 h-7 rounded-lg transition-all"
+              style={{ background: 'var(--surface-card2)', border: '1px solid var(--border-strong)' }}
+            >
+              {open
+                ? <IconChevronUp size={14} style={{ color: 'var(--text-muted)' }} />
+                : <IconChevronDown size={14} style={{ color: 'var(--text-muted)' }} />}
+            </button>
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          {/* Starter progress */}
-          <div className="w-[110px]">
-            <div className="flex justify-between text-xs mb-1" style={{ color: 'var(--text-muted)' }}>
-              <span>Starter</span>
-              <span style={{ color: 'var(--kick-green-text)' }}>{starterDone}/{totalStarter}</span>
-            </div>
-            <div className="h-[4px] rounded-full" style={{ background: 'var(--border-default)' }}>
-              <div
-                className="h-full rounded-full transition-all"
-                style={{ width: `${(starterDone / totalStarter) * 100}%`, background: 'var(--kick-green-text)' }}
-              />
-            </div>
-          </div>
-
-          {/* Reset */}
+        {/* CTA — always visible, even when collapsed */}
+        <div className="px-5 pb-4">
           <button
-            onClick={reset}
-            className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs transition-all hover:bg-red-500/10 hover:border-red-400/30 hover:text-red-300"
-            style={{ color: 'var(--text-secondary)', border: '1px solid var(--border-strong)' }}
-            title={locale === 'th' ? 'รีเซ็ต' : 'Reset'}
+            onClick={start}
+            className="w-full py-3 rounded-xl text-sm font-bold tracking-wide transition-all hover:brightness-110 hover:shadow-[0_0_24px_rgba(127,119,221,0.45)] active:scale-[0.98]"
+            style={{
+              background: 'linear-gradient(135deg, var(--purple) 0%, #3b6fd4 100%)',
+              color: '#fff',
+              boxShadow: '0 2px 12px rgba(127,119,221,0.3)',
+            }}
           >
-            <IconRefresh size={12} />
-            <span>{locale === 'th' ? 'รีเซ็ต' : 'Reset'}</span>
-          </button>
-
-          {/* Collapse toggle */}
-          <button
-            onClick={() => setOpen(!open)}
-            className="flex items-center justify-center w-7 h-7 rounded-lg transition-all"
-            style={{ background: 'var(--surface-card2)', border: '1px solid var(--border-strong)' }}
-          >
-            {open
-              ? <IconChevronUp size={14} style={{ color: 'var(--text-muted)' }} />
-              : <IconChevronDown size={14} style={{ color: 'var(--text-muted)' }} />}
+            {locale === 'th'
+              ? '🚀 มือใหม่ใช่ไหม? เริ่ม Setup Stream กันเลย'
+              : '🚀 New here? Start your Stream Setup!'}
           </button>
         </div>
       </div>

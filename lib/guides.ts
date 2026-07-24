@@ -23,7 +23,7 @@ export interface GuideData {
 
 export const guides: GuideData[] = [
   {
-    id: 1, slug: 'account-setup', level: 'beginner', category: 'Setup', duration: 20,
+    id: 1, slug: 'account-setup', level: 'beginner', category: 'Setup', duration: 5,
     icon: 'ti-user-circle', color: 'green', label: 'Account',
     title: { th: 'สมัครและตั้งค่าช่อง', en: 'Account & Channel Setup' },
     description: { th: 'วิธีสมัคร KICK และตั้งค่าช่องสตรีมตั้งแต่เริ่มต้น', en: 'Create your KICK account and set up your stream channel from scratch' },
@@ -36,7 +36,7 @@ export const guides: GuideData[] = [
     ],
   },
   {
-    id: 2, slug: 'obs-studio', level: 'beginner', category: 'Setup', duration: 30,
+    id: 2, slug: 'obs-studio', level: 'beginner', category: 'Setup', duration: 10,
     icon: 'ti-device-desktop', color: 'green', label: 'OBS',
     title: { th: 'OBS Studio', en: 'OBS Studio Setup' },
     description: { th: 'ติดตั้งและตั้งค่า OBS Studio สำหรับสตรีมบน KICK', en: 'Install and configure OBS Studio for streaming on KICK' },
@@ -49,7 +49,7 @@ export const guides: GuideData[] = [
     ],
   },
   {
-    id: 3, slug: 'kick-features', level: 'beginner', category: 'Setup', duration: 20,
+    id: 3, slug: 'kick-features', level: 'beginner', category: 'Setup', duration: 8,
     icon: 'ti-dashboard', color: 'blue', label: 'Features',
     title: { th: 'ฟีเจอร์ KICK', en: 'KICK Features' },
     description: { th: 'Dashboard, Clips, VODs, Channel Points และฟีเจอร์อื่นๆ', en: 'Dashboard, Clips, VODs, Channel Points and more' },
@@ -61,7 +61,7 @@ export const guides: GuideData[] = [
     ],
   },
   {
-    id: 4, slug: 'chat-restrictions', level: 'beginner', category: 'Chat', duration: 15,
+    id: 4, slug: 'chat-restrictions', level: 'beginner', category: 'Chat', duration: 8,
     icon: 'ti-messages', color: 'teal', label: 'Chat',
     title: { th: 'แชทและการจำกัด', en: 'Chat & Restrictions' },
     description: { th: 'Chat Modes, Banned Words, Link Protection', en: 'Chat Modes, Banned Words, Link Protection' },
@@ -73,7 +73,7 @@ export const guides: GuideData[] = [
     ],
   },
   {
-    id: 5, slug: 'chatbot', level: 'intermediate', category: 'Tools & Bot', duration: 10,
+    id: 5, slug: 'chatbot', level: 'intermediate', category: 'Tools & Bot', duration: 5,
     icon: 'ti-robot', color: 'amber', label: 'Chatbot',
     title: { th: 'Chatbot Setup', en: 'Chatbot Setup' },
     description: { th: 'เปรียบเทียบ KickBot vs BotRix พร้อมวิธีติดตั้งและเชื่อมต่อบอทกับช่องของคุณ', en: 'KickBot vs BotRix comparison and step-by-step bot installation for your channel' },
@@ -85,7 +85,7 @@ export const guides: GuideData[] = [
     ],
   },
   {
-    id: 6, slug: 'moderator', level: 'intermediate', category: 'Chat', duration: 20,
+    id: 6, slug: 'moderator', level: 'intermediate', category: 'Chat', duration: 10,
     icon: 'ti-shield', color: 'teal', label: 'Mod',
     title: { th: 'การตั้งค่าและการจัดการ Moderator', en: 'Moderator Setup & Management' },
     description: { th: 'คู่มือการแต่งตั้งทีมงาน Moderator คำสั่งแชต Mod View Dashboard และขั้นตอนการจัดการคนเกรียนอย่างเป็นระบบ', en: 'Appointing moderators, live chat commands, Mod View Dashboard tools, and structured moderation workflows' },
@@ -97,7 +97,7 @@ export const guides: GuideData[] = [
     ],
   },
   {
-    id: 7, slug: 'discord-connector', level: 'intermediate', category: 'Tools & Bot', duration: 20,
+    id: 7, slug: 'discord-connector', level: 'intermediate', category: 'Tools & Bot', duration: 10,
     icon: 'ti-brand-discord', color: 'blue', label: 'Discord',
     title: { th: 'การเชื่อมต่อ Discord กับช่อง KICK', en: 'Discord Connector Setup' },
     description: { th: 'สร้าง Discord Server ระบบ Onboarding ยืนยันตัวตน แจ้งเตือนไลฟ์สดอัตโนมัติ และซิงก์ยศ Subscriber', en: 'Discord Server setup, onboarding verification, automated Go-Live webhooks, and Sub Role sync' },
@@ -109,7 +109,7 @@ export const guides: GuideData[] = [
     ],
   },
   {
-    id: 8, slug: 'subscription-donation', level: 'intermediate', category: 'Monetization', duration: 25,
+    id: 8, slug: 'subscription-donation', level: 'intermediate', category: 'Monetization', duration: 12,
     icon: 'ti-cash', color: 'amber', label: 'รับเงิน',
     title: { th: 'ระบบซับและการรับรายได้', en: 'Subscription & Donation Fees' },
     description: { th: 'ส่วนแบ่งรายได้ 95/5 บน KICK แก้ปัญหาซับมือถือ ผูกบัญชีธนาคารไทยผ่าน Stripe Connect และโดเนทพร้อมเพย์ 100%', en: "KICK's 95/5 revenue share, Direct Sub Link fix for mobile, Stripe Connect Thailand payout, and 100% PromptPay donations" },
@@ -121,7 +121,7 @@ export const guides: GuideData[] = [
     ],
   },
   {
-    id: 10, slug: 'kickbot-functions', level: 'intermediate', category: 'Tools & Bot', duration: 20,
+    id: 10, slug: 'kickbot-functions', level: 'intermediate', category: 'Tools & Bot', duration: 10,
     icon: 'ti-robot', color: 'green', label: 'KickBot',
     title: { th: 'KickBot Functions', en: 'KickBot Functions' },
     description: { th: 'คู่มือฟังก์ชั่น KickBot ครบทุกฟีเจอร์: Custom Commands, Timers, AI TTS, !clip, Link Protection, Gimmicks และ Chat Overlay', en: 'Full KickBot function guide: Custom Commands, Timers, AI TTS, !clip, Link Protection, Gimmicks and Chat Overlay' },
@@ -137,7 +137,7 @@ export const guides: GuideData[] = [
     ],
   },
   {
-    id: 11, slug: 'botrix-functions', level: 'intermediate', category: 'Tools & Bot', duration: 20,
+    id: 11, slug: 'botrix-functions', level: 'intermediate', category: 'Tools & Bot', duration: 10,
     icon: 'ti-robot', color: 'amber', label: 'BotRix',
     title: { th: 'BotRix Functions', en: 'BotRix Functions' },
     description: { th: 'คู่มือฟังก์ชั่น BotRix ครบทุกฟีเจอร์: Custom Commands, Timers, Link Protection, Emote Limit, Alerts Overlay, Gimmicks, Chat Overlay และ Music Overlay', en: 'Full BotRix function guide: Custom Commands, Timers, Link Protection, Emote Limit, Alerts Overlay, Gimmicks, Chat Overlay and Music Overlay' },
