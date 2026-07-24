@@ -6,63 +6,63 @@
 
 @layer base {
   :root {
-    /* Brand */
-    --kick-green: #2E9E12;
-    --kick-green-text: #1E7A0A;
-    --kick-green-10: rgba(30, 122, 10, 0.08);
-    --kick-green-22: rgba(30, 122, 10, 0.18);
-    --kick-green-bg: #EDFCE8;
+    /* Brand — KICK bright green for dark bg */
+    --kick-green: #53FC18;
+    --kick-green-text: #53FC18;
+    --kick-green-10: rgba(83, 252, 24, 0.07);
+    --kick-green-22: rgba(83, 252, 24, 0.16);
+    --kick-green-bg: rgba(83, 252, 24, 0.10);
     --kick-green-bright: #53FC18;
 
-    /* Surfaces — light theme */
-    --surface-page:  #F0F2F0;
-    --surface-card:  #FFFFFF;
-    --surface-card2: #F5F7F5;
+    /* Surfaces — dark KICK forest theme */
+    --surface-page:  #0C110D;
+    --surface-card:  #141A14;
+    --surface-card2: #1A221A;
 
     /* XP / Path accent */
-    --purple:    #5B52B5;
-    --purple-13: rgba(91, 82, 181, 0.10);
-    --purple-28: rgba(91, 82, 181, 0.22);
+    --purple:    #8B82E0;
+    --purple-13: rgba(139, 130, 224, 0.12);
+    --purple-28: rgba(139, 130, 224, 0.24);
 
     /* Intermediate */
-    --amber:    #B87308;
-    --amber-10: rgba(184, 115, 8, 0.08);
-    --amber-25: rgba(184, 115, 8, 0.18);
+    --amber:    #E8A020;
+    --amber-10: rgba(232, 160, 32, 0.10);
+    --amber-25: rgba(232, 160, 32, 0.22);
 
     /* Developer */
-    --blue:    #2B6CB0;
-    --blue-10: rgba(43, 108, 176, 0.08);
-    --blue-25: rgba(43, 108, 176, 0.18);
+    --blue:    #5BA3E8;
+    --blue-10: rgba(91, 163, 232, 0.10);
+    --blue-25: rgba(91, 163, 232, 0.22);
 
     /* Text */
-    --text-primary:   #1A1F1A;
-    --text-secondary: #4A5A4D;
-    --text-muted:     #7A8A7D;
+    --text-primary:   #DCF0DD;
+    --text-secondary: #7EA882;
+    --text-muted:     #4A6450;
 
     /* Borders */
-    --border-default: rgba(0, 0, 0, 0.08);
-    --border-strong:  rgba(0, 0, 0, 0.15);
+    --border-default: rgba(83, 252, 24, 0.07);
+    --border-strong:  rgba(83, 252, 24, 0.14);
 
-    /* shadcn compat — light theme */
-    --background: 100 8% 97%;
-    --foreground: 120 8% 11%;
-    --card: 0 0% 100%;
-    --card-foreground: 120 8% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 120 8% 11%;
-    --primary: 110 85% 30%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 110 8% 94%;
-    --secondary-foreground: 120 8% 11%;
-    --muted: 110 8% 94%;
-    --muted-foreground: 120 10% 40%;
-    --accent: 110 8% 94%;
-    --accent-foreground: 120 8% 11%;
-    --destructive: 0 84% 50%;
+    /* shadcn compat — dark theme */
+    --background: 125 20% 6%;
+    --foreground: 125 15% 90%;
+    --card: 125 18% 9%;
+    --card-foreground: 125 15% 90%;
+    --popover: 125 18% 9%;
+    --popover-foreground: 125 15% 90%;
+    --primary: 107 97% 54%;
+    --primary-foreground: 125 20% 6%;
+    --secondary: 125 15% 14%;
+    --secondary-foreground: 125 15% 90%;
+    --muted: 125 15% 14%;
+    --muted-foreground: 125 10% 50%;
+    --accent: 125 15% 14%;
+    --accent-foreground: 125 15% 90%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-    --border: 110 8% 88%;
-    --input: 110 8% 88%;
-    --ring: 110 85% 30%;
+    --border: 125 15% 18%;
+    --input: 125 15% 18%;
+    --ring: 107 97% 54%;
     --radius: 0.5rem;
   }
 }
@@ -98,11 +98,11 @@
 .prose-guide a {
   color: var(--kick-green-text);
   text-decoration: underline;
-  text-decoration-color: rgba(30, 122, 10, 0.3);
+  text-decoration-color: rgba(83, 252, 24, 0.3);
   text-underline-offset: 2px;
   transition: color 0.15s, text-decoration-color 0.15s;
 }
 .prose-guide a:hover {
-  color: #155C08;
-  text-decoration-color: rgba(30, 122, 10, 0.6);
+  color: #7fff4a;
+  text-decoration-color: rgba(83, 252, 24, 0.6);
 }

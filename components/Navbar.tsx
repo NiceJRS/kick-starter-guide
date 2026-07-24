@@ -10,12 +10,12 @@ const NAV_LINKS = {
   th: [
     { label: 'เส้นทาง', href: '#path' },
     { label: 'แนะนำ', href: '#featured' },
-    { label: 'คู่มือ', href: '#guides' },
+    { label: 'คู่มือ', href: 'GUIDES' },
   ],
   en: [
     { label: 'Path', href: '#path' },
     { label: 'Featured', href: '#featured' },
-    { label: 'Guides', href: '#guides' },
+    { label: 'Guides', href: 'GUIDES' },
   ],
 }
 
@@ -63,16 +63,19 @@ export default function Navbar({
       {/* Center: section links (home streamer) */}
       {isHome && mode === 'streamer' ? (
         <div className="hidden md:flex items-center gap-1">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all hover:bg-[--surface-card2] hover:text-[--text-primary]"
-              style={{ color: 'var(--text-secondary)' }}
-            >
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) => {
+            const href = l.href === 'GUIDES' ? `/${locale}/guides` : l.href
+            return (
+              <a
+                key={l.href}
+                href={href}
+                className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all hover:bg-[--surface-card2] hover:text-[--text-primary]"
+                style={{ color: 'var(--text-secondary)' }}
+              >
+                {l.label}
+              </a>
+            )
+          })}
         </div>
       ) : null}
 

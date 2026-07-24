@@ -3,37 +3,12 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { IconArrowLeft, IconCheck } from '@tabler/icons-react'
-import { guides } from '@/lib/guides'
+import { guides, STAGE_CONFIG } from '@/lib/guides'
 
-const STAGE_GROUPS = [
-  {
-    id: 'starter',
-    label: { th: 'Starter', en: 'Starter' },
-    required: true,
-    color: 'var(--kick-green-text)',
-    colorBg: 'var(--kick-green-bg)',
-    colorBorder: 'var(--kick-green-22)',
-    guideIds: [1, 2],
-  },
-  {
-    id: 'amateur',
-    label: { th: 'Amateur', en: 'Amateur' },
-    required: false,
-    color: 'var(--amber)',
-    colorBg: 'var(--amber-10)',
-    colorBorder: 'var(--amber-25)',
-    guideIds: [3, 4, 5, 6],
-  },
-  {
-    id: 'pro',
-    label: { th: 'Pro', en: 'Pro' },
-    required: false,
-    color: 'var(--purple)',
-    colorBg: 'var(--purple-13)',
-    colorBorder: 'var(--purple-28)',
-    guideIds: [7, 8, 10, 11],
-  },
-]
+const STAGE_GROUPS = STAGE_CONFIG.map((s) => ({
+  ...s,
+  guideIds: guides.filter((g) => g.stage === s.id && g.showIn.includes('path')).map((g) => g.id),
+}))
 
 const NAV_OFFSET = 110
 

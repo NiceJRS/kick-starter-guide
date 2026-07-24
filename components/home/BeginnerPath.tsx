@@ -3,47 +3,13 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { IconMap2, IconCheck, IconChevronDown, IconChevronUp, IconRefresh } from '@tabler/icons-react'
-import { guides } from '@/lib/guides'
+import { guides, STAGE_CONFIG } from '@/lib/guides'
 import { getCompletedGuides, markGuideComplete, unmarkGuideComplete, PROGRESS_KEY } from '@/lib/progress'
 
-const STAGES = [
-  {
-    id: 'starter',
-    label: { th: 'Starter', en: 'Starter' },
-    sub: { th: 'ขั้นต่ำเพื่อเริ่มสตรีม', en: 'Minimum to go live' },
-    color: 'var(--kick-green)',
-    colorBg: 'var(--kick-green-bg)',
-    colorBorder: 'var(--kick-green-22)',
-    colorText: 'var(--kick-green-text)',
-    guideIds: [1, 2],
-    celebrate: { th: 'คุณพร้อมสตรีมแล้ว! 🚀', en: "You're ready to stream! 🚀" },
-    celebrateSub: { th: 'ติดตั้ง OBS และตั้งค่าบัญชีเสร็จแล้ว ไปกด Live ได้เลย', en: 'OBS is set up and your account is ready. Go live now!' },
-  },
-  {
-    id: 'amateur',
-    label: { th: 'Amateur', en: 'Amateur' },
-    sub: { th: 'สร้างชุมชนคนดู', en: 'Build your audience' },
-    color: 'var(--amber)',
-    colorBg: 'var(--amber-10)',
-    colorBorder: 'var(--amber-25)',
-    colorText: 'var(--amber)',
-    guideIds: [3, 4, 5, 6],
-    celebrate: { th: 'ขั้น Amateur สำเร็จ! 🏆', en: 'Amateur stage complete! 🏆' },
-    celebrateSub: { th: 'แชทปลอดภัย บอทพร้อม Mod ครบ — ชุมชนโตได้แล้ว', en: 'Chat managed, bots and mods set — time to grow!' },
-  },
-  {
-    id: 'pro',
-    label: { th: 'Pro', en: 'Pro' },
-    sub: { th: 'มืออาชีพเต็มขั้น', en: 'Go professional' },
-    color: 'var(--purple)',
-    colorBg: 'var(--purple-13)',
-    colorBorder: 'var(--purple-28)',
-    colorText: 'var(--purple)',
-    guideIds: [7, 8, 10, 11],
-    celebrate: { th: 'คุณคือ Pro Streamer แล้ว! 👑', en: "You're a Pro Streamer! 👑" },
-    celebrateSub: { th: 'Discord, รายได้, บอทครบ — ยินดีต้อนรับสู่ระดับมืออาชีพ', en: 'Discord, revenue, full bot setup — welcome to pro level!' },
-  },
-]
+const STAGES = STAGE_CONFIG.map((s) => ({
+  ...s,
+  guideIds: guides.filter((g) => g.stage === s.id && g.showIn.includes('path')).map((g) => g.id),
+}))
 
 export default function BeginnerPath({ locale }: { locale: string }) {
   const [completed, setCompleted] = useState<number[]>([])
