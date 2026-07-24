@@ -55,7 +55,7 @@ export default function HighlightSection({ locale }: { locale: string }) {
   const small = HIGHLIGHTS.filter((h) => !h.featured)
 
   const href = (h: typeof HIGHLIGHTS[0]) =>
-    `/${locale}/guide/${h.slug}${h.section ? '#' + h.section : ''}`
+    `/${locale}/guides/${h.slug}${h.section ? '#' + h.section : ''}`
 
   return (
     <div className="mb-3">

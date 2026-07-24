@@ -20,7 +20,7 @@ export default function SuggestionRow({ locale }: { locale: string }) {
         {suggestions.map((s) => {
           const Icon = s.icon
           return (
-            <Link key={s.slug} href={`/${locale}/guide/${s.slug}`} className="flex-shrink-0 w-[148px]">
+            <Link key={s.slug} href={`/${locale}/guides/${s.slug}`} className="flex-shrink-0 w-[148px]">
               <div
                 className="p-3 rounded-xl cursor-pointer transition-all h-full"
                 style={{ background: 'var(--surface-card)', border: '1px solid var(--border-default)' }}

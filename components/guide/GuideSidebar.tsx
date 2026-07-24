@@ -16,10 +16,12 @@ export default function GuideSidebar({
   locale,
   currentSlug,
   completed,
+  basePath = 'path',
 }: {
   locale: string
   currentSlug: string
   completed: number[]
+  basePath?: 'guides' | 'path'
 }) {
   const [activeSection, setActiveSection] = useState<string>('')
 
@@ -57,7 +59,7 @@ export default function GuideSidebar({
     <div className="w-[200px] flex-shrink-0 hidden lg:block">
       <div className="sticky top-20 max-h-[calc(100vh-5rem)] overflow-y-auto pr-1">
         <Link
-          href={`/${locale}`}
+          href={`/${locale}/${basePath}`}
           className="flex items-center gap-1.5 text-xs mb-4 transition-colors hover:opacity-80"
           style={{ color: 'var(--text-secondary)' }}
         >
@@ -98,7 +100,7 @@ export default function GuideSidebar({
                     const current = g.slug === currentSlug
                     return (
                       <div key={g.slug}>
-                        <Link href={`/${locale}/guide/${g.slug}`}>
+                        <Link href={`/${locale}/${basePath}/${g.slug}`}>
                           <div
                             className="flex items-center gap-1.5 px-2 py-1.5 rounded-lg text-xs transition-all"
                             style={{

@@ -23,5 +23,12 @@
   "search": {
     "placeholder": "Search guides...",
     "noResults": "No results found"
+  },
+  "sidebar": {
+    "getting-started": "🚀 Getting Started",
+    "kick-features": "🎮 KICK Features",
+    "chat-community": "💬 Chat & Community",
+    "monetization": "💰 Monetization",
+    "advanced": "⚙️ Advanced"
   }
 }

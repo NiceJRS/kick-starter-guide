@@ -30,7 +30,7 @@ export default function Navbar({
 }) {
   const pathname = usePathname()
   const router = useRouter()
-  const isHome = !pathname.includes('/guide/')
+  const isHome = !pathname.includes('/guides/') && !pathname.includes('/path/')
 
   const toggleLocale = () => {
     const next = locale === 'th' ? 'en' : 'th'

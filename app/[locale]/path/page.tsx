@@ -198,7 +198,7 @@ export default function PathPage({ params: { locale } }: { params: { locale: str
                     {stage.guides.map((g) => {
                       const done = completed.includes(g.id)
                       return (
-                        <Link key={g.slug} href={`/${locale}/guide/${g.slug}`}
+                        <Link key={g.slug} href={`/${locale}/path/${g.slug}`}
                           className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-xs transition-all group"
                           style={{ color: done ? stage.colorText : 'var(--text-secondary)' }}
                           onMouseEnter={(e) => {
@@ -274,7 +274,7 @@ export default function PathPage({ params: { locale } }: { params: { locale: str
             {/* Start CTA */}
             {currentStep && (
               <button
-                onClick={() => router.push(`/${locale}/guide/${currentStep.slug}`)}
+                onClick={() => router.push(`/${locale}/path/${currentStep.slug}`)}
                 className="mt-3 w-full py-2.5 rounded-xl text-sm font-bold tracking-wide transition-all hover:brightness-110 hover:shadow-[0_0_20px_rgba(139,130,224,0.4)]"
                 style={{
                   background: 'linear-gradient(135deg, var(--purple) 0%, #3b6fd4 100%)',
@@ -367,7 +367,7 @@ export default function PathPage({ params: { locale } }: { params: { locale: str
                 {/* Guide cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3">
                   {stage.guides.map((g) => (
-                    <GuideCard key={g.id} guide={g} locale={locale} />
+                    <GuideCard key={g.id} guide={g} locale={locale} basePath="path" />
                   ))}
                 </div>
 

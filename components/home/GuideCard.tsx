@@ -35,12 +35,12 @@ const CATEGORY_LABELS: Record<string, string> = {
   'Advanced': 'Advanced',
 }
 
-export default function GuideCard({ guide, locale }: { guide: GuideData; locale: string }) {
+export default function GuideCard({ guide, locale, basePath = 'guides' }: { guide: GuideData; locale: string; basePath?: 'guides' | 'path' }) {
   const Icon = ICONS[guide.icon] ?? IconApi
   const { bg, fg } = COLOR_MAP[guide.color] ?? COLOR_MAP.green
 
   return (
-    <Link href={`/${locale}/guide/${guide.slug}`}>
+    <Link href={`/${locale}/${basePath}/${guide.slug}`}>
       <div
         className="rounded-xl cursor-pointer transition-all duration-200 h-full hover:-translate-y-0.5 hover:shadow-md overflow-hidden"
         style={{

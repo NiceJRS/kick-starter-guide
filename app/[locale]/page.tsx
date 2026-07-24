@@ -62,12 +62,12 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
             </div>
             <div className="relative">
               <div className="text-sm font-bold mb-0.5" style={{ color: 'var(--text-primary)' }}>
-                {locale === 'th' ? 'มือใหม่ใช่ไหม? เริ่ม Setup Stream กัน' : 'New here? Start your Stream Setup'}
+                {locale === 'th' ? 'เส้นทาง Streamer' : 'Stream Path'}
               </div>
               <div className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 {locale === 'th'
-                  ? 'ทำ 2 บทแรกก็พร้อมสตรีมได้เลย — ที่เหลือเป็น optional'
-                  : 'Just 2 chapters to go live — rest is optional'}
+                  ? 'มือใหม่ใช่ไหม? เริ่ม Setup Stream กันเลย!'
+                  : "New here? Let's get your stream set up!"}
               </div>
             </div>
             <div className="relative flex items-center gap-1.5 mt-1">
@@ -109,12 +109,12 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
             </div>
             <div className="relative">
               <div className="text-sm font-bold mb-0.5" style={{ color: 'var(--text-primary)' }}>
-                {locale === 'th' ? 'คู่มือทั้งหมด' : 'Guidebook'}
+                {locale === 'th' ? 'คู่มือทั้งหมด' : 'Full Guidebook'}
               </div>
               <div className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 {locale === 'th'
-                  ? 'คู่มือทุกบทพร้อม sidebar wiki-style — ค้นหาตามหมวด'
-                  : 'All guides with wiki-style sidebar — browse by category'}
+                  ? 'เนื้อหาครบทุกหัวข้อ ตั้งแต่เริ่มต้นจนถึงขั้นโปร'
+                  : 'Complete reference covering all topics from beginner to pro'}
               </div>
             </div>
             <div className="relative flex items-center gap-1.5 mt-1">

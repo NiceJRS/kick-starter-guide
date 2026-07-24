@@ -6,16 +6,18 @@ export default function GuideNav({
   prev,
   next,
   locale,
+  basePath = 'guides',
 }: {
   prev: GuideData | null
   next: GuideData | null
   locale: string
+  basePath?: 'guides' | 'path'
 }) {
   return (
     <div className="flex items-center justify-between gap-3 mt-8 pt-4"
       style={{ borderTop: '1px solid var(--border-default)' }}>
       {prev ? (
-        <Link href={`/${locale}/guide/${prev.slug}`}>
+        <Link href={`/${locale}/${basePath}/${prev.slug}`}>
           <div className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm border transition-all hover:border-[--border-strong]"
             style={{ background: 'transparent', borderColor: 'var(--border-default)', color: 'var(--text-secondary)' }}>
             <IconArrowLeft size={13} />
@@ -25,7 +27,7 @@ export default function GuideNav({
       ) : <div />}
 
       {next ? (
-        <Link href={`/${locale}/guide/${next.slug}`}>
+        <Link href={`/${locale}/${basePath}/${next.slug}`}>
           <div className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm border transition-all"
             style={{
               background: 'var(--kick-green-bg)',

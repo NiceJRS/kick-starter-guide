@@ -3,15 +3,17 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { IconRadio, IconArrowLeft, IconSearch, IconX, IconChevronRight, IconClock, IconBook, IconStar } from '@tabler/icons-react'
-import { guides, type GuideCategory } from '@/lib/guides'
+import { IconRadio, IconArrowLeft, IconSearch, IconX, IconChevronRight } from '@tabler/icons-react'
+import { guides, type SidebarCategory } from '@/lib/guides'
 import GuideCard from '@/components/home/GuideCard'
+import GuidebookSidebar from '@/components/guide/GuidebookSidebar'
 
-const CATEGORIES: { key: GuideCategory; icon: string; label: { th: string; en: string } }[] = [
-  { key: 'Setup', icon: '⚙️', label: { th: 'การติดตั้ง', en: 'Setup' } },
-  { key: 'Chat', icon: '💬', label: { th: 'แชทและความปลอดภัย', en: 'Chat & Safety' } },
-  { key: 'Tools & Bot', icon: '🤖', label: { th: 'บอทและเครื่องมือ', en: 'Tools & Bot' } },
-  { key: 'Monetization', icon: '💰', label: { th: 'การรับรายได้', en: 'Monetization' } },
+const SIDEBAR_CATEGORIES: { key: SidebarCategory; label: { th: string; en: string } }[] = [
+  { key: 'getting-started', label: { th: '🚀 เริ่มต้น', en: '🚀 Getting Started' } },
+  { key: 'kick-features', label: { th: '🎮 ฟีเจอร์ KICK', en: '🎮 KICK Features' } },
+  { key: 'chat-community', label: { th: '💬 Chat & ชุมชน', en: '💬 Chat & Community' } },
+  { key: 'monetization', label: { th: '💰 รายได้', en: '💰 Monetization' } },
+  { key: 'advanced', label: { th: '⚙️ ขั้นสูง', en: '⚙️ Advanced' } },
 ]
 
 type SearchResult = {
@@ -42,16 +44,16 @@ function searchGuides(q: string, locale: string): SearchResult[] {
 }
 
 export default function GuidesPage({ params: { locale } }: { params: { locale: string } }) {
-  const [activeCategory, setActiveCategory] = useState<GuideCategory | 'all'>('all')
+  const [activeCategory, setActiveCategory] = useState<SidebarCategory | 'all'>('all')
   const [query, setQuery] = useState('')
   const [searchOpen, setSearchOpen] = useState(false)
   const searchRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
 
-  const allGuides = guides
+  const allGuidesList = guides
   const filtered = activeCategory === 'all'
-    ? allGuides
-    : allGuides.filter((g) => g.category === activeCategory)
+    ? allGuidesList
+    : allGuidesList.filter((g) => g.sidebarCategory === activeCategory)
 
   const searchResults = query.trim().length >= 1 ? searchGuides(query, locale) : []
 
@@ -68,7 +70,7 @@ export default function GuidesPage({ params: { locale } }: { params: { locale: s
   const goResult = (r: SearchResult) => {
     setSearchOpen(false)
     setQuery('')
-    router.push(`/${locale}/guide/${r.guideSlug}${r.sectionId ? '#' + r.sectionId : ''}`)
+    router.push(`/${locale}/guides/${r.guideSlug}${r.sectionId ? '#' + r.sectionId : ''}`)
   }
 
   return (
@@ -109,129 +111,14 @@ export default function GuidesPage({ params: { locale } }: { params: { locale: s
       </nav>
 
       <div className="flex gap-0 mt-2">
-        {/* === LEFT WIKI SIDEBAR — category-based with sub-topics === */}
-        <aside className="w-[240px] flex-shrink-0 hidden lg:block"
-          style={{ borderRight: '1px solid var(--border-default)' }}>
-          <div className="sticky top-20 max-h-[calc(100vh-5rem)] overflow-y-auto scrollbar-hide py-4 pr-2">
-
-            {/* All Guides button */}
-            <button
-              onClick={() => setActiveCategory('all')}
-              className="w-full text-left flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold mb-3 transition-all"
-              style={{
-                background: activeCategory === 'all' ? 'var(--kick-green-bg)' : 'transparent',
-                color: activeCategory === 'all' ? 'var(--kick-green-text)' : 'var(--text-secondary)',
-                border: `1px solid ${activeCategory === 'all' ? 'var(--kick-green-22)' : 'transparent'}`,
-              }}>
-              <IconBook size={14} />
-              {locale === 'th' ? 'คู่มือทั้งหมด' : 'All Guides'}
-              <span className="ml-auto text-[10px]" style={{ color: 'var(--text-muted)' }}>{allGuides.length}</span>
-            </button>
-
-            {/* Category groups with guide + sub-topic links */}
-            {CATEGORIES.map((cat) => {
-              const catGuides = allGuides.filter((g) => g.category === cat.key)
-              if (catGuides.length === 0) return null
-              const isActive = activeCategory === cat.key
-
-              return (
-                <div key={cat.key} className="mb-3">
-                  {/* Category separator */}
-                  <button
-                    onClick={() => setActiveCategory(isActive ? 'all' : cat.key)}
-                    className="w-full text-left flex items-center justify-between px-2 py-1.5 rounded-lg transition-all"
-                    style={{
-                      background: isActive ? 'var(--surface-card2)' : 'transparent',
-                    }}>
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-xs">{cat.icon}</span>
-                      <span className="text-xs font-bold uppercase tracking-wider"
-                        style={{ color: isActive ? 'var(--kick-green-text)' : 'var(--text-muted)' }}>
-                        {locale === 'th' ? cat.label.th : cat.label.en}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <span className="text-[10px]" style={{ color: 'var(--text-muted)' }}>{catGuides.length}</span>
-                      <IconChevronRight size={10}
-                        style={{
-                          color: 'var(--text-muted)',
-                          transform: isActive ? 'rotate(90deg)' : 'rotate(0)',
-                          transition: 'transform 0.15s',
-                        }} />
-                    </div>
-                  </button>
-
-                  {/* Guide links with sub-topics */}
-                  <div className="mt-1 space-y-0.5 pl-1">
-                    {catGuides.map((g) => (
-                      <div key={g.slug}>
-                        <Link href={`/${locale}/guide/${g.slug}`}
-                          className="flex items-center gap-1.5 px-2 py-1 rounded text-xs transition-all"
-                          style={{ color: 'var(--text-secondary)' }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.background = 'var(--surface-card2)'
-                            e.currentTarget.style.color = 'var(--text-primary)'
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.background = 'transparent'
-                            e.currentTarget.style.color = 'var(--text-secondary)'
-                          }}>
-                          {g.showInHighlight && (
-                            <IconStar size={9} style={{ color: '#facc15', flexShrink: 0 }} />
-                          )}
-                          <span className="truncate leading-tight">
-                            {locale === 'th' ? g.title.th : g.title.en}
-                          </span>
-                        </Link>
-
-                        {/* Sub-topics (sections) — always visible */}
-                        {g.sections.length > 0 && (
-                          <div className="pl-4 space-y-0 mt-0.5 mb-1"
-                            style={{ borderLeft: '1px solid var(--border-default)', marginLeft: '10px' }}>
-                            {g.sections.map((sec) => (
-                              <Link key={sec.id}
-                                href={`/${locale}/guide/${g.slug}#${sec.id}`}
-                                className="block px-1.5 py-0.5 rounded text-[10px] transition-all truncate"
-                                style={{ color: 'var(--text-muted)' }}
-                                onMouseEnter={(e) => {
-                                  e.currentTarget.style.color = 'var(--text-primary)'
-                                  e.currentTarget.style.background = 'var(--surface-card2)'
-                                }}
-                                onMouseLeave={(e) => {
-                                  e.currentTarget.style.color = 'var(--text-muted)'
-                                  e.currentTarget.style.background = 'transparent'
-                                }}>
-                                {locale === 'th' ? sec.label.th : sec.label.en}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )
-            })}
-
-            {/* Stats */}
-            <div className="mt-4 pt-3 px-2" style={{ borderTop: '1px solid var(--border-default)' }}>
-              <div className="text-[10px] space-y-1" style={{ color: 'var(--text-muted)' }}>
-                <div className="flex items-center gap-1.5">
-                  <IconBook size={11} />
-                  <span>{allGuides.length} {locale === 'th' ? 'บท' : 'guides'}</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <IconClock size={11} />
-                  <span>~{allGuides.reduce((s, g) => s + g.duration, 0)} {locale === 'th' ? 'นาที' : 'min total'}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </aside>
+        <GuidebookSidebar
+          locale={locale}
+          activeCategory={activeCategory}
+          onCategoryChange={setActiveCategory}
+        />
 
         {/* === MAIN CONTENT === */}
         <main className="flex-1 min-w-0 px-5 py-4">
-          {/* Page header + search */}
           <div className="mb-5">
             <div className="flex items-center justify-between mb-3">
               <div>
@@ -239,8 +126,8 @@ export default function GuidesPage({ params: { locale } }: { params: { locale: s
                   {activeCategory === 'all'
                     ? (locale === 'th' ? 'คู่มือทั้งหมด' : 'All Guides')
                     : (locale === 'th'
-                      ? CATEGORIES.find(c => c.key === activeCategory)?.label.th
-                      : CATEGORIES.find(c => c.key === activeCategory)?.label.en)
+                      ? SIDEBAR_CATEGORIES.find(c => c.key === activeCategory)?.label.th
+                      : SIDEBAR_CATEGORIES.find(c => c.key === activeCategory)?.label.en)
                   }
                 </h1>
                 <div className="flex items-center gap-3 text-xs mt-1" style={{ color: 'var(--text-muted)' }}>
@@ -281,7 +168,6 @@ export default function GuidesPage({ params: { locale } }: { params: { locale: s
                 )}
               </div>
 
-              {/* Search dropdown */}
               {searchOpen && (
                 <div className="absolute left-0 right-0 mt-1 rounded-xl overflow-hidden z-50 text-left"
                   style={{ background: 'var(--surface-card)', border: '1px solid var(--kick-green-22)', boxShadow: '0 8px 32px rgba(0,0,0,0.25)' }}>
@@ -329,7 +215,7 @@ export default function GuidesPage({ params: { locale } }: { params: { locale: s
               }}>
               {locale === 'th' ? 'ทั้งหมด' : 'All'}
             </button>
-            {CATEGORIES.map((cat) => (
+            {SIDEBAR_CATEGORIES.map((cat) => (
               <button key={cat.key} onClick={() => setActiveCategory(cat.key)}
                 className="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-all"
                 style={{
@@ -337,7 +223,7 @@ export default function GuidesPage({ params: { locale } }: { params: { locale: s
                   color: activeCategory === cat.key ? 'var(--kick-green-text)' : 'var(--text-muted)',
                   border: `1px solid ${activeCategory === cat.key ? 'var(--kick-green-22)' : 'var(--border-strong)'}`,
                 }}>
-                {cat.icon} {locale === 'th' ? cat.label.th : cat.label.en}
+                {locale === 'th' ? cat.label.th : cat.label.en}
               </button>
             ))}
           </div>
@@ -345,7 +231,7 @@ export default function GuidesPage({ params: { locale } }: { params: { locale: s
           {/* Guide cards grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3">
             {filtered.map((g) => (
-              <GuideCard key={g.id} guide={g} locale={locale} />
+              <GuideCard key={g.id} guide={g} locale={locale} basePath="guides" />
             ))}
           </div>
         </main>

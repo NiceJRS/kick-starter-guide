@@ -14,7 +14,7 @@ export default function GuideCard({ guide, locale }: { guide: Guide; locale: str
   const description = locale === 'th' ? guide.description_th : guide.description_en
 
   return (
-    <Link href={`/${locale}/guide/${guide.slug}`}>
+    <Link href={`/${locale}/guides/${guide.slug}`}>
       <Card className="h-full hover:shadow-md transition-shadow cursor-pointer">
         <CardHeader>
           <div className="flex items-center justify-between mb-1">

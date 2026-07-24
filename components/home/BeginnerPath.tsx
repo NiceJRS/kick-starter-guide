@@ -61,7 +61,7 @@ export default function BeginnerPath({ locale }: { locale: string }) {
 
   const start = () => {
     const target = guides.find((g) => !completed.includes(g.id)) ?? guides[0]
-    router.push(`/${locale}/guide/${target.slug}`)
+    router.push(`/${locale}/path/${target.slug}`)
   }
 
   const reset = () => {

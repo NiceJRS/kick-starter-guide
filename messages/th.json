@@ -23,5 +23,12 @@
   "search": {
     "placeholder": "ค้นหาคู่มือ...",
     "noResults": "ไม่พบผลลัพธ์"
+  },
+  "sidebar": {
+    "getting-started": "🚀 เริ่มต้น",
+    "kick-features": "🎮 ฟีเจอร์ KICK",
+    "chat-community": "💬 Chat & ชุมชน",
+    "monetization": "💰 รายได้",
+    "advanced": "⚙️ ขั้นสูง"
   }
 }

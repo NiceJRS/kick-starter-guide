@@ -71,7 +71,7 @@ export default function SearchHero({ locale }: { locale: string }) {
   const go = (r: Result) => {
     setOpen(false)
     setQuery('')
-    router.push(`/${locale}/guide/${r.guideSlug}${r.sectionId ? '#' + r.sectionId : ''}`)
+    router.push(`/${locale}/guides/${r.guideSlug}${r.sectionId ? '#' + r.sectionId : ''}`)
   }
 
   const handleChange = (v: string) => {
