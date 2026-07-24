@@ -16,40 +16,18 @@ sidebar_category: chat-community
   - kick-features
 ---
 
-<SectionHeading id="s4-1">4.1 Chat Modes & Verification</SectionHeading>
+<SectionHeading id="s4-1">4.1 Chat Modes</SectionHeading>
 
-<StepCard step={1} title="Followers-Only Mode">
+<StepCard step={1} title="Followers-Only Mode, Slow Mode & Subscribers-Only Mode">
   <SubSteps items={[
-    "Go to <a href='https://dashboard.kick.com/chat/settings' target='_blank'>dashboard.kick.com/chat/settings</a>.",
-    "Toggle <strong>Followers-Only Mode</strong> to ON.",
-    "Set the minimum follow duration — recommended <strong>15 minutes</strong>.",
-    "This blocks throwaway accounts from instantly typing in your chat."
-  ]} />
-  <ImageCaption src="/images/ch4/s4_1_step1_followers_only.jpg" alt="Followers-Only Mode toggle" caption="Chat Settings — Followers-Only Mode with 15-minute minimum follow time" />
-</StepCard>
-
-<StepCard step={2} title="Slow Mode & Subscribers-Only Mode">
-  <SubSteps items={[
-    "<strong>Slow Mode:</strong> Set a rate limit per user (e.g., 5s or 10s delay between messages).",
-    "Use this during high-traffic streams to keep chat readable.",
+    "Go to <a href='https://dashboard.kick.com/stream' target='_blank'>dashboard.kick.com/stream</a>.",
+    "<strong>Followers-Only Mode:</strong> Toggle to ON and set the minimum follow duration — recommended <strong>15 minutes</strong> — to block throwaway accounts from instantly typing in your chat.",
+    "<strong>Slow Mode:</strong> Set a rate limit per user (e.g., 5s or 10s delay between messages) to keep high-traffic chat readable.",
     "<strong>Subscribers-Only Mode:</strong> Toggle ON during exclusive community events or sub-only broadcasts.",
-    "Moderators are always exempted from both modes."
+    "Moderators are always exempted from all three modes."
   ]} />
-  <ImageCaption src="/images/ch4/s4_1_step2_slow_sub_mode.jpg" alt="Slow Mode and Subscribers-Only Mode settings" caption="Chat Settings — Slow Mode rate limiting and Subscribers-Only toggle" />
+  <ImageCaption src="/images/ch4/4.1chatmode.jpg" alt="Chat modes settings" caption="Chat Settings — Followers-Only, Slow Mode, and Subscribers-Only Mode" />
 </StepCard>
-
-<StepCard step={3} title="Identity Verification">
-  <SubSteps items={[
-    "Under <strong>Identity Verification</strong> in Chat Settings, enable <strong>Require Phone Verification</strong> or <strong>Email Verification</strong>.",
-    "This filters out over <strong>90% of automated spam bots</strong> by requiring real contact info before chatting.",
-    "You can enable both phone and email verification at the same time for maximum protection."
-  ]} />
-  <ImageCaption src="/images/ch4/s4_1_step3_identity_verification.jpg" alt="Identity Verification settings" caption="Identity Verification — require phone or email to chat, blocks 90%+ spam bots" />
-</StepCard>
-
-<TipBox>
-Followers-Only (15 min) + Phone Verification together = the most effective anti-troll shield for Thai streamers.
-</TipBox>
 
 ---
 
@@ -63,27 +41,14 @@ Followers-Only (15 min) + Phone Verification together = the most effective anti-
     "Example scam keywords: <code>casino</code>, <code>slot</code>, <code>pgslot</code>, <code>directweb</code>, <code>deposit-withdraw</code>, <code>line@</code>.",
     "Messages containing these words are <strong>silently blocked before they appear in chat</strong> — viewers never see them."
   ]} />
-  <ImageCaption src="/images/ch4/s4_2_step4_banned_words_list.jpg" alt="Banned Words input field" caption="Moderation → Banned Words — adding prohibited terms to the filter list" />
+  <ImageCaption src="/images/ch4/4.2.bannedword.jpg" alt="Banned Words input field" caption="Moderation → Banned Words — adding prohibited terms to the filter list" />
 </StepCard>
 
-<StepCard step={5} title="Wildcard Asterisk (*) Technique">
+<StepCard step={5} title="Block Disruptive Emotes">
   <SubSteps items={[
-    "Wrap a keyword with <code>*</code> to catch all variations containing that root word.",
-    "Example: <code>*slot*</code> catches <code>pgslot</code>, <code>slotgame</code>, <code>freeslots</code>, etc.",
-    "Example: <code>*casino*</code> catches <code>onlinecasino</code>, <code>casinobonus</code>, etc.",
-    "Without wildcards, viewers can easily bypass filters by adding prefixes or suffixes."
+    "KICK's Banned Words filter only matches exact text and doesn't support wildcards — it's easy for viewers to bypass in practice.",
+    "For more flexible emote or word filtering, use <strong>BotRix</strong> or <strong>KickBot</strong> instead (see Chapter 5 for setup)."
   ]} />
-  <ImageCaption src="/images/ch4/s4_2_step5_wildcard_technique.jpg" alt="Wildcard asterisk technique" caption="Wildcard technique — *slot* catches all variations like pgslot, slotgame, freeslots" />
-</StepCard>
-
-<StepCard step={6} title="Block Disruptive Emotes">
-  <SubSteps items={[
-    "KICK emotes are encoded as <code>[emote:ID:EmoteName]</code> behind the scenes — e.g., <code>[emote:39251:beeBobble]</code>.",
-    "To ban a disruptive emote: type the emote name <code>beeBobble</code> into the Banned Words field.",
-    "Or use wildcard: <code>*beeBobble*</code> to catch all variations.",
-    "Click <strong>Add</strong> — any message containing that emote will be blocked before it reaches chat."
-  ]} />
-  <ImageCaption src="/images/ch4/s4_2_step6_block_emote.jpg" alt="Blocking emote via Banned Words" caption="Blocking disruptive emotes — add emote name to Banned Words to silently filter them" />
 </StepCard>
 
 <WarningBox>
@@ -100,7 +65,7 @@ Followers-Only (15 min) + Phone Verification together = the most effective anti-
     "This blocks all URL postings from general viewers.",
     "Streamer and Moderators are <strong>automatically exempted</strong> — they can always post links."
   ]} />
-  <ImageCaption src="/images/ch4/s4_3_step7_block_links.jpg" alt="Block Links toggle" caption="Chat Settings — Block Links prevents viewers from posting URLs (mods exempted)" />
+  <ImageCaption src="/images/ch4/4.3.2.blocklink.jpg" alt="Block Links toggle" caption="Chat Settings — Block Links prevents viewers from posting URLs (mods exempted)" />
 </StepCard>
 
 <StepCard step={8} title="Set Up Channel Rules">
@@ -110,31 +75,21 @@ Followers-Only (15 min) + Phone Verification together = the most effective anti-
     "Click <strong>Save Changes</strong>.",
     "First-time viewers will see an <strong>'I Agree'</strong> pop-up and must accept before sending their first message."
   ]} />
-  <ImageCaption src="/images/ch4/s4_3_step8_chat_rules.jpg" alt="Chat Rules pop-up setup" caption="Moderation → Display — set channel rules that viewers must agree to before chatting" />
-</StepCard>
-
-<StepCard step={9} title="Quick Mod Commands">
-  <SubSteps items={[
-    "Streamers and mods can type these commands directly in the live chat dock:",
-    "<code>/clear</code> — purge all visible chat messages instantly.",
-    "<code>/slow 10</code> — enable 10-second rate limit between messages (disable: <code>/slowoff</code>).",
-    "<code>/followers 15</code> — restrict chat to 15-min followers only (disable: <code>/followersoff</code>)."
-  ]} />
-  <ImageCaption src="/images/ch4/s4_3_step9_mod_commands.jpg" alt="Mod commands in chat" caption="Quick mod commands — /clear, /slow, /followers for instant chat control during stream" />
+  <ImageCaption src="/images/ch4/4.3.3.charrule.jpg" alt="Chat Rules pop-up setup" caption="Moderation → Display — set channel rules that viewers must agree to before chatting" />
 </StepCard>
 
 <TipBox>
-Want Subscribers to post links but block Followers? KICK's native Block Links is all-or-nothing. For role-based URL permissions, use external chatbots (BotRix / Nightbot) — covered in Chapter 5.
+Want Subscribers to post links but block Followers? KICK's native Block Links is all-or-nothing. For role-based URL permissions, use <strong>BotRix</strong> — see <a href='/en/guides/botrix-functions'>Chapter 11 — BotRix Functions</a>.
 </TipBox>
 
 ---
 
 <FaqItem q="How can I block scam links while still allowing Subscribers to share links?">
-KICK's native Block Links toggle applies globally to all non-mod viewers. For Subscriber-only link permissions, configure URL Protection via BotRix or Nightbot (Chapter 5).
+KICK's native Block Links toggle applies globally to all non-mod viewers. For Subscriber-only link permissions, configure URL Protection via BotRix (Chapter 11 — BotRix Functions).
 </FaqItem>
 
-<FaqItem q="Why are viewers still bypassing banned words with prefixes/suffixes?">
-Use wildcard asterisks `*` around the keyword — e.g., `*casino*` instead of `casino`. This catches any message containing the root word.
+<FaqItem q="Why doesn't Banned Words catch every variation of a spam term?">
+KICK's Banned Words filter only matches exact text and doesn't support wildcards. For more flexible filtering, use BotRix or KickBot instead.
 </FaqItem>
 
 ---

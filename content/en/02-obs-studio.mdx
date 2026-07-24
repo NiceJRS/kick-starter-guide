@@ -25,7 +25,7 @@ sidebar_category: getting-started
     "Run the installer. On first launch, the Auto-Configuration Wizard will appear — select <strong>'Optimize for streaming, recording is secondary'</strong> so OBS auto-tunes settings for your hardware.",
     "Read the full beginner guide at <a href='https://obsproject.com/wiki/OBS-Studio-Overview' target='_blank'>Official OBS Studio Overview Guide</a>."
   ]} />
-  <ImageCaption src="/images/ch2/s2_1_step1_obs_download.jpg" alt="OBS Studio Download Page" caption="Downloading OBS Studio installer from obsproject.com" />
+  <ImageCaption src="/images/ch2/2.1.1_logo_obs.jpg" alt="OBS Studio Download Page" caption="Downloading OBS Studio installer from obsproject.com" />
 </StepCard>
 
 <TipBox>
@@ -42,6 +42,7 @@ On Windows, always right-click the OBS Studio icon and select <strong>Run as adm
     "Change the <strong>Output Mode</strong> dropdown from 'Simple' to <strong>Advanced</strong> to unlock precise controls.",
     "Under the Streaming tab, select your GPU <strong>Encoder</strong>: <strong>NVIDIA NVENC H.264</strong> (NVIDIA GeForce RTX/GTX), <strong>AMD HW H.264</strong> (AMD GPUs), <strong>Apple VT H.264</strong> (Apple Silicon Macs), or <strong>x264</strong> (software CPU encoding — no dedicated GPU)."
   ]} />
+  <ImageCaption src="/images/ch2/2.1.1.obs.encoder.jpg" alt="OBS Encoder selection" caption="Settings → Output — select the Encoder matching your GPU" />
 </StepCard>
 
 <StepCard step={3} title="Configure Bitrate & Resolution Parameters">
@@ -51,7 +52,8 @@ On Windows, always right-click the OBS Studio icon and select <strong>Run as adm
     "<strong>Preset:</strong> Select <strong>P5: Slow (Good Quality)</strong> or <strong>Quality</strong>.",
     "Navigate to <strong>Settings → Video</strong>. Set <strong>Base (Canvas) Resolution</strong> to match your monitor (e.g., 1920x1080) and set <strong>Output (Scaled) Resolution</strong> according to your target stream quality."
   ]} />
-  <ImageCaption src="/images/ch2/s2_2_step2_output_settings.jpg" alt="OBS Advanced Output Settings" caption="Advanced Output Settings and Bitrate configuration in OBS Studio" />
+  <ImageCaption src="/images/ch2/2.2.2.obs.bitrate.jpg" alt="OBS Bitrate settings" caption="Rate Control, Keyframe Interval, and Bitrate configuration in OBS Studio" />
+  <ImageCaption src="/images/ch2/2.2.3.obs.resolution.jpg" alt="OBS Resolution settings" caption="Settings → Video — Base and Output Resolution" />
 </StepCard>
 
 <BitrateTable locale="en" />
@@ -73,7 +75,7 @@ Bitrate acts like pipe bandwidth — higher bitrate means clearer video. Your ho
     "<strong>Video Capture Device:</strong> Captures your webcam feed.",
     "Learn more source types at <a href='https://obsproject.com/kb/sources-guide' target='_blank'>OBS Official Sources Guide</a>."
   ]} />
-  <ImageCaption src="/images/ch2/s2_3_step4_scene_sources.jpg" alt="OBS Scene and Source Layout" caption="Structural layout of Scenes and Sources in OBS Studio" />
+  <ImageCaption src="/images/ch2/2.2.4.obs.scene.jpg" alt="OBS Scene and Source Layout" caption="Structural layout of Scenes and Sources in OBS Studio" />
 </StepCard>
 
 <StepCard step={5} title="Configure Audio Routing & Apply Noise Filters">
@@ -91,13 +93,13 @@ Bitrate acts like pipe bandwidth — higher bitrate means clearer video. Your ho
 
 <StepCard step={6} title="Retrieve Stream Key & Go Live on KICK">
   <SubSteps items={[
-    "Open your browser and go to <a href='https://kick.com/dashboard/settings/stream' target='_blank'>KICK Creator Dashboard → Settings → Stream Key</a>.",
+    "Open your browser and go to <a href='https://dashboard.kick.com/channel/stream' target='_blank'>KICK Creator Dashboard → Settings → Stream Key</a>.",
     "Copy both <strong>Stream URL</strong> and <strong>Stream Key</strong>.",
     "In OBS Studio, open <strong>Settings → Stream</strong> and set Service to <strong>Custom...</strong>",
     "Paste the Stream URL into <strong>Server</strong> (<code>rtmps://fa723fc1b171.global-contribute.live-video.net:443/app</code>) and paste your Stream Key into <strong>Stream Key</strong>, then click Apply.",
     "Click <strong>Start Streaming</strong> in OBS Studio, then switch to KICK Creator Dashboard to confirm the live video feed and audio levels."
   ]} />
-  <ImageCaption src="/images/ch2/s2_4_step6_connect_kick.jpg" alt="OBS Custom Stream Connection" caption="Connecting OBS Studio via Custom RTMP Server and KICK Stream Key" />
+  <ImageCaption src="/images/ch2/2.2.5.obs.stream.key.jpg" alt="OBS Custom Stream Connection" caption="Connecting OBS Studio via Custom RTMP Server and KICK Stream Key" />
 </StepCard>
 
 <WarningBox>
@@ -123,6 +125,6 @@ KICK recommends a maximum of 8,000 Kbps for 1080p 60fps. Official guidelines are
   { label: "OBS Studio Overview Guide", url: "https://obsproject.com/wiki/OBS-Studio-Overview" },
   { label: "OBS Sources Guide", url: "https://obsproject.com/kb/sources-guide" },
   { label: "OBS Audio Filters Guide", url: "https://obsproject.com/kb/filters-guide" },
-  { label: "KICK Creator Dashboard – Stream Key", url: "https://kick.com/dashboard/settings/stream" },
+  { label: "KICK Creator Dashboard – Stream Key", url: "https://dashboard.kick.com/channel/stream" },
   { label: "KICK Help Center", url: "https://help.kick.com" }
 ]} />

@@ -24,7 +24,6 @@ sidebar_category: chat-community
     "<strong>KickBot (<a href='https://kickbot.com' target='_blank'>kickbot.com</a>):</strong> Best for streamers who want AI Text-to-Speech (natural voice chat reader), automatic VOD clipping via the <code>!clip</code> command, and interactive gimmick commands.",
     "<strong>BotRix (<a href='https://botrix.live' target='_blank'>botrix.live</a>):</strong> Best for streamers who want OBS Stream Alerts overlays, subscriber-exempt URL filters, PromptPay/TipMe donation timers, and a Now Playing music overlay."
   ]} />
-  <ImageCaption src="/images/ch5/s5_1_step1_compare_bots.jpg" alt="KickBot and BotRix homepages" caption="KickBot vs BotRix — each specializes in a different set of streaming tools" />
 </StepCard>
 
 <BotComparisonTable />
@@ -40,11 +39,9 @@ You can run both bots at the same time — use KickBot for AI TTS + !clip, and B
 <StepCard step={2} title="Link KickBot to Your Channel">
   <SubSteps items={[
     "Open <a href='https://kickbot.com' target='_blank'>kickbot.com</a> in your browser.",
-    "Click <strong>Login with Kick</strong> and authorize the connection.",
-    "KickBot will display a verification command — e.g., <code>!verify abc123</code>.",
-    "Go to your KICK chat dock and type the verification command to complete linking."
+    "Click <strong>Login with Kick</strong> and authorize the connection."
   ]} />
-  <ImageCaption src="/images/ch5/s5_2_step1_link_kickbot.jpg" alt="KickBot login and verification page" caption="kickbot.com — click Login with Kick and type the verification command in your chat" />
+  <ImageCaption src="/images/ch5/5.2.1.Kickbot.jpg" alt="KickBot login page" caption="kickbot.com — click Login with Kick to authorize the connection" />
 </StepCard>
 
 <StepCard step={3} title="Grant KickBot Moderator Status">
@@ -52,9 +49,9 @@ You can run both bots at the same time — use KickBot for AI TTS + !clip, and B
     "Go to <a href='https://dashboard.kick.com/community/moderators' target='_blank'>dashboard.kick.com/community/moderators</a>.",
     "Click <strong>Add New</strong>.",
     "Search for <code>KickBot</code> and grant it <strong>Moderator</strong> status.",
-    "Without Moderator status, KickBot cannot delete spam or send any responses in chat."
+    "Once granted, KickBot finishes connecting automatically — no verification command needed."
   ]} />
-  <ImageCaption src="/images/ch5/s5_2_step2_grant_mod_kickbot.jpg" alt="KICK moderators dashboard — adding KickBot" caption="dashboard.kick.com/community/moderators — add KickBot as Moderator" />
+  <ImageCaption src="/images/ch5/5.2.2.addkickbot.jpg" alt="KICK moderators dashboard — adding KickBot" caption="dashboard.kick.com/community/moderators — add KickBot as Moderator" />
 </StepCard>
 
 <WarningBox>
@@ -62,7 +59,7 @@ You can run both bots at the same time — use KickBot for AI TTS + !clip, and B
 </WarningBox>
 
 <TipBox>
-<strong>Ready to set up KickBot functions?</strong> Head to <a href='/en/guide/kickbot-functions'>Chapter 10 — KickBot Functions</a> for step-by-step guides on Custom Commands, Timers, AI TTS, !clip, Link Protection, Gimmick Commands, and Chat Overlay Widget.
+<strong>Ready to set up KickBot functions?</strong> Head to <a href='/en/guides/kickbot-functions'>Chapter 10 — KickBot Functions</a> for step-by-step guides on Custom Commands, Timers, AI TTS, !clip, Link Protection, Gimmick Commands, and Chat Overlay Widget.
 </TipBox>
 
 ---
@@ -76,7 +73,8 @@ You can run both bots at the same time — use KickBot for AI TTS + !clip, and B
     "BotRix will display an account-link command to paste in your live chat.",
     "Type the command in your chat to complete the connection."
   ]} />
-  <ImageCaption src="/images/ch5/s5_3_step1_link_botrix.jpg" alt="BotRix login and link page" caption="botrix.live — sign in with KICK and paste the link command in your chat" />
+  <ImageCaption src="/images/ch5/5.3.1BotRix.jpg" alt="BotRix login and link page" caption="botrix.live — sign in with KICK and paste the link command in your chat" />
+  <ImageCaption src="/images/ch5/5.3.3.verifybotrix.jpg" alt="BotRix connection verification" caption="Type the link command in chat to confirm BotRix connected successfully" />
 </StepCard>
 
 <StepCard step={5} title="Grant BotRix Moderator Status">
@@ -86,11 +84,11 @@ You can run both bots at the same time — use KickBot for AI TTS + !clip, and B
     "Search for <code>BotRix</code> and grant it <strong>Moderator</strong> status.",
     "Without Moderator status, BotRix cannot delete spam or send any responses in chat."
   ]} />
-  <ImageCaption src="/images/ch5/s5_3_step2_grant_mod_botrix.jpg" alt="KICK moderators dashboard — adding BotRix" caption="dashboard.kick.com/community/moderators — add BotRix as Moderator" />
+  <ImageCaption src="/images/ch5/5.3.2.AddBotRix.jpg" alt="KICK moderators dashboard — adding BotRix" caption="dashboard.kick.com/community/moderators — add BotRix as Moderator" />
 </StepCard>
 
 <TipBox>
-<strong>Ready to set up BotRix functions?</strong> Head to <a href='/en/guide/botrix-functions'>Chapter 11 — BotRix Functions</a> for step-by-step guides on Custom Commands, Timers, Link Protection, Emote Limit, Stream Alerts Overlay, Gimmick Commands, Chat Overlay, and Music Overlay (!sr).
+<strong>Ready to set up BotRix functions?</strong> Head to <a href='/en/guides/botrix-functions'>Chapter 11 — BotRix Functions</a> for step-by-step guides on Custom Commands, Timers, Link Protection, Emote Limit, Stream Alerts Overlay, Gimmick Commands, Chat Overlay, and Music Overlay (!sr).
 </TipBox>
 
 ---
@@ -109,6 +107,6 @@ Yes. A recommended setup: use KickBot for AI TTS voice reading + !clip tools, an
   { label: "KickBot", url: "https://kickbot.com" },
   { label: "BotRix", url: "https://botrix.live" },
   { label: "KICK Moderators Dashboard", url: "https://dashboard.kick.com/community/moderators" },
-  { label: "Chapter 10 — KickBot Functions", url: "/en/guide/kickbot-functions" },
-  { label: "Chapter 11 — BotRix Functions", url: "/en/guide/botrix-functions" }
+  { label: "Chapter 10 — KickBot Functions", url: "/en/guides/kickbot-functions" },
+  { label: "Chapter 11 — BotRix Functions", url: "/en/guides/botrix-functions" }
 ]} />

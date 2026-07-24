@@ -16,40 +16,18 @@ sidebar_category: chat-community
   - kick-features
 ---
 
-<SectionHeading id="s4-1">4.1 Chat Modes & Verification</SectionHeading>
+<SectionHeading id="s4-1">4.1 Chat Modes</SectionHeading>
 
-<StepCard step={1} title="Followers-Only Mode">
+<StepCard step={1} title="Followers-Only Mode, Slow Mode และ Subscribers-Only Mode">
   <SubSteps items={[
-    "ไปที่ <a href='https://dashboard.kick.com/chat/settings' target='_blank'>dashboard.kick.com/chat/settings</a>",
-    "เลื่อนสวิตช์ <strong>Followers-Only Mode</strong> เป็น ON",
-    "ตั้งเวลาขั้นต่ำ — แนะนำ <strong>15 นาที</strong>",
-    "ป้องกันบัญชีสร้างใหม่มาเกรียนได้ทันที ต้องกด Follow รออย่างน้อย 15 นาทีก่อนพิมพ์แชท"
-  ]} />
-  <ImageCaption src="/images/ch4/s4_1_step1_followers_only.jpg" alt="สวิตช์ Followers-Only Mode" caption="Chat Settings — เปิด Followers-Only Mode ตั้งขั้นต่ำ 15 นาที" />
-</StepCard>
-
-<StepCard step={2} title="Slow Mode และ Subscribers-Only Mode">
-  <SubSteps items={[
-    "<strong>Slow Mode:</strong> กำหนดเวลาเว้นระยะการพิมพ์ต่อคน (เช่น 5 หรือ 10 วินาที)",
-    "เหมาะสำหรับสตรีมคนดูเยอะที่แชทไหลเร็วจนอ่านไม่ทัน",
+    "ไปที่ <a href='https://dashboard.kick.com/stream' target='_blank'>dashboard.kick.com/stream</a>",
+    "<strong>Followers-Only Mode:</strong> เลื่อนสวิตช์เป็น ON แล้วตั้งเวลาขั้นต่ำ — แนะนำ <strong>15 นาที</strong> ป้องกันบัญชีสร้างใหม่มาเกรียนได้ทันที",
+    "<strong>Slow Mode:</strong> กำหนดเวลาเว้นระยะการพิมพ์ต่อคน (เช่น 5 หรือ 10 วินาที) เหมาะสำหรับสตรีมคนดูเยอะที่แชทไหลเร็วจนอ่านไม่ทัน",
     "<strong>Subscribers-Only Mode:</strong> เปิดเฉพาะช่วงกิจกรรมพิเศษ หรือรายการ Exclusive สำหรับ Subscriber",
-    "มอดจะได้รับการยกเว้นจากทั้งสองโหมดอัตโนมัติ"
+    "มอดจะได้รับการยกเว้นจากทั้งสามโหมดอัตโนมัติ"
   ]} />
-  <ImageCaption src="/images/ch4/s4_1_step2_slow_sub_mode.jpg" alt="การตั้งค่า Slow Mode และ Subscribers-Only" caption="Chat Settings — Slow Mode ชะลอแชท และ Subscribers-Only สำหรับกิจกรรมพิเศษ" />
+  <ImageCaption src="/images/ch4/4.1chatmode.jpg" alt="การตั้งค่า Chat Modes" caption="Chat Settings — Followers-Only, Slow Mode และ Subscribers-Only Mode" />
 </StepCard>
-
-<StepCard step={3} title="Identity Verification (ยืนยันตัวตน)">
-  <SubSteps items={[
-    "ในหัวข้อ <strong>Identity Verification</strong> ของ Chat Settings ให้เปิด <strong>Require Phone Verification</strong> หรือ <strong>Email Verification</strong>",
-    "กรองสแปมบอทออกไปได้มากกว่า <strong>90%</strong> เพราะบอทไม่มีเบอร์โทรจริง",
-    "เปิดทั้ง Phone + Email พร้อมกันได้ เพื่อป้องกันสูงสุด"
-  ]} />
-  <ImageCaption src="/images/ch4/s4_1_step3_identity_verification.jpg" alt="การตั้งค่า Identity Verification" caption="Identity Verification — บังคับยืนยันเบอร์โทร/อีเมล กรองบอทสแปมออก 90%+" />
-</StepCard>
-
-<TipBox>
-Followers-Only (15 นาที) + Phone Verification เปิดพร้อมกัน = เกราะป้องกันบอทและบัญชีเกรียนที่ได้ผลดีที่สุดสำหรับสตรีมเมอร์ไทย
-</TipBox>
 
 ---
 
@@ -63,27 +41,14 @@ Followers-Only (15 นาที) + Phone Verification เปิดพร้อ�
     "ตัวอย่างคำสแปม: <code>คาสิโน</code>, <code>สล็อต</code>, <code>pgslot</code>, <code>เว็บตรง</code>, <code>ฝาก-ถอน</code>, <code>โบนัส100%</code>, <code>ไลน์@</code>, <code>รับปั่น</code>",
     "ข้อความที่ตรงกับ Banned Words จะ<strong>ถูกบล็อกก่อนขึ้นแชท</strong> — คนดูคนอื่นจะไม่เห็นเลย"
   ]} />
-  <ImageCaption src="/images/ch4/s4_2_step4_banned_words_list.jpg" alt="ช่องเพิ่มคำต้องห้าม" caption="Moderation → Banned Words — เพิ่มคำต้องห้ามเพื่อบล็อกสแปมอัตโนมัติ" />
+  <ImageCaption src="/images/ch4/4.2.bannedword.jpg" alt="ช่องเพิ่มคำต้องห้าม" caption="Moderation → Banned Words — เพิ่มคำต้องห้ามเพื่อบล็อกสแปมอัตโนมัติ" />
 </StepCard>
 
-<StepCard step={5} title="เทคนิค Wildcard (*)">
+<StepCard step={5} title="บล็อก Emote ก่อกวน">
   <SubSteps items={[
-    "ใส่เครื่องหมาย <code>*</code> ครอบหน้าหลังคำ เพื่อดักจับทุกรูปแบบที่มีคำนั้นผสมอยู่",
-    "ตัวอย่าง: <code>*สล็อต*</code> ดักจับ <code>เล่นสล็อต</code>, <code>สล็อตpg</code>, <code>เว็บสล็อต</code> ทั้งหมด",
-    "ตัวอย่าง: <code>*casino*</code> ดักจับ <code>onlinecasino</code>, <code>casinobonus</code> ฯลฯ",
-    "ถ้าไม่ใส่ Wildcard คนดูจะหลบได้ง่ายมากโดยเติมคำหน้า-หลัง"
+    "Banned Words ของ KICK ดักจับคำแบบตรงตัวเท่านั้น ไม่รองรับ Wildcard และมักหลบง่ายในทางปฏิบัติ",
+    "สำหรับการบล็อก Emote หรือคำก่อกวนแบบยืดหยุ่นกว่านี้ แนะนำให้ใช้ฟีเจอร์กรองคำของ <strong>BotRix</strong> หรือ <strong>KickBot</strong> แทน (ดูวิธีตั้งค่าใน Chapter 5)"
   ]} />
-  <ImageCaption src="/images/ch4/s4_2_step5_wildcard_technique.jpg" alt="เทคนิค Wildcard asterisk" caption="Wildcard — *สล็อต* ดักจับทุกรูปแบบ: เล่นสล็อต, สล็อตpg, เว็บสล็อต" />
-</StepCard>
-
-<StepCard step={6} title="บล็อก Emote ก่อกวน">
-  <SubSteps items={[
-    "Emote บน KICK เข้ารหัสเป็น <code>[emote:ID:EmoteName]</code> หลังบ้าน เช่น <code>[emote:39251:beeBobble]</code>",
-    "ต้องการแบน Emote ก่อกวน: พิมพ์ชื่อ Emote เช่น <code>beeBobble</code> ในช่อง Banned Words",
-    "หรือใส่ Wildcard: <code>*beeBobble*</code> เพื่อดักจับทุกรูปแบบ",
-    "กด <strong>Add</strong> — ข้อความที่มี Emote นั้นจะถูกบล็อกทันทีก่อนขึ้นแชท"
-  ]} />
-  <ImageCaption src="/images/ch4/s4_2_step6_block_emote.jpg" alt="การบล็อก Emote ผ่าน Banned Words" caption="บล็อก Emote ก่อกวน — เพิ่มชื่อ Emote ลง Banned Words เพื่อบล็อกอัตโนมัติ" />
 </StepCard>
 
 <WarningBox>
@@ -100,7 +65,7 @@ Followers-Only (15 นาที) + Phone Verification เปิดพร้อ�
     "บล็อกคนดูทั่วไปไม่ให้แปะลิงก์ในแชท",
     "สตรีมเมอร์และมอด<strong>ได้รับยกเว้นอัตโนมัติ</strong> — แปะลิงก์ได้ตลอด"
   ]} />
-  <ImageCaption src="/images/ch4/s4_3_step7_block_links.jpg" alt="สวิตช์ Block Links" caption="Chat Settings — Block Links บล็อกคนดูไม่ให้แปะ URL (มอดยกเว้น)" />
+  <ImageCaption src="/images/ch4/4.3.2.blocklink.jpg" alt="สวิตช์ Block Links" caption="Chat Settings — Block Links บล็อกคนดูไม่ให้แปะ URL (มอดยกเว้น)" />
 </StepCard>
 
 <StepCard step={8} title="ตั้งกฎประจำช่อง (Chat Rules)">
@@ -110,31 +75,21 @@ Followers-Only (15 นาที) + Phone Verification เปิดพร้อ�
     "กด <strong>Save Changes</strong>",
     "คนดูใหม่ที่เข้ามาพิมพ์ครั้งแรก จะเจอ Pop-up แสดงกฎช่อง ต้องกด <strong>'I Agree'</strong> ก่อนถึงจะพิมพ์ได้"
   ]} />
-  <ImageCaption src="/images/ch4/s4_3_step8_chat_rules.jpg" alt="การตั้ง Chat Rules" caption="Moderation → Display — ตั้งกฎช่อง คนดูต้องกด 'I Agree' ก่อนพิมพ์" />
-</StepCard>
-
-<StepCard step={9} title="คำสั่งด่วนสำหรับมอด (Quick Mod Commands)">
-  <SubSteps items={[
-    "สตรีมเมอร์และมอดพิมพ์คำสั่งเหล่านี้ในแชทสดได้ทันที:",
-    "<code>/clear</code> — ล้างข้อความทั้งหมดบนจอแชททันที",
-    "<code>/slow 10</code> — เปิดโหมดชะลอแชท พิมพ์ได้ทุก 10 วินาที (ปิด: <code>/slowoff</code>)",
-    "<code>/followers 15</code> — เปิดโหมดแชทเฉพาะผู้ติดตาม 15 นาที (ปิด: <code>/followersoff</code>)"
-  ]} />
-  <ImageCaption src="/images/ch4/s4_3_step9_mod_commands.jpg" alt="คำสั่งมอดในแชท" caption="คำสั่งด่วน — /clear, /slow, /followers สำหรับควบคุมแชทระหว่างสตรีม" />
+  <ImageCaption src="/images/ch4/4.3.3.charrule.jpg" alt="การตั้ง Chat Rules" caption="Moderation → Display — ตั้งกฎช่อง คนดูต้องกด 'I Agree' ก่อนพิมพ์" />
 </StepCard>
 
 <TipBox>
-อยากให้ Subscriber แปะลิงก์ได้ แต่ Follower ไม่ได้? KICK Native ทำไม่ได้ — ต้องตั้งค่าเพิ่มผ่าน Chatbot ภายนอก (BotRix / Nightbot) ดูวิธีใน Chapter 5
+อยากให้ Subscriber แปะลิงก์ได้ แต่ Follower ไม่ได้? KICK Native ทำไม่ได้ — ต้องตั้งค่าเพิ่มผ่าน <strong>BotRix</strong> ดูวิธีใน <a href='/th/guides/botrix-functions'>บทที่ 11 — BotRix Functions</a>
 </TipBox>
 
 ---
 
 <FaqItem q="ทำอย่างไรถ้าไม่อยากให้คนดูแปะลิงก์เว็บพนัน แต่ยังอยากให้ Subscriber แปะลิงก์ได้?">
-ปุ่ม Block Links ของ KICK แบนลิงก์ทุกคนยกเว้นมอดกับสตรีมเมอร์ หากต้องการยกเว้นเฉพาะ Subscriber ต้องไปตั้งค่า URL Protection ใน BotRix หรือ Nightbot (Chapter 5)
+ปุ่ม Block Links ของ KICK แบนลิงก์ทุกคนยกเว้นมอดกับสตรีมเมอร์ หากต้องการยกเว้นเฉพาะ Subscriber ต้องไปตั้งค่า URL Protection ใน BotRix (บทที่ 11 — BotRix Functions)
 </FaqItem>
 
-<FaqItem q="ใส่คำใน Banned Words แล้ว ทำไมคนดูยังหลบได้?">
-ใส่ `*` (Wildcard) ครอบหน้าหลังคำ เช่น `*สล็อต*` แทน `สล็อต` เพื่อดักจับทุกรูปแบบ เช่น เล่นสล็อต, สล็อตpg, เว็บสล็อต
+<FaqItem q="ทำไม Banned Words ยังกรองคำก่อกวนได้ไม่หมด?">
+Banned Words ของ KICK ดักจับคำตรงตัวเท่านั้น ไม่รองรับ Wildcard — สำหรับกรองคำแบบยืดหยุ่นกว่านี้ แนะนำให้ใช้ BotRix หรือ KickBot แทน
 </FaqItem>
 
 ---

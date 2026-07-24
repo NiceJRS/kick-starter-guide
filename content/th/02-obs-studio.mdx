@@ -25,7 +25,7 @@ sidebar_category: getting-started
     "เปิดไฟล์ติดตั้งและทำตามขั้นตอน บนป๊อปอัป Auto-Configuration Wizard ในการเปิดครั้งแรก ให้เลือก <strong>'Optimize for streaming, recording is secondary'</strong> เพื่อให้ระบบคำนวณสเปกให้อัตโนมัติ",
     "ศึกษาคู่มือเบื้องต้นเพิ่มเติมได้ที่ <a href='https://obsproject.com/wiki/OBS-Studio-Overview' target='_blank'>Official OBS Studio Overview Guide</a>"
   ]} />
-  <ImageCaption src="/images/ch2/s2_1_step1_obs_download.jpg" alt="หน้าดาวน์โหลดโปรแกรม OBS Studio" caption="การดาวน์โหลดตัวติดตั้ง OBS Studio จาก obsproject.com" />
+  <ImageCaption src="/images/ch2/2.1.1_logo_obs.jpg" alt="หน้าดาวน์โหลดโปรแกรม OBS Studio" caption="การดาวน์โหลดตัวติดตั้ง OBS Studio จาก obsproject.com" />
 </StepCard>
 
 <TipBox>
@@ -42,6 +42,7 @@ sidebar_category: getting-started
     "เปลี่ยน <strong>Output Mode</strong> จาก 'Simple' เป็น <strong>Advanced</strong> เพื่อเปิดการตั้งค่าแบบละเอียด",
     "ในแถบ Streaming เลือก <strong>Encoder</strong> ของการ์ดจอที่ใช้: <strong>NVIDIA NVENC H.264</strong> (NVIDIA GeForce RTX/GTX), <strong>AMD HW H.264</strong> (AMD GPU), <strong>Apple VT H.264</strong> (Mac) หรือ <strong>x264</strong> (ไม่มีการ์ดจอแยก)"
   ]} />
+  <ImageCaption src="/images/ch2/2.1.1.obs.encoder.jpg" alt="การเลือก Encoder ใน OBS" caption="Settings → Output — เลือก Encoder ให้ตรงกับการ์ดจอที่ใช้งาน" />
 </StepCard>
 
 <StepCard step={3} title="กำหนด Bitrate และความละเอียดภาพสตรีม">
@@ -51,7 +52,8 @@ sidebar_category: getting-started
     "<strong>Preset:</strong> เลือก <strong>P5: Slow (Good Quality)</strong> หรือ <strong>Quality</strong>",
     "ไปที่ <strong>Settings → Video</strong> ตั้ง <strong>Base (Canvas) Resolution</strong> ให้ตรงกับหน้าจอ (เช่น 1920x1080) และตั้ง <strong>Output (Scaled) Resolution</strong> ตามคุณภาพสตรีมที่เลือก"
   ]} />
-  <ImageCaption src="/images/ch2/s2_2_step2_output_settings.jpg" alt="หน้าตั้งค่า Output Advanced ใน OBS" caption="การตั้งค่า Output Mode แบบ Advanced และกำหนด Bitrate บน OBS Studio" />
+  <ImageCaption src="/images/ch2/2.2.2.obs.bitrate.jpg" alt="การตั้งค่า Bitrate ใน OBS" caption="การตั้งค่า Rate Control, Keyframe Interval และ Bitrate บน OBS Studio" />
+  <ImageCaption src="/images/ch2/2.2.3.obs.resolution.jpg" alt="การตั้งค่า Resolution ใน OBS" caption="Settings → Video — ตั้ง Base และ Output Resolution" />
 </StepCard>
 
 <BitrateTable locale="th" />
@@ -73,7 +75,7 @@ Bitrate เปรียบเหมือนความกว้างของ
     "<strong>Video Capture Device:</strong> ดึงภาพจากกล้อง Webcam",
     "ศึกษาประเภท Source เพิ่มเติมได้ที่ <a href='https://obsproject.com/kb/sources-guide' target='_blank'>OBS Official Sources Guide</a>"
   ]} />
-  <ImageCaption src="/images/ch2/s2_3_step4_scene_sources.jpg" alt="การจัดวาง Scene และ Source ใน OBS" caption="โครงสร้างการเรียงลำดับ Scenes และ Sources ในหน้าจอหลัก OBS Studio" />
+  <ImageCaption src="/images/ch2/2.2.4.obs.scene.jpg" alt="การจัดวาง Scene และ Source ใน OBS" caption="โครงสร้างการเรียงลำดับ Scenes และ Sources ในหน้าจอหลัก OBS Studio" />
 </StepCard>
 
 <StepCard step={5} title="ตั้งค่าระบบเสียงและใส่ Audio Filters ตัดเสียงรบกวน">
@@ -91,13 +93,13 @@ Bitrate เปรียบเหมือนความกว้างของ
 
 <StepCard step={6} title="ดึง Stream Key และเริ่ม Go Live บน KICK">
   <SubSteps items={[
-    "เปิดเบราว์เซอร์ไปที่ <a href='https://kick.com/dashboard/settings/stream' target='_blank'>KICK Creator Dashboard → Settings → Stream Key</a>",
+    "เปิดเบราว์เซอร์ไปที่ <a href='https://dashboard.kick.com/channel/stream' target='_blank'>KICK Creator Dashboard → Settings → Stream Key</a>",
     "คัดลอกค่า <strong>Stream URL</strong> และ <strong>Stream Key</strong>",
     "กลับมาที่ OBS Studio ไปที่ <strong>Settings → Stream</strong> เปลี่ยน Service เป็น <strong>Custom...</strong>",
     "วาง Stream URL ในช่อง <strong>Server</strong> (<code>rtmps://fa723fc1b171.global-contribute.live-video.net:443/app</code>) และวาง Stream Key ในช่อง <strong>Stream Key</strong> แล้วกด Apply",
     "กดปุ่ม <strong>Start Streaming</strong> ใน OBS จากนั้นสลับไปหน้า KICK Creator Dashboard เพื่อตรวจสอบสัญญาณภาพและเสียงจริง"
   ]} />
-  <ImageCaption src="/images/ch2/s2_4_step6_connect_kick.jpg" alt="การใส่ Custom Stream Key ใน OBS" caption="การผูก Custom RTMP Server และ Stream Key ของ KICK บน OBS Studio" />
+  <ImageCaption src="/images/ch2/2.2.5.obs.stream.key.jpg" alt="การใส่ Custom Stream Key ใน OBS" caption="การผูก Custom RTMP Server และ Stream Key ของ KICK บน OBS Studio" />
 </StepCard>
 
 <WarningBox>
@@ -123,6 +125,6 @@ Stream Key คือรหัสลับประจำช่อง <strong>ห
   { label: "คู่มือภาพรวม OBS Studio", url: "https://obsproject.com/wiki/OBS-Studio-Overview" },
   { label: "คู่มือ Sources ของ OBS", url: "https://obsproject.com/kb/sources-guide" },
   { label: "คู่มือ Audio Filters ของ OBS", url: "https://obsproject.com/kb/filters-guide" },
-  { label: "KICK Creator Dashboard – Stream Key", url: "https://kick.com/dashboard/settings/stream" },
+  { label: "KICK Creator Dashboard – Stream Key", url: "https://dashboard.kick.com/channel/stream" },
   { label: "KICK Help Center", url: "https://help.kick.com" }
 ]} />

@@ -24,7 +24,6 @@ sidebar_category: chat-community
     "<strong>KickBot (<a href='https://kickbot.com' target='_blank'>kickbot.com</a>):</strong> เหมาะกับสายเอนเตอร์เทนที่ต้องการ AI เสียงอ่านแชทสด (TTS), คำสั่งตัดคลิป VOD อัตโนมัติ (<code>!clip</code>) และกิมมิกสุ่มตัวเลขในแชท",
     "<strong>BotRix (<a href='https://botrix.live' target='_blank'>botrix.live</a>):</strong> เหมาะกับคนที่ต้องการกรอบแจ้งเตือน Follow/Sub บน OBS Studio, ระบบคัดกรองลิงก์แยกยศ Subscriber, ตั้งเวลาโพสต์ลิงก์โดเนทพร้อมเพย์ (TipMe) และกรอบซิงก์ชื่อเพลง Now Playing"
   ]} />
-  <ImageCaption src="/images/ch5/s5_1_step1_compare_bots.jpg" alt="หน้าหลัก KickBot และ BotRix" caption="KickBot vs BotRix — แต่ละตัวเชี่ยวชาญเครื่องมือสตรีมคนละด้าน" />
 </StepCard>
 
 <BotComparisonTable lang="th" />
@@ -40,11 +39,9 @@ sidebar_category: chat-community
 <StepCard step={2} title="เชื่อมต่อ KickBot กับช่องของคุณ">
   <SubSteps items={[
     "เปิดเบราว์เซอร์แล้วไปที่ <a href='https://kickbot.com' target='_blank'>kickbot.com</a>",
-    "กดปุ่ม <strong>Login with Kick</strong> แล้วอนุญาตการเชื่อมต่อ",
-    "KickBot จะแสดงคำสั่งยืนยันตัวตน เช่น <code>!verify abc123</code>",
-    "เปิด Chat Dock ของ KICK แล้วพิมพ์คำสั่งนั้นในแชท เพื่อเสร็จสิ้นการเชื่อมต่อ"
+    "กดปุ่ม <strong>Login with Kick</strong> แล้วอนุญาตการเชื่อมต่อ"
   ]} />
-  <ImageCaption src="/images/ch5/s5_2_step1_link_kickbot.jpg" alt="หน้า Login และยืนยันตัวตน KickBot" caption="kickbot.com — กด Login with Kick แล้วพิมพ์คำสั่งยืนยันในแชท" />
+  <ImageCaption src="/images/ch5/5.2.1.Kickbot.jpg" alt="หน้า Login KickBot" caption="kickbot.com — กด Login with Kick เพื่อเชื่อมต่อบัญชี" />
 </StepCard>
 
 <StepCard step={3} title="แต่งตั้งยศ Moderator ให้ KickBot">
@@ -52,9 +49,9 @@ sidebar_category: chat-community
     "ไปที่ <a href='https://dashboard.kick.com/community/moderators' target='_blank'>dashboard.kick.com/community/moderators</a>",
     "กดปุ่ม <strong>Add New</strong>",
     "ค้นหา <code>KickBot</code> แล้วแต่งตั้งเป็น <strong>Moderator</strong>",
-    "หากไม่มียศ Moderator KickBot จะลบสแปมหรือส่งข้อความตอบกลับในแชทไม่ได้"
+    "หลังแต่งตั้งยศ Moderator แล้ว KickBot จะเชื่อมต่อสำเร็จอัตโนมัติ — ไม่ต้องพิมพ์คำสั่งยืนยันในแชท"
   ]} />
-  <ImageCaption src="/images/ch5/s5_2_step2_grant_mod_kickbot.jpg" alt="หน้า Moderators ใน KICK Dashboard — เพิ่ม KickBot" caption="dashboard.kick.com/community/moderators — เพิ่ม KickBot เป็น Moderator" />
+  <ImageCaption src="/images/ch5/5.2.2.addkickbot.jpg" alt="หน้า Moderators ใน KICK Dashboard — เพิ่ม KickBot" caption="dashboard.kick.com/community/moderators — เพิ่ม KickBot เป็น Moderator" />
 </StepCard>
 
 <WarningBox>
@@ -62,7 +59,7 @@ sidebar_category: chat-community
 </WarningBox>
 
 <TipBox>
-<strong>พร้อมตั้งค่าฟังก์ชั่น KickBot แล้วใช่ไหม?</strong> ไปที่ <a href='/th/guide/kickbot-functions'>บทที่ 10 — KickBot Functions</a> สำหรับคู่มือ Custom Commands, Timers, AI TTS, !clip, Link Protection, Gimmick Commands และ Chat Overlay Widget แบบ Step-by-Step
+<strong>พร้อมตั้งค่าฟังก์ชั่น KickBot แล้วใช่ไหม?</strong> ไปที่ <a href='/th/guides/kickbot-functions'>บทที่ 10 — KickBot Functions</a> สำหรับคู่มือ Custom Commands, Timers, AI TTS, !clip, Link Protection, Gimmick Commands และ Chat Overlay Widget แบบ Step-by-Step
 </TipBox>
 
 ---
@@ -76,7 +73,8 @@ sidebar_category: chat-community
     "BotRix จะแสดงคำสั่งเชื่อมต่อบัญชีให้คุณนำไปวางในแชทสด",
     "พิมพ์คำสั่งนั้นในแชท เพื่อเสร็จสิ้นการเชื่อมต่อ"
   ]} />
-  <ImageCaption src="/images/ch5/s5_3_step1_link_botrix.jpg" alt="หน้า Login และเชื่อมต่อบัญชี BotRix" caption="botrix.live — เข้าสู่ระบบด้วย KICK แล้วพิมพ์คำสั่งเชื่อมต่อในแชท" />
+  <ImageCaption src="/images/ch5/5.3.1BotRix.jpg" alt="หน้า Login และเชื่อมต่อบัญชี BotRix" caption="botrix.live — เข้าสู่ระบบด้วย KICK แล้วพิมพ์คำสั่งเชื่อมต่อในแชท" />
+  <ImageCaption src="/images/ch5/5.3.3.verifybotrix.jpg" alt="การยืนยันการเชื่อมต่อ BotRix" caption="พิมพ์คำสั่งเชื่อมต่อในแชทเพื่อยืนยันว่า BotRix เชื่อมกับช่องสำเร็จ" />
 </StepCard>
 
 <StepCard step={5} title="แต่งตั้งยศ Moderator ให้ BotRix">
@@ -86,11 +84,11 @@ sidebar_category: chat-community
     "ค้นหา <code>BotRix</code> แล้วแต่งตั้งเป็น <strong>Moderator</strong>",
     "หากไม่มียศ Moderator BotRix จะลบสแปมหรือส่งข้อความตอบกลับในแชทไม่ได้"
   ]} />
-  <ImageCaption src="/images/ch5/s5_3_step2_grant_mod_botrix.jpg" alt="หน้า Moderators ใน KICK Dashboard — เพิ่ม BotRix" caption="dashboard.kick.com/community/moderators — เพิ่ม BotRix เป็น Moderator" />
+  <ImageCaption src="/images/ch5/5.3.2.AddBotRix.jpg" alt="หน้า Moderators ใน KICK Dashboard — เพิ่ม BotRix" caption="dashboard.kick.com/community/moderators — เพิ่ม BotRix เป็น Moderator" />
 </StepCard>
 
 <TipBox>
-<strong>พร้อมตั้งค่าฟังก์ชั่น BotRix แล้วใช่ไหม?</strong> ไปที่ <a href='/th/guide/botrix-functions'>บทที่ 11 — BotRix Functions</a> สำหรับคู่มือ Custom Commands, Timers, Link Protection, Emote Limit, Stream Alerts Overlay, Gimmick Commands, Chat Overlay และ Music Overlay (!sr) แบบ Step-by-Step
+<strong>พร้อมตั้งค่าฟังก์ชั่น BotRix แล้วใช่ไหม?</strong> ไปที่ <a href='/th/guides/botrix-functions'>บทที่ 11 — BotRix Functions</a> สำหรับคู่มือ Custom Commands, Timers, Link Protection, Emote Limit, Stream Alerts Overlay, Gimmick Commands, Chat Overlay และ Music Overlay (!sr) แบบ Step-by-Step
 </TipBox>
 
 ---
@@ -109,6 +107,6 @@ sidebar_category: chat-community
   { label: "KickBot", url: "https://kickbot.com" },
   { label: "BotRix", url: "https://botrix.live" },
   { label: "KICK Moderators Dashboard", url: "https://dashboard.kick.com/community/moderators" },
-  { label: "บทที่ 10 — KickBot Functions", url: "/th/guide/kickbot-functions" },
-  { label: "บทที่ 11 — BotRix Functions", url: "/th/guide/botrix-functions" }
+  { label: "บทที่ 10 — KickBot Functions", url: "/th/guides/kickbot-functions" },
+  { label: "บทที่ 11 — BotRix Functions", url: "/th/guides/botrix-functions" }
 ]} />
