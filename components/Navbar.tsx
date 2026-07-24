@@ -8,12 +8,12 @@ type Mode = 'streamer' | 'developer'
 
 const NAV_LINKS = {
   th: [
-    { label: 'เส้นทาง', href: '#path' },
+    { label: 'เส้นทาง', href: 'PATH' },
     { label: 'แนะนำ', href: '#featured' },
     { label: 'คู่มือ', href: 'GUIDES' },
   ],
   en: [
-    { label: 'Path', href: '#path' },
+    { label: 'Path', href: 'PATH' },
     { label: 'Featured', href: '#featured' },
     { label: 'Guides', href: 'GUIDES' },
   ],
@@ -64,7 +64,9 @@ export default function Navbar({
       {isHome && mode === 'streamer' ? (
         <div className="hidden md:flex items-center gap-1">
           {links.map((l) => {
-            const href = l.href === 'GUIDES' ? `/${locale}/guides` : l.href
+            const href = l.href === 'GUIDES' ? `/${locale}/guides`
+              : l.href === 'PATH' ? `/${locale}/path`
+              : l.href
             return (
               <a
                 key={l.href}

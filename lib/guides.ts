@@ -54,6 +54,7 @@ export interface GuideData {
   category: GuideCategory
   stage: GuideStage
   showIn: GuideShowIn[]
+  highlighted?: boolean
   duration: number
   icon: string
   color: 'green' | 'amber' | 'purple' | 'blue' | 'teal'
@@ -79,7 +80,7 @@ export const guides: GuideData[] = [
     ],
   },
   {
-    id: 2, slug: 'obs-studio', level: 'beginner', category: 'Setup', stage: 'starter', showIn: ['path', 'catalog'], duration: 10,
+    id: 2, slug: 'obs-studio', level: 'beginner', category: 'Setup', stage: 'starter', showIn: ['path', 'catalog'], highlighted: true, duration: 10,
     icon: 'ti-device-desktop', color: 'green', label: 'OBS',
     title: { th: 'OBS Studio', en: 'OBS Studio Setup' },
     description: { th: 'ติดตั้งและตั้งค่า OBS Studio สำหรับสตรีมบน KICK', en: 'Install and configure OBS Studio for streaming on KICK' },
@@ -116,7 +117,7 @@ export const guides: GuideData[] = [
     ],
   },
   {
-    id: 5, slug: 'chatbot', level: 'intermediate', category: 'Tools & Bot', stage: 'amateur', showIn: ['path', 'catalog'], duration: 5,
+    id: 5, slug: 'chatbot', level: 'intermediate', category: 'Tools & Bot', stage: 'amateur', showIn: ['path', 'catalog'], highlighted: true, duration: 5,
     icon: 'ti-robot', color: 'amber', label: 'Chatbot',
     title: { th: 'Chatbot Setup', en: 'Chatbot Setup' },
     description: { th: 'เปรียบเทียบ KickBot vs BotRix พร้อมวิธีติดตั้งและเชื่อมต่อบอทกับช่องของคุณ', en: 'KickBot vs BotRix comparison and step-by-step bot installation for your channel' },
@@ -152,7 +153,7 @@ export const guides: GuideData[] = [
     ],
   },
   {
-    id: 8, slug: 'subscription-donation', level: 'intermediate', category: 'Monetization', stage: 'pro', showIn: ['path', 'catalog'], duration: 12,
+    id: 8, slug: 'subscription-donation', level: 'intermediate', category: 'Monetization', stage: 'pro', showIn: ['path', 'catalog'], highlighted: true, duration: 12,
     icon: 'ti-cash', color: 'amber', label: 'รับเงิน',
     title: { th: 'ระบบซับและการรับรายได้', en: 'Subscription & Donation Fees' },
     description: { th: 'ส่วนแบ่งรายได้ 95/5 บน KICK แก้ปัญหาซับมือถือ ผูกบัญชีธนาคารไทยผ่าน Stripe Connect และโดเนทพร้อมเพย์ 100%', en: "KICK's 95/5 revenue share, Direct Sub Link fix for mobile, Stripe Connect Thailand payout, and 100% PromptPay donations" },

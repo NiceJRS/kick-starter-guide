@@ -65,7 +65,7 @@ export default function HighlightSection({ locale }: { locale: string }) {
           <IconStar size={14} style={{ color: 'var(--kick-green)' }} />
           Highlights
         </div>
-        <Link href={`/${locale}#guides`} className="text-sm flex items-center gap-1 hover:underline"
+        <Link href={`/${locale}/guides`} className="text-sm flex items-center gap-1 hover:underline"
           style={{ color: 'var(--text-secondary)' }}>
           {locale === 'th' ? 'ดูทั้งหมด' : 'View all'} <IconArrowRight size={11} />
         </Link>
