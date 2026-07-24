@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { IconBook, IconClock, IconStar } from '@tabler/icons-react'
 import { guides, type SidebarCategory } from '@/lib/guides'
@@ -14,6 +14,7 @@ const SIDEBAR_CATEGORIES: { key: SidebarCategory; label: { th: string; en: strin
 ]
 
 const NAV_OFFSET = 110
+const SCROLL_KEY = 'guidebook-sidebar-scroll'
 
 export default function GuidebookSidebar({
   locale,
@@ -31,6 +32,19 @@ export default function GuidebookSidebar({
 
   const currentGuide = currentSlug ? guides.find((g) => g.slug === currentSlug) : null
 
+  useLayoutEffect(() => {
+    const saved = sessionStorage.getItem(SCROLL_KEY)
+    if (saved && scrollRef.current) scrollRef.current.scrollTop = parseInt(saved, 10)
+  }, [])
+
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el) return
+    const onSidebarScroll = () => sessionStorage.setItem(SCROLL_KEY, String(el.scrollTop))
+    el.addEventListener('scroll', onSidebarScroll, { passive: true })
+    return () => el.removeEventListener('scroll', onSidebarScroll)
+  }, [])
+
   useEffect(() => {
     if (!currentGuide || currentGuide.sections.length === 0) return
 
@@ -45,16 +59,12 @@ export default function GuidebookSidebar({
         })
         .filter(Boolean) as { id: string; top: number }[]
 
-      const saved = scrollRef.current?.scrollTop ?? 0
       const passed = positions.filter((p) => p.top <= NAV_OFFSET)
       if (passed.length > 0) {
         setActiveSection(passed[passed.length - 1].id)
       } else if (positions.length > 0) {
         setActiveSection(positions[0].id)
       }
-      requestAnimationFrame(() => {
-        if (scrollRef.current) scrollRef.current.scrollTop = saved
-      })
     }
 
     window.addEventListener('scroll', onScroll, { passive: true })
