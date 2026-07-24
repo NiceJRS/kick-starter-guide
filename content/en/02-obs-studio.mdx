@@ -16,7 +16,7 @@ sidebar_category: getting-started
   - account-setup
 ---
 
-<SectionHeading id="s2-1">1.1 Install OBS Studio</SectionHeading>
+<SectionHeading id="s2-1">1. Install OBS Studio</SectionHeading>
 
 <StepCard step={1} title="Understand and Install OBS Studio">
   <SubSteps items={[
@@ -34,9 +34,9 @@ On Windows, always right-click the OBS Studio icon and select <strong>Run as adm
 
 ---
 
-<SectionHeading id="s2-2">1.2 Output Settings (Encoder & Bitrate)</SectionHeading>
+<SectionHeading id="s2-2">2. Output Settings (Encoder & Bitrate)</SectionHeading>
 
-<StepCard step={2} title="Unlock Advanced Settings & Select Your Encoder">
+<StepCard step={1} title="Unlock Advanced Settings & Select Your Encoder">
   <SubSteps items={[
     "In OBS Studio, navigate to <strong>Settings → Output</strong>.",
     "Change the <strong>Output Mode</strong> dropdown from 'Simple' to <strong>Advanced</strong> to unlock precise controls.",
@@ -45,7 +45,7 @@ On Windows, always right-click the OBS Studio icon and select <strong>Run as adm
   <ImageCaption src="/images/ch2/2.1.1.obs.encoder.jpg" alt="OBS Encoder selection" caption="Settings → Output — select the Encoder matching your GPU" />
 </StepCard>
 
-<StepCard step={3} title="Configure Bitrate & Resolution Parameters">
+<StepCard step={2} title="Configure Bitrate & Resolution Parameters">
   <SubSteps items={[
     "<strong>Rate Control:</strong> Set to <strong>CBR (Constant Bitrate)</strong> to maintain a stable stream signal.",
     "<strong>Keyframe Interval:</strong> Set to <strong>2s</strong> (standard requirement for streaming platforms).",
@@ -64,9 +64,9 @@ Bitrate acts like pipe bandwidth — higher bitrate means clearer video. Your ho
 
 ---
 
-<SectionHeading id="s2-3">1.3 Scene & Sources</SectionHeading>
+<SectionHeading id="s2-3">3. Scene & Sources</SectionHeading>
 
-<StepCard step={4} title="Create Scenes and Add Essential Sources">
+<StepCard step={1} title="Create Scenes and Add Essential Sources">
   <SubSteps items={[
     "<strong>Scene:</strong> Think of it as a stage layout. Click '+' in the Scenes panel to create 4 core scenes: <code>Starting Soon</code>, <code>Main Gameplay</code>, <code>Be Right Back</code>, and <code>Stream Ended</code>.",
     "<strong>Source:</strong> Elements placed on stage. Select <code>Main Gameplay</code> and click '+' in Sources to add:",
@@ -78,7 +78,7 @@ Bitrate acts like pipe bandwidth — higher bitrate means clearer video. Your ho
   <ImageCaption src="/images/ch2/2.2.4.obs.scene.jpg" alt="OBS Scene and Source Layout" caption="Structural layout of Scenes and Sources in OBS Studio" />
 </StepCard>
 
-<StepCard step={5} title="Configure Audio Routing & Apply Noise Filters">
+<StepCard step={2} title="Configure Audio Routing & Apply Noise Filters">
   <SubSteps items={[
     "Go to <strong>Settings → Audio</strong> and set <strong>Mic/Auxiliary Audio</strong> to your connected microphone.",
     "In the Audio Mixer panel, click the 3 dots next to your mic → select <strong>Filters</strong>.",
@@ -89,9 +89,9 @@ Bitrate acts like pipe bandwidth — higher bitrate means clearer video. Your ho
 
 ---
 
-<SectionHeading id="s2-4">1.4 Connect to KICK</SectionHeading>
+<SectionHeading id="s2-4">4. Connect to KICK</SectionHeading>
 
-<StepCard step={6} title="Retrieve Stream Key & Go Live on KICK">
+<StepCard step={1} title="Retrieve Stream Key & Go Live on KICK">
   <SubSteps items={[
     "Open your browser and go to <a href='https://dashboard.kick.com/channel/stream' target='_blank'>KICK Creator Dashboard → Settings → Stream Key</a>.",
     "Copy both <strong>Stream URL</strong> and <strong>Stream Key</strong>.",

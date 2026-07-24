@@ -16,7 +16,7 @@ sidebar_category: kick-features
   - moderator
 ---
 
-<SectionHeading id="s7-1">1.1 โครงสร้าง Discord Server และระบบ Onboarding</SectionHeading>
+<SectionHeading id="s7-1">1. โครงสร้าง Discord Server และระบบ Onboarding</SectionHeading>
 
 <StepCard step={1} title="สร้าง Discord Server และตั้งค่าโครงสร้างยศ (Role Hierarchy)">
   <SubSteps items={[
@@ -47,9 +47,9 @@ sidebar_category: kick-features
 
 ---
 
-<SectionHeading id="s7-2">1.2 ระบบแจ้งเตือนสตรีมสดอัตโนมัติ</SectionHeading>
+<SectionHeading id="s7-2">2. ระบบแจ้งเตือนสตรีมสดอัตโนมัติ</SectionHeading>
 
-<StepCard step={3} title="เชื่อมต่อ Kick กับ Discord ผ่าน BotRix">
+<StepCard step={1} title="เชื่อมต่อ Kick กับ Discord ผ่าน BotRix">
   <SubSteps items={[
     "ที่ Discord Server ของคุณ สร้างห้องข้อความ <code>#live-notifications</code> ไว้สำหรับรับการแจ้งเตือน",
     "เข้าไปที่ <a href='https://botrix.live/panel/integrations' target='_blank'>botrix.live/panel/integrations</a> → เมนูด้านซ้ายเลือก <strong>Integrations</strong>",
@@ -59,7 +59,7 @@ sidebar_category: kick-features
   <ImageCaption src="/images/ch7/7.2.1.botrixconnectdiscord.jpg" alt="หน้า Integrations ของ BotRix เลือกแพลตฟอร์ม Kick" caption="botrix.live/panel/integrations — คลิกการ์ด Kick เพื่อเริ่มเชื่อมต่อ Discord" />
 </StepCard>
 
-<StepCard step={4} title="เลือกห้องแจ้งเตือนและปรับแต่งข้อความแจ้งเตือนไลฟ์สด">
+<StepCard step={2} title="เลือกห้องแจ้งเตือนและปรับแต่งข้อความแจ้งเตือนไลฟ์สด">
   <SubSteps items={[
     "หลังเชื่อม Discord สำเร็จแล้ว กลับมาที่หน้า <a href='https://botrix.live/panel/integrations' target='_blank'>Integrations</a> อีกครั้ง แล้วคลิกการ์ด <strong>Kick</strong> ซ้ำ",
     "ระบบจะเปิดหน้าต่าง <strong>Select a channel</strong> ให้เลือกห้อง <code>#live-notifications</code> ที่สร้างไว้ แล้วกด <strong>Accept</strong>",
@@ -78,9 +78,9 @@ sidebar_category: kick-features
 
 ---
 
-<SectionHeading id="s7-3">1.3 ซิงก์ยศ Sub อัตโนมัติและ Community Perks</SectionHeading>
+<SectionHeading id="s7-3">3. ซิงก์ยศ Sub อัตโนมัติและ Community Perks</SectionHeading>
 
-<StepCard step={5} title="เพิ่มบอท RoleLogic และเชื่อมต่อ Kick Channel Role">
+<StepCard step={1} title="เพิ่มบอท RoleLogic และเชื่อมต่อ Kick Channel Role">
   <SubSteps items={[
     "ไปที่ <a href='https://rolelogic.faizo.net' target='_blank'>rolelogic.faizo.net</a> กด <strong>Get Started Free</strong> แล้วล็อกอินด้วยบัญชี Discord เพื่อเชิญบอทเข้าเซิร์ฟเวอร์ของคุณ",
     "ในเมนูด้านซ้ายของ Dashboard เลือก <strong>Integrations → Add Integration</strong> แล้วเลือกประเภท <strong>Kick Channel Role</strong>",
@@ -89,7 +89,7 @@ sidebar_category: kick-features
   <ImageCaption src="/images/ch7/7.3.rolelogicpage.jpg" alt="หน้าแรกของ RoleLogic" caption="rolelogic.faizo.net — กด Get Started Free เพื่อเชิญบอทและเริ่มตั้งค่า" />
 </StepCard>
 
-<StepCard step={6} title="ตั้งเงื่อนไข Subscriber และจับคู่ยศ Discord">
+<StepCard step={2} title="ตั้งเงื่อนไข Subscriber และจับคู่ยศ Discord">
   <SubSteps items={[
     "หลังเพิ่ม Integration แล้ว จะเห็นรายการ <strong>Kick Channel Role</strong> ปรากฏในหน้า Integrations กดปุ่ม <strong>Configure</strong>",
     "ใช้ตัวสร้างเงื่อนไขแบบ IF/THEN เลือกเงื่อนไข <strong>Subscriber</strong> (รองรับเงื่อนไขอื่นเพิ่มเติมได้ เช่น Sub Tenure, VIP, Moderator, OG, Follower, Account Age)",
@@ -99,7 +99,7 @@ sidebar_category: kick-features
   <ImageCaption src="/images/ch7/7.3.2connectdiscord.jpg" alt="หน้า Integrations ของ RoleLogic แสดงการจับคู่ Kick Channel Role กับยศ Subscriber" caption="Integrations — Kick Channel Role ที่จับคู่กับยศ @Subscriber พร้อมปุ่ม Configure" />
 </StepCard>
 
-<StepCard step={7} title="Troubleshooting เคสยศไม่ขึ้น และไอเดียเพิ่มยอดซับด้วย Sub Perks">
+<StepCard step={3} title="Troubleshooting เคสยศไม่ขึ้น และไอเดียเพิ่มยอดซับด้วย Sub Perks">
   <SubSteps items={[
     "<strong>Troubleshooting (ยศไม่ขึ้น):</strong> หากคนดูเปย์ Sub แล้วยศไม่ขึ้น ให้ตรวจสอบว่าคนดูล็อกอินยืนยันตัวตนผ่านหน้า RoleLogic แล้วหรือยัง หากไม่ได้จริงๆ สตรีมเมอร์สามารถมอบยศ <code>@Subscriber</code> ให้ด้วยตัวเองใน Discord ได้ทันที",
     "<strong>Sub Perks เพิ่มยอดซับรายเดือน:</strong>",

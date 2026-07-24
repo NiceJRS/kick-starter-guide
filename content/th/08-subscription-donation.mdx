@@ -16,7 +16,7 @@ sidebar_category: monetization
   - account-setup
 ---
 
-<SectionHeading id="s8-1">1.1 KICK Revenue Share & Direct Sub Link</SectionHeading>
+<SectionHeading id="s8-1">1. KICK Revenue Share & Direct Sub Link</SectionHeading>
 
 <RevenueOverviewTable lang="th" />
 
@@ -47,9 +47,9 @@ sidebar_category: monetization
 
 ---
 
-<SectionHeading id="s8-2">1.2 ผูกบัญชีรับเงินผ่าน Stripe Connect Thailand</SectionHeading>
+<SectionHeading id="s8-2">2. ผูกบัญชีรับเงินผ่าน Stripe Connect Thailand</SectionHeading>
 
-<StepCard step={3} title="ขั้นตอนการผูกบัญชีธนาคารไทยผ่าน Stripe Connect">
+<StepCard step={1} title="ขั้นตอนการผูกบัญชีธนาคารไทยผ่าน Stripe Connect">
   <SubSteps items={[
     "ไปที่ <a href='https://dashboard.kick.com/revenue' target='_blank'>dashboard.kick.com/revenue</a> แล้วคลิกปุ่ม <strong>Set Up Account</strong> (หรือ Enable Subscriptions) หน้าต่าง Stripe Connect จะเปิดขึ้น",
     "<strong>Country:</strong> เลือก <code>Thailand</code>",
@@ -67,7 +67,7 @@ sidebar_category: monetization
 <strong>ชื่อภาษาอังกฤษไม่ตรง = โอนเงินไม่ผ่าน</strong> ตรวจสอบการสะกดชื่อจากหน้าสมุดบัญชีธนาคารก่อนกรอก Stripe Connect กรอกให้เหมือนกันทุกตัวอักษร แม้แค่ตัวเดียวต่างกันก็อาจทำให้การโอนถูกปฏิเสธ
 </WarningBox>
 
-<StepCard step={4} title="หาก Stripe Verify ไม่ผ่าน — วิธีแก้ไขข้อมูลและยืนยันตัวตนใหม่">
+<StepCard step={2} title="หาก Stripe Verify ไม่ผ่าน — วิธีแก้ไขข้อมูลและยืนยันตัวตนใหม่">
   <SubSteps items={[
     "<strong>เข้าสู่ระบบ Stripe Dashboard:</strong> ไปที่ <a href='https://dashboard.stripe.com/login' target='_blank'>dashboard.stripe.com/login</a> แล้ว Login ด้วยอีเมลเดียวกับที่ใช้สมัคร KICK — ระบบจะพาไปที่ <code>connect.stripe.com/app/express</code> ซึ่งเป็น Stripe Connect Express ของ KICK โดยอัตโนมัติ",
     "<strong>เข้าที่ Settings:</strong> คลิกเมนู <strong>Settings</strong> ในหน้า Stripe Express Dashboard",
@@ -86,9 +86,9 @@ sidebar_category: monetization
 
 ---
 
-<SectionHeading id="s8-3">1.3 โดเนท PromptPay และ TrueMoney Mastercard</SectionHeading>
+<SectionHeading id="s8-3">3. โดเนท PromptPay และ TrueMoney Mastercard</SectionHeading>
 
-<StepCard step={5} title="วิธีให้คนดูใช้ True Wallet กด Subscribe ช่อง KICK">
+<StepCard step={1} title="วิธีให้คนดูใช้ True Wallet กด Subscribe ช่อง KICK">
   <SubSteps items={[
     "<strong>ปัญหา:</strong> การกด Sub บนเว็บ KICK ต้องชำระผ่านบัตรเครดิต/เดบิตสากล คนดูที่ไม่มีบัตรเครดิตสามารถใช้ TrueMoney Wallet สร้างบัตร Mastercard เสมือน",
     "<strong>ขั้นตอนที่ 1 — สร้าง TrueMoney Mastercard (ฝั่งคนดู):</strong>",
@@ -102,7 +102,7 @@ sidebar_category: monetization
   <ImageCaption src="/images/ch8/8.3.2_subscribe_page.jpg" alt="หน้า Subscribe ของ KICK" caption="kick.com/[username]/subscribe — กรอกเลขบัตร TrueMoney Mastercard เพื่อชำระ" />
 </StepCard>
 
-<StepCard step={6} title="ตั้งค่าระบบโดเนทพร้อมเพย์ผ่าน EasyDonate (100% Revenue)">
+<StepCard step={2} title="ตั้งค่าระบบโดเนทพร้อมเพย์ผ่าน EasyDonate (100% Revenue)">
   <SubSteps items={[
     "<strong>สมัครใช้งาน EasyDonate:</strong> เข้าไปที่ <a href='https://easydonate.app' target='_blank'>easydonate.app</a> แล้ว Login ด้วยบัญชี Discord หรือ Google",
     "<strong>กรอกข้อมูลบัญชีและพร้อมเพย์:</strong> ไปที่หน้า <strong>Payout / Payment Settings</strong> → กรอกชื่อ-นามสกุลจริงให้ตรงกับบัญชีธนาคาร → ผูกหมายเลขโทรศัพท์พร้อมเพย์ หรือเลขบัญชีธนาคารไทยที่ต้องการรับเงิน",

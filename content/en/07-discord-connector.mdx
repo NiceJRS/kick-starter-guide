@@ -16,7 +16,7 @@ sidebar_category: kick-features
   - moderator
 ---
 
-<SectionHeading id="s7-1">1.1 Discord Server Structure & Onboarding</SectionHeading>
+<SectionHeading id="s7-1">1. Discord Server Structure & Onboarding</SectionHeading>
 
 <StepCard step={1} title="Create Discord Server & Configure Role Hierarchy">
   <SubSteps items={[
@@ -47,9 +47,9 @@ Combining an onboarding verification gate in #verify with private VIP category l
 
 ---
 
-<SectionHeading id="s7-2">1.2 Automated Go-Live Notifications</SectionHeading>
+<SectionHeading id="s7-2">2. Automated Go-Live Notifications</SectionHeading>
 
-<StepCard step={3} title="Connect Kick to Discord via BotRix">
+<StepCard step={1} title="Connect Kick to Discord via BotRix">
   <SubSteps items={[
     "In your Discord Server, create a text channel called <code>#live-notifications</code> to receive alerts.",
     "Go to <a href='https://botrix.live/panel/integrations' target='_blank'>botrix.live/panel/integrations</a> → select <strong>Integrations</strong> in the left menu.",
@@ -59,7 +59,7 @@ Combining an onboarding verification gate in #verify with private VIP category l
   <ImageCaption src="/images/ch7/7.2.1.botrixconnectdiscord.jpg" alt="BotRix Integrations page with the Kick platform card" caption="botrix.live/panel/integrations — click the Kick card to start connecting Discord" />
 </StepCard>
 
-<StepCard step={4} title="Select Your Alert Channel and Customize the Go-Live Message">
+<StepCard step={2} title="Select Your Alert Channel and Customize the Go-Live Message">
   <SubSteps items={[
     "After Discord is connected, go back to <a href='https://botrix.live/panel/integrations' target='_blank'>Integrations</a> and click the <strong>Kick</strong> card again.",
     "A <strong>Select a channel</strong> dialog appears — choose the <code>#live-notifications</code> channel you created, then click <strong>Accept</strong>.",
@@ -78,9 +78,9 @@ Since KICK mobile apps do not support native in-app subscribing, attach <code>ht
 
 ---
 
-<SectionHeading id="s7-3">1.3 KICK Sub Role Sync & Community Perks</SectionHeading>
+<SectionHeading id="s7-3">3. KICK Sub Role Sync & Community Perks</SectionHeading>
 
-<StepCard step={5} title="Add the RoleLogic Bot and Connect Kick Channel Role">
+<StepCard step={1} title="Add the RoleLogic Bot and Connect Kick Channel Role">
   <SubSteps items={[
     "Go to <a href='https://rolelogic.faizo.net' target='_blank'>rolelogic.faizo.net</a>, click <strong>Get Started Free</strong>, and sign in with Discord to invite the bot to your server.",
     "In the dashboard's left menu, select <strong>Integrations → Add Integration</strong> and choose <strong>Kick Channel Role</strong>.",
@@ -89,7 +89,7 @@ Since KICK mobile apps do not support native in-app subscribing, attach <code>ht
   <ImageCaption src="/images/ch7/7.3.rolelogicpage.jpg" alt="RoleLogic landing page" caption="rolelogic.faizo.net — click Get Started Free to invite the bot and begin setup" />
 </StepCard>
 
-<StepCard step={6} title="Set the Subscriber Condition and Map a Discord Role">
+<StepCard step={2} title="Set the Subscriber Condition and Map a Discord Role">
   <SubSteps items={[
     "Once added, the <strong>Kick Channel Role</strong> integration appears on the Integrations page — click <strong>Configure</strong>.",
     "Use the IF/THEN rule builder to select the <strong>Subscriber</strong> condition (other conditions are also available, such as Sub Tenure, VIP, Moderator, OG, Follower, and Account Age).",
@@ -99,7 +99,7 @@ Since KICK mobile apps do not support native in-app subscribing, attach <code>ht
   <ImageCaption src="/images/ch7/7.3.2connectdiscord.jpg" alt="RoleLogic Integrations page showing Kick Channel Role mapped to the Subscriber role" caption="Integrations — Kick Channel Role mapped to the @Subscriber role, with a Configure button" />
 </StepCard>
 
-<StepCard step={7} title="Troubleshooting Missing Roles & Community Sub Perks Strategy">
+<StepCard step={3} title="Troubleshooting Missing Roles & Community Sub Perks Strategy">
   <SubSteps items={[
     "<strong>Troubleshooting Role Sync:</strong> If a subscriber's role fails to appear, confirm they've signed in through the RoleLogic verification page. Streamers or mods can also manually assign the <code>@Subscriber</code> role as a fallback.",
     "<strong>Sub Perks to Boost Monthly Retention:</strong>",

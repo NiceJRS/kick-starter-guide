@@ -16,7 +16,7 @@ sidebar_category: monetization
   - account-setup
 ---
 
-<SectionHeading id="s8-1">1.1 KICK Revenue Share & Direct Sub Link</SectionHeading>
+<SectionHeading id="s8-1">1. KICK Revenue Share & Direct Sub Link</SectionHeading>
 
 <RevenueOverviewTable />
 
@@ -47,9 +47,9 @@ Set up both the <code>!sub</code> command AND a 20-minute timer. Most mobile vie
 
 ---
 
-<SectionHeading id="s8-2">1.2 Stripe Connect Thailand Payout Setup</SectionHeading>
+<SectionHeading id="s8-2">2. Stripe Connect Thailand Payout Setup</SectionHeading>
 
-<StepCard step={3} title="Connect Your Thai Bank Account via Stripe Connect">
+<StepCard step={1} title="Connect Your Thai Bank Account via Stripe Connect">
   <SubSteps items={[
     "Go to <a href='https://dashboard.kick.com/revenue' target='_blank'>dashboard.kick.com/revenue</a> and click <strong>Set Up Account</strong> (or Enable Subscriptions). The Stripe Connect window will open.",
     "<strong>Country:</strong> Select <code>Thailand</code>.",
@@ -67,7 +67,7 @@ Set up both the <code>!sub</code> command AND a 20-minute timer. Most mobile vie
 <strong>English name mismatch = payout failure.</strong> Check your bank passbook for the exact English spelling of your name. Enter it identically into Stripe Connect — even a single character difference can cause the transfer to be rejected.
 </WarningBox>
 
-<StepCard step={4} title="If Stripe Verification Fails — How to Fix and Re-verify">
+<StepCard step={2} title="If Stripe Verification Fails — How to Fix and Re-verify">
   <SubSteps items={[
     "<strong>Log in to Stripe Dashboard:</strong> Go to <a href='https://dashboard.stripe.com/login' target='_blank'>dashboard.stripe.com/login</a> and sign in using the <strong>same email</strong> as your KICK account. The system will automatically redirect you to <code>connect.stripe.com/app/express</code> — KICK's Stripe Connect Express portal.",
     "<strong>Open Settings:</strong> Click the <strong>Settings</strong> menu inside the Stripe Express Dashboard.",
@@ -86,9 +86,9 @@ Set up both the <code>!sub</code> command AND a 20-minute timer. Most mobile vie
 
 ---
 
-<SectionHeading id="s8-3">1.3 PromptPay Donations & TrueMoney Mastercard</SectionHeading>
+<SectionHeading id="s8-3">3. PromptPay Donations & TrueMoney Mastercard</SectionHeading>
 
-<StepCard step={5} title="How Viewers Use TrueMoney Wallet to Subscribe on KICK">
+<StepCard step={1} title="How Viewers Use TrueMoney Wallet to Subscribe on KICK">
   <SubSteps items={[
     "<strong>The Problem:</strong> KICK web subscriptions require an international credit/debit card. Thai viewers without traditional credit cards can use TrueMoney Wallet's Virtual Mastercard.",
     "<strong>Step 1 — Generate TrueMoney Mastercard (Viewer side):</strong>",
@@ -102,7 +102,7 @@ Set up both the <code>!sub</code> command AND a 20-minute timer. Most mobile vie
   <ImageCaption src="/images/ch8/8.3.2_subscribe_page.jpg" alt="KICK subscription page" caption="kick.com/[username]/subscribe — enter TrueMoney Mastercard details to complete payment" />
 </StepCard>
 
-<StepCard step={6} title="Set Up PromptPay Donations via EasyDonate (100% Revenue)">
+<StepCard step={2} title="Set Up PromptPay Donations via EasyDonate (100% Revenue)">
   <SubSteps items={[
     "<strong>Register on EasyDonate:</strong> Visit <a href='https://easydonate.app' target='_blank'>easydonate.app</a> and sign in using your Discord or Google account.",
     "<strong>Configure Payout & PromptPay Details:</strong> Navigate to <strong>Payout / Payment Settings</strong> → enter your legal name matching your bank account → link your PromptPay phone number or Thai bank account to receive funds directly.",
