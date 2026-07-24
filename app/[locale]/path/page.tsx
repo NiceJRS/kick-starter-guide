@@ -262,7 +262,7 @@ export default function PathPage({ params: { locale } }: { params: { locale: str
             <div className="flex items-center gap-2 mb-1">
               <IconMap2 size={18} style={{ color: 'var(--purple)' }} />
               <h1 className="text-xl font-bold" style={{ color: 'var(--text-primary)' }}>
-                {locale === 'th' ? 'เส้นทาง Streamer' : 'Streamer Path'}
+                {locale === 'th' ? 'Setup Stream' : 'Streamer Path'}
               </h1>
             </div>
             <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>

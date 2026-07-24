@@ -65,7 +65,7 @@ export default function PathDetailPage({
             </Link>
             <span>/</span>
             <Link href={`/${locale}/path`} className="hover:opacity-80">
-              {locale === 'th' ? 'เส้นทาง' : 'Stream Path'}
+              {locale === 'th' ? 'Setup Stream' : 'Stream Path'}
             </Link>
             <span>/</span>
             <span style={{ color: 'var(--kick-green-text)' }}>{title}</span>
@@ -155,7 +155,7 @@ export default function PathDetailPage({
             className="flex items-center gap-1.5 text-xs"
             style={{ color: 'var(--text-secondary)' }}>
             <IconArrowLeft size={14} />
-            {locale === 'th' ? 'เส้นทาง' : 'Path'}
+            {locale === 'th' ? 'Setup Stream' : 'Path'}
           </Link>
           <button
             onClick={() => setMobileNavOpen(true)}
@@ -194,7 +194,7 @@ export default function PathDetailPage({
           >
             <div className="flex items-center justify-between mb-4">
               <span className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
-                {locale === 'th' ? 'เส้นทาง Streamer' : 'Streamer Path'}
+                {locale === 'th' ? 'Setup Stream' : 'Streamer Path'}
               </span>
               <button onClick={() => setMobileNavOpen(false)} style={{ color: 'var(--text-muted)' }}>
                 <IconX size={18} />

@@ -280,8 +280,8 @@ export default function BeginnerPath({ locale }: { locale: string }) {
                 </div>
                 <div className="text-xs" style={{ color: 'var(--text-muted)' }}>
                   {locale === 'th'
-                    ? `บทที่ ${currentStep.id} · ~${currentStep.duration} นาที`
-                    : `Chapter ${currentStep.id} · ${currentStep.level} · ~${currentStep.duration}m`}
+                    ? `~${currentStep.duration} นาที`
+                    : `${currentStep.level} · ~${currentStep.duration}m`}
                 </div>
               </div>
               <div className="flex items-center gap-2.5">

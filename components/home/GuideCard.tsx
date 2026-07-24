@@ -59,7 +59,7 @@ export default function GuideCard({ guide, locale, basePath = 'guides' }: { guid
             <Icon size={13} style={{ color: fg }} />
           </div>
           <span className="text-[10px] font-semibold" style={{ color: fg }}>
-            #{guide.id}
+            {guide.label}
           </span>
           <div className="ml-auto flex items-center gap-1.5">
             {guide.showInHighlight && (

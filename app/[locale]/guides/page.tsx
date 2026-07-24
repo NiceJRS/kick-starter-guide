@@ -99,7 +99,7 @@ export default function GuidesPage({ params: { locale } }: { params: { locale: s
           <Link href={`/${locale}/path`}
             className="px-3 py-1.5 rounded-lg text-xs font-medium transition-all"
             style={{ color: 'var(--text-secondary)', border: '1px solid var(--border-strong)' }}>
-            {locale === 'th' ? 'เส้นทาง' : 'Path'}
+            {locale === 'th' ? 'Setup Stream' : 'Path'}
           </Link>
           <button
             onClick={() => router.push(locale === 'th' ? '/en/guides' : '/th/guides')}

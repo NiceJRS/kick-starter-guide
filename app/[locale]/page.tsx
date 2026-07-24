@@ -62,7 +62,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
             </div>
             <div className="relative">
               <div className="text-sm font-bold mb-0.5" style={{ color: 'var(--text-primary)' }}>
-                {locale === 'th' ? 'เส้นทาง Streamer' : 'Stream Path'}
+                {locale === 'th' ? 'Setup Stream' : 'Stream Path'}
               </div>
               <div className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 {locale === 'th'

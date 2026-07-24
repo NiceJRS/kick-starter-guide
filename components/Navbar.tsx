@@ -8,7 +8,7 @@ type Mode = 'streamer' | 'developer'
 
 const NAV_LINKS = {
   th: [
-    { label: 'เส้นทาง', href: 'PATH' },
+    { label: 'Setup Stream', href: 'PATH' },
     { label: 'แนะนำ', href: '#featured' },
     { label: 'คู่มือ', href: 'GUIDES' },
   ],
