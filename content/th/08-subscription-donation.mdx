@@ -20,9 +20,9 @@ prerequisites:
     "<strong>ส่วนแบ่งรายได้ที่ดีที่สุดในวงการ:</strong> แพลตฟอร์มสตรีมมิ่งส่วนใหญ่หักรายได้ 50/50 แต่ KICK ให้สตรีมเมอร์ถึง <strong>95%</strong> โดยหักค่าธรรมเนียมแค่ 5% เท่านั้น",
     "<strong>ราคา Sub มาตรฐาน:</strong> ราคา Subscription อยู่ที่ประมาณ <code>$4.99 USD/เดือน</code> (ราว 170–180 บาท) สตรีมเมอร์จะได้รับส่วนแบ่งประมาณ <code>$4.74 USD</code> ต่อ 1 Subscription",
     "<strong>เงื่อนไขการปลดล็อก (Monetization Eligibility):</strong> สตรีมเมอร์ต้องสตรีมสะสมครบ <strong>5 ชั่วโมง</strong> และมีผู้ติดตามครบ <strong>75 Followers</strong> ระบบถึงจะเปิดปุ่มผูก Stripe Connect ใน Creator Dashboard",
-    "เมื่อครบเงื่อนไขแล้ว ไปที่ <a href='https://dashboard.kick.com/revenue/payout' target='_blank'>dashboard.kick.com/revenue/payout</a> เพื่อเริ่มผูกบัญชีรับเงิน"
+    "เมื่อครบเงื่อนไขแล้ว ไปที่ <a href='https://dashboard.kick.com/revenue/overall' target='_blank'>dashboard.kick.com/revenue/overall</a> เพื่อดูสถานะรายได้และเริ่มผูกบัญชีรับเงิน"
   ]} />
-  <ImageCaption src="/images/ch8/s8_1_step1_revenue_dashboard.jpg" alt="หน้า Revenue ใน KICK Creator Dashboard แสดงส่วนแบ่ง 95/5" caption="dashboard.kick.com/revenue/payout — แสดงสัดส่วนรายได้และสถานะความพร้อมรับเงิน" />
+  <ImageCaption src="/images/ch8/8.1.0_dashbaord.jpg" alt="หน้า Revenue ใน KICK Creator Dashboard แสดงส่วนแบ่ง 95/5" caption="dashboard.kick.com/revenue/overall — แสดงสัดส่วนรายได้และสถานะความพร้อมรับเงิน" />
 </StepCard>
 
 <StepCard step={2} title="แก้ Pain Point คนดูบนมือถือด้วย Direct Subscription Link">
@@ -46,7 +46,7 @@ prerequisites:
 
 <StepCard step={3} title="ขั้นตอนการผูกบัญชีธนาคารไทยผ่าน Stripe Connect">
   <SubSteps items={[
-    "ไปที่ <a href='https://dashboard.kick.com/revenue/payout' target='_blank'>dashboard.kick.com/revenue/payout</a> แล้วคลิกปุ่ม <strong>Set Up Account</strong> (หรือ Enable Subscriptions) หน้าต่าง Stripe Connect จะเปิดขึ้น",
+    "ไปที่ <a href='https://dashboard.kick.com/revenue' target='_blank'>dashboard.kick.com/revenue</a> แล้วคลิกปุ่ม <strong>Set Up Account</strong> (หรือ Enable Subscriptions) หน้าต่าง Stripe Connect จะเปิดขึ้น",
     "<strong>Country:</strong> เลือก <code>Thailand</code>",
     "<strong>Type of Entity:</strong> เลือก <code>Individual / Sole Proprietorship</code> (บุคคลธรรมดา)",
     "<strong>ข้อมูลส่วนตัว (สำคัญมาก):</strong> กรอกชื่อ-นามสกุลภาษาอังกฤษ <strong>ให้ตรงกับหน้าสมุดบัญชีธนาคารและบัตรประชาชน</strong> การสะกดชื่อภาษาอังกฤษไม่ตรงกันคือสาเหตุอันดับ 1 ที่สตรีมเมอร์ไทยถอนเงินไม่ได้",
@@ -54,18 +54,36 @@ prerequisites:
     "<strong>ยืนยันตัวตน (KYC):</strong> อัปโหลดรูปถ่ายบัตรประชาชนหรือพาสปอร์ตไทย (ถ่ายให้ชัดไม่สะท้อนแสง อ่านข้อความได้ครบ) → กด <strong>Submit</strong>",
     "<strong>รอบการตัดจ่าย (Payout Schedule):</strong> KICK และ Stripe โอนเงินเข้าธนาคารไทยอัตโนมัติใน <strong>วันที่ 1 และ 15 ของทุกเดือน</strong> ยอดขั้นต่ำในการตัดจ่ายคือ <code>$25 USD</code>"
   ]} />
-  <ImageCaption src="/images/ch8/s8_2_step3_stripe_connect.jpg" alt="หน้าฟอร์ม Stripe Connect Thailand" caption="Stripe Connect — เลือก Country: Thailand + Individual + กรอกข้อมูลธนาคารไทย" />
+  <ImageCaption src="/images/ch8/8.2.0_revenue_page.jpg" alt="หน้า Revenue ใน KICK Dashboard" caption="dashboard.kick.com/revenue — คลิก Set Up Account เพื่อเริ่มผูก Stripe Connect" />
+  <ImageCaption src="/images/ch8/8.2.1_stipe_connect_page.jpg" alt="หน้าฟอร์ม Stripe Connect Thailand" caption="Stripe Connect — เลือก Country: Thailand + Individual + กรอกข้อมูลธนาคารไทย" />
 </StepCard>
 
 <WarningBox>
 <strong>ชื่อภาษาอังกฤษไม่ตรง = โอนเงินไม่ผ่าน</strong> ตรวจสอบการสะกดชื่อจากหน้าสมุดบัญชีธนาคารก่อนกรอก Stripe Connect กรอกให้เหมือนกันทุกตัวอักษร แม้แค่ตัวเดียวต่างกันก็อาจทำให้การโอนถูกปฏิเสธ
 </WarningBox>
 
+<StepCard step={4} title="หาก Stripe Verify ไม่ผ่าน — วิธีแก้ไขข้อมูลและยืนยันตัวตนใหม่">
+  <SubSteps items={[
+    "<strong>เข้าสู่ระบบ Stripe Dashboard:</strong> ไปที่ <a href='https://dashboard.stripe.com/login' target='_blank'>dashboard.stripe.com/login</a> แล้ว Login ด้วยอีเมลเดียวกับที่ใช้สมัคร KICK — ระบบจะพาไปที่ <code>connect.stripe.com/app/express</code> ซึ่งเป็น Stripe Connect Express ของ KICK โดยอัตโนมัติ",
+    "<strong>เข้าที่ Settings:</strong> คลิกเมนู <strong>Settings</strong> ในหน้า Stripe Express Dashboard",
+    "<strong>แก้ไข Display Name:</strong> เปลี่ยน Display Name เป็น <strong>ภาษาอังกฤษ</strong> ให้ตรงกับชื่อในบัตรประชาชนหรือพาสปอร์ต",
+    "<strong>แก้ไขแบบฟอร์ม W-8/W-9:</strong> เปิดส่วน Tax Information → กรอกข้อมูลเป็น <strong>ภาษาอังกฤษ</strong> → ติ๊กเลือก <strong>No</strong> ในช่อง &quot;Are you a U.S. person?&quot; เพราะคุณไม่ใช่พลเมืองสหรัฐฯ",
+    "<strong>กรอก Signature:</strong> ลงลายเซ็นดิจิทัลเป็น <strong>ภาษาอังกฤษ</strong> ให้ตรงกับชื่อที่กรอกในแบบฟอร์ม",
+    "<strong>หากผ่านการยืนยัน:</strong> คุณจะได้รับอีเมล <strong>\"Your identity has been verified!\"</strong> — แสดงว่า Stripe ยืนยันตัวตนสำเร็จและพร้อมรับโอนเงิน"
+  ]} />
+  <ImageCaption src="/images/ch8/8.2.2_stripe_dashboard_login.jpg" alt="หน้า Login ของ Stripe Dashboard" caption="dashboard.stripe.com/login — Login ด้วยอีเมลเดียวกับ KICK เพื่อเข้าแก้ไข Stripe Express" />
+  <ImageCaption src="/images/ch8/8.2.3_Stipe_settings.jpg" alt="หน้า Settings ใน Stripe Express Dashboard" caption="Stripe Express → Settings — จุดที่แก้ Display Name และ Tax Information" />
+  <ImageCaption src="/images/ch8/8.2.4_edit_w8.jpg" alt="แบบฟอร์ม W-8 ใน Stripe Express" caption="W-8 Form — กรอกภาษาอังกฤษ ติ๊ก No สำหรับ U.S. Person" />
+  <ImageCaption src="/images/ch8/8.2.5_stripe_edit_legal_name.jpg" alt="แก้ไข Legal Name ใน Stripe Express" caption="Display Name / Legal Name — ต้องตรงกับชื่อในบัตรประชาชน" />
+  <ImageCaption src="/images/ch8/8.2.6_signature.jpg" alt="ช่องลงลายเซ็นใน Stripe Express" caption="Signature — กรอกภาษาอังกฤษให้ตรงกับชื่อที่กรอก" />
+  <ImageCaption src="/images/ch8/8.2.7_verify_pass.jpg" alt="อีเมลยืนยัน Your identity has been verified" caption="อีเมล 'Your identity has been verified!' — Stripe ยืนยันตัวตนสำเร็จ พร้อมรับโอนเงิน" />
+</StepCard>
+
 ---
 
 <SectionHeading id="s8-3">8.3 โดเนท PromptPay และ TrueMoney Mastercard</SectionHeading>
 
-<StepCard step={4} title="วิธีให้คนดูใช้ True Wallet กด Subscribe ช่อง KICK">
+<StepCard step={5} title="วิธีให้คนดูใช้ True Wallet กด Subscribe ช่อง KICK">
   <SubSteps items={[
     "<strong>ปัญหา:</strong> การกด Sub บนเว็บ KICK ต้องชำระผ่านบัตรเครดิต/เดบิตสากล คนดูที่ไม่มีบัตรเครดิตสามารถใช้ TrueMoney Wallet สร้างบัตร Mastercard เสมือน",
     "<strong>ขั้นตอนที่ 1 — สร้าง TrueMoney Mastercard (ฝั่งคนดู):</strong>",
@@ -75,22 +93,29 @@ prerequisites:
     "เปิดลิงก์ Direct Sub ผ่านเว็บเบราว์เซอร์: <code>https://kick.com/[username]/subscribe</code>",
     "เลือกช่องทางชำระเงินเป็น <strong>Credit / Debit Card</strong> แล้วกรอกหมายเลขบัตร 16 หลัก วันหมดอายุ และ CVV จาก TrueMoney (ตัดเงินจาก TrueWallet ทันที)"
   ]} />
+  <ImageCaption src="/images/ch8/8.3.1_register_truemoney_mastercard.jpg" alt="การสร้าง TrueMoney Mastercard ในแอป TrueMoney" caption="แอป TrueMoney → บัตร Virtual Mastercard — ออกเลขบัตร 16 หลักสำหรับชำระ KICK Sub" />
+  <ImageCaption src="/images/ch8/8.3.2_subscribe_page.jpg" alt="หน้า Subscribe ของ KICK" caption="kick.com/[username]/subscribe — กรอกเลขบัตร TrueMoney Mastercard เพื่อชำระ" />
 </StepCard>
 
-<StepCard step={5} title="ตั้งค่าระบบโดเนทพร้อมเพย์ผ่าน TipMe (100% Revenue)">
+<StepCard step={6} title="ตั้งค่าระบบโดเนทพร้อมเพย์ผ่าน EasyDonate (100% Revenue)">
   <SubSteps items={[
-    "เข้าไปที่ <a href='https://tipme.in.th' target='_blank'>tipme.in.th</a> → สมัครสมาชิกและผูกบัญชี KICK",
-    "ใส่เลข PromptPay หรือเลขบัญชีธนาคารไทยของคุณ",
-    "<strong>เปิดใช้งาน Slip Verification:</strong> เปิดระบบตรวจสอบสลิปอัตโนมัติ เพื่อป้องกันเกรียนส่งสลิปโอนเงินปลอมขึ้นหน้าจอไลฟ์",
-    "คัดลอก <strong>Widget URL</strong> นำไปวางใน OBS Studio เป็น Browser Source — แสดงกรอบแจ้งเตือนพร้อมยอดโดเนทระหว่างสตรีม",
-    "นำลิงก์โดเนทส่วนตัวไปแปะในแชทสดและ Discord เพื่อให้คนดูโอนได้ตลอดเวลา",
-    "<strong>ข้อดี:</strong> เงินเข้าบัญชีธนาคารไทยทันทีแบบ Real-time โดย <strong>ไม่โดนหักส่วนแบ่งใดๆ จากแพลตฟอร์ม</strong>"
+    "<strong>สมัครใช้งาน EasyDonate:</strong> เข้าไปที่ <a href='https://easydonate.app' target='_blank'>easydonate.app</a> แล้ว Login ด้วยบัญชี Discord หรือ Google",
+    "<strong>กรอกข้อมูลบัญชีและพร้อมเพย์:</strong> ไปที่หน้า <strong>Payout / Payment Settings</strong> → กรอกชื่อ-นามสกุลจริงให้ตรงกับบัญชีธนาคาร → ผูกหมายเลขโทรศัพท์พร้อมเพย์ หรือเลขบัญชีธนาคารไทยที่ต้องการรับเงิน",
+    "<strong>ตั้งค่า Widget แจ้งเตือน (Alert Box):</strong> ไปที่เมนู <strong>Widget</strong> หรือ <strong>Alert Settings</strong> เพื่อปรับแต่งรูปแบบป๊อปอัปแจ้งเตือน (เสียง, GIF, ข้อความ, ยอดโดเนทขั้นต่ำ)",
+    "<strong>คัดลอก Widget URL สำหรับ OBS:</strong> ไปที่ <a href='https://easydonate.app/dashboard/donate/widget' target='_blank'>easydonate.app/dashboard/donate/widget</a> → คัดลอก <strong>Widget URL</strong> ของคุณ",
+    "<strong>ใส่ใน OBS Studio:</strong> OBS Studio → กด <code>+</code> ในช่อง Sources → เลือก <strong>Browser Source</strong> → วาง Widget URL → ตั้งขนาด 1920×1080 → กด OK — กรอบแจ้งเตือนโดเนทจะเด้งขึ้นบนจอไลฟ์สดทุกครั้งที่มีคนสแกนพร้อมเพย์โดเนทเข้ามา",
+    "<strong>ข้อดี:</strong> เงินเข้าบัญชีธนาคารไทยทันทีแบบ Real-time โดย <strong>ไม่โดนหักส่วนแบ่งใดๆ จากแพลตฟอร์ม (100%)</strong>"
   ]} />
-  <ImageCaption src="/images/ch8/s8_3_step5_tipme_setup.jpg" alt="หน้า TipMe แสดงการตั้งค่า PromptPay และ Widget URL" caption="tipme.in.th — ผูก PromptPay เปิด Slip Verification และคัดลอก Widget URL สำหรับ OBS" />
+  <ImageCaption src="/images/ch8/8.3.3_ezy_donate.jpg" alt="หน้าหลัก EasyDonate" caption="easydonate.app — Login ด้วย Discord หรือ Google เพื่อเริ่มตั้งค่าระบบโดเนท" />
+  <ImageCaption src="/images/ch8/8.3.4_ezy_donate_setup_page.jpg" alt="หน้าตั้งค่า EasyDonate" caption="EasyDonate Setup Page — หน้าหลักสำหรับตั้งค่าโปรไฟล์และการรับเงิน" />
+  <ImageCaption src="/images/ch8/8.3.5_ezy_set_promptpay.jpg" alt="การตั้งค่า PromptPay ใน EasyDonate" caption="EasyDonate → Payment Settings — ผูกหมายเลขพร้อมเพย์หรือบัญชีธนาคารไทย" />
+  <ImageCaption src="/images/ch8/8.3.6_ezy_done_set_promptpay.jpg" alt="ตั้งค่า PromptPay สำเร็จใน EasyDonate" caption="ผูก PromptPay สำเร็จ — พร้อมรับโดเนทจากคนดูแล้ว" />
+  <ImageCaption src="/images/ch8/8.2.7_ezy_widget_url.jpg" alt="หน้า Widget URL ของ EasyDonate" caption="easydonate.app/dashboard/donate/widget — คัดลอก Widget URL นำไปใส่ใน OBS Browser Source" />
+  <ImageCaption src="/images/ch8/8.3.7_ezy_obs_widget.jpg" alt="EasyDonate Widget ใน OBS Studio" caption="OBS Studio → Browser Source — Widget แจ้งเตือนโดเนทจาก EasyDonate บนจอไลฟ์สด" />
 </StepCard>
 
 <TipBox>
-ใช้ทั้ง Stripe Connect Sub และ TipMe PromptPay พร้อมกัน Subscription ให้รายได้ประจำรายเดือน ส่วน PromptPay จับคนดูที่ไม่มีบัตรเครดิตหรืออยากส่งยอดโดเนทก้อนใหญ่ครั้งเดียว
+ใช้ทั้ง Stripe Connect Sub และ EasyDonate PromptPay พร้อมกัน Subscription ให้รายได้ประจำรายเดือน ส่วน PromptPay จับคนดูที่ไม่มีบัตรเครดิตหรืออยากส่งยอดโดเนทก้อนใหญ่ครั้งเดียว
 </TipBox>
 
 ---
@@ -100,14 +125,21 @@ prerequisites:
 </FaqItem>
 
 <FaqItem q="คนดูที่ไม่มีบัตรเครดิต จะกด Subscribe ได้อย่างไร?">
-ใช้แอป TrueMoney Wallet สร้างบัตรเสมือน **TrueMoney Mastercard** แล้วนำเลขบัตร 16 หลัก + CVV มากรอกในหน้าเว็บ Subscribe ของ KICK ได้เลยครับ
+ใช้แอป TrueMoney Wallet สร้างบัตรเสมือน **TrueMoney Mastercard** แล้วนำเลขบัตร 16 หลัก + CVV มากรอกในหน้าเว็บ Subscribe ของ KICK ได้เลย
+</FaqItem>
+
+<FaqItem q="ทำไม Stripe Verify ไม่ผ่าน และแก้ยังไง?">
+สาเหตุส่วนใหญ่มาจากชื่อภาษาอังกฤษไม่ตรงกับบัตร หรือแบบฟอร์ม W-8 กรอกไม่ครบ แก้โดยเข้า dashboard.stripe.com/login ด้วยอีเมลเดิม → ไปที่ Settings → แก้ Display Name เป็นภาษาอังกฤษตรงกับบัตร → แก้ W-8 ติ๊ก No (ไม่ใช่คน US) → กรอก Signature ภาษาอังกฤษ → Submit ใหม่
 </FaqItem>
 
 ---
 
 <References items={[
-  { label: "KICK Revenue & Payout Dashboard", url: "https://dashboard.kick.com/revenue/payout" },
-  { label: "TipMe — ระบบโดเนทพร้อมเพย์สำหรับสตรีมเมอร์ไทย", url: "https://tipme.in.th" },
+  { label: "KICK Revenue Dashboard", url: "https://dashboard.kick.com/revenue/overall" },
+  { label: "KICK Revenue Payout Setup", url: "https://dashboard.kick.com/revenue" },
+  { label: "Stripe Dashboard Login", url: "https://dashboard.stripe.com/login" },
+  { label: "EasyDonate — ระบบโดเนทพร้อมเพย์สำหรับสตรีมเมอร์ไทย", url: "https://easydonate.app" },
+  { label: "EasyDonate Widget URL", url: "https://easydonate.app/dashboard/donate/widget" },
   { label: "BotRix Custom Commands", url: "https://botrix.live" },
   { label: "KickBot Custom Commands", url: "https://kickbot.com" }
 ]} />

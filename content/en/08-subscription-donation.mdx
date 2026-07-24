@@ -20,9 +20,9 @@ prerequisites:
     "<strong>Industry-Leading Revenue Share:</strong> Most streaming platforms split revenue 50/50. KICK gives streamers <strong>95%</strong> of every subscription, taking only a 5% fee.",
     "<strong>Standard Sub Price:</strong> A standard subscription costs approximately <code>$4.99 USD/month</code> (~170–180 THB). The streamer receives approximately <code>$4.74 USD</code> per subscription.",
     "<strong>Monetization Eligibility:</strong> Streamers must accumulate at least <strong>5 streaming hours</strong> and reach <strong>75 Followers</strong> to unlock the Stripe Connect setup button in the Creator Dashboard.",
-    "Once eligible, go to <a href='https://dashboard.kick.com/revenue/payout' target='_blank'>dashboard.kick.com/revenue/payout</a> to see the Set Up Account button."
+    "Once eligible, go to <a href='https://dashboard.kick.com/revenue/overall' target='_blank'>dashboard.kick.com/revenue/overall</a> to view your revenue overview and start the payout setup."
   ]} />
-  <ImageCaption src="/images/ch8/s8_1_step1_revenue_dashboard.jpg" alt="KICK Creator Dashboard Revenue page showing 95/5 split" caption="dashboard.kick.com/revenue/payout — Revenue share breakdown and eligibility status" />
+  <ImageCaption src="/images/ch8/8.1.0_dashbaord.jpg" alt="KICK Creator Dashboard Revenue page showing 95/5 split" caption="dashboard.kick.com/revenue/overall — Revenue share breakdown and eligibility status" />
 </StepCard>
 
 <StepCard step={2} title="Solving Mobile Sub Pain Points with Direct Sub Links">
@@ -46,7 +46,7 @@ Set up both the <code>!sub</code> command AND a 20-minute timer. Most mobile vie
 
 <StepCard step={3} title="Connect Your Thai Bank Account via Stripe Connect">
   <SubSteps items={[
-    "Go to <a href='https://dashboard.kick.com/revenue/payout' target='_blank'>dashboard.kick.com/revenue/payout</a> and click <strong>Set Up Account</strong> (or Enable Subscriptions). The Stripe Connect window will open.",
+    "Go to <a href='https://dashboard.kick.com/revenue' target='_blank'>dashboard.kick.com/revenue</a> and click <strong>Set Up Account</strong> (or Enable Subscriptions). The Stripe Connect window will open.",
     "<strong>Country:</strong> Select <code>Thailand</code>.",
     "<strong>Type of Entity:</strong> Select <code>Individual / Sole Proprietorship</code> (individual streamer).",
     "<strong>Personal Info (CRITICAL):</strong> Enter your English first and last name <strong>exactly matching your bank passbook and national ID card</strong>. Mismatched English spellings are the #1 reason Thai streamer payouts fail.",
@@ -54,18 +54,36 @@ Set up both the <code>!sub</code> command AND a 20-minute timer. Most mobile vie
     "<strong>KYC Verification:</strong> Upload a clear photo of your Thai National ID card or Passport (no glare, all text readable) → click <strong>Submit</strong>.",
     "<strong>Payout Schedule:</strong> KICK and Stripe automatically transfer funds to your Thai bank on the <strong>1st and 15th of every month</strong>. Minimum payout threshold: <code>$25 USD</code>."
   ]} />
-  <ImageCaption src="/images/ch8/s8_2_step3_stripe_connect.jpg" alt="Stripe Connect Thailand setup form" caption="Stripe Connect — fill Country: Thailand + Individual entity + Thai bank details" />
+  <ImageCaption src="/images/ch8/8.2.0_revenue_page.jpg" alt="KICK Revenue page with Set Up Account button" caption="dashboard.kick.com/revenue — Click Set Up Account to begin Stripe Connect" />
+  <ImageCaption src="/images/ch8/8.2.1_stipe_connect_page.jpg" alt="Stripe Connect Thailand setup form" caption="Stripe Connect — fill Country: Thailand + Individual entity + Thai bank details" />
 </StepCard>
 
 <WarningBox>
 <strong>English name mismatch = payout failure.</strong> Check your bank passbook for the exact English spelling of your name. Enter it identically into Stripe Connect — even a single character difference can cause the transfer to be rejected.
 </WarningBox>
 
+<StepCard step={4} title="If Stripe Verification Fails — How to Fix and Re-verify">
+  <SubSteps items={[
+    "<strong>Log in to Stripe Dashboard:</strong> Go to <a href='https://dashboard.stripe.com/login' target='_blank'>dashboard.stripe.com/login</a> and sign in using the <strong>same email</strong> as your KICK account. The system will automatically redirect you to <code>connect.stripe.com/app/express</code> — KICK's Stripe Connect Express portal.",
+    "<strong>Open Settings:</strong> Click the <strong>Settings</strong> menu inside the Stripe Express Dashboard.",
+    "<strong>Fix Display Name:</strong> Update your Display Name to <strong>English</strong>, matching exactly the name on your national ID card or passport.",
+    "<strong>Fix W-8/W-9 Tax Form:</strong> Open the Tax Information section → fill in all fields in <strong>English</strong> → select <strong>No</strong> for &quot;Are you a U.S. person?&quot; (you are not a U.S. citizen or resident).",
+    "<strong>Add Signature:</strong> Sign the form digitally in <strong>English</strong>, matching the name you entered in the form above.",
+    "<strong>If verification passes:</strong> You will receive an email titled <strong>\"Your identity has been verified!\"</strong> — Stripe has approved your account and you are ready to receive payouts."
+  ]} />
+  <ImageCaption src="/images/ch8/8.2.2_stripe_dashboard_login.jpg" alt="Stripe Dashboard login page" caption="dashboard.stripe.com/login — Sign in with the same email as KICK to access Stripe Express" />
+  <ImageCaption src="/images/ch8/8.2.3_Stipe_settings.jpg" alt="Settings menu in Stripe Express Dashboard" caption="Stripe Express → Settings — where you update Display Name and Tax Information" />
+  <ImageCaption src="/images/ch8/8.2.4_edit_w8.jpg" alt="W-8 form in Stripe Express" caption="W-8 Form — fill in English, select No for U.S. Person" />
+  <ImageCaption src="/images/ch8/8.2.5_stripe_edit_legal_name.jpg" alt="Edit Legal Name in Stripe Express" caption="Display Name / Legal Name — must match exactly the name on your ID card" />
+  <ImageCaption src="/images/ch8/8.2.6_signature.jpg" alt="Digital signature field in Stripe Express" caption="Signature — sign in English matching the name you entered" />
+  <ImageCaption src="/images/ch8/8.2.7_verify_pass.jpg" alt="Your identity has been verified email" caption="'Your identity has been verified!' email — Stripe verification complete, ready for payouts" />
+</StepCard>
+
 ---
 
 <SectionHeading id="s8-3">8.3 PromptPay Donations & TrueMoney Mastercard</SectionHeading>
 
-<StepCard step={4} title="How Viewers Use TrueMoney Wallet to Subscribe on KICK">
+<StepCard step={5} title="How Viewers Use TrueMoney Wallet to Subscribe on KICK">
   <SubSteps items={[
     "<strong>The Problem:</strong> KICK web subscriptions require an international credit/debit card. Thai viewers without traditional credit cards can use TrueMoney Wallet's Virtual Mastercard.",
     "<strong>Step 1 — Generate TrueMoney Mastercard (Viewer side):</strong>",
@@ -75,22 +93,29 @@ Set up both the <code>!sub</code> command AND a 20-minute timer. Most mobile vie
     "Open the Direct Sub link via mobile or desktop browser: <code>https://kick.com/[username]/subscribe</code>",
     "Select <strong>Credit / Debit Card</strong> at checkout, enter the 16-digit TrueMoney card number, expiry, and CVV to complete payment (deducted instantly from TrueWallet balance)."
   ]} />
+  <ImageCaption src="/images/ch8/8.3.1_register_truemoney_mastercard.jpg" alt="Creating TrueMoney Mastercard in the TrueMoney app" caption="TrueMoney app → Virtual Mastercard — generates a 16-digit card number for KICK subscriptions" />
+  <ImageCaption src="/images/ch8/8.3.2_subscribe_page.jpg" alt="KICK subscription page" caption="kick.com/[username]/subscribe — enter TrueMoney Mastercard details to complete payment" />
 </StepCard>
 
-<StepCard step={5} title="Set Up PromptPay Donations via TipMe (100% Revenue)">
+<StepCard step={6} title="Set Up PromptPay Donations via EasyDonate (100% Revenue)">
   <SubSteps items={[
-    "Go to <a href='https://tipme.in.th' target='_blank'>tipme.in.th</a> → Register and link your KICK account.",
-    "Enter your PromptPay number or Thai bank account details.",
-    "<strong>Enable Slip Verification:</strong> Turn on the Slip Verification feature to auto-validate payment slips and prevent viewers from uploading fake transfer screenshots during your stream.",
-    "Copy the <strong>Widget URL</strong> and add it to OBS Studio as a Browser Source — displays donation alerts with amounts during live stream.",
-    "Paste your personal donation link in chat (and Discord) so viewers can send PromptPay donations at any time.",
-    "<strong>Advantage:</strong> Funds transfer directly to your Thai bank account in real-time with <strong>zero platform fee deductions</strong>."
+    "<strong>Register on EasyDonate:</strong> Visit <a href='https://easydonate.app' target='_blank'>easydonate.app</a> and sign in using your Discord or Google account.",
+    "<strong>Configure Payout & PromptPay Details:</strong> Navigate to <strong>Payout / Payment Settings</strong> → enter your legal name matching your bank account → link your PromptPay phone number or Thai bank account to receive funds directly.",
+    "<strong>Customize Your Alert Box Widget:</strong> Go to the <strong>Widget</strong> or <strong>Alert Settings</strong> menu to personalize your donation popup (alert sounds, GIF animations, custom text, minimum donation threshold).",
+    "<strong>Copy Widget URL for OBS:</strong> Go to <a href='https://easydonate.app/dashboard/donate/widget' target='_blank'>easydonate.app/dashboard/donate/widget</a> → copy your unique <strong>Widget URL</strong>.",
+    "<strong>Add to OBS Studio:</strong> OBS Studio → click <code>+</code> under Sources → select <strong>Browser Source</strong> → paste Widget URL → set dimensions to 1920×1080 → click OK. Donation alerts will now pop up on your stream overlay whenever a viewer tips via PromptPay.",
+    "<strong>Advantage:</strong> Funds transfer directly to your Thai bank account in real-time with <strong>zero platform fee deductions (100%)</strong>."
   ]} />
-  <ImageCaption src="/images/ch8/s8_3_step5_tipme_setup.jpg" alt="TipMe dashboard showing PromptPay and Widget URL setup" caption="tipme.in.th — Link PromptPay, enable Slip Verification, copy Widget URL for OBS" />
+  <ImageCaption src="/images/ch8/8.3.3_ezy_donate.jpg" alt="EasyDonate main page" caption="easydonate.app — sign in with Discord or Google to get started" />
+  <ImageCaption src="/images/ch8/8.3.4_ezy_donate_setup_page.jpg" alt="EasyDonate setup page" caption="EasyDonate Setup — main configuration page for profile and payment settings" />
+  <ImageCaption src="/images/ch8/8.3.5_ezy_set_promptpay.jpg" alt="Setting up PromptPay in EasyDonate" caption="EasyDonate → Payment Settings — link your PromptPay number or Thai bank account" />
+  <ImageCaption src="/images/ch8/8.3.6_ezy_done_set_promptpay.jpg" alt="PromptPay successfully linked in EasyDonate" caption="PromptPay linked successfully — ready to receive donations from viewers" />
+  <ImageCaption src="/images/ch8/8.2.7_ezy_widget_url.jpg" alt="EasyDonate Widget URL page" caption="easydonate.app/dashboard/donate/widget — copy Widget URL to add as OBS Browser Source" />
+  <ImageCaption src="/images/ch8/8.3.7_ezy_obs_widget.jpg" alt="EasyDonate Widget in OBS Studio" caption="OBS Studio → Browser Source — EasyDonate donation alert overlay on your live stream" />
 </StepCard>
 
 <TipBox>
-Run both Stripe Connect Sub revenue AND TipMe PromptPay donations simultaneously. Subs give you recurring income; PromptPay donations capture Thai viewers who prefer not to use credit cards or who want to send larger one-time amounts.
+Run both Stripe Connect Sub revenue AND EasyDonate PromptPay donations simultaneously. Subs give you recurring income; PromptPay donations capture Thai viewers who prefer not to use credit cards or who want to send larger one-time amounts.
 </TipBox>
 
 ---
@@ -103,11 +128,18 @@ To avoid Apple and Google's 15%–30% In-App Purchase fees and preserve the 95/5
 Yes. Thai viewers can open the TrueMoney Wallet app, generate a virtual **TrueMoney Mastercard** (16-digit card number + CVV), and use those card details to subscribe via web browser.
 </FaqItem>
 
+<FaqItem q="What do I do if Stripe verification fails?">
+Most failures are caused by an English name mismatch or incomplete W-8 form. Go to dashboard.stripe.com/login with the same email → Settings → fix Display Name to English matching your ID → fix W-8 (tick No for U.S. person) → add English signature → resubmit. You will receive a "Your identity has been verified!" email when approved.
+</FaqItem>
+
 ---
 
 <References items={[
-  { label: "KICK Revenue & Payout Dashboard", url: "https://dashboard.kick.com/revenue/payout" },
-  { label: "TipMe — Thai PromptPay Donation Platform", url: "https://tipme.in.th" },
+  { label: "KICK Revenue Dashboard", url: "https://dashboard.kick.com/revenue/overall" },
+  { label: "KICK Revenue Payout Setup", url: "https://dashboard.kick.com/revenue" },
+  { label: "Stripe Dashboard Login", url: "https://dashboard.stripe.com/login" },
+  { label: "EasyDonate — Thai PromptPay Donation Platform", url: "https://easydonate.app" },
+  { label: "EasyDonate Widget URL", url: "https://easydonate.app/dashboard/donate/widget" },
   { label: "BotRix Custom Commands", url: "https://botrix.live" },
   { label: "KickBot Custom Commands", url: "https://kickbot.com" }
 ]} />

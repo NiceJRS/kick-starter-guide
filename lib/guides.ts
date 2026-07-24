@@ -113,11 +113,11 @@ export const guides: GuideData[] = [
     icon: 'ti-cash', color: 'amber', label: 'รับเงิน',
     title: { th: 'ระบบซับและการรับรายได้', en: 'Subscription & Donation Fees' },
     description: { th: 'ส่วนแบ่งรายได้ 95/5 บน KICK แก้ปัญหาซับมือถือ ผูกบัญชีธนาคารไทยผ่าน Stripe Connect และโดเนทพร้อมเพย์ 100%', en: "KICK's 95/5 revenue share, Direct Sub Link fix for mobile, Stripe Connect Thailand payout, and 100% PromptPay donations" },
-    tags: ['donation', 'โดเนท', 'subscribe', 'ซับ', 'sub', 'promptpay', 'พร้อมเพย์', 'truemoney', 'stripe', 'ธนาคาร', 'bank', 'รายได้', 'income', 'payout', 'ถอนเงิน', 'wise', 'paypal', 'ค่าธรรมเนียม', 'fee', '95/5'],
+    tags: ['donation', 'โดเนท', 'subscribe', 'ซับ', 'sub', 'promptpay', 'พร้อมเพย์', 'truemoney', 'stripe', 'ธนาคาร', 'bank', 'รายได้', 'income', 'payout', 'ถอนเงิน', 'easydonate', 'ezy', 'widget', 'ค่าธรรมเนียม', 'fee', '95/5', 'verify', 'w-8', 'kyc'],
     sections: [
       { id: 's8-1', label: { th: '8.1 Revenue Share & Direct Sub Link', en: '8.1 Revenue Share & Direct Sub Link' } },
       { id: 's8-2', label: { th: '8.2 ผูกบัญชี Stripe Connect ไทย', en: '8.2 Stripe Connect Thailand Payout' } },
-      { id: 's8-3', label: { th: '8.3 โดเนท PromptPay & TrueMoney', en: '8.3 PromptPay & TrueMoney Mastercard' } },
+      { id: 's8-3', label: { th: '8.3 โดเนท PromptPay & EasyDonate', en: '8.3 PromptPay & EasyDonate' } },
     ],
   },
   {
