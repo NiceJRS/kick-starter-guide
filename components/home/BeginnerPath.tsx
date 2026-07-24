@@ -67,7 +67,7 @@ export default function BeginnerPath({ locale }: { locale: string }) {
       const done = stage.guideIds.every((id) => newCompleted.includes(id))
       if (done && !shownStages.has(stage.id)) {
         setCelebratedStage(stage.id)
-        setShownStages((prev) => new Set([...prev, stage.id]))
+        setShownStages((prev) => { const s = new Set(prev); s.add(stage.id); return s })
         break
       }
     }
