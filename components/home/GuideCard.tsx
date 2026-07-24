@@ -62,7 +62,7 @@ export default function GuideCard({ guide, locale }: { guide: GuideData; locale:
             #{guide.id}
           </span>
           <div className="ml-auto flex items-center gap-1.5">
-            {guide.highlighted && (
+            {guide.showInHighlight && (
               <span title="Highlight" style={{ color: '#facc15', fontSize: 11, lineHeight: 1 }}>⭐</span>
             )}
             <LevelBadge level={guide.level} locale={locale} />

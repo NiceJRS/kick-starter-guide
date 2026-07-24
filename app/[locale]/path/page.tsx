@@ -19,7 +19,7 @@ export default function PathPage({ params: { locale } }: { params: { locale: str
 
   const stageGroups = STAGE_CONFIG.map((s) => ({
     ...s,
-    guides: guides.filter((g) => g.stage === s.id && g.showIn.includes('path')),
+    guides: guides.filter((g) => g.stage === s.id && g.showInPath),
   }))
 
   useEffect(() => {
@@ -85,7 +85,7 @@ export default function PathPage({ params: { locale } }: { params: { locale: str
   }
 
   const celebrateData = celebratedStage ? stageGroups.find((s) => s.id === celebratedStage) : null
-  const currentStep = guides.filter((g) => g.showIn.includes('path')).find((g) => !completed.includes(g.id))
+  const currentStep = guides.filter((g) => g.showInPath).find((g) => !completed.includes(g.id))
 
   return (
     <div className="min-h-screen" style={{ background: 'var(--surface-page)', color: 'var(--text-primary)' }}>
@@ -228,8 +228,8 @@ export default function PathPage({ params: { locale } }: { params: { locale: str
             <div className="mt-2 pt-3 px-2" style={{ borderTop: '1px solid var(--border-default)' }}>
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[10px]" style={{ color: 'var(--text-muted)' }}>
-                  {completed.filter(id => guides.find(g => g.id === id && g.showIn.includes('path'))).length}
-                  /{guides.filter(g => g.showIn.includes('path')).length} {locale === 'th' ? 'เสร็จ' : 'done'}
+                  {completed.filter(id => guides.find(g => g.id === id && g.showInPath)).length}
+                  /{guides.filter(g => g.showInPath).length} {locale === 'th' ? 'เสร็จ' : 'done'}
                 </span>
                 <button onClick={reset}
                   className="flex items-center gap-1 text-[10px] px-2 py-0.5 rounded transition-all hover:text-red-400"
@@ -240,7 +240,7 @@ export default function PathPage({ params: { locale } }: { params: { locale: str
               </div>
               {/* Overall progress bar */}
               {(() => {
-                const pathGuides = guides.filter(g => g.showIn.includes('path'))
+                const pathGuides = guides.filter(g => g.showInPath)
                 const doneCount = pathGuides.filter(g => completed.includes(g.id)).length
                 const pct = pathGuides.length > 0 ? (doneCount / pathGuides.length) * 100 : 0
                 return (

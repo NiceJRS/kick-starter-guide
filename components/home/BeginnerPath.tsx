@@ -8,7 +8,7 @@ import { getCompletedGuides, markGuideComplete, unmarkGuideComplete, PROGRESS_KE
 
 const STAGES = STAGE_CONFIG.map((s) => ({
   ...s,
-  guideIds: guides.filter((g) => g.stage === s.id && g.showIn.includes('path')).map((g) => g.id),
+  guideIds: guides.filter((g) => g.stage === s.id && g.showInPath).map((g) => g.id),
 }))
 
 export default function BeginnerPath({ locale }: { locale: string }) {

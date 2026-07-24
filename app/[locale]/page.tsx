@@ -62,12 +62,12 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
             </div>
             <div className="relative">
               <div className="text-sm font-bold mb-0.5" style={{ color: 'var(--text-primary)' }}>
-                {locale === 'th' ? 'เส้นทาง Streamer' : 'Streamer Path'}
+                {locale === 'th' ? 'มือใหม่ใช่ไหม? เริ่ม Setup Stream กัน' : 'New here? Start your Stream Setup'}
               </div>
               <div className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 {locale === 'th'
-                  ? 'Step-by-step ตั้งแต่ Starter จนถึง Pro — พร้อม progress tracker'
-                  : 'Step-by-step from Starter to Pro — with progress tracker'}
+                  ? 'ทำ 2 บทแรกก็พร้อมสตรีมได้เลย — ที่เหลือเป็น optional'
+                  : 'Just 2 chapters to go live — rest is optional'}
               </div>
             </div>
             <div className="relative flex items-center gap-1.5 mt-1">

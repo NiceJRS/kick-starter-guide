@@ -7,7 +7,7 @@ import { guides, STAGE_CONFIG } from '@/lib/guides'
 
 const STAGE_GROUPS = STAGE_CONFIG.map((s) => ({
   ...s,
-  guideIds: guides.filter((g) => g.stage === s.id && g.showIn.includes('path')).map((g) => g.id),
+  guideIds: guides.filter((g) => g.stage === s.id && g.showInPath).map((g) => g.id),
 }))
 
 const NAV_OFFSET = 110
