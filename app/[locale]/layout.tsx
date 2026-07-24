@@ -3,6 +3,7 @@ import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { Inter } from 'next/font/google'
 import type { ReactNode } from 'react'
+import { Analytics } from '@vercel/analytics/next'
 import '../globals.css'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' })
@@ -33,6 +34,7 @@ export default async function LocaleLayout({
             </div>
           </div>
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   )
