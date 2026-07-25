@@ -13,13 +13,13 @@ type Result = {
 }
 
 const QUICK_TAGS = [
-  { th: 'ตั้งค่า OBS', en: 'OBS setup' },
-  { th: 'รับ Donation', en: 'Donation' },
-  { th: 'บอทแชท', en: 'Chatbot' },
-  { th: 'Discord', en: 'Discord' },
-  { th: 'Stream Key', en: 'Stream Key' },
-  { th: 'VOD คลิป', en: 'VOD Clips' },
-  { th: 'Mod จัดการ', en: 'Moderation' },
+  { th: 'ตั้งค่า OBS', en: 'OBS setup', query: 'obs' },
+  { th: 'รับ Donation', en: 'Donation', query: 'donation' },
+  { th: 'บอทแชท', en: 'Chatbot', query: 'chatbot' },
+  { th: 'Discord', en: 'Discord', query: 'discord' },
+  { th: 'Stream Key', en: 'Stream Key', query: 'stream key' },
+  { th: 'VOD คลิป', en: 'VOD Clips', query: 'vod' },
+  { th: 'Mod จัดการ', en: 'Moderation', query: 'mod' },
 ]
 
 function search(q: string, locale: string): Result[] {
@@ -200,7 +200,7 @@ export default function SearchHero({ locale }: { locale: string }) {
           return (
             <button
               key={label}
-              onClick={() => handleTag(label)}
+              onClick={() => handleTag(tag.query)}
               className="px-2.5 py-1 rounded-full text-xs border transition-all"
               style={{
                 background: 'var(--surface-card2)',
