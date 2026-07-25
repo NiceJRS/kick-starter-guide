@@ -1,6 +1,6 @@
 'use client'
 
-import { IconRadio } from '@tabler/icons-react'
+import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 import ModeTab from '@/components/home/ModeTab'
 
@@ -47,16 +47,24 @@ export default function Navbar({
       {/* Logo */}
       <div className="flex items-center gap-2.5">
         <div
-          className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
-          style={{ background: 'var(--kick-green-10)', border: '1px solid var(--kick-green-22)' }}
+          className="w-8 h-8 rounded-lg overflow-hidden shrink-0"
+          style={{ border: '1px solid var(--kick-green-22)' }}
         >
-          <IconRadio size={16} style={{ color: 'var(--kick-green-text)' }} />
+          <Image src="/images/brand/nicejrs-avatar.jpg" alt="NiceJRS" width={32} height={32} className="w-full h-full object-cover" />
         </div>
         <div>
           <div className="text-[14px] font-semibold leading-tight" style={{ color: 'var(--kick-green-text)' }}>
             KICK Guide TH
           </div>
-          <div className="text-[10px]" style={{ color: 'var(--text-muted)' }}>By NiceJRS · Community Guide</div>
+          <a
+            href="https://kick.com/nicejrs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[10px] hover:underline"
+            style={{ color: 'var(--text-muted)' }}
+          >
+            By NiceJRS · Community Guide
+          </a>
         </div>
       </div>
 
