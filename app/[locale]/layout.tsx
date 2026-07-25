@@ -3,6 +3,7 @@ import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { Inter } from 'next/font/google'
 import type { ReactNode } from 'react'
+import Footer from '@/components/Footer'
 import '../globals.css'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' })
@@ -30,6 +31,7 @@ export default async function LocaleLayout({
           <div className="min-h-screen" style={{ background: 'var(--surface-page)' }}>
             <div className="max-w-5xl mx-auto px-5 pt-4 pb-12">
               {children}
+              <Footer locale={locale} />
             </div>
           </div>
         </NextIntlClientProvider>
