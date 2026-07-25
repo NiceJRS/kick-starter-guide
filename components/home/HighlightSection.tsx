@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import {
-  IconDeviceDesktop, IconRobot, IconCash,
+  IconDeviceDesktop, IconRobot, IconShieldCheck,
   IconStar, IconArrowRight
 } from '@tabler/icons-react'
 import LevelBadge from '@/components/shared/LevelBadge'
@@ -36,14 +36,14 @@ const HIGHLIGHTS = [
   },
   {
     slug: 'subscription-donation',
-    section: 's8-3',
+    section: 's8-2',
     featured: false,
-    icon: IconCash,
+    icon: IconShieldCheck,
     iconBg: 'var(--amber-10)',
     iconColor: 'var(--amber)',
-    badge: { bg: 'var(--amber-10)', color: 'var(--amber)', text: { th: '💰', en: '💰' } },
-    title: { th: 'รับโดเนท PromptPay', en: 'PromptPay Donations' },
-    desc: { th: 'รับเงินตรง 100% ไม่โดนหัก', en: '100% revenue, no platform cut' },
+    badge: { bg: 'var(--amber-10)', color: 'var(--amber)', text: { th: '🔐', en: '🔐' } },
+    title: { th: 'Verify ตัวตนผ่าน Stripe', en: 'Verify via Stripe' },
+    desc: { th: 'แก้ปัญหา Stripe Verify ไม่ผ่าน ผูกบัญชีธนาคารไทยให้สำเร็จ', en: 'Fix failed Stripe verification and link your Thai bank account' },
     tags: [],
     level: 'intermediate' as const,
     duration: 25,

@@ -1,7 +1,8 @@
 import Link from 'next/link'
-import { IconRobot, IconCash, IconBrandDiscord, IconShield, IconVideo, IconSparkles } from '@tabler/icons-react'
+import { IconRobot, IconCash, IconBrandDiscord, IconShield, IconShieldCheck, IconVideo, IconSparkles } from '@tabler/icons-react'
 
 const suggestions = [
+  { icon: IconShieldCheck,  color: 'var(--amber)',       bg: 'var(--amber-10)',       slug: 'subscription-donation', section: 's8-2', th: 'Verify ตัวตนไม่ผ่าน',   en: 'Failed Verification',    sub: 'Stripe Connect' },
   { icon: IconRobot,        color: 'var(--kick-green)', bg: 'var(--kick-green-10)', slug: 'chatbot',               th: 'บอทตอบ chat อัตโนมัติ', en: 'Auto Chat Bot',          sub: 'Nightbot, BotRix' },
   { icon: IconCash,         color: 'var(--amber)',       bg: 'var(--amber-10)',       slug: 'subscription-donation', th: 'ตั้งรับ Donation ไทย',  en: 'Thai Donation',          sub: 'PromptPay, Wise' },
   { icon: IconBrandDiscord, color: 'var(--blue)',        bg: 'var(--blue-10)',        slug: 'discord-connector',     th: 'แจ้งเตือน Discord',      en: 'Discord Alerts',         sub: 'Live notifications' },
@@ -20,7 +21,7 @@ export default function SuggestionRow({ locale }: { locale: string }) {
         {suggestions.map((s) => {
           const Icon = s.icon
           return (
-            <Link key={s.slug} href={`/${locale}/guides/${s.slug}`} className="flex-shrink-0 w-[148px]">
+            <Link key={s.slug + (s.section ?? '')} href={`/${locale}/guides/${s.slug}${s.section ? '#' + s.section : ''}`} className="flex-shrink-0 w-[148px]">
               <div
                 className="p-3 rounded-xl cursor-pointer transition-all h-full"
                 style={{ background: 'var(--surface-card)', border: '1px solid var(--border-default)' }}
