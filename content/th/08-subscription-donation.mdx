@@ -69,20 +69,26 @@ sidebar_category: monetization
 
 <StepCard step={2} title="หาก Stripe Verify ไม่ผ่าน — วิธีแก้ไขข้อมูลและยืนยันตัวตนใหม่">
   <SubSteps items={[
-    "<strong>เข้าสู่ระบบ Stripe Dashboard:</strong> ไปที่ <a href='https://dashboard.stripe.com/login' target='_blank'>dashboard.stripe.com/login</a> แล้ว Login ด้วยอีเมลเดียวกับที่ใช้สมัคร KICK — ระบบจะพาไปที่ <code>connect.stripe.com/app/express</code> ซึ่งเป็น Stripe Connect Express ของ KICK โดยอัตโนมัติ",
-    "<strong>เข้าที่ Settings:</strong> คลิกเมนู <strong>Settings</strong> ในหน้า Stripe Express Dashboard",
-    "<strong>แก้ไข Display Name:</strong> เปลี่ยน Display Name เป็น <strong>ภาษาอังกฤษ</strong> ให้ตรงกับชื่อในบัตรประชาชนหรือพาสปอร์ต",
-    "<strong>แก้ไขแบบฟอร์ม W-8/W-9:</strong> เปิดส่วน Tax Information → กรอกข้อมูลเป็น <strong>ภาษาอังกฤษ</strong> → ติ๊กเลือก <strong>No</strong> ในช่อง &quot;Are you a U.S. person?&quot; เพราะคุณไม่ใช่พลเมืองสหรัฐฯ",
-    "<strong>กรอก Signature:</strong> ลงลายเซ็นดิจิทัลเป็น <strong>ภาษาอังกฤษ</strong> ให้ตรงกับชื่อที่กรอกในแบบฟอร์ม",
+    "<strong>เข้าสู่ระบบ Stripe:</strong> ไปที่ <a href='https://dashboard.stripe.com/login' target='_blank'>dashboard.stripe.com/login</a> — ระบบจะ Redirect พาไปที่ <code>connect.stripe.com/app/express</code> ซึ่งเป็น Stripe Express Dashboard ของ KICK ให้เอง",
+    "<strong>สำคัญ:</strong> ต้องใช้อีเมลเดียวกับที่ใช้สมัคร KICK Account เท่านั้น",
+    "เข้ามาได้แล้ว ให้กดไปที่เมนู <strong>Settings</strong> แล้วเช็คตาม 5 จุดนี้เลย:",
+    "<strong>1. Account Details:</strong> Display Name ต้องตั้งเป็น <strong>ภาษาอังกฤษ</strong>",
+    "<strong>2. Business Details:</strong> Type / Location ต้องเป็น <strong>Thailand</strong>",
+    "<strong>3. Tax Forms → W-8/W-9</strong> (กดปุ่ม Edit Personal Details): Legal Name ต้องเป็น <strong>ภาษาอังกฤษ</strong> ตรงตามหน้าบัตรประชาชน/เอกสารราชการ",
+    "<strong>4. Current Residential Address:</strong> Address Country ต้องเป็น <strong>Thailand</strong>",
+    "<strong>5. Payout Details:</strong> Bank Account ต้องเป็น <strong>บัญชีธนาคารไทย</strong>",
     "<strong>หากผ่านการยืนยัน:</strong> คุณจะได้รับอีเมล <strong>\"Your identity has been verified!\"</strong> — แสดงว่า Stripe ยืนยันตัวตนสำเร็จและพร้อมรับโอนเงิน"
   ]} />
-  <ImageCaption src="/images/ch8/8.2.2_stripe_dashboard_login.jpg" alt="หน้า Login ของ Stripe Dashboard" caption="dashboard.stripe.com/login — Login ด้วยอีเมลเดียวกับ KICK เพื่อเข้าแก้ไข Stripe Express" />
-  <ImageCaption src="/images/ch8/8.2.3_Stipe_settings.jpg" alt="หน้า Settings ใน Stripe Express Dashboard" caption="Stripe Express → Settings — จุดที่แก้ Display Name และ Tax Information" />
-  <ImageCaption src="/images/ch8/8.2.4_edit_w8.jpg" alt="แบบฟอร์ม W-8 ใน Stripe Express" caption="W-8 Form — กรอกภาษาอังกฤษ ติ๊ก No สำหรับ U.S. Person" />
-  <ImageCaption src="/images/ch8/8.2.5_stripe_edit_legal_name.jpg" alt="แก้ไข Legal Name ใน Stripe Express" caption="Display Name / Legal Name — ต้องตรงกับชื่อในบัตรประชาชน" />
-  <ImageCaption src="/images/ch8/8.2.6_signature.jpg" alt="ช่องลงลายเซ็นใน Stripe Express" caption="Signature — กรอกภาษาอังกฤษให้ตรงกับชื่อที่กรอก" />
+  <ImageCaption src="/images/ch8/8.2.1new.png" alt="Stripe Express Settings — Account Details Display Name" caption="1. Account Details — Display Name ต้องตั้งเป็นภาษาอังกฤษ" />
+  <ImageCaption src="/images/ch8/8.2.2new.png" alt="Stripe Express — Business Details Type Thailand" caption="2. Business Details — Type / Location ต้องเป็น Thailand" />
+  <ImageCaption src="/images/ch8/8.2.3new.png" alt="Stripe Express — Edit Personal Details Legal Name และ Residential Address" caption="3-4. Edit Personal Details — Legal Name ภาษาอังกฤษ และ Current Residential Address ต้องเป็น Thailand" />
+  <ImageCaption src="/images/ch8/8.2.4new.png" alt="Stripe Express — Payout Details Bank Account" caption="5. Payout Details — Bank Account ต้องเป็นบัญชีธนาคารไทย" />
   <ImageCaption src="/images/ch8/8.2.7_verify_pass.jpg" alt="อีเมลยืนยัน Your identity has been verified" caption="อีเมล 'Your identity has been verified!' — Stripe ยืนยันตัวตนสำเร็จ พร้อมรับโอนเงิน" />
 </StepCard>
+
+<WarningBox>
+<strong>ถ้าข้อมูลไม่ถูกต้อง หรือ Country / Region ไม่ตรง</strong> (เช่น ขึ้นเป็นประเทศอื่นแล้วกดแก้เองไม่ได้) จะไม่สามารถกดเปลี่ยนประเทศเองได้ ต้องติดต่อ KICK Support ให้ช่วย Reset บัญชีเพื่อสมัครใหม่เท่านั้น ส่งอีเมลไปที่ <code>support@kick.com</code>
+</WarningBox>
 
 ---
 
@@ -134,7 +140,7 @@ sidebar_category: monetization
 </FaqItem>
 
 <FaqItem q="ทำไม Stripe Verify ไม่ผ่าน และแก้ยังไง?">
-สาเหตุส่วนใหญ่มาจากชื่อภาษาอังกฤษไม่ตรงกับบัตร หรือแบบฟอร์ม W-8 กรอกไม่ครบ แก้โดยเข้า dashboard.stripe.com/login ด้วยอีเมลเดิม → ไปที่ Settings → แก้ Display Name เป็นภาษาอังกฤษตรงกับบัตร → แก้ W-8 ติ๊ก No (ไม่ใช่คน US) → กรอก Signature ภาษาอังกฤษ → Submit ใหม่
+สาเหตุส่วนใหญ่มาจากข้อมูลใน Settings ไม่ครบหรือไม่ตรง แก้โดยเข้า dashboard.stripe.com/login ด้วยอีเมลเดิมที่สมัคร KICK → ไปที่ Settings → เช็ค 5 จุด: Account Details (ชื่ออังกฤษ), Business Details (Thailand), W-8/W-9 Legal Name (ชื่ออังกฤษตรงบัตร), Current Residential Address (Thailand), Payout Details (บัญชีธนาคารไทย) หากแก้ Country ไม่ได้ ต้องติดต่อ `support@kick.com` ให้ Reset บัญชี
 </FaqItem>
 
 ---

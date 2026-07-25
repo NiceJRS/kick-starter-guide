@@ -69,20 +69,26 @@ Set up both the <code>!sub</code> command AND a 20-minute timer. Most mobile vie
 
 <StepCard step={2} title="If Stripe Verification Fails — How to Fix and Re-verify">
   <SubSteps items={[
-    "<strong>Log in to Stripe Dashboard:</strong> Go to <a href='https://dashboard.stripe.com/login' target='_blank'>dashboard.stripe.com/login</a> and sign in using the <strong>same email</strong> as your KICK account. The system will automatically redirect you to <code>connect.stripe.com/app/express</code> — KICK's Stripe Connect Express portal.",
-    "<strong>Open Settings:</strong> Click the <strong>Settings</strong> menu inside the Stripe Express Dashboard.",
-    "<strong>Fix Display Name:</strong> Update your Display Name to <strong>English</strong>, matching exactly the name on your national ID card or passport.",
-    "<strong>Fix W-8/W-9 Tax Form:</strong> Open the Tax Information section → fill in all fields in <strong>English</strong> → select <strong>No</strong> for &quot;Are you a U.S. person?&quot; (you are not a U.S. citizen or resident).",
-    "<strong>Add Signature:</strong> Sign the form digitally in <strong>English</strong>, matching the name you entered in the form above.",
-    "<strong>If verification passes:</strong> You will receive an email titled <strong>\"Your identity has been verified!\"</strong> — Stripe has approved your account and you are ready to receive payouts."
+    "<strong>Log in to Stripe:</strong> Go to <a href='https://dashboard.stripe.com/login' target='_blank'>dashboard.stripe.com/login</a> — you'll be redirected to <code>connect.stripe.com/app/express</code>, KICK's Stripe Express Dashboard, automatically.",
+    "<strong>Important:</strong> You must use the same email you used to sign up for your KICK account.",
+    "Once in, open the <strong>Settings</strong> menu and check these 5 spots:",
+    "<strong>1. Account Details:</strong> Display Name must be set in <strong>English</strong>.",
+    "<strong>2. Business Details:</strong> Type / Location must be <strong>Thailand</strong>.",
+    "<strong>3. Tax Forms → W-8/W-9</strong> (click Edit Personal Details): Legal Name must be in <strong>English</strong>, matching exactly your national ID card or passport.",
+    "<strong>4. Current Residential Address:</strong> Address Country must be <strong>Thailand</strong>.",
+    "<strong>5. Payout Details:</strong> Bank Account must be a <strong>Thai bank account</strong>.",
+    "<strong>If verification passes:</strong> You'll receive an email titled <strong>\"Your identity has been verified!\"</strong> — Stripe has approved your account and you're ready to receive payouts."
   ]} />
-  <ImageCaption src="/images/ch8/8.2.2_stripe_dashboard_login.jpg" alt="Stripe Dashboard login page" caption="dashboard.stripe.com/login — Sign in with the same email as KICK to access Stripe Express" />
-  <ImageCaption src="/images/ch8/8.2.3_Stipe_settings.jpg" alt="Settings menu in Stripe Express Dashboard" caption="Stripe Express → Settings — where you update Display Name and Tax Information" />
-  <ImageCaption src="/images/ch8/8.2.4_edit_w8.jpg" alt="W-8 form in Stripe Express" caption="W-8 Form — fill in English, select No for U.S. Person" />
-  <ImageCaption src="/images/ch8/8.2.5_stripe_edit_legal_name.jpg" alt="Edit Legal Name in Stripe Express" caption="Display Name / Legal Name — must match exactly the name on your ID card" />
-  <ImageCaption src="/images/ch8/8.2.6_signature.jpg" alt="Digital signature field in Stripe Express" caption="Signature — sign in English matching the name you entered" />
+  <ImageCaption src="/images/ch8/8.2.1new.png" alt="Stripe Express Settings — Account Details Display Name" caption="1. Account Details — Display Name must be set in English" />
+  <ImageCaption src="/images/ch8/8.2.2new.png" alt="Stripe Express — Business Details Type Thailand" caption="2. Business Details — Type / Location must be Thailand" />
+  <ImageCaption src="/images/ch8/8.2.3new.png" alt="Stripe Express — Edit Personal Details Legal Name and Residential Address" caption="3-4. Edit Personal Details — Legal Name in English, and Current Residential Address must be Thailand" />
+  <ImageCaption src="/images/ch8/8.2.4new.png" alt="Stripe Express — Payout Details Bank Account" caption="5. Payout Details — Bank Account must be a Thai bank account" />
   <ImageCaption src="/images/ch8/8.2.7_verify_pass.jpg" alt="Your identity has been verified email" caption="'Your identity has been verified!' email — Stripe verification complete, ready for payouts" />
 </StepCard>
+
+<WarningBox>
+<strong>If your details are wrong or the Country / Region doesn't match</strong> (e.g. it's stuck on the wrong country and won't let you edit it), you can't change the country yourself. You'll need to contact KICK Support to reset your account so you can sign up again — email <code>support@kick.com</code>.
+</WarningBox>
 
 ---
 
@@ -134,7 +140,7 @@ Yes. Thai viewers can open the TrueMoney Wallet app, generate a virtual **TrueMo
 </FaqItem>
 
 <FaqItem q="What do I do if Stripe verification fails?">
-Most failures are caused by an English name mismatch or incomplete W-8 form. Go to dashboard.stripe.com/login with the same email → Settings → fix Display Name to English matching your ID → fix W-8 (tick No for U.S. person) → add English signature → resubmit. You will receive a "Your identity has been verified!" email when approved.
+Most failures come from incomplete or mismatched details in Settings. Go to dashboard.stripe.com/login with the same email you used for KICK → Settings → check 5 spots: Account Details (English name), Business Details (Thailand), W-8/W-9 Legal Name (English, matching your ID), Current Residential Address (Thailand), and Payout Details (Thai bank account). If the Country field is stuck and won't let you edit it, contact `support@kick.com` to have your account reset.
 </FaqItem>
 
 ---
