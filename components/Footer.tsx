@@ -21,8 +21,9 @@ export default function Footer({ locale }: { locale: string }) {
           {locale === 'th' ? ' · ดูไลฟ์ได้ที่ kick.com/nicejrs' : ' · Watch live at kick.com/nicejrs'}
         </span>
       </a>
-      <span>
+      <span className="flex items-center gap-1.5">
         © {new Date().getFullYear()} KICK Guide TH — {locale === 'th' ? 'คู่มือชุมชนสำหรับสตรีมเมอร์ไทย' : 'Community guide for Thai streamers'}
+        <Image src="/images/brand/kick-logo.webp" alt="KICK" width={36} height={12} className="inline-block h-3 w-auto opacity-80" />
       </span>
     </footer>
   )
